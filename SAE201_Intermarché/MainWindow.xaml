@@ -17,6 +17,37 @@
             <Ellipse Height="30" Width="30" Fill="Yellow" Margin="20,0,0,0"/>
             <Label Content="?" FontSize="20" Margin="5,0,5,0" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White" FontWeight="Bold"/>
         </StackPanel>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Column="0" Margin="20" Background="Gray">
+                <Rectangle Width="150" Height="25" HorizontalAlignment="Left" Fill="Orange"></Rectangle>
+                <TextBlock Margin="5,-22,0,0" Width="auto" Height="25">Enregistrer une location</TextBlock>
+            </StackPanel>
+            <StackPanel Grid.Column="1" Margin="20" Background="Gray">
+                <Rectangle Width="150" Height="25" HorizontalAlignment="Left" Fill="Orange"></Rectangle>
+                <TextBlock Margin="5,-22,0,0" Width="auto" Height="25">Enregistrer un retour</TextBlock>
+            </StackPanel>
+            <StackPanel Grid.Column="2" Margin="20" Background="Gray">
+                <Rectangle Width="100" Height="25" HorizontalAlignment="Left" Fill="Orange"></Rectangle>
+                <TextBlock Margin="5,-22,0,0" Width="auto" Height="25">Rechercher</TextBlock>
+                <Label FontSize="9" Padding="3" Margin="10,0,10,0">Type véhicule</Label>
+                <ComboBox Margin="10,0,10,0"></ComboBox>
+                <Label Margin="10,0,10,0" FontSize="9" Padding="3">Date emprunt</Label>
+                <DatePicker Margin="10,0,10,0"></DatePicker>
+                <Label Margin="10,0,10,0" FontSize="9" Padding="3">Date retour</Label>
+                <DatePicker Margin="10,0,10,0"></DatePicker>
+                <Button HorizontalAlignment="Right" Margin="0,5,0,5" Width="50">ok</Button>
+            </StackPanel>
+        </Grid>
+        <StackPanel Grid.Row="2" Orientation="Horizontal" Margin="20">
+            <Calendar></Calendar>
+            <DataGrid d:ItemsSource="{d:SampleData ItemCount=5}" Width="624"/>
+
+        </StackPanel>
 
     </Grid>
 </Window>
