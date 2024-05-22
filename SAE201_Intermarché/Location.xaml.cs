@@ -12,7 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace SAE201_Intermarché
+namespace SAE201_Intermarche
 {
     /// <summary>
     /// Logique d'interaction pour Location.xaml
