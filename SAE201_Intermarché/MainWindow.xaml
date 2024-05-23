@@ -5,48 +5,84 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SAE201_Intermarché"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        Title="MainWindow"  ResizeMode="CanResize" WindowStartupLocation="CenterOwner" WindowState="Maximized" Width="1920" Height="1080">
+
+    <Grid >
         <Grid.RowDefinitions>
             <RowDefinition Height="1*"/>
             <RowDefinition Height="5*"/>
             <RowDefinition Height="4*"/>
         </Grid.RowDefinitions>
-        <StackPanel x:Name="hautPage" Orientation="Horizontal" Grid.Row="0" Background="Gray">
-            <Image Height="auto" Source="/img/logo.png" Stretch="Fill" Width="auto" Margin="5,5,5,5"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*"></ColumnDefinition>
+            <ColumnDefinition Width="2*"></ColumnDefinition>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <StackPanel Orientation="Horizontal" Grid.Row="0" Grid.ColumnSpan="3" Background="Gray"  >
+            <Image Height="auto" Source="/img/logo.png" Stretch="Fill" Width="auto" Margin="5,5,5,5" MouseDown="Image_MouseDown"/>
             <Ellipse Height="30" Width="30" Fill="Yellow" Margin="20,0,0,0"/>
             <Label Content="?" FontSize="20" Margin="5,0,5,0" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White" FontWeight="Bold"/>
         </StackPanel>
-        <Grid Grid.Row="1">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="2*"/>
-                <ColumnDefinition Width="2*"/>
-                <ColumnDefinition Width="1*"/>
-            </Grid.ColumnDefinitions>
-            <StackPanel Grid.Column="0" Margin="20" Background="Gray">
-                <Rectangle Width="150" Height="25" HorizontalAlignment="Left" Fill="Orange"></Rectangle>
-                <TextBlock Margin="5,-22,0,0" Width="auto" Height="25">Enregistrer une location</TextBlock>
-            </StackPanel>
-            <StackPanel Grid.Column="1" Margin="20" Background="Gray">
-                <Rectangle Width="150" Height="25" HorizontalAlignment="Left" Fill="Orange"></Rectangle>
-                <TextBlock Margin="5,-22,0,0" Width="auto" Height="25">Enregistrer un retour</TextBlock>
-            </StackPanel>
-            <StackPanel Grid.Column="2" Margin="20" Background="Gray">
-                <Rectangle Width="100" Height="25" HorizontalAlignment="Left" Fill="Orange"></Rectangle>
-                <TextBlock Margin="5,-22,0,0" Width="auto" Height="25">Rechercher</TextBlock>
-                <Label FontSize="9" Padding="3" Margin="10,0,10,0">Type véhicule</Label>
-                <ComboBox Margin="10,0,10,0"></ComboBox>
-                <Label Margin="10,0,10,0" FontSize="9" Padding="3">Date emprunt</Label>
-                <DatePicker Margin="10,0,10,0"></DatePicker>
-                <Label Margin="10,0,10,0" FontSize="9" Padding="3">Date retour</Label>
-                <DatePicker Margin="10,0,10,0"></DatePicker>
-                <Button HorizontalAlignment="Right" Margin="0,5,0,5" Width="50">ok</Button>
-            </StackPanel>
-        </Grid>
-        <StackPanel Grid.Row="2" Orientation="Horizontal" Margin="20">
-            <Calendar></Calendar>
-            <DataGrid d:ItemsSource="{d:SampleData ItemCount=5}" Width="624"/>
 
+        <StackPanel Grid.Row="1" Grid.Column="0" Style="{StaticResource Principalstackpanel}">
+        
+                <Label Width="150" Height="30" HorizontalAlignment="Left" Background="Orange" >Enregistrer une location</Label>
+                <StackPanel Orientation="Horizontal" Margin="20,50,20,20">
+                    <Label Width="100" Height="30" HorizontalAlignment="Left" Background="Green">Recherche Client</Label>
+                    <TextBox TextWrapping="Wrap" Text="" Width="300"/>
+                    <Button Content="Ok" Width="40" />
+                    <Button Content=" + Ajouter le client" Width="150" Margin="10,0,0,0"/>
+                </StackPanel>
+                <StackPanel  Grid.Column="1" Orientation="Horizontal" Margin="20">
+                    <Label Width="100" Height="30" HorizontalAlignment="Left" Background="Green">Date emprunt</Label>
+                    <DatePicker Width="200"/>
+                    <Label Width="100" Height="30" HorizontalAlignment="Left" Background="Green" Margin="10,0,0,0">Date retour</Label>
+                    <DatePicker Width="200"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="20">
+                    <Label Width="100" Height="30" HorizontalAlignment="Left" Background="Green">Type véhicule</Label>
+                    <ComboBox Text="" Width="300"/>
+                </StackPanel>
+                <Button Content="Continuer la réservation" Width="150" Height="30" HorizontalAlignment="Right" Margin="20" Background="Red"/>
+            </StackPanel>
+
+
+        <StackPanel Grid.Row="1" Grid.Column="1" Style="{StaticResource Principalstackpanel}">
+                <Label Width="150" Height="30" HorizontalAlignment="Left" Background="Orange" >Enregistrer un retour</Label>
+                <StackPanel Orientation="Horizontal" Margin="20,50,20,20">
+                    <Label Width="100" Height="30" HorizontalAlignment="Left" Background="Green">Recherche Client</Label>
+                    <TextBox TextWrapping="Wrap" Text="" Width="300"/>
+                    <Button Content="Ok" Width="40" />
+                    <Button Content=" + Ajouter le client" Width="150" Margin="10,0,0,0"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="20">
+                    <Label Width="100" Height="30" HorizontalAlignment="Left" Background="Green">Date emprunt</Label>
+                    <DatePicker Width="150"/>
+                    <Label Width="100" Height="30" HorizontalAlignment="Left" Background="Green" Margin="10,0,0,0">Date retour</Label>
+                    <DatePicker Width="150"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="20">
+                    <Label Width="100" Height="30" HorizontalAlignment="Left" Background="Green">Type véhicule</Label>
+                    <ComboBox Text="" Width="300"/>
+                </StackPanel>
+                <Button Content="Continuer le retour" Width="150" Height="30" HorizontalAlignment="Right" Margin="20" Background="Red"/>
+            </StackPanel>
+
+        <StackPanel Grid.Row="1" Grid.Column="2" Style="{StaticResource Principalstackpanel}">
+                <Label Width="100" Height="30" HorizontalAlignment="Left" Background="Orange">Rechercher</Label>
+                <Label FontSize="15" Padding="3" Margin="10,10,10,5">Type véhicule</Label>
+                <ComboBox Margin="10,0,10,0"></ComboBox>
+                <Label Margin="10,10,10,5" FontSize="15" Padding="3">Date emprunt</Label>
+                <DatePicker Margin="10,0,10,0"></DatePicker>
+                <Label Margin="10,10,10,5" FontSize="15" Padding="3">Date retour</Label>
+                <DatePicker Margin="10,0,10,0"></DatePicker>
+                <Button HorizontalAlignment="Right" Margin="10,20,10,5" Width="50" Height="30">ok</Button>
+            </StackPanel>
+
+        <StackPanel Grid.Row="2" Grid.ColumnSpan="3" Style="{StaticResource Principalstackpanel}" Orientation="Horizontal">
+            <Label Background="Orange" Width="150" Height="30" VerticalAlignment="Top">Agenda</Label>
+            <Calendar VerticalAlignment="Center"></Calendar>
+            <DataGrid Margin="20,0,0,0" d:ItemsSource="{d:SampleData ItemCount=5}" Width="auto" VerticalAlignment="Center"/>
         </StackPanel>
 
     </Grid>

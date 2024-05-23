@@ -29,5 +29,10 @@ namespace SAE201_Intermarche
         {
 
         }
+
+        private void Image_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+           
+        }
     }
 }
