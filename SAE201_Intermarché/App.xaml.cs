@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SAE201_Intermarche;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
@@ -11,7 +12,9 @@ namespace SAE201_Intermarché
     /// <summary>
     /// Interaction logic for App.xaml
     /// </summary>
+    /// 
     public partial class App : Application
     {
+
     }
 }

@@ -17,6 +17,7 @@ namespace SAE201_Intermarche
     /// <summary>
     /// Logique d'interaction pour Location.xaml
     /// </summary>
+    /// 
     public partial class Location : Window
     {
         public Location()

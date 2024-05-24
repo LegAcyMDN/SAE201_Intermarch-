@@ -1,23 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using SAE201_Intermarché;
+using System.Net.Sockets;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace SAE201_Intermarche
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
+    /// 
+
     public partial class MainWindow : Window
     {
         public MainWindow()
@@ -25,14 +17,26 @@ namespace SAE201_Intermarche
             InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
         private void Image_MouseDown(object sender, MouseButtonEventArgs e)
         {
-           
+        }
+
+        private void resa_Click(object sender, RoutedEventArgs e)
+        {
+            Location location = new Location();
+            location.Show();
+        }
+
+        private void clientWin_Click(object sender, RoutedEventArgs e)
+        {
+            Client client = new Client();
+            client.Show();
+        }
+
+        private void retourWin_Click(object sender, RoutedEventArgs e)
+        {
+            Retour retour = new Retour();
+            retour.Show();
         }
     }
 }

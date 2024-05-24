@@ -27,23 +27,25 @@
         <StackPanel Grid.Row="1" Grid.Column="0" Style="{StaticResource Principalstackpanel}">
         
                 <Label Width="150" Height="30" HorizontalAlignment="Left" Background="Orange" >Enregistrer une location</Label>
-                <StackPanel Orientation="Horizontal" Margin="20,50,20,20">
-                    <Label Width="100" Height="30" HorizontalAlignment="Left" Background="Green">Recherche Client</Label>
-                    <TextBox TextWrapping="Wrap" Text="" Width="300"/>
-                    <Button Content="Ok" Width="40" />
-                    <Button Content=" + Ajouter le client" Width="150" Margin="10,0,0,0"/>
-                </StackPanel>
-                <StackPanel  Grid.Column="1" Orientation="Horizontal" Margin="20">
-                    <Label Width="100" Height="30" HorizontalAlignment="Left" Background="Green">Date emprunt</Label>
-                    <DatePicker Width="200"/>
-                    <Label Width="100" Height="30" HorizontalAlignment="Left" Background="Green" Margin="10,0,0,0">Date retour</Label>
-                    <DatePicker Width="200"/>
-                </StackPanel>
-                <StackPanel Orientation="Horizontal" Margin="20">
-                    <Label Width="100" Height="30" HorizontalAlignment="Left" Background="Green">Type véhicule</Label>
-                    <ComboBox Text="" Width="300"/>
-                </StackPanel>
-                <Button Content="Continuer la réservation" Width="150" Height="30" HorizontalAlignment="Right" Margin="20" Background="Red"/>
+            <StackPanel Orientation="Horizontal" Margin="20,50,20,20">
+                <Label Width="100" Height="30" HorizontalAlignment="Left" Background="Green">Recherche Client</Label>
+                <TextBox TextWrapping="Wrap" Text="" Width="200"/>
+                <Button Content="Ok" Width="40" />
+                <Button x:Name="clientWi" Content="Ajouter un client" Width="150" Margin="10,0,0,0" Click="clientWin_Click"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="20,0,20,20">
+                <Label Width="100" Height="30" HorizontalAlignment="Left" Background="Green">Date emprunt</Label>
+                <DatePicker Width="150"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="10,10,20,20">
+                <Label Width="100" Height="30" HorizontalAlignment="Left" Background="Green" Margin="10,0,0,0">Date retour</Label>
+                <DatePicker Width="150"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal"  Margin="20,0,20,20">
+                <Label Width="100" Height="30" HorizontalAlignment="Left" Background="Green">Type véhicule</Label>
+                <ComboBox Text="" Width="300"/>
+            </StackPanel>
+            <Button x:Name="resa" Content="Continuer la réservation" Width="150" Height="30" HorizontalAlignment="Right" Margin="20" Background="Red" Click="resa_Click"/>
             </StackPanel>
 
 
@@ -51,21 +53,23 @@
                 <Label Width="150" Height="30" HorizontalAlignment="Left" Background="Orange" >Enregistrer un retour</Label>
                 <StackPanel Orientation="Horizontal" Margin="20,50,20,20">
                     <Label Width="100" Height="30" HorizontalAlignment="Left" Background="Green">Recherche Client</Label>
-                    <TextBox TextWrapping="Wrap" Text="" Width="300"/>
+                    <TextBox TextWrapping="Wrap" Text="" Width="200"/>
                     <Button Content="Ok" Width="40" />
-                    <Button Content=" + Ajouter le client" Width="150" Margin="10,0,0,0"/>
+                    <Button x:Name="clientWin" Content="Ajouter un client" Width="150" Margin="10,0,0,0" Click="clientWin_Click"/>
                 </StackPanel>
-                <StackPanel Orientation="Horizontal" Margin="20">
+                <StackPanel Orientation="Horizontal" Margin="20,0,20,20">
                     <Label Width="100" Height="30" HorizontalAlignment="Left" Background="Green">Date emprunt</Label>
                     <DatePicker Width="150"/>
-                    <Label Width="100" Height="30" HorizontalAlignment="Left" Background="Green" Margin="10,0,0,0">Date retour</Label>
-                    <DatePicker Width="150"/>
                 </StackPanel>
-                <StackPanel Orientation="Horizontal" Margin="20">
+            <StackPanel Orientation="Horizontal" Margin="10,10,20,20">
+                <Label Width="100" Height="30" HorizontalAlignment="Left" Background="Green" Margin="10,0,0,0">Date retour</Label>
+                <DatePicker Width="150"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal"  Margin="20,0,20,20">
                     <Label Width="100" Height="30" HorizontalAlignment="Left" Background="Green">Type véhicule</Label>
                     <ComboBox Text="" Width="300"/>
                 </StackPanel>
-                <Button Content="Continuer le retour" Width="150" Height="30" HorizontalAlignment="Right" Margin="20" Background="Red"/>
+                <Button x:Name="retourWin" Content="Continuer le retour" Width="150" Height="30" HorizontalAlignment="Right" Margin="20" Background="Red" Click="retourWin_Click"/>
             </StackPanel>
 
         <StackPanel Grid.Row="1" Grid.Column="2" Style="{StaticResource Principalstackpanel}">

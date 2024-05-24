@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SAE201_Intermarché"
         mc:Ignorable="d"
-        Title="Retour" Height="450" Width="800">
+        Title="Retour" ResizeMode="CanResize" WindowStartupLocation="CenterOwner" WindowState="Maximized" Width="1920" Height="1080">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="1*"/>
@@ -25,10 +25,13 @@
         </StackPanel>
 
         <StackPanel Grid.Row="1" Grid.RowSpan="2" Style="{StaticResource Principalstackpanel}">
+            <Label Width="150" Height="30" HorizontalAlignment="Left" Background="Orange" >Enregistrer une location</Label>
         </StackPanel>
         <StackPanel Grid.Row="1" Grid.RowSpan="2" Grid.Column="1" Style="{StaticResource Principalstackpanel}">
+            <Label Width="150" Height="30" HorizontalAlignment="Left" Background="Orange" >Enregistrer une location</Label>
         </StackPanel>
         <StackPanel Grid.Row="1" Grid.RowSpan="2" Grid.Column="2" Style="{StaticResource Principalstackpanel}">
+            <Label Width="150" Height="30" HorizontalAlignment="Left" Background="Orange" >Enregistrer une location</Label>
         </StackPanel>
 
     </Grid>
