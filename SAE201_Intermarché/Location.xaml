@@ -8,10 +8,10 @@
         Title="Location" ResizeMode="CanResize" WindowStartupLocation="CenterOwner" WindowState="Maximized" Width="1920" Height="1080">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="1*"/>
-            <RowDefinition Height="2*"/>
-            <RowDefinition Height="4*"/>
-            <RowDefinition Height="3*"/>
+            <RowDefinition Height="106*"/>
+            <RowDefinition Height="121*"/>
+            <RowDefinition Height="518*"/>
+            <RowDefinition Height="319*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1*"></ColumnDefinition>
@@ -24,17 +24,94 @@
             <Ellipse Height="30" Width="30" Fill="Yellow" Margin="20,0,0,0"/>
             <Label Content="?" FontSize="20" Margin="5,0,5,0" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White" FontWeight="Bold"/>
         </StackPanel>
-        <StackPanel Grid.Row="1" Grid.ColumnSpan="2" Style="{StaticResource Principalstackpanel}">
-            <Label Width="150" Height="30" HorizontalAlignment="Left" Background="Orange" >Enregistrer une location</Label>
+        <StackPanel Grid.Row="1" Grid.ColumnSpan="2" Style="{StaticResource Principalstackpanel}" Margin="20,20,20,20">
+            <StackPanel Orientation="Horizontal" Margin="10">
+                <Label Width="100" Height="30" HorizontalAlignment="Left" Background="Green">Recherche Client</Label>
+                <TextBox TextWrapping="Wrap" Text="" Width="200"/>
+                <Button Content="Ok" Width="40" />
+                <Button x:Name="clientWin" Content="Ajouter un client" Width="150" Margin="10,0,0,0"/>
+            </StackPanel>
         </StackPanel>
-        <StackPanel Grid.Row="1" Grid.Column="2" Grid.RowSpan="3" Style="{StaticResource Principalstackpanel}">
-            <Label Width="150" Height="30" HorizontalAlignment="Left" Background="Orange" >Enregistrer une location</Label>
+        <StackPanel Grid.Row="1" Grid.Column="2" Grid.RowSpan="3" Style="{StaticResource Principalstackpanel}" Margin="20,20,20,20">
+            <Label Width="150" Height="30" HorizontalAlignment="Left" Background="Orange" >Résumé de la location</Label>
+            <StackPanel Orientation="Vertical" Margin="20,20,20,0">
+                <Image Height="150" Width="150" Source="/img/icone.jpg" HorizontalAlignment="Left"></Image>
+                <TextBox TextWrapping="Wrap" Width="200" Height="30" Text=" Nom" HorizontalAlignment="Right" Margin="0,-130,0,0"/>
+                <TextBox TextWrapping="Wrap" Width="200" Height="30" Text=" Prénom" HorizontalAlignment="Right" Margin="0,-50,0,0"/>
+                <DatePicker Margin="0,10,0,0" Text="Date de naissance"></DatePicker>
+                <TextBox TextWrapping="Wrap" Width="200" Height="30" Text=" Téléphone" HorizontalAlignment="Right" Margin="0,10,0,0"/>
+                <TextBox TextWrapping="Wrap" Width="200" Height="30" Text=" Email" HorizontalAlignment="Right" Margin="0,10,0,0"/>
+                <TextBox TextWrapping="Wrap" Width="310" Height="30" Text=" Adresse" HorizontalAlignment="Right" Margin="0,10,0,10"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="20,0,20,20" HorizontalAlignment="Right">
+                <TextBox TextWrapping="Wrap" Width="100" Height="30" Text=" Code postal"  Margin="0,0,10,0"/>
+                <TextBox TextWrapping="Wrap" Width="200" Height="30" Text=" Ville" Margin="0,0,0,0"/>
+            </StackPanel>
+            <StackPanel Orientation="Vertical" Margin="20,0,20,0">
+                <TextBox TextWrapping="Wrap" Width="200" Height="30" Text="Modèle choisi" HorizontalAlignment="Left" Margin="0,10,0,0"/>
+                <TextBox TextWrapping="Wrap" Width="200" Height="30" Text="Plaque immatriculation" HorizontalAlignment="Left" Margin="0,10,0,0"/>
+                <DatePicker Margin="0,10,0,0" Text=""></DatePicker>
+                <DatePicker Margin="0,10,0,0" Text=""></DatePicker>
+                <TextBox TextWrapping="Wrap" Width="200" Height="30" Text="Type véhicule" HorizontalAlignment="Left" Margin="0,10,0,0"/>
+                <TextBox TextWrapping="Wrap" Width="200" Height="30" Text="Prix" HorizontalAlignment="Left" Margin="0,10,0,0"/>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="-50,0,0,20" >
+                    <Button  Content="Continuer le retour" Width="150" Height="30" Background="Red" Margin="0,0,20,0"/>
+                    <Button Content="Continuer le retour" Width="150" Height="30"  Background="Red" Margin="0,0,0,0" />
+                </StackPanel>
+            </StackPanel>
         </StackPanel>
-        <StackPanel Grid.Row="2" Grid.Column="1" Grid.RowSpan="2" Style="{StaticResource Principalstackpanel}">
-            <Label Width="150" Height="30" HorizontalAlignment="Left" Background="Orange" >Enregistrer une location</Label>
+        <StackPanel Grid.Row="2" Grid.Column="1" Grid.RowSpan="2" Style="{StaticResource Principalstackpanel}" Margin="20,20,20,20">
+            <Label Width="150" Height="30" HorizontalAlignment="Left" Background="Orange" >Liste véhicules</Label>
+            <StackPanel Orientation="Horizontal">
+                <StackPanel Orientation="Vertical" Width="500">
+                    <Rectangle Height="30" Fill="Gray"></Rectangle>
+                    <Rectangle Height="30" Fill="DarkGray"></Rectangle>
+                    <Rectangle Height="30" Fill="Gray"></Rectangle>
+                    <Rectangle Height="30" Fill="DarkGray"></Rectangle>
+                    <Rectangle Height="30" Fill="Gray"></Rectangle>
+                    <Rectangle Height="30" Fill="DarkGray"></Rectangle>
+                    <Rectangle Height="30" Fill="Gray"></Rectangle>
+                    <Rectangle Height="30" Fill="DarkGray"></Rectangle>
+                    <Rectangle Height="30" Fill="Gray"></Rectangle>
+                    <Rectangle Height="30" Fill="DarkGray"></Rectangle>
+                    <Rectangle Height="30" Fill="Gray"></Rectangle>
+                    <Rectangle Height="30" Fill="DarkGray"></Rectangle>
+                    <Rectangle Height="30" Fill="Gray"></Rectangle>
+                    <Rectangle Height="30" Fill="DarkGray"></Rectangle>
+                    <Rectangle Height="30" Fill="Gray"></Rectangle>
+                    <Rectangle Height="30" Fill="DarkGray"></Rectangle>
+                    <Rectangle Height="30" Fill="Gray"></Rectangle>
+                    <Rectangle Height="30" Fill="DarkGray"></Rectangle>
+                    <Rectangle Height="30" Fill="Gray"></Rectangle>
+                    <Rectangle Height="30" Fill="DarkGray"></Rectangle>
+                    <Rectangle Height="30" Fill="Gray"></Rectangle>
+                    <Rectangle Height="30" Fill="DarkGray"></Rectangle>
+                    <Rectangle Height="30" Fill="Gray"></Rectangle>
+                    <Rectangle Height="30" Fill="DarkGray"></Rectangle>
+                    <Rectangle Height="30" Fill="Gray"></Rectangle>
+                    <Rectangle Height="30" Fill="DarkGray"></Rectangle>
+                    <Rectangle Height="30" Fill="Gray"></Rectangle>
+                    <Rectangle Height="30" Fill="DarkGray"></Rectangle>
+                    <Rectangle Height="30" Fill="Gray"></Rectangle>
+                    <Rectangle Height="30" Fill="DarkGray"></Rectangle>
+                    <Rectangle Height="30" Fill="Gray"></Rectangle>
+                </StackPanel>
+                <StackPanel Orientation="Vertical" Width="80" Background="Orange">
+                    <Ellipse Width="20" Height="20" Fill="Green" Margin="5"></Ellipse>
+                    <Ellipse Width="20" Height="20" Fill="DarkOrange" Margin="5"></Ellipse>
+                    <Ellipse Width="20" Height="20" Fill="Red" Margin="5"></Ellipse>
+                </StackPanel>
+            </StackPanel>
         </StackPanel>
-        <StackPanel Grid.Row="2" Grid.RowSpan="1" Style="{StaticResource Principalstackpanel}">
-            <Label Width="150" Height="30" HorizontalAlignment="Left" Background="Orange" >Enregistrer une location</Label>
+        <StackPanel Grid.Row="2" Grid.RowSpan="1" Style="{StaticResource Principalstackpanel}" Margin="20,20,20,20">
+            <Label Width="150" Height="30" HorizontalAlignment="Left" Background="Orange" >Filtre</Label>
+            <Label FontSize="15" Padding="3" Margin="10,10,10,5">Type véhicule</Label>
+            <ComboBox Margin="10,0,10,0"></ComboBox>
+            <Label Margin="10,10,10,5" FontSize="15" Padding="3">Date emprunt</Label>
+            <DatePicker Margin="10,0,10,0"></DatePicker>
+            <Label Margin="10,10,10,5" FontSize="15" Padding="3">Date retour</Label>
+            <DatePicker Margin="10,0,10,0"></DatePicker>
+            <Button HorizontalAlignment="Right" Margin="10,20,10,5" Width="50" Height="30">ok</Button>
         </StackPanel>
 
     </Grid>
