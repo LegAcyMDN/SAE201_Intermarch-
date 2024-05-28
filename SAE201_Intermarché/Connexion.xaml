@@ -8,6 +8,7 @@
     Title="Connexion"
     Width="400"
     Height="225"
+    WindowStartupLocation="CenterScreen"
     mc:Ignorable="d">
     <Grid>
         <Label
@@ -39,6 +40,7 @@
             Margin="295,151,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            Content="Valider" Click="but_Valider_Click" />
+            Click="but_Valider_Click"
+            Content="Valider" />
     </Grid>
 </Window>
