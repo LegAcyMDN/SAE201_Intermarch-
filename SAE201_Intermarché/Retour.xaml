@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SAE201_Intermarché"
         mc:Ignorable="d"
-        Title="Retour" ResizeMode="CanResize" WindowStartupLocation="CenterOwner" WindowState="Maximized" Width="1920" Height="1080">
+        Title="Retour" ResizeMode="CanResize" WindowStartupLocation="CenterScreen"  Width="1200" Height="700">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="1*"/>
@@ -26,82 +26,152 @@
 
         <StackPanel Grid.Row="1" Grid.RowSpan="2" Style="{StaticResource Principalstackpanel}">
             <Label Width="150" Height="30" HorizontalAlignment="Left" Background="Orange" >Enregistrement retour</Label>
-            
+            <StackPanel Margin="20">
+                <StackPanel Orientation="Horizontal">
+                    <Label Background="Green" Height="30" Width="300">Plein</Label>
+                    <Ellipse Width="20" Height="20" Fill="Red" Margin="20,0,0,0"></Ellipse>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
+                    <Label Background="Green" Height="30" Width="150">Kilomètrage</Label>
+                    <TextBox Width="150"></TextBox>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
+                    <Label Background="Green" Width="100">Date emprunt</Label>
+                    <Label Margin="20,0,0,0" Width="150" Background="White">06/12/20</Label>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
+                    <Label Background="Green" Width="100">Date retour</Label>
+                    <DatePicker Margin="20,0,0,0"></DatePicker>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
+                    <Label Background="Green" Width="150">Jours supplémentaires</Label>
+                    <Label Margin="0,0,0,0" Width="50" Background="White" Padding="20,5,20,0">5</Label>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,10,0,10">
+                    <Label Background="Green" Width="80">Prix final</Label>
+                    <Label Margin="0,0,0,0" Width="50" Background="White" >500</Label>
+                </StackPanel>
+                <Rectangle Height="10" Fill="DarkGray"></Rectangle>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,10">
+                    <Label Background="Green" Width="80">Dégâts</Label>
+                    <ComboBox Width="200"></ComboBox>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="-50,5,0,20" >
+                    <Button  Content="Enregistrer le retour" Width="150" Height="30" Background="Red" Margin="0,0,20,0"/>
+                    <Button Content="Confirmer le retour" Width="150" Height="30"  Background="Red" Margin="0,0,0,0" />
+                </StackPanel>
+            </StackPanel>
             
         </StackPanel>
         <StackPanel Grid.Row="1" Grid.RowSpan="2" Grid.Column="1" Style="{StaticResource Principalstackpanel}">
             <Label Width="150" Height="30" HorizontalAlignment="Left" Background="Orange" >Dégâts</Label>
-            <StackPanel Orientation="Horizontal" Background="DarkGray">
-                <Label Margin="0,0,200,0" >Libellé</Label>
+            <StackPanel Orientation="Horizontal" Background="Green">
+                <Label Margin="0,0,150,0" >Libellé</Label>
                 <Label HorizontalAlignment="Right">Montant</Label>
             </StackPanel>
-            <Rectangle Height="30" Fill="Gray"></Rectangle>
-            <Rectangle Height="30" Fill="DarkGray"></Rectangle>
-            <Rectangle Height="30" Fill="Gray"></Rectangle>
-            <Rectangle Height="30" Fill="DarkGray"></Rectangle>
-            <Rectangle Height="30" Fill="Gray"></Rectangle>
-            <Rectangle Height="30" Fill="DarkGray"></Rectangle>
-            <Rectangle Height="30" Fill="Gray"></Rectangle>
-            <Rectangle Height="30" Fill="DarkGray"></Rectangle>
-            <Rectangle Height="30" Fill="Gray"></Rectangle>
-            <Rectangle Height="30" Fill="DarkGray"></Rectangle>
-            <Rectangle Height="30" Fill="Gray"></Rectangle>
-            <Rectangle Height="30" Fill="DarkGray"></Rectangle>
-            <Rectangle Height="30" Fill="Gray"></Rectangle>
-            <Rectangle Height="30" Fill="DarkGray"></Rectangle>
-            <Rectangle Height="30" Fill="Gray"></Rectangle>
-            <Rectangle Height="30" Fill="DarkGray"></Rectangle>
-            <Rectangle Height="30" Fill="Gray"></Rectangle>
-            <Rectangle Height="30" Fill="DarkGray"></Rectangle>
-            <Rectangle Height="30" Fill="Gray"></Rectangle>
-            <Rectangle Height="30" Fill="DarkGray"></Rectangle>
-            <Rectangle Height="30" Fill="Gray"></Rectangle>
-            <Rectangle Height="30" Fill="DarkGray"></Rectangle>
-            <Rectangle Height="30" Fill="Gray"></Rectangle>
-            <Rectangle Height="30" Fill="DarkGray"></Rectangle>
-            <Rectangle Height="30" Fill="Gray"></Rectangle>
-            <Rectangle Height="30" Fill="DarkGray"></Rectangle>
-            <Rectangle Height="30" Fill="Gray"></Rectangle>
-            <Rectangle Height="30" Fill="DarkGray"></Rectangle>
-            <Rectangle Height="30" Fill="Gray"></Rectangle>
-            <Rectangle Height="30" Fill="DarkGray"></Rectangle>
-            <Rectangle Height="30" Fill="Gray"></Rectangle>
-            <Rectangle Height="30" Fill="DarkGray"></Rectangle>
-            <Rectangle Height="30" Fill="Gray"></Rectangle>
-            <Rectangle Height="30" Fill="DarkGray"></Rectangle>
-            <Rectangle Height="30" Fill="Gray"></Rectangle>
-            <Rectangle Height="30" Fill="DarkGray"></Rectangle>
-            <Rectangle Height="30" Fill="Gray"></Rectangle>
-            <Rectangle Height="30" Fill="DarkGray"></Rectangle>
-            <Rectangle Height="30" Fill="Gray"></Rectangle>
-            <Rectangle Height="30" Fill="DarkGray"></Rectangle>
-            <Rectangle Height="30" Fill="Gray"></Rectangle>
-            <Rectangle Height="30" Fill="DarkGray"></Rectangle>
+            <StackPanel Orientation="Horizontal" Background="Gray">
+                <Label Margin="0,0,80,0" >Rayure portière droite</Label>
+                <Label HorizontalAlignment="Right">400</Label>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Background="DarkGray">
+                <Label Margin="0,0,150,0" Height="30"></Label>
+                <Label HorizontalAlignment="Right" ></Label>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Background="Gray">
+                <Label Margin="0,0,150,0" Height="30" ></Label>
+                <Label HorizontalAlignment="Right"></Label>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Background="DarkGray">
+                <Label Margin="0,0,150,0" Height="30"></Label>
+                <Label HorizontalAlignment="Right" ></Label>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Background="Gray">
+                <Label Margin="0,0,150,0" Height="30" ></Label>
+                <Label HorizontalAlignment="Right"></Label>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Background="DarkGray">
+                <Label Margin="0,0,150,0" Height="30"></Label>
+                <Label HorizontalAlignment="Right" ></Label>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Background="Gray">
+                <Label Margin="0,0,150,0" Height="30" ></Label>
+                <Label HorizontalAlignment="Right"></Label>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Background="DarkGray">
+                <Label Margin="0,0,150,0" Height="30"></Label>
+                <Label HorizontalAlignment="Right" ></Label>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Background="Gray">
+                <Label Margin="0,0,150,0" Height="30" ></Label>
+                <Label HorizontalAlignment="Right"></Label>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Background="DarkGray">
+                <Label Margin="0,0,150,0" Height="30"></Label>
+                <Label HorizontalAlignment="Right" ></Label>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Background="Gray">
+                <Label Margin="0,0,150,0" Height="30" ></Label>
+                <Label HorizontalAlignment="Right"></Label>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Background="DarkGray">
+                <Label Margin="0,0,150,0" Height="30"></Label>
+                <Label HorizontalAlignment="Right" ></Label>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Background="Gray">
+                <Label Margin="0,0,150,0" Height="30" ></Label>
+                <Label HorizontalAlignment="Right"></Label>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Background="DarkGray">
+                <Label Margin="0,0,150,0" Height="30"></Label>
+                <Label HorizontalAlignment="Right" ></Label>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Background="Gray">
+                <Label Margin="0,0,150,0" Height="30" ></Label>
+                <Label HorizontalAlignment="Right"></Label>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Background="DarkGray">
+                <Label Margin="0,0,150,0" Height="30"></Label>
+                <Label HorizontalAlignment="Right" ></Label>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Background="Gray">
+                <Label Margin="0,0,150,0" Height="30" ></Label>
+                <Label HorizontalAlignment="Right"></Label>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Background="DarkGray">
+                <Label Margin="0,0,150,0" Height="30"></Label>
+                <Label HorizontalAlignment="Right" ></Label>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Background="Gray">
+                <Label Margin="0,0,150,0" Height="30" ></Label>
+                <Label HorizontalAlignment="Right"></Label>
+            </StackPanel>
+
+
 
         </StackPanel>
         <StackPanel Grid.Row="1" Grid.RowSpan="2" Grid.Column="2" Style="{StaticResource Principalstackpanel}">
             <Label Width="150" Height="30" HorizontalAlignment="Left" Background="Orange"> Résumé de la location</Label>
             <StackPanel Orientation="Vertical" Margin="20,20,20,0">
                 <Image Height="150" Width="150" Source="/img/icone.jpg" HorizontalAlignment="Left"></Image>
-                <TextBox TextWrapping="Wrap" Width="200" Height="30" Text=" Nom" HorizontalAlignment="Right" Margin="0,-130,0,0"/>
-                <TextBox TextWrapping="Wrap" Width="200" Height="30" Text=" Prénom" HorizontalAlignment="Right" Margin="0,-50,0,0"/>
-                <DatePicker Margin="0,10,0,0" Text="Date de naissance"></DatePicker>
-                <TextBox TextWrapping="Wrap" Width="200" Height="30" Text=" Téléphone" HorizontalAlignment="Right" Margin="0,10,0,0"/>
-                <TextBox TextWrapping="Wrap" Width="200" Height="30" Text=" Email" HorizontalAlignment="Right" Margin="0,10,0,0"/>
-                <TextBox TextWrapping="Wrap" Width="310" Height="30" Text=" Adresse" HorizontalAlignment="Right" Margin="0,10,0,10"/>
+                <TextBox TextWrapping="Wrap" Width="200" Height="30" Text=" Nom" HorizontalAlignment="Right" Margin="0,-250,0,0"/>
+                <TextBox TextWrapping="Wrap" Width="200" Height="30" Text=" Prénom" HorizontalAlignment="Right" Margin="0,-180,0,0"/>
+                <DatePicker Text="Date de naissance" Width="200" HorizontalAlignment="Right" Margin="0,-70,0,0"></DatePicker>
+                <TextBox TextWrapping="Wrap" Width="200" Height="30" Text=" Téléphone" HorizontalAlignment="Right" Margin="0,-60,0,0"/>
+                <TextBox TextWrapping="Wrap" Width="200" Height="30" Text=" Email" HorizontalAlignment="Right" Margin="0,-10,0,0"/>
+                <TextBox TextWrapping="Wrap" Width="310" Height="30" Text=" Adresse" HorizontalAlignment="Right" Margin="0,5,0,10"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal" Margin="20,0,20,20" HorizontalAlignment="Right">
-                <TextBox TextWrapping="Wrap" Width="100" Height="30" Text=" Code postal"  Margin="0,0,10,0"/>
-                <TextBox TextWrapping="Wrap" Width="200" Height="30" Text=" Ville" Margin="0,0,0,0"/>
+                <TextBox TextWrapping="Wrap" Width="100" Height="30" Text=" Code postal"  Margin="0,-5,10,0"/>
+                <TextBox TextWrapping="Wrap" Width="200" Height="30" Text=" Ville" Margin="0,-5,0,0"/>
             </StackPanel>
-            <StackPanel Orientation="Vertical" Margin="20,0,20,0">
+            <StackPanel Orientation="Vertical" Margin="20,-25,20,0">
                 <TextBox TextWrapping="Wrap" Width="200" Height="30" Text="Modèle choisi" HorizontalAlignment="Left" Margin="0,10,0,0"/>
-                <TextBox TextWrapping="Wrap" Width="200" Height="30" Text="Plaque immatriculation" HorizontalAlignment="Left" Margin="0,10,0,0"/>
-                <DatePicker Margin="0,10,0,0" Text=""></DatePicker>
-                <DatePicker Margin="0,10,0,0" Text=""></DatePicker>
-                <TextBox TextWrapping="Wrap" Width="200" Height="30" Text="Type véhicule" HorizontalAlignment="Left" Margin="0,10,0,0"/>
+                <TextBox TextWrapping="Wrap" Width="200" Height="30" Text="Plaque immatriculation" HorizontalAlignment="Left" Margin="0,5,0,0"/>
+                <DatePicker Margin="0,5,0,0" Text=""></DatePicker>
+                <DatePicker Margin="0,5,0,0" Text=""></DatePicker>
+                <TextBox TextWrapping="Wrap" Width="200" Height="30" Text="Type véhicule" HorizontalAlignment="Left" Margin="0,5,0,0"/>
                 <TextBox TextWrapping="Wrap" Width="200" Height="30" Text="Prix" HorizontalAlignment="Left" Margin="0,10,0,0"/>
-                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="-50,0,0,20" >
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="-50,5,0,20" >
                     <Button  Content="Continuer le retour" Width="150" Height="30" Background="Red" Margin="0,0,20,0"/>
                     <Button Content="Continuer le retour" Width="150" Height="30"  Background="Red" Margin="0,0,0,0" />
                 </StackPanel>

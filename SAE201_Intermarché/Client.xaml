@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SAE201_Intermarché"
         mc:Ignorable="d"
-        Title="Client" ResizeMode="CanResize" WindowStartupLocation="CenterOwner" WindowState="Maximized" Width="1920" Height="1080">
+        Title="Client" ResizeMode="CanResize" WindowStartupLocation="CenterScreen"  Width="1200" Height="700">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="1*"/>
@@ -22,7 +22,7 @@
             <Ellipse Height="30" Width="30" Fill="Yellow" Margin="20,0,0,0"/>
             <Label Content="?" FontSize="20" Margin="5,0,5,0" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White" FontWeight="Bold"/>
         </StackPanel>
-        <StackPanel Grid.Row="1" Grid.Column="0"  Style="{StaticResource Principalstackpanel}">
+        <StackPanel Grid.Row="1" Grid.Column="0" Grid.RowSpan="2" Style="{StaticResource Principalstackpanel}">
             <Label Width="80" Height="30" HorizontalAlignment="Left" Background="Orange" >Identité</Label>
             <StackPanel Orientation="Vertical" Margin="20,20,20,0">
                 <Image Height="150" Width="150" Source="/img/icone.jpg" HorizontalAlignment="Left"></Image>
@@ -79,14 +79,14 @@
             <DatePicker Margin="10,0,10,0"></DatePicker>
             <Button HorizontalAlignment="Right" Margin="10,20,10,5" Width="50" Height="30">ok</Button>
         </StackPanel>
-        <StackPanel Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Style="{StaticResource Principalstackpanel}">
+        <StackPanel Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" Style="{StaticResource Principalstackpanel}">
             <Label Width="160" Height="30" HorizontalAlignment="Left" Background="Orange" >Historique des réservations</Label>
-            <StackPanel Background="DarkGray" Height="30" Orientation="Horizontal">
-                <Label>Numéro de réservation</Label>
-                <Label>Immatriculation</Label>
-                <Label>Date de début</Label>
-                <Label>Date de fin</Label>
-                <Label>prix</Label>
+            <StackPanel Background="Green" Height="30" Orientation="Horizontal">
+                <Label Margin="0,0,40,0">Numéro de réservation</Label>
+                <Label  Margin="0,0,40,0">Immatriculation</Label>
+                <Label  Margin="0,0,40,0">Date de début</Label>
+                <Label  Margin="0,0,40,0">Date de fin</Label>
+                <Label  Margin="0,0,40,0" Content="prix"/>
             </StackPanel>
             <Rectangle Height="30" Fill="Gray"></Rectangle>
             <Rectangle Height="30" Fill="DarkGray"></Rectangle>
