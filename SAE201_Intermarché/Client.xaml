@@ -50,14 +50,14 @@
                     <Button Height="20" Width="40" Margin="-40,10,10,10">ouvrir</Button>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
-                    <Label Width="200" Height="30" HorizontalAlignment="Left" Background="Green" >Permis</Label>
+                    <Label Width="200" Height="30" HorizontalAlignment="Left" Background="Green" >Pièce identité</Label>
                     <Button Height="20" Width="20" Margin="-50,10,10,10">+</Button>
                     <Ellipse Height="10" Width="10" Fill="Red" Margin="-15,10,10,10"></Ellipse>
                     <TextBox TextWrapping="Wrap" Text="nomdufichier" Width="200" Height="20"/>
                     <Button Height="20" Width="40" Margin="-40,10,10,10">ouvrir</Button>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
-                    <Label Width="200" Height="30" HorizontalAlignment="Left" Background="Green" >Permis</Label>
+                    <Label Width="200" Height="30" HorizontalAlignment="Left" Background="Green" >Assurance</Label>
                     <Button Height="20" Width="20" Margin="-50,10,10,10">+</Button>
                     <Ellipse Height="10" Width="10" Fill="Red" Margin="-15,10,10,10"></Ellipse>
                     <TextBox TextWrapping="Wrap" Text="nomdufichier" Width="200" Height="20"/>
