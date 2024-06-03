@@ -5,31 +5,35 @@
              StartupUri="MainWindow.xaml">
     <Application.Resources>
         <Style x:Key="Principalstackpanel" TargetType="StackPanel">
+            <Setter Property="Width" Value="auto" />
             <Setter Property="Margin" Value="20" />
             <Setter Property="Background" Value="Gray"></Setter>
+            <Setter Property="HorizontalAlignment" Value="Stretch"></Setter>
         </Style>
         <Style x:Key="formulaireLabel" TargetType="Label">
-            <Setter Property="Margin" Value="0,0,0,0" />
+            <Setter Property="Margin" Value="40,5,10,0" />
             <Setter Property="Width" Value="150"></Setter>
+            <Setter Property="Height" Value="30"></Setter>
             <Setter Property="Background" Value="Green"></Setter>
-            <Setter Property="HorizontalAlignment" Value="Left"></Setter>
+            <Setter Property="HorizontalAlignment" Value="Stretch"></Setter>
         </Style>
         <Style x:Key="Formulairestackpanel" TargetType="StackPanel">
-            <Setter Property="Margin" Value="20,0,0,5" />
+            <Setter Property="Margin" Value="20,5,0,0" />
             <Setter Property="Orientation" Value="Horizontal" ></Setter>
-            <Setter Property="HorizontalAlignment" Value="Left"></Setter>
+            <Setter Property="HorizontalAlignment" Value="Stretch"></Setter>
         </Style>
         <Style x:Key="formulaireTextbox" TargetType="TextBox">
-            <Setter Property="Margin" Value="0,0,20,0" />
+            <Setter Property="Margin" Value="0,5,20,0" />
             <Setter Property="Width" Value="250"></Setter>
             <Setter Property="Height" Value="30"></Setter>
-            <Setter Property="HorizontalAlignment" Value="Left"></Setter>
+            <Setter Property="HorizontalAlignment" Value="Stretch"></Setter>
+            <Setter Property="VerticalAlignment" Value="Stretch"></Setter>
         </Style>
         <Style x:Key="formulaireDate" TargetType="DatePicker">
-            <Setter Property="Margin" Value="0,0,20,0" />
+            <Setter Property="Margin" Value="0,5,20,0" />
             <Setter Property="Width" Value="250"></Setter>
             <Setter Property="Height" Value="30"></Setter>
-            <Setter Property="HorizontalAlignment" Value="Left"></Setter>
+            <Setter Property="HorizontalAlignment" Value="Stretch"></Setter>
         </Style>
     </Application.Resources>
 </Application>
