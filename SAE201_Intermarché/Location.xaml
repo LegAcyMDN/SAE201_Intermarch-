@@ -89,73 +89,52 @@
                 Background="Orange">
                 Résumé de la location
             </Label>
-            <StackPanel Margin="20,20,20,0" Orientation="Vertical">
-                <Image
-                    Width="150"
-                    Height="150"
-                    HorizontalAlignment="Left"
-                    Source="/img/icone.jpg" />
-                <TextBox
-                    Width="200"
-                    Height="30"
-                    Margin="0,-250,0,0"
-                    HorizontalAlignment="Right"
-                    Text=" Nom"
-                    TextWrapping="Wrap" />
-                <TextBox
-                    Width="200"
-                    Height="30"
-                    Margin="0,-180,0,0"
-                    HorizontalAlignment="Right"
-                    Text=" Prénom"
-                    TextWrapping="Wrap" />
-                <DatePicker
-                    Width="200"
-                    Margin="0,-70,0,0"
-                    HorizontalAlignment="Right"
-                    Text="Date de naissance" />
-                <TextBox
-                    Width="200"
-                    Height="30"
-                    Margin="0,-60,0,0"
-                    HorizontalAlignment="Right"
-                    Text=" Téléphone"
-                    TextWrapping="Wrap" />
-                <TextBox
-                    Width="200"
-                    Height="30"
-                    Margin="0,-10,0,0"
-                    HorizontalAlignment="Right"
-                    Text=" Email"
-                    TextWrapping="Wrap" />
-                <TextBox
-                    Width="310"
-                    Height="30"
-                    Margin="0,5,0,10"
-                    HorizontalAlignment="Right"
-                    Text=" Adresse"
-                    TextWrapping="Wrap" />
+            <StackPanel Orientation="Vertical" Margin="20,10,20,0">
+
+                <StackPanel Style="{StaticResource Formulairestackpanel}" HorizontalAlignment="Center" >
+                    <Label Margin="0,0,150,0">Nom</Label>
+                    <Label>Prénom</Label>
+                </StackPanel>
+                <StackPanel Style="{StaticResource Formulairestackpanel}" HorizontalAlignment="Center">
+                    <TextBox TextWrapping="Wrap" Width="150" Margin="0,0,20,0" Height="30" Text=" Nom" HorizontalAlignment="Right" />
+                    <TextBox TextWrapping="Wrap" Width="150" Height="30" Text=" Prénom" HorizontalAlignment="Right" />
+                </StackPanel>
+                <Label Margin="40,0,0,0">Date de naissance</Label>
+                <DatePicker Margin="40,0,40,5" Text="Date de naissance"></DatePicker>
+                <StackPanel Style="{StaticResource Formulairestackpanel}" HorizontalAlignment="Center">
+                    <Label Margin="0,0,120,0">Téléphone</Label>
+                    <Label>Email</Label>
+                </StackPanel>
+                <StackPanel Style="{StaticResource Formulairestackpanel}" HorizontalAlignment="Center">
+                    <TextBox TextWrapping="Wrap" Width="150" Height="30" Text=" Téléphone" HorizontalAlignment="Center" Margin="0,0,20,0"/>
+                    <TextBox TextWrapping="Wrap" Width="150" Height="30" Text=" Email" HorizontalAlignment="Center" Margin="0,0,0,0"/>
+                </StackPanel>
+                <Label Margin="20,0,0,0">Adresse</Label>
+                <TextBox TextWrapping="Wrap" Width="310" Height="30" Text=" Adresse" HorizontalAlignment="Center" Margin="0,0,0,0"/>
             </StackPanel>
-            <StackPanel
-                Margin="20,0,20,20"
-                HorizontalAlignment="Right"
-                Orientation="Horizontal">
-                <TextBox
-                    Width="100"
-                    Height="30"
-                    Margin="0,-5,10,0"
-                    Text=" Code postal"
-                    TextWrapping="Wrap" />
-                <TextBox
-                    Width="200"
-                    Height="30"
-                    Margin="0,-5,0,0"
-                    Text=" Ville"
-                    TextWrapping="Wrap" />
+            <StackPanel Style="{StaticResource Formulairestackpanel}"  HorizontalAlignment="Center">
+                <Label Margin="0,0,80,0" Width="87">Code postal</Label>
+                <Label Width="143">Ville</Label>
             </StackPanel>
-            <StackPanel Orientation="Vertical" Margin="20,-25,20,0">
+            <StackPanel Style="{StaticResource Formulairestackpanel}" HorizontalAlignment="Center">
+                <TextBox TextWrapping="Wrap" Width="100" Height="30" Text=" Code postal"  Margin="0,0,10,0"/>
+                <TextBox TextWrapping="Wrap" Width="200" Height="30" Text=" Ville" Margin="0,0,0,0"/>
+            </StackPanel>
+            <StackPanel Style="{StaticResource Formulairestackpanel}" Margin="0,10,0,0" HorizontalAlignment="Center">
+                <RadioButton Content="Particulier"/>
+                <RadioButton Content="Entreprise"
+                Margin="100,0,0,0"/>
+            </StackPanel>
+            <StackPanel Style="{StaticResource Formulairestackpanel}" HorizontalAlignment="Center">
+                <Label Margin="0,0,80,0">Date emprunt</Label>
+                <Label>Date retour</Label>
+            </StackPanel>
+            <StackPanel Style="{StaticResource Formulairestackpanel}" HorizontalAlignment="Center">
                 <DatePicker Margin="0,5,0,0" Text=""></DatePicker>
                 <DatePicker Margin="0,5,0,0" Text=""></DatePicker>
+            </StackPanel>
+            <StackPanel Orientation="Vertical" Margin="20,5,20,0">
+               
                 <ListBox Height="30"  Margin="0,5,0,0">Liste des véhicules choisis</ListBox>
                 <TextBox TextWrapping="Wrap" Width="200" Height="30" Text="Prix" HorizontalAlignment="Left" Margin="0,10,0,0"/>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="-50,5,0,20" >
