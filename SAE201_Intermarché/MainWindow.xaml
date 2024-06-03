@@ -65,7 +65,7 @@
                 Background="Orange">
                 Nouvelle location
             </Label>
-            <StackPanel Margin="20,10,20,20" Orientation="Horizontal">
+            <StackPanel Margin="20,10,20,20" Orientation="Horizontal" Width="auto" HorizontalAlignment="Stretch" >
                 <Label
                     Width="100"
                     Height="30"
@@ -106,7 +106,7 @@
                 </Label>
                 <DatePicker Width="150" />
             </StackPanel>
-            <StackPanel Margin="20,0,20,0" Orientation="Horizontal">
+            <StackPanel Margin="20,0,20,0" Orientation="Horizontal" HorizontalAlignment="Stretch">
                 <Label
                     Width="100"
                     Height="30"
@@ -114,7 +114,7 @@
                     Background="Green">
                     Type véhicule
                 </Label>
-                <ComboBox Width="300" Text="" />
+                <ComboBox Width="300" Text=""  HorizontalAlignment="Stretch"/>
             </StackPanel>
             <Button
                 x:Name="resa"
@@ -148,11 +148,10 @@
             </StackPanel>
 
             <TextBox TextWrapping="Wrap" Width="310" Height="30" Text=" Adresse" HorizontalAlignment="Center" Margin="0,10,20,0" />
-            <StackPanel Orientation="Horizontal" Margin="0,10,20,0" HorizontalAlignment="Center" >
-                <TextBox TextWrapping="Wrap" Width="100" Height="30" Text=" Code postal"  Margin="0,0,10,0"/>
+            <StackPanel Orientation="Horizontal" Margin="20,10,20,0" HorizontalAlignment="Center" >
+                <TextBox TextWrapping="Wrap" Width="150" Height="30" Text=" Code postal"  Margin="0,0,10,0"/>
                 <TextBox TextWrapping="Wrap" Width="200" Height="30" Text=" Ville" Margin="0,0,0,0"/>
             </StackPanel>
-            <StackPanel Margin="20,0,20,0" Orientation="Horizontal"/>
             <Button
                 x:Name="retourWin"
                 Width="150"
