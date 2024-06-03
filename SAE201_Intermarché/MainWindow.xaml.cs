@@ -37,8 +37,8 @@ namespace SAE201_Intermarche
 
         private void retourWin_Click(object sender, RoutedEventArgs e)
         {
-            Retour retour = new Retour();
-            retour.Show();
+            Resume resume = new Resume();
+            resume.Show();
         }
     }
 }
