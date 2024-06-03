@@ -50,7 +50,7 @@
 
 
         <StackPanel Grid.Row="1" Grid.Column="1" Style="{StaticResource Principalstackpanel}">
-            <Label Width="150" Height="30" HorizontalAlignment="Left" Background="Orange" >Enregistrer un retour</Label>
+            <Label Width="150" Height="30" HorizontalAlignment="Left" Background="Orange" >liste location</Label>
             <StackPanel Orientation="Horizontal" Margin="20,10,20,20">
                 <Label Width="100" Height="30" HorizontalAlignment="Left" Background="Green">Recherche Client</Label>
                 <TextBox TextWrapping="Wrap" Text="" Width="151"/>
@@ -69,7 +69,7 @@
                     <Label Width="100" Height="30" HorizontalAlignment="Left" Background="Green">Type véhicule</Label>
                     <ComboBox Text="" Width="300"/>
                 </StackPanel>
-                <Button x:Name="retourWin" Content="Continuer le retour" Width="150" Height="30" HorizontalAlignment="Right" Margin="20" Background="Red" Click="retourWin_Click"/>
+                <Button x:Name="retourWin" Content="Continuer la recherche" Width="150" Height="30" HorizontalAlignment="Right" Margin="20" Background="Red" Click="retourWin_Click"/>
             </StackPanel>
 
         <StackPanel Grid.Row="1" Grid.Column="2" Style="{StaticResource Principalstackpanel}">

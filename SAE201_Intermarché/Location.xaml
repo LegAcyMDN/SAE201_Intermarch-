@@ -48,15 +48,12 @@
                 <TextBox TextWrapping="Wrap" Width="200" Height="30" Text=" Ville" Margin="0,-5,0,0"/>
             </StackPanel>
             <StackPanel Orientation="Vertical" Margin="20,-25,20,0">
-                <TextBox TextWrapping="Wrap" Width="200" Height="30" Text="Modèle choisi" HorizontalAlignment="Left" Margin="0,10,0,0"/>
-                <TextBox TextWrapping="Wrap" Width="200" Height="30" Text="Plaque immatriculation" HorizontalAlignment="Left" Margin="0,5,0,0"/>
                 <DatePicker Margin="0,5,0,0" Text=""></DatePicker>
                 <DatePicker Margin="0,5,0,0" Text=""></DatePicker>
-                <TextBox TextWrapping="Wrap" Width="200" Height="30" Text="Type véhicule" HorizontalAlignment="Left" Margin="0,5,0,0"/>
+                <ListBox Height="30"  Margin="0,5,0,0">Liste des véhicules choisis</ListBox>
                 <TextBox TextWrapping="Wrap" Width="200" Height="30" Text="Prix" HorizontalAlignment="Left" Margin="0,10,0,0"/>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="-50,5,0,20" >
-                    <Button  Content="Continuer le retour" Width="150" Height="30" Background="Red" Margin="0,0,20,0"/>
-                    <Button Content="Continuer le retour" Width="150" Height="30"  Background="Red" Margin="0,0,0,0" />
+                  <Button Content="Confirmer la location" Width="150" Height="30"  Background="Red" Margin="0,0,0,0" />
                 </StackPanel>
             </StackPanel>
         </StackPanel>
