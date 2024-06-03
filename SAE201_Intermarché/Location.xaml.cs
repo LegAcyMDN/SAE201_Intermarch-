@@ -24,5 +24,10 @@ namespace SAE201_Intermarche
         {
             InitializeComponent();
         }
+
+
+
+
+
     }
 }
