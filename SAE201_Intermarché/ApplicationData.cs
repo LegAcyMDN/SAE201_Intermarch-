@@ -9,10 +9,10 @@ namespace SAE201_Intermarche
 {
     public class ApplicationData
     {
-        private ObservableCollection<Client> lesClients;
+        private ObservableCollection<EntiteClient> lesClients;
 
 
-        public ObservableCollection<Client> LesClients
+        public ObservableCollection<EntiteClient> LesClients
         {
             get
             {

@@ -19,10 +19,21 @@ namespace SAE201_Intermarche
     /// </summary>
     public partial class Client : Window
     {
+
+
+
+
+
+
+
+
+
         public Client()
         {
             InitializeComponent();
         }
+
+
 
         private void Image_MouseDown(object sender, MouseButtonEventArgs e)
         {

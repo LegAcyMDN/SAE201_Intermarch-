@@ -12,6 +12,7 @@ namespace SAE201_Intermarche
 
     public partial class MainWindow : Window
     {
+        public static ApplicationData data = new ApplicationData();
         public MainWindow()
         {
             InitializeComponent();
