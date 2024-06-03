@@ -60,7 +60,7 @@
                 Height="30"
                 HorizontalAlignment="Left"
                 Background="Orange">
-                Enregistrer une location
+                Nouvelle location
             </Label>
             <StackPanel Margin="20,10,20,20" Orientation="Horizontal">
                 <Label
