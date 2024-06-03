@@ -40,5 +40,14 @@ namespace SAE201_Intermarche
             Resume resume = new Resume();
             resume.Show();
         }
+
+        private void loc_Click(object sender, RoutedEventArgs e)
+        {
+
+
+
+        }
+
+
     }
 }

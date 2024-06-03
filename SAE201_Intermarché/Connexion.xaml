@@ -39,7 +39,7 @@
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Click="but_Valider_Click"
-            Content="Valider" />
+            Content="Valider" IsDefault="True" />
         <Image Margin="220,17,15,110" Source="/img/logo.png" Stretch="Uniform"/>
     </Grid>
 </Window>
