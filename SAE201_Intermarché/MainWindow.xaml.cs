@@ -38,14 +38,15 @@ namespace SAE201_Intermarche
 
         private void retourWin_Click(object sender, RoutedEventArgs e)
         {
-            Resume resume = new Resume();
-            resume.Show();
+            Client client = new Client();
+            client.Show();
         }
 
-        private void loc_Click(object sender, RoutedEventArgs e)
+        private void resume_Click(object sender, RoutedEventArgs e)
         {
 
-
+            Resume resume = new Resume();
+            resume.Show();
 
         }
 
