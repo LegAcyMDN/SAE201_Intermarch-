@@ -28,13 +28,11 @@
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="Mot de passe :" />
-        <TextBox
+        <PasswordBox
             Width="120"
             Margin="49,105,0,0"
             HorizontalAlignment="Left"
-            VerticalAlignment="Top"
-            Text=""
-            TextWrapping="Wrap" />
+            VerticalAlignment="Top" />
         <Button
             x:Name="but_Valider"
             Margin="295,151,0,0"
