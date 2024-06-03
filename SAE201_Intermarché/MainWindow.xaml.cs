@@ -12,7 +12,7 @@ namespace SAE201_Intermarche
 
     public partial class MainWindow : Window
     {
-        public static ApplicationData data = new ApplicationData();
+        //public static ApplicationData appData = new ApplicationData();
         public MainWindow()
         {
             InitializeComponent();
@@ -47,6 +47,12 @@ namespace SAE201_Intermarche
 
             Resume resume = new Resume();
             resume.Show();
+
+        }
+
+        private void ComboBox_SelectionChanged(object sender, RoutedEventArgs e)
+        {
+
 
         }
 
