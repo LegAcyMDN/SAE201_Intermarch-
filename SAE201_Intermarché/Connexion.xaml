@@ -42,5 +42,9 @@
             VerticalAlignment="Top"
             Click="but_Valider_Click"
             Content="Valider" />
+        <Image
+        Margin="200,23,26,147"
+        Source="/img/logo.png"
+        Stretch="Fill" />
     </Grid>
 </Window>

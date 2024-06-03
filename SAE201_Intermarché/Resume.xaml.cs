@@ -17,9 +17,9 @@ namespace SAE201_Intermarche
     /// <summary>
     /// Logique d'interaction pour Retour.xaml
     /// </summary>
-    public partial class Retour : Window
+    public partial class Resume : Window
     {
-        public Retour()
+        public Resume()
         {
             InitializeComponent();
         }
