@@ -66,30 +66,28 @@
         FontSize="15">
                 Type véhicule
             </Label>
-            <ComboBox Margin="10,0,10,0" />
+            <ComboBox  Style="{StaticResource formulaireCombobox}" />
             <Label
         Margin="10,10,10,5"
         Padding="3"
         FontSize="15">
                 Date emprunt
             </Label>
-            <DatePicker Margin="10,0,10,0" />
+            <DatePicker Style="{StaticResource formulaireDate}" />
             <Label
         Margin="10,10,10,5"
         Padding="3"
         FontSize="15">
                 Date retour
             </Label>
-            <DatePicker Margin="10,0,10,0" />
+            <DatePicker Style="{StaticResource formulaireDate}" />
             <Label
 Margin="10,10,10,5"
 Padding="3"
 FontSize="15">
                 Nom client
             </Label>
-            <ComboBox Margin="10,0,10,0"
-     Width="151"
-     Text=""
+            <ComboBox  Style="{StaticResource formulaireCombobox}"
      />
             <Button
         Width="50"
