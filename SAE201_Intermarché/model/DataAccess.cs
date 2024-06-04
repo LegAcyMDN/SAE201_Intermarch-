@@ -11,7 +11,7 @@ namespace SAE201_Intermarche.model
         private string strConnexion = "Server=srv-peda-new;port=5433;" +
         "Database=sae_intermarche;Search Path=reserver_vehicule;uid=bonansej;password=dvHNbo;";
 
-        private DataAccess() { }
+        public DataAccess() { }
 
         public static DataAccess Instance
         {
