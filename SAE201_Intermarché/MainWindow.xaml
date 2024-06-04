@@ -90,7 +90,7 @@
                     />
                     <DatePicker Style="{StaticResource formulaireDate}"></DatePicker>
                     <DatePicker Style="{StaticResource formulaireDate}"></DatePicker>
-                    <ComboBox Style="{StaticResource formulaireCombobox}"></ComboBox>
+                    <ComboBox Style="{StaticResource formulaireCombobox}" ItemsSource="{Binding ListeTypeVehicule}"></ComboBox>
 
                     <Button
                 x:Name="resa"

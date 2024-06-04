@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,7 +25,16 @@ namespace SAE201_Intermarche.model
 			set { nomCaracteristique = value; }
 		}
 
-        public EntiteCaracteristique(int numCaracteristique, string nomCaracteristique)
+		private ObservableCollection<EntiteVehicule> lesVehicules = new ObservableCollection<EntiteVehicule>();
+
+		public ObservableCollection<EntiteVehicule> LesVehicules
+		{
+			get { return lesVehicules; }
+			set { lesVehicules = value; }
+		}
+
+
+		public EntiteCaracteristique(int numCaracteristique, string nomCaracteristique)
         {
             NumCaracteristique = numCaracteristique;
             NomCaracteristique = nomCaracteristique;

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SAE201_Intermarche.model
 {
-    internal class EntiteReservation
+    public class EntiteReservation
     {
 		private int numReservation;
 
@@ -71,6 +71,8 @@ namespace SAE201_Intermarche.model
 			get { return forfaitKM; }
 			set { forfaitKM = value; }
 		}
+
+		public EntiteReservation() { }
 
         public EntiteReservation(int numReservation, int numAssurance, int numClient, DateTime dateReservation, DateTime dateDebut, DateTime dateFin, double montantReservation, string forfaitKM)
         {
