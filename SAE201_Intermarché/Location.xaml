@@ -10,13 +10,15 @@
     Height="700"
     ResizeMode="CanResize"
     WindowStartupLocation="CenterScreen"
-    mc:Ignorable="d">
+    mc:Ignorable="d"
+    MinWidth="800">
     <Grid>
+
         <Grid.RowDefinitions>
-            <RowDefinition Height="106*" />
-            <RowDefinition Height="121*" />
-            <RowDefinition Height="518*" />
-            <RowDefinition Height="319*" />
+            <RowDefinition Height="68*" />
+            <RowDefinition Height="28*" />
+            <RowDefinition Height="383*" />
+            <RowDefinition Height="205*" />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="40*" />
@@ -54,37 +56,11 @@
                 FontWeight="Bold"
                 Foreground="White" />
         </StackPanel>
+        <ScrollViewer Margin="20" Grid.Column="2" Grid.Row="2" Grid.RowSpan="3" Grid.ColumnSpan="2" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" Height="auto">
         <StackPanel
-            
-            Grid.Row="1"
-            Grid.ColumnSpan="2"
-            Margin="20,20,20,9"
-            Style="{StaticResource Principalstackpanel}">
-            <StackPanel Margin="10" Orientation="Horizontal">
-                <Label Style="{StaticResource formulaireLabel}"
-                    Width="100"
-                    Height="30"
-                    HorizontalAlignment="Left"
-                    >Recherche Client
-                </Label>
-                <TextBox
-                    Width="200"
-                    Height="30"
-                    Text=""
-                    TextWrapping="Wrap" />
-                <Button Width="40" Content="Ok" />
-                <Button
-                    x:Name="clientWin"
-                    Width="150"
-                    Margin="10,0,0,0"
-                    Content="Ajouter un client" />
-            </StackPanel>
-        </StackPanel>
-        <StackPanel
-            Grid.Row="1"
-            Grid.RowSpan="3"
+            Grid.Row="2"
+            Grid.RowSpan="2"
             Grid.Column="2"
-            Margin="20,20,20,20"
             Style="{StaticResource Principalstackpanel}" Grid.ColumnSpan="2">
             <Label
                 Margin="0,0,0,20"
@@ -94,41 +70,48 @@
                 Background="Orange">
                 Résumé de la location
             </Label>
-        </StackPanel>
-        <StackPanel Grid.Row="1" Grid.Column="2" Grid.RowSpan="3" >
-            <Label Style="{StaticResource formulaireLabel}" Margin="40,60,10,0">Nom</Label>
-            <Label Style="{StaticResource formulaireLabel}">Prénom</Label>
-            <Label  Style="{StaticResource formulaireLabel}" >Date de naissance</Label>
-            <Label Style="{StaticResource formulaireLabel}">Email</Label>
-            <Label Style="{StaticResource formulaireLabel}" >Téléphone</Label>
-            <Label Style="{StaticResource formulaireLabel}" >Adresse</Label>
-            <Label Style="{StaticResource formulaireLabel}" >Code postal</Label>
-            <Label Style="{StaticResource formulaireLabel}" >Ville</Label>
-            <Label Style="{StaticResource formulaireLabel}">Date retour</Label>
-            <Label Style="{StaticResource formulaireLabel}" >Date emprunt</Label>
-            <TextBox TextWrapping="Wrap"  Height="30" Text="Prix" HorizontalAlignment="Stretch" Margin="40,10,10,0"/>
-        </StackPanel>
-        <StackPanel Grid.Row="1" Grid.Column="3" Grid.RowSpan="3"  Style="{StaticResource Principalstackpanel}">
-            <TextBox Style="{StaticResource formulaireTextbox}"  Margin="0,40,20,0" Text=" Nom"  />
-            <TextBox Style="{StaticResource formulaireTextbox}" Text=" Prénom" />
-            <DatePicker Style="{StaticResource formulaireDate}"></DatePicker>
-            <TextBox Style="{StaticResource formulaireTextbox}" Text=" Email" />
-            <TextBox Style="{StaticResource formulaireTextbox}" Text="Téléphone"/>
-            <TextBox Style="{StaticResource formulaireTextbox}" Text=" Adresse" />
-            <TextBox Style="{StaticResource formulaireTextbox}" Text=" Code postal"  />
-            <TextBox Style="{StaticResource formulaireTextbox}" Text=" Ville" />
-            <DatePicker Style="{StaticResource formulaireDate}"></DatePicker>
-            <DatePicker Style="{StaticResource formulaireDate}"></DatePicker>
-            <DataGrid Margin="0,5,20,0" Height="auto">Liste des véhicules choisis</DataGrid>
-            <Button Content="Confirmer la location"  Height="30" HorizontalAlignment="Stretch" Background="Red" Margin="0,20,20,0" />
-        </StackPanel>
+
+                <StackPanel Orientation="Horizontal">
+
+                    <StackPanel  HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                        <Label Style="{StaticResource formulaireLabel}" >Nom</Label>
+                        <Label Style="{StaticResource formulaireLabel}">Prénom</Label>
+                        <Label  Style="{StaticResource formulaireLabel}" >Date de naissance</Label>
+                        <Label Style="{StaticResource formulaireLabel}">Email</Label>
+                        <Label Style="{StaticResource formulaireLabel}" >Téléphone</Label>
+                        <Label Style="{StaticResource formulaireLabel}" >Adresse</Label>
+                        <Label Style="{StaticResource formulaireLabel}" >Code postal</Label>
+                        <Label Style="{StaticResource formulaireLabel}" >Ville</Label>
+                        <Label Style="{StaticResource formulaireLabel}">Date retour</Label>
+                        <Label Style="{StaticResource formulaireLabel}" >Date emprunt</Label>
+                        <TextBox TextWrapping="Wrap"  Height="30" Text="Prix" HorizontalAlignment="Stretch" Margin="40,10,10,0"/>
+                    </StackPanel>
+
+                    <StackPanel HorizontalAlignment="Stretch" VerticalAlignment="Stretch" >
+                        <TextBox Style="{StaticResource formulaireTextbox}" Text=" Nom"  />
+                        <TextBox Style="{StaticResource formulaireTextbox}" Text=" Prénom" />
+                        <DatePicker Style="{StaticResource formulaireDate}"></DatePicker>
+                        <TextBox Style="{StaticResource formulaireTextbox}" Text=" Email" />
+                        <TextBox Style="{StaticResource formulaireTextbox}" Text="Téléphone"/>
+                        <TextBox Style="{StaticResource formulaireTextbox}" Text=" Adresse" />
+                        <TextBox Style="{StaticResource formulaireTextbox}" Text=" Code postal"  />
+                        <TextBox Style="{StaticResource formulaireTextbox}" Text=" Ville" />
+                        <DatePicker Style="{StaticResource formulaireDate}"></DatePicker>
+                        <DatePicker Style="{StaticResource formulaireDate}"></DatePicker>
+                        <DataGrid Margin="0,5,20,0" Height="auto">Liste des véhicules choisis</DataGrid>
+                        <Button Content="Confirmer la location"  Height="30" HorizontalAlignment="Stretch" Background="Red" Margin="0,20,20,0" />
+                    </StackPanel>
+                </StackPanel>
+            </StackPanel>
+        </ScrollViewer>
 
         <StackPanel
             Grid.Row="2"
             Grid.RowSpan="2"
             Grid.Column="1"
             Margin="20,20,20,20"
-            Style="{StaticResource Principalstackpanel}">
+            Style="{StaticResource Principalstackpanel}"
+            >
             <Label
                 Width="150"
                 Height="30"
@@ -136,47 +119,53 @@
                 Background="Orange">
                 Liste véhicules
             </Label>
-            <StackPanel Orientation="Horizontal">
-                <StackPanel Width="370" Orientation="Vertical">
-                    <Label Height="30" Background="DarkGray" />
-                    <Label Height="30" Background="Gray" />
-                    <Label Height="30" Background="DarkGray" />
-                    <Label Height="30" Background="Gray" />
-                    <Label Height="30" Background="DarkGray" />
-                    <Label Height="30" Background="Gray" />
-                    <Label Height="30" Background="DarkGray" />
-                    <Label Height="30" Background="Gray" />
-                    <Label Height="30" Background="DarkGray" />
-                    <Label Height="30" Background="Gray" />
-                    <Label Height="30" Background="DarkGray" />
-                    <Label Height="30" Background="Gray"/>
-                    <Label Height="30" Background="DarkGray" />
-                    <Label Height="30" Background="Gray" />
-                    <Label Height="30" Background="DarkGray" />
-                    <Label Height="30" Background="Gray" />
-                    <Label Height="30" Background="DarkGray" />
+
+            <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+                <StackPanel Orientation="Horizontal" Width="auto" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                    <StackPanel Margin="20" Orientation="Vertical" Width="auto">
+                        <Label Height="30" Background="DarkGray" />
+                        <Label Height="30" Background="Gray" />
+                        <Label Height="30" Background="DarkGray" />
+                        <Label Height="30" Background="Gray" />
+                        <Label Height="30" Background="DarkGray" />
+                        <Label Height="30" Background="Gray" />
+                        <Label Height="30" Background="DarkGray" />
+                        <Label Height="30" Background="Gray" />
+                        <Label Height="30" Background="DarkGray" />
+                        <Label Height="30" Background="Gray" />
+                        <Label Height="30" Background="DarkGray" />
+                        <Label Height="30" Background="Gray"/>
+                        <Label Height="30" Background="DarkGray" />
+                        <Label Height="30" Background="Gray" />
+                        <Label Height="30" Background="DarkGray" />
+                        <Label Height="30" Background="Gray" />
+                        <Label Height="30" Background="DarkGray" />
+                    </StackPanel>
+                    <StackPanel Margin="20"
+        HorizontalAlignment="Stretch"
+        Width="auto"
+        Background="Orange"
+        Orientation="Vertical"
+                        VerticalAlignment="Stretch">
+                        <Ellipse
+            Width="20"
+            Height="20"
+            Margin="5"
+            Fill="Green" />
+                        <Ellipse
+            Width="20"
+            Height="20"
+            Margin="5"
+            Fill="DarkOrange" />
+                        <Ellipse
+            Width="20"
+            Height="20"
+            Margin="5"
+            Fill="Red" />
+                    </StackPanel>
                 </StackPanel>
-                <StackPanel
-                    Width="80"
-                    Background="Orange"
-                    Orientation="Vertical">
-                    <Ellipse
-                        Width="20"
-                        Height="20"
-                        Margin="5"
-                        Fill="Green" />
-                    <Ellipse
-                        Width="20"
-                        Height="20"
-                        Margin="5"
-                        Fill="DarkOrange" />
-                    <Ellipse
-                        Width="20"
-                        Height="20"
-                        Margin="5"
-                        Fill="Red" />
-                </StackPanel>
-            </StackPanel>
+            </ScrollViewer>
+
         </StackPanel>
         <StackPanel
             Grid.Row="2"

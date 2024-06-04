@@ -13,62 +13,53 @@
             <RowDefinition Height="4*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
             <ColumnDefinition Width="2*"></ColumnDefinition>
-            <ColumnDefinition Width="2*"></ColumnDefinition>
-            <ColumnDefinition Width="1*"></ColumnDefinition>
+            <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <StackPanel x:Name="hautPage" Orientation="Horizontal" Grid.Row="0" Grid.ColumnSpan="3" Background="Gray">
+        <StackPanel x:Name="hautPage" Orientation="Horizontal" Grid.Row="0" Grid.ColumnSpan="4" Background="Gray">
             <Image Height="auto" Source="/img/logo.png" Stretch="Fill" Width="auto" Margin="5,5,5,5" MouseDown="Image_MouseDown"/>
             <Ellipse Height="30" Width="30" Fill="Yellow" Margin="20,0,0,0"/>
             <Label Content="?" FontSize="20" Margin="5,0,5,0" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White" FontWeight="Bold"/>
         </StackPanel>
-        <StackPanel Grid.Row="1" Grid.Column="0" Grid.RowSpan="2" Style="{StaticResource Principalstackpanel}">
+        <StackPanel Grid.Row="1" Grid.Column="0" Grid.RowSpan="2" Style="{StaticResource Principalstackpanel}" Grid.ColumnSpan="2" Margin="20,20,20,20">
             <Label Width="80" Height="30" HorizontalAlignment="Left" Background="Orange" >Identité</Label>
-            <StackPanel Orientation="Vertical" Margin="20,20,20,0">
-                <StackPanel Orientation="Horizontal" Margin="20,0,20,20" HorizontalAlignment="Left">
-                    <Image Height="70" Width="70" Source="/img/icone.jpg" HorizontalAlignment="Left"></Image>
-                    <Label Height="30" Margin="20,0,0,0" >Date création</Label>
-                    <Label Background="White" Margin="20,0,0,0" Height="30" Content="Date création"/>
+            <StackPanel Orientation="Horizontal">
+                <StackPanel Margin="10" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Orientation="Vertical" Grid.Row="2" Grid.RowSpan="2" Grid.Column="0">
+                    <Image Height="70" Width="70" Source="/img/icone.jpg" HorizontalAlignment="Left" Margin="20,10,0,20"></Image>
+                    <Label Style="{StaticResource formulaireLabel}" >Date création</Label>
+                    <Label Style="{StaticResource formulaireLabel}" >Nom</Label>
+                    <Label Style="{StaticResource formulaireLabel}">Prénom</Label>
+                    <Label Style="{StaticResource formulaireLabel}">Date de naissance</Label>
+                    <Label Style="{StaticResource formulaireLabel}" >Téléphone</Label>
+                    <Label Style="{StaticResource formulaireLabel}">Email</Label>
+                    <Label Style="{StaticResource formulaireLabel}">Adresse</Label>
+                    <Label Style="{StaticResource formulaireLabel}">Code postal</Label>
+                    <Label Style="{StaticResource formulaireLabel}">Ville</Label>
                 </StackPanel>
-               
-                <StackPanel Orientation="Horizontal" Margin="0" HorizontalAlignment="Center">
-                    <Label Margin="0,0,150,0">Nom</Label>
-                    <Label>Prénom</Label>
+                <StackPanel  HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Orientation="Vertical" Margin="0,110,10,20">
+                    <Label Style="{StaticResource ClientFormulaireLabel}" Content="Date création"/>
+                    <TextBox Style="{StaticResource ClientFormulaireTextbox}" Text=" Nom" />
+                    <TextBox Style="{StaticResource ClientFormulaireTextbox}" Text=" Prénom" />
+                    <DatePicker Style="{StaticResource ClientFormulaireDate}"></DatePicker>
+                    <TextBox Style="{StaticResource ClientFormulaireTextbox}" Text=" Téléphone" />
+                    <TextBox Style="{StaticResource ClientFormulaireTextbox}" Text=" Email" />
+                    <TextBox  Style="{StaticResource ClientFormulaireTextbox}" Text="Adresse" />
+                    <TextBox Style="{StaticResource ClientFormulaireTextbox}" Text=" Code postal"  />
+                    <TextBox Style="{StaticResource ClientFormulaireTextbox}" Text=" Ville"/>
                 </StackPanel>
-                <StackPanel Orientation="Horizontal" Margin="20,0,20,20" HorizontalAlignment="Center">
-                    <TextBox TextWrapping="Wrap" Width="150" Margin="0,0,20,0" Height="30" Text=" Nom" HorizontalAlignment="Right" />
-                    <TextBox TextWrapping="Wrap" Width="150" Height="30" Text=" Prénom" HorizontalAlignment="Right" />
-                </StackPanel>
-                <Label Margin="40,0,0,0">Date de naissance</Label>
-                <DatePicker Margin="40,0,40,20" Text="Date de naissance"></DatePicker>
-                <StackPanel Orientation="Horizontal" Margin="0" HorizontalAlignment="Center">
-                    <Label Margin="0,0,120,0">Téléphone</Label>
-                    <Label>Email</Label>
-                </StackPanel>
-                <StackPanel Orientation="Horizontal" Margin="20,0,20,20" HorizontalAlignment="Center">
-                    <TextBox TextWrapping="Wrap" Width="150" Height="30" Text=" Téléphone" HorizontalAlignment="Center" Margin="0,0,20,0"/>
-                    <TextBox TextWrapping="Wrap" Width="150" Height="30" Text=" Email" HorizontalAlignment="Center" Margin="0,0,0,0"/>
-                </StackPanel>
-                <Label Margin="40,0,0,0">Adresse</Label>
-                <TextBox TextWrapping="Wrap" Width="310" Height="30" Text=" Adresse" HorizontalAlignment="Center" Margin="0,0,0,0"/>
             </StackPanel>
-            <StackPanel Orientation="Horizontal" Margin="0,20,0,0" HorizontalAlignment="Center">
-                <Label Margin="0,0,80,0" Width="87">Code postal</Label>
-                <Label Width="143">Ville</Label>
-            </StackPanel>
-            <StackPanel Orientation="Horizontal" Margin="20,0,20,20" HorizontalAlignment="Center">
-                <TextBox TextWrapping="Wrap" Width="100" Height="30" Text=" Code postal"  Margin="0,0,10,0"/>
-                <TextBox TextWrapping="Wrap" Width="200" Height="30" Text=" Ville" Margin="0,0,0,0"/>
-            </StackPanel>
+          
             <StackPanel Orientation="Horizontal" Margin="20,0,20,20" HorizontalAlignment="Center">
                 <RadioButton Content="Particulier"/>
                 <RadioButton Content="Entreprise"
                      Margin="100,0,0,0"/>
             </StackPanel>
 
-           
+
         </StackPanel>
-        <StackPanel Grid.Row="1" Grid.Column="1" Style="{StaticResource Principalstackpanel}">
+        <StackPanel Grid.Row="1" Grid.Column="2" Style="{StaticResource Principalstackpanel}" Margin="20,20,20,20">
             <Label Width="150" Height="30" HorizontalAlignment="Left" Background="Orange" >Pièces jointes</Label>
             <StackPanel Margin="10,10,10,10">
                 <StackPanel Orientation="Horizontal">
@@ -96,7 +87,7 @@
             </StackPanel>
         </StackPanel>
 
-        <StackPanel Grid.Row="1" Grid.Column="2" Style="{StaticResource Principalstackpanel}" Margin="20,20,20,25">
+        <StackPanel Grid.Row="1" Grid.Column="3" Style="{StaticResource Principalstackpanel}" Margin="20,20,20,25">
             <Button Height="30" Background="red">Enregistrer le client</Button>
             <Rectangle Height="20" Fill="White" ></Rectangle>
             <Label Width="100" Height="30" HorizontalAlignment="Left" Background="Orange">Rechercher</Label>
@@ -108,7 +99,7 @@
             <DatePicker Margin="10,0,10,0"></DatePicker>
 
         </StackPanel>
-        <StackPanel Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" Style="{StaticResource Principalstackpanel}">
+        <StackPanel Grid.Row="2" Grid.Column="2" Grid.ColumnSpan="2" Style="{StaticResource Principalstackpanel}" Margin="20,20,20,20">
             <Label Width="160" Height="30" HorizontalAlignment="Left" Background="Orange" >Historique des réservations</Label>
             <StackPanel Background="Green" Height="30" Orientation="Horizontal">
                 <Label Margin="0,0,40,0">Numéro de réservation</Label>

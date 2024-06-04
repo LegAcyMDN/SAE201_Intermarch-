@@ -126,6 +126,7 @@
                 Click="resa_Click"
                 Content="Continuer la réservation" />
         </StackPanel>
+
         <StackPanel
             Grid.Row="1"
             Grid.Column="1"
@@ -137,6 +138,7 @@
                 Background="Orange">
                 Ajouter un client
             </Label>
+
             <StackPanel  Margin="20,20,20,0" Orientation="Horizontal">
                 <TextBox TextWrapping="Wrap" Width="200" Height="30" Text=" Nom" HorizontalAlignment="Right" Margin="0,0,10,0" />
                 <TextBox TextWrapping="Wrap" Width="200" Height="30" Text=" Prénom" HorizontalAlignment="Right" Margin="0,0,10,0" />
@@ -232,6 +234,7 @@
                 </DataGrid.Columns>
             </DataGrid>
         </StackPanel>
+        <Label Grid.Column="2" Content="Label" HorizontalAlignment="Left" Margin="506,79,0,0" Grid.Row="2" VerticalAlignment="Top"/>
 
     </Grid>
 
