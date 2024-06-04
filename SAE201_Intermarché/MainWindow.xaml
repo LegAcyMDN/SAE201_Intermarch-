@@ -10,7 +10,8 @@
     Height="700"
     ResizeMode="CanResize"
     WindowStartupLocation="CenterScreen"
-    mc:Ignorable="d">
+    mc:Ignorable="d"
+     WindowState="Maximized">
     <Window.DataContext>
         <local:ApplicationData x:Name="data"/>
     </Window.DataContext>
@@ -18,13 +19,13 @@
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="1*" />
-            <RowDefinition Height="5*" />
+            <RowDefinition Height="4*" />
             <RowDefinition Height="4*" />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="2*" />
-            <ColumnDefinition Width="2*" />
-            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="450*" />
+            <ColumnDefinition Width="450*" />
+            <ColumnDefinition Width="301*" />
         </Grid.ColumnDefinitions>
         <StackPanel
             Grid.Row="0"
@@ -56,13 +57,10 @@
         <StackPanel
             Grid.Row="1"
             Grid.Column="0"
-            Style="{StaticResource Principalstackpanel}">
+            Style="{StaticResource Principalstackpanel}" Margin="10,10,10,10">
 
             <Label
-                Width="150"
-                Height="30"
-                HorizontalAlignment="Left"
-                Background="Orange">
+               Style="{StaticResource titrePrincipal}">
                 Nouvelle location
             </Label>
             <Grid Margin="20">
@@ -107,12 +105,9 @@
         <StackPanel
             Grid.Row="1"
             Grid.Column="1"
-            Style="{StaticResource Principalstackpanel}">
+            Style="{StaticResource Principalstackpanel}" Margin="10,10,10,10">
             <Label
-                Width="150"
-                Height="30"
-                HorizontalAlignment="Left"
-                Background="Orange">
+               Style="{StaticResource titrePrincipal}">
                 Ajouter un client
             </Label>
             <Grid Margin="0,20">
@@ -140,26 +135,22 @@
                         Content="Ajouter un client" />
                 </StackPanel>
             </Grid>
-            
+
         </StackPanel>
 
         <StackPanel
             Grid.Row="1"
             Grid.Column="2"
-            Style="{StaticResource Principalstackpanel}">
+            Style="{StaticResource Principalstackpanel}" Margin="10,10,10,10">
             <Label
-                Width="150"
-                Height="30"
-                Margin="0,0,0,20"
-                HorizontalAlignment="Left"
-                Background="Orange">
+               Style="{StaticResource titrePrincipal}">
                 Rechercher un client
             </Label>
-            <Label Style="{StaticResource formulaireLabel}" >Nom</Label>
+            <Label Style="{StaticResource filtreLabel}" >Nom</Label>
             <TextBox Style="{StaticResource formulaireTextbox}" Text=" Nom"/>
-            <Label Style="{StaticResource formulaireLabel}">Prénom</Label>
+            <Label Style="{StaticResource filtreLabel}">Prénom</Label>
             <TextBox Style="{StaticResource formulaireTextbox}" Text=" Prénom" />
-            <Label  Style="{StaticResource formulaireLabel}" >Date de naissance</Label>
+            <Label Style="{StaticResource filtreLabel}" >Date de naissance</Label>
             <DatePicker Style="{StaticResource formulaireDate}"></DatePicker>
 
             <Button
@@ -168,78 +159,65 @@
         </StackPanel>
         <StackPanel  Grid.Row="2"
  Grid.Column="2"
- Style="{StaticResource Principalstackpanel}">
+ Style="{StaticResource Principalstackpanel}" Margin="10,10,10,10">
             <Label
-                Width="150"
-                Height="30"
-                HorizontalAlignment="Left"
-                Background="Orange">
-                    Rechercher une location
-                </Label>
-                <Label
-                Margin="10,10,10,5"
-                Padding="3"
-                FontSize="15">
-                    Type véhicule
-                </Label>
-                <ComboBox Margin="10,0,10,0" 
-                          ItemsSource="{Binding ListeTypeVehicule}"
-                          />
-                <Label
-                Margin="10,10,10,5"
-                Padding="3"
-                FontSize="15">
-                    Date emprunt
-                </Label>
-                <DatePicker Margin="10,0,10,0" />
-                <Label
-                Margin="10,10,10,5"
-                Padding="3"
-                FontSize="15">
-                    Date retour
-                </Label>
-                <DatePicker Margin="10,0,10,0" />
-                <Button
+               Style="{StaticResource titrePrincipal}">
+                Rechercher une location
+            </Label>
+            <Label
+                Style="{StaticResource filtreLabel}">
+                Type véhicule
+            </Label>
+            <ComboBox Style="{StaticResource formulaireCombobox}" />
+            <Label
+                Style="{StaticResource filtreLabel}">
+                Date emprunt
+            </Label>
+            <DatePicker Style="{StaticResource formulaireDate}"/>
+            <Label
+                Style="{StaticResource filtreLabel}">
+                Date retour
+            </Label>
+            <DatePicker Style="{StaticResource formulaireDate}" />
+            <Button
              x:Name="location"
-              Width="150"
-            Height="30"
-             Margin="20,10,20,20"
-            HorizontalAlignment="Right"
-            Background="Red"
+             Style="{StaticResource PrincipalBouton}"
             Click="resume_Click"
              Content="Rechercher la location" />
-            
+
 
         </StackPanel>
-        
+
         <StackPanel
             Grid.Row="2"
             Grid.ColumnSpan="2"
             Orientation="Horizontal"
-            Style="{StaticResource Principalstackpanel}">
-            <Label
-                Width="150"
-                Height="30"
-                VerticalAlignment="Top"
-                Background="Orange" Content="Planning des réservations"/>
-            <Calendar VerticalAlignment="Center" Margin="-120,50,20,20"/>
-            <DataGrid
-                x:Name="dgData"
-                Width="auto"
-                Margin="20,0,0,0"
-                VerticalAlignment="Center">
-                <DataGrid.Columns>
-                    <DataGridTextColumn Header="Véhicule" />
-                    <DataGridTextColumn Header="TypeBoite" />
-                    <DataGridTextColumn Header="Forfait" />
-                    <DataGridTextColumn Header="Assurance" />
-                    <DataGridTextColumn Header="Nom" />
-                    <DataGridTextColumn Header="Prenom" />
-                </DataGrid.Columns>
-            </DataGrid>
+            Style="{StaticResource Principalstackpanel}" Margin="10,10,10,10">
+            <Grid Width="auto">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="5*" />
+                </Grid.ColumnDefinitions>
+                <StackPanel Grid.Column="0">
+                    <Label Style="{StaticResource titrePrincipal}" Content="Planning des réservations"/>
+                    <Calendar VerticalAlignment="Center" Margin="20,50,20,20"/>
+                </StackPanel>
+                <StackPanel Grid.Column="1">
+                    <DataGrid
+       x:Name="dgData"
+       Margin="20" >
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Véhicule" />
+                            <DataGridTextColumn Header="TypeBoite" />
+                            <DataGridTextColumn Header="Forfait" />
+                            <DataGridTextColumn Header="Assurance" />
+                            <DataGridTextColumn Header="Nom" />
+                            <DataGridTextColumn Header="Prenom" />
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </StackPanel>
+            </Grid>
         </StackPanel>
-        <Label Grid.Column="2" Content="Label" HorizontalAlignment="Left" Margin="506,79,0,0" Grid.Row="2" VerticalAlignment="Top"/>
-
     </Grid>
 
 

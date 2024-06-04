@@ -16,6 +16,7 @@
             <Setter Property="Height" Value="30" />
             <Setter Property="Margin" Value="20" />
             <Setter Property="Background" Value="red"></Setter>
+            <Setter Property="VerticalAlignment" Value="Bottom"></Setter>
         </Style>
         <Style x:Key="PlusBouton" TargetType="Button">
             <Setter Property="Height" Value="20" />
@@ -24,7 +25,12 @@
             <Setter Property="Background" Value="red"></Setter>
             <Setter Property="HorizontalAlignment" Value="Left"></Setter>
         </Style>
-
+        <Style x:Key="titrePrincipal" TargetType="Label">
+            <Setter Property="Height" Value="30" />
+            <Setter Property="Width" Value="auto" />
+            <Setter Property="Background" Value="orange"></Setter>
+            <Setter Property="HorizontalAlignment" Value="Left"></Setter>
+        </Style>
         <!--formulaire-->
         <Style x:Key="formulaireLabel" TargetType="Label">
             <Setter Property="Margin" Value="20,5,20,0" />
@@ -56,6 +62,10 @@
             <Setter Property="Margin" Value="20,5,20,0" />
             <Setter Property="Height" Value="20"></Setter>
         </Style>
-
+        <!--filtre-->
+        <Style x:Key="filtreLabel" TargetType="Label">
+            <Setter Property="Margin" Value="10,5,20,0" />
+            <Setter Property="FontSize" Value="15"></Setter>
+        </Style>
     </Application.Resources>
 </Application>
