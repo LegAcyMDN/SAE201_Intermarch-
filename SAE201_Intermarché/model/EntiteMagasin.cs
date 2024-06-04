@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SAE201_Intermarche.model
 {
-    internal class Magasin
+    internal class EntiteMagasin
     {
     }
 }
