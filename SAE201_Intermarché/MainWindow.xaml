@@ -126,7 +126,9 @@
                     Background="Green">
                     Type véhicule
                 </Label>
-                <ComboBox Width="300" Text=""  HorizontalAlignment="Stretch"/>
+                <ComboBox Width="300" Text=""  HorizontalAlignment="Stretch"
+                          ItemsSource="{Binding ListeTypeVehicule}"
+                          />
             </StackPanel>
             <Button
                 x:Name="resa"
@@ -201,7 +203,9 @@ Content="Ajouter un client" />
                 FontSize="15">
                 Type véhicule
             </Label>
-            <ComboBox Margin="10,0,10,0" />
+            <ComboBox Margin="10,0,10,0" 
+                      ItemsSource="{Binding ListeTypeVehicule}"
+                      />
             <Label
                 Margin="10,10,10,5"
                 Padding="3"
@@ -238,7 +242,9 @@ Content="Ajouter un client" />
                 FontSize="15">
                     Type véhicule
                 </Label>
-                <ComboBox Margin="10,0,10,0" />
+                <ComboBox Margin="10,0,10,0" 
+                          ItemsSource="{Binding ListeTypeVehicule}"
+                          />
                 <Label
                 Margin="10,10,10,5"
                 Padding="3"

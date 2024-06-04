@@ -12,6 +12,7 @@ namespace SAE201_Intermarche.model
     {
         private ObservableCollection<EntiteClient> lesClients;
         private ObservableCollection<string> clientComboBoxItems;
+        private Array listeTypeVehicule = Enum.GetValues(typeof(CategorieVehicule));
 
 
         public ObservableCollection<EntiteClient> LesClients
@@ -28,6 +29,7 @@ namespace SAE201_Intermarche.model
         }
 
         public ObservableCollection<string> ClientComboBoxItems { get => clientComboBoxItems; set => clientComboBoxItems = value; }
+        public Array ListeTypeVehicule { get => listeTypeVehicule; set => listeTypeVehicule = value; }
 
         public ApplicationData()
         {
