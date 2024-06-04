@@ -65,6 +65,18 @@
                 Background="Orange">
                 Nouvelle location
             </Label>
+            <Grid Margin="20">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <StackPanel Grid.Column="0">
+                 
+                </StackPanel>
+                <StackPanel Grid.Column="1">
+                 
+                </StackPanel>
+            </Grid>
             <StackPanel Margin="20,10,20,20" Orientation="Horizontal" Width="auto" HorizontalAlignment="Stretch" >
                 <Label
                     Width="100"
@@ -138,36 +150,43 @@
                 Background="Orange">
                 Ajouter un client
             </Label>
-
-            <StackPanel  Margin="20,20,20,0" Orientation="Horizontal">
-                <TextBox TextWrapping="Wrap" Width="200" Height="30" Text=" Nom" HorizontalAlignment="Right" Margin="0,0,10,0" />
-                <TextBox TextWrapping="Wrap" Width="200" Height="30" Text=" Prénom" HorizontalAlignment="Right" Margin="0,0,10,0" />
-            </StackPanel>
-            <DatePicker Margin="20,10,20,0" Text="Date de naissance"></DatePicker>
-            <StackPanel  Margin="20,0,20,0" Orientation="Horizontal">
-                <TextBox TextWrapping="Wrap" Width="200" Height="30" Text=" Téléphone" HorizontalAlignment="Right" Margin="0,5,10,0"/>
-                <TextBox TextWrapping="Wrap" Width="200" Height="30" Text=" Email" HorizontalAlignment="Right" Margin="0,5,10,0"/>
-            </StackPanel>
-
-            <TextBox TextWrapping="Wrap" Width="310" Height="30" Text=" Adresse" HorizontalAlignment="Center" Margin="0,10,20,0" />
-            <StackPanel Orientation="Horizontal" Margin="20,10,20,0" HorizontalAlignment="Center" >
-                <TextBox TextWrapping="Wrap" Width="150" Height="30" Text=" Code postal"  Margin="0,0,10,0"/>
-                <TextBox TextWrapping="Wrap" Width="200" Height="30" Text=" Ville" Margin="0,0,0,0"/>
-            </StackPanel>
+            <Grid Margin="20">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <StackPanel Grid.Column="0">
+                    <Label Style="{StaticResource formulaireLabel}" >Nom</Label>
+                    <Label Style="{StaticResource formulaireLabel}">Prénom</Label>
+                    <Label  Style="{StaticResource formulaireLabel}" >Date de naissance</Label>
+                    <Label Style="{StaticResource formulaireLabel}">Email</Label>
+                    <Label Style="{StaticResource formulaireLabel}" >Téléphone</Label>
+                </StackPanel>
+                <StackPanel Grid.Column="1">
+                    <TextBox Style="{StaticResource formulaireTextbox}" Text=" Nom"/>
+                    <TextBox Style="{StaticResource formulaireTextbox}" Text=" Prénom" />
+                    <DatePicker Style="{StaticResource formulaireDate}"></DatePicker>
+                    <TextBox Style="{StaticResource formulaireTextbox}" Text=" Téléphone"/>
+                    <TextBox Style="{StaticResource formulaireTextbox}" Text=" Email" />
+                   
+                </StackPanel>
+            </Grid>
             <Button
-                x:Name="retourWin"
-                Width="150"
-                Height="30"
-                Margin="20"
-                HorizontalAlignment="Right"
-                Background="Red"
-                Click="retourWin_Click"
-                Content="Ajouter un client" />
+x:Name="retourWin"
+Width="150"
+Height="30"
+Margin="20"
+HorizontalAlignment="Right"
+Background="Red"
+Click="retourWin_Click"
+Content="Ajouter un client" />
         </StackPanel>
+
 
         <StackPanel
             Grid.Row="1"
             Grid.Column="2"
+            Grid.RowSpan="2"
             Style="{StaticResource Principalstackpanel}">
             <Label
                 Width="150"
@@ -198,19 +217,58 @@
             </Label>
             <DatePicker Margin="10,0,10,0" />
             <Button
-     x:Name="location"
-     Width="150"
-     Height="30"
-     Margin="20"
-     HorizontalAlignment="Right"
-     Background="Red"
-     Click="resume_Click"
-     Content="Continuer la recherche" />
-        </StackPanel>
+            Width="150"
+             Height="30"
+              Margin="20"
+             HorizontalAlignment="Right"
+              Background="Red"
+             
+            Content="Recchercher le client" />
 
+                <Label
+                Width="150"
+                Height="30"
+                HorizontalAlignment="Left"
+                Background="Orange">
+                    Rechercher une location
+                </Label>
+                <Label
+                Margin="10,10,10,5"
+                Padding="3"
+                FontSize="15">
+                    Type véhicule
+                </Label>
+                <ComboBox Margin="10,0,10,0" />
+                <Label
+                Margin="10,10,10,5"
+                Padding="3"
+                FontSize="15">
+                    Date emprunt
+                </Label>
+                <DatePicker Margin="10,0,10,0" />
+                <Label
+                Margin="10,10,10,5"
+                Padding="3"
+                FontSize="15">
+                    Date retour
+                </Label>
+                <DatePicker Margin="10,0,10,0" />
+                <Button
+             x:Name="location"
+              Width="150"
+            Height="30"
+             Margin="20"
+            HorizontalAlignment="Right"
+            Background="Red"
+            Click="resume_Click"
+             Content="Rechercher la location" />
+            
+
+        </StackPanel>
+        
         <StackPanel
             Grid.Row="2"
-            Grid.ColumnSpan="3"
+            Grid.ColumnSpan="2"
             Orientation="Horizontal"
             Style="{StaticResource Principalstackpanel}">
             <Label
