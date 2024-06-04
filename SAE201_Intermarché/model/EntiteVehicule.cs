@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 namespace SAE201_Intermarche.model
 {
 
-    enum categorieVehicule
+    enum CategorieVehicule
     {
         COMPACT, ECONOMIQUE, FAMILIALE, HYBRIDE, CAMION_BENNE
     }
-    public class Vehicule
+    public class EntiteVehicule
     {
 
 
