@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SAE201_Intermarché"
         mc:Ignorable="d"
-        Title="Client" ResizeMode="CanResize" WindowStartupLocation="CenterScreen"  Width="1200" Height="700">
+        Title="Client" ResizeMode="CanResize" WindowStartupLocation="CenterScreen"  Width="1200" Height="700" WindowState="Maximized">
 
     <Grid>
         <Grid.RowDefinitions>
@@ -26,7 +26,7 @@
             <Label Content="?" FontSize="20" Margin="5,0,5,0" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White" FontWeight="Bold"/>
         </StackPanel>
         <StackPanel Grid.Row="1" Grid.Column="0" Grid.RowSpan="3" Style="{StaticResource Principalstackpanel}" Grid.ColumnSpan="2" Margin="20,20,20,20">
-            <Label Width="80" Height="30" HorizontalAlignment="Left" Background="Orange" >Identité</Label>
+            <Label Style="{StaticResource titrePrincipal}" >Identité</Label>
 
             <Grid>
                 <Grid.ColumnDefinitions>
@@ -67,7 +67,7 @@
 
 
         <StackPanel Grid.Row="1" Grid.Column="2" Style="{StaticResource Principalstackpanel}" Margin="20,20,20,20" Grid.RowSpan="2">
-            <Label Width="150" Height="30" HorizontalAlignment="Left" Background="Orange" >Pièces jointes</Label>
+            <Label Style="{StaticResource titrePrincipal}" >Pièces jointes</Label>
             <Grid Margin="0,20">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="4*"/>
@@ -104,17 +104,17 @@
         </StackPanel>
         <StackPanel Grid.Row="2" Grid.Column="3" Style="{StaticResource Principalstackpanel}">
 
-            <Label Width="100" Height="30" HorizontalAlignment="Left" Background="Orange">Rechercher</Label>
-            <Label FontSize="15" Padding="3" Margin="10,10,10,0">Type véhicule</Label>
+            <Label Style="{StaticResource titrePrincipal}">Rechercher</Label>
+            <Label Style="{StaticResource filtreLabel}" >Type véhicule</Label>
             <ComboBox Style="{StaticResource formulaireCombobox}"></ComboBox>
-            <Label Margin="10,0,10,0" FontSize="15" Padding="3">Date emprunt</Label>
+            <Label Style="{StaticResource filtreLabel}">Date emprunt</Label>
             <DatePicker Style="{StaticResource formulaireDate}"></DatePicker>
-            <Label Margin="10,0,10,0" FontSize="15" Padding="3">Date retour</Label>
+            <Label Style="{StaticResource filtreLabel}">Date retour</Label>
             <DatePicker Style="{StaticResource formulaireDate}"></DatePicker>
 
         </StackPanel>
         <StackPanel Grid.Row="3" Grid.Column="2" Grid.ColumnSpan="2" Style="{StaticResource Principalstackpanel}" Margin="20,20,20,20">
-            <Label Width="160" Height="30" HorizontalAlignment="Left" Background="Orange" >Historique des réservations</Label>
+            <Label Style="{StaticResource titrePrincipal}" >Historique des réservations</Label>
             <StackPanel Background="Green" Height="30" Orientation="Horizontal">
                 <Label Margin="0,0,40,0">Numéro de réservation</Label>
                 <Label  Margin="0,0,40,0">Immatriculation</Label>

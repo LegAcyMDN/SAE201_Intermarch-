@@ -10,7 +10,8 @@
     Height="700"
     ResizeMode="CanResize"
     WindowStartupLocation="CenterScreen"
-    mc:Ignorable="d">
+    mc:Ignorable="d"
+     WindowState="Maximized">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="1*" />
@@ -61,41 +62,26 @@
                 Filtre
             </Label>
             <Label
-        Margin="10,10,10,5"
-        Padding="3"
-        FontSize="15">
+        Style="{StaticResource filtreLabel}">
                 Type véhicule
             </Label>
             <ComboBox  Style="{StaticResource formulaireCombobox}" />
             <Label
-        Margin="10,10,10,5"
-        Padding="3"
-        FontSize="15">
+       Style="{StaticResource filtreLabel}">
                 Date emprunt
             </Label>
             <DatePicker Style="{StaticResource formulaireDate}" />
             <Label
-        Margin="10,10,10,5"
-        Padding="3"
-        FontSize="15">
+        Style="{StaticResource filtreLabel}">
                 Date retour
             </Label>
             <DatePicker Style="{StaticResource formulaireDate}" />
             <Label
-Margin="10,10,10,5"
-Padding="3"
-FontSize="15">
+Style="{StaticResource filtreLabel}">
                 Nom client
             </Label>
             <ComboBox  Style="{StaticResource formulaireCombobox}"
      />
-            <Button
-        Width="50"
-        Height="30"
-        Margin="10,20,10,5"
-        HorizontalAlignment="Right">
-                ok
-            </Button>
         </StackPanel>
         <StackPanel Grid.Column="1" Grid.Row="1" Grid.RowSpan="2"  Style="{StaticResource Principalstackpanel}">
             <Label

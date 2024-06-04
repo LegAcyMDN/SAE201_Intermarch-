@@ -11,7 +11,8 @@
     ResizeMode="CanResize"
     WindowStartupLocation="CenterScreen"
     mc:Ignorable="d"
-    MinWidth="800">
+    MinWidth="800"
+     WindowState="Maximized">
     <Grid>
 
         <Grid.RowDefinitions>
@@ -62,11 +63,7 @@
             Grid.Column="2"
             Style="{StaticResource Principalstackpanel}" Grid.ColumnSpan="2">
             <Label
-                Margin="0,0,0,20"
-                Width="150"
-                Height="30"
-                HorizontalAlignment="Left"
-                Background="Orange">
+                Style="{StaticResource titrePrincipal}">
                 Résumé de la location
             </Label>
             <Grid>
@@ -113,10 +110,7 @@
             Style="{StaticResource Principalstackpanel}"
             >
             <Label
-                Width="150"
-                Height="30"
-                HorizontalAlignment="Left"
-                Background="Orange">
+                Style="{StaticResource titrePrincipal}">
                 Liste véhicules
             </Label>
             
@@ -145,10 +139,7 @@
             Margin="20,20,20,20"
             Style="{StaticResource Principalstackpanel}">
             <Label
-                Width="150"
-                Height="30"
-                HorizontalAlignment="Left"
-                Background="Orange">
+                Style="{StaticResource titrePrincipal}">
                 Filtre
             </Label>
             <Label
