@@ -1,6 +1,10 @@
 ﻿using SAE201_Intermarché;
+using SAE201_Intermarche.model;
+using System;
+using System.Collections.Generic;
 using System.Net.Sockets;
 using System.Windows;
+using System.Windows.Documents;
 using System.Windows.Input;
 
 namespace SAE201_Intermarche
@@ -23,6 +27,7 @@ namespace SAE201_Intermarche
             {
                 cbRechercheClientLocation.SelectedItem = data.ClientComboBoxItems[0];
             }
+
             Connexion connexion = new Connexion();
             connexion.ShowDialog();
 

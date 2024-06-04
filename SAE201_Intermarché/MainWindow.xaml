@@ -71,72 +71,37 @@
                     <ColumnDefinition />
                 </Grid.ColumnDefinitions>
                 <StackPanel Grid.Column="0">
-                 
+                    <Label Style="{StaticResource formulaireLabel}">
+                        Recherche Client
+                    </Label>
+                    <Label Style="{StaticResource formulaireLabel}">
+                        Date réservation
+                    </Label>
+                    <Label Style="{StaticResource formulaireLabel}">
+                        Date retour
+                    </Label>
+                    <Label Style="{StaticResource formulaireLabel}" >
+                        Type véhicule
+                    </Label>
                 </StackPanel>
                 <StackPanel Grid.Column="1">
-                 
-                </StackPanel>
-            </Grid>
-            <StackPanel Margin="20,10,20,20" Orientation="Horizontal" Width="auto" HorizontalAlignment="Stretch" >
-                <Label
-                    Width="100"
-                    Height="30"
-                    HorizontalAlignment="Left"
-                    Background="Green">
-                    Recherche Client
-                </Label>
-                <ComboBox x:Name="cbRechercheClientLocation"
-                    ItemsSource="{Binding ClientComboBoxItems}"
-                    Width="151"
-                    Text="" SelectionChanged="ComboBox_SelectionChanged"
-                     />
-                <Button
-                    x:Name="clientWi"
-                    Width="95"
-                    Margin="10,0,0,0"
-                    Click="clientWin_Click"
-                    Content="Ajouter un client" />
-            </StackPanel>
-            <StackPanel Margin="20,0,20,20" Orientation="Horizontal">
-                <Label
-                    Width="100"
-                    Height="30"
-                    HorizontalAlignment="Left"
-                    Background="Green">
-                    Date emprunt
-                </Label>
-                <DatePicker Width="150" />
-            </StackPanel>
-            <StackPanel Margin="10,10,20,20" Orientation="Horizontal">
-                <Label
-                    Width="100"
-                    Height="30"
-                    Margin="10,0,0,0"
-                    HorizontalAlignment="Left"
-                    Background="Green">
-                    Date retour
-                </Label>
-                <DatePicker Width="150" />
-            </StackPanel>
-            <StackPanel Margin="20,0,20,0" Orientation="Horizontal" HorizontalAlignment="Stretch">
-                <Label
-                    Width="100"
-                    Height="30"
-                    HorizontalAlignment="Left"
-                    Background="Green">
-                    Type véhicule
-                </Label>
-                <ComboBox Width="300" Text=""  HorizontalAlignment="Stretch"/>
-            </StackPanel>
-            <Button
+                    <ComboBox x:Name="cbRechercheClientLocation"
+                                ItemsSource="{Binding ClientComboBoxItems}"
+                                Text="" SelectionChanged="ComboBox_SelectionChanged"
+                              Style="{StaticResource formulaireCombobox}"
+                    />
+                    <DatePicker Style="{StaticResource formulaireDate}"></DatePicker>
+                    <DatePicker Style="{StaticResource formulaireDate}"></DatePicker>
+                    <ComboBox Style="{StaticResource formulaireCombobox}" ItemsSource="{Binding ListeTypeVehicule}"></ComboBox>
+
+                    <Button
                 x:Name="resa"
-                Width="150"
-                Height="30"
-                Margin="20"
-                HorizontalAlignment="Right"
-                Background="Red"
+               Style="{StaticResource PrincipalBouton}"
                 Click="resa_Click"
                 Content="Continuer la réservation" />
+                </StackPanel>
+            </Grid>
+
         </StackPanel>
 
         <StackPanel
@@ -150,7 +115,7 @@
                 Background="Orange">
                 Ajouter un client
             </Label>
-            <Grid Margin="20">
+            <Grid Margin="0,20">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition />
                     <ColumnDefinition />
@@ -168,64 +133,43 @@
                     <DatePicker Style="{StaticResource formulaireDate}"></DatePicker>
                     <TextBox Style="{StaticResource formulaireTextbox}" Text=" Téléphone"/>
                     <TextBox Style="{StaticResource formulaireTextbox}" Text=" Email" />
-                   
+                    <Button
+                        x:Name="retourWin"
+                        Style="{StaticResource PrincipalBouton}"
+                        Click="retourWin_Click"
+                        Content="Ajouter un client" />
                 </StackPanel>
             </Grid>
-            <Button
-x:Name="retourWin"
-Width="150"
-Height="30"
-Margin="20"
-HorizontalAlignment="Right"
-Background="Red"
-Click="retourWin_Click"
-Content="Ajouter un client" />
+            
         </StackPanel>
-
 
         <StackPanel
             Grid.Row="1"
             Grid.Column="2"
-            Grid.RowSpan="2"
             Style="{StaticResource Principalstackpanel}">
             <Label
                 Width="150"
                 Height="30"
+                Margin="0,0,0,20"
                 HorizontalAlignment="Left"
                 Background="Orange">
-                Rechercher une location
+                Rechercher un client
             </Label>
-            <Label
-                Margin="10,10,10,5"
-                Padding="3"
-                FontSize="15">
-                Type véhicule
-            </Label>
-            <ComboBox Margin="10,0,10,0" />
-            <Label
-                Margin="10,10,10,5"
-                Padding="3"
-                FontSize="15">
-                Date emprunt
-            </Label>
-            <DatePicker Margin="10,0,10,0" />
-            <Label
-                Margin="10,10,10,5"
-                Padding="3"
-                FontSize="15">
-                Date retour
-            </Label>
-            <DatePicker Margin="10,0,10,0" />
-            <Button
-            Width="150"
-             Height="30"
-              Margin="20"
-             HorizontalAlignment="Right"
-              Background="Red"
-             
-            Content="Recchercher le client" />
+            <Label Style="{StaticResource formulaireLabel}" >Nom</Label>
+            <TextBox Style="{StaticResource formulaireTextbox}" Text=" Nom"/>
+            <Label Style="{StaticResource formulaireLabel}">Prénom</Label>
+            <TextBox Style="{StaticResource formulaireTextbox}" Text=" Prénom" />
+            <Label  Style="{StaticResource formulaireLabel}" >Date de naissance</Label>
+            <DatePicker Style="{StaticResource formulaireDate}"></DatePicker>
 
-                <Label
+            <Button
+            Style="{StaticResource PrincipalBouton}"
+            Content="Rechercher le client" />
+        </StackPanel>
+        <StackPanel  Grid.Row="2"
+ Grid.Column="2"
+ Style="{StaticResource Principalstackpanel}">
+            <Label
                 Width="150"
                 Height="30"
                 HorizontalAlignment="Left"
@@ -238,7 +182,9 @@ Content="Ajouter un client" />
                 FontSize="15">
                     Type véhicule
                 </Label>
-                <ComboBox Margin="10,0,10,0" />
+                <ComboBox Margin="10,0,10,0" 
+                          ItemsSource="{Binding ListeTypeVehicule}"
+                          />
                 <Label
                 Margin="10,10,10,5"
                 Padding="3"
@@ -257,7 +203,7 @@ Content="Ajouter un client" />
              x:Name="location"
               Width="150"
             Height="30"
-             Margin="20"
+             Margin="20,10,20,20"
             HorizontalAlignment="Right"
             Background="Red"
             Click="resume_Click"

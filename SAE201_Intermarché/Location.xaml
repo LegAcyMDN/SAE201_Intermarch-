@@ -100,7 +100,7 @@
                     <DatePicker Style="{StaticResource formulaireDate}"></DatePicker>
                     <DatePicker Style="{StaticResource formulaireDate}"></DatePicker>
                     <DataGrid Margin="0,5,20,0" Height="auto">Liste des véhicules choisis</DataGrid>
-                    <Button Content="Confirmer la location"  Height="30" HorizontalAlignment="Stretch" Background="Red" Margin="0,20,20,0" />
+                    <Button Content="Confirmer la location"  Style="{StaticResource PrincipalBouton}" />
                 </StackPanel>
             </Grid>
         </StackPanel>
@@ -157,21 +157,21 @@
                 FontSize="15">
                 Type véhicule
             </Label>
-            <ComboBox Margin="10,0,10,0" />
+            <ComboBox Style="{StaticResource formulaireCombobox}" />
             <Label
                 Margin="10,10,10,5"
                 Padding="3"
                 FontSize="15">
                 Date emprunt
             </Label>
-            <DatePicker Margin="10,0,10,0" />
+            <DatePicker Style="{StaticResource formulaireDate}" />
             <Label
                 Margin="10,10,10,5"
                 Padding="3"
                 FontSize="15">
                 Date retour
             </Label>
-            <DatePicker Margin="10,0,10,0" />
+            <DatePicker Style="{StaticResource formulaireDate}" />
             <Button
                 Width="50"
                 Height="30"
