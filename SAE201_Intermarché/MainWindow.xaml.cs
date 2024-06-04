@@ -17,7 +17,8 @@ namespace SAE201_Intermarche
         {
             InitializeComponent();
             Connexion connexion = new Connexion();
-            //connexion.ShowDialog();
+            connexion.ShowDialog();
+
         }
 
         private void Image_MouseDown(object sender, MouseButtonEventArgs e)
