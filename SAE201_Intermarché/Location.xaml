@@ -35,12 +35,12 @@
             Grid.ColumnSpan="4"
             Background="Gray"
             Orientation="Horizontal">
-            <Image
+            <Image x:Name="imageIntermarche"
                 Width="auto"
                 Height="auto"
                 Margin="5,5,5,5"
                 Source="/img/logo.png"
-                Stretch="Fill" />
+                Stretch="Fill" MouseDown="imageIntermarche_MouseDown" />
             <Ellipse
                 Width="30"
                 
