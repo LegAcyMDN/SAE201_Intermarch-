@@ -25,9 +25,10 @@ namespace SAE201_Intermarche
             InitializeComponent();
         }
 
-
-
-
-
+        private void imageIntermarche_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            MainWindow.getInstance().Show();
+            this.Close();
+        }
     }
 }

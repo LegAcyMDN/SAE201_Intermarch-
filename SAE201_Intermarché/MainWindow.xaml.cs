@@ -20,6 +20,7 @@ namespace SAE201_Intermarche
     public partial class MainWindow : Window
     {
         //public static ApplicationData appData = new ApplicationData();
+        public static MainWindow instance;
         public MainWindow()
         {
             InitializeComponent();
@@ -30,7 +31,7 @@ namespace SAE201_Intermarche
 
             Connexion connexion = new Connexion();
             connexion.ShowDialog();
-
+            instance = this;
         }
 
         private void Image_MouseDown(object sender, MouseButtonEventArgs e)
@@ -41,6 +42,7 @@ namespace SAE201_Intermarche
         {
             Location location = new Location();
             location.Show();
+            this.Hide();
         }
 
         private void clientWin_Click(object sender, RoutedEventArgs e)
@@ -68,6 +70,13 @@ namespace SAE201_Intermarche
 
 
         }
+
+
+        public static MainWindow getInstance()
+        {
+            return instance;
+        }
+
 
 
     }
