@@ -23,9 +23,9 @@
             <RowDefinition Height="4*" />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="2*" />
-            <ColumnDefinition Width="2*" />
-            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="450*" />
+            <ColumnDefinition Width="450*" />
+            <ColumnDefinition Width="301*" />
         </Grid.ColumnDefinitions>
         <StackPanel
             Grid.Row="0"
@@ -57,7 +57,7 @@
         <StackPanel
             Grid.Row="1"
             Grid.Column="0"
-            Style="{StaticResource Principalstackpanel}">
+            Style="{StaticResource Principalstackpanel}" Margin="10,10,10,10">
 
             <Label
                Style="{StaticResource titrePrincipal}">
@@ -105,7 +105,7 @@
         <StackPanel
             Grid.Row="1"
             Grid.Column="1"
-            Style="{StaticResource Principalstackpanel}">
+            Style="{StaticResource Principalstackpanel}" Margin="10,10,10,10">
             <Label
                Style="{StaticResource titrePrincipal}">
                 Ajouter un client
@@ -141,7 +141,7 @@
         <StackPanel
             Grid.Row="1"
             Grid.Column="2"
-            Style="{StaticResource Principalstackpanel}">
+            Style="{StaticResource Principalstackpanel}" Margin="10,10,10,10">
             <Label
                Style="{StaticResource titrePrincipal}">
                 Rechercher un client
@@ -159,7 +159,7 @@
         </StackPanel>
         <StackPanel  Grid.Row="2"
  Grid.Column="2"
- Style="{StaticResource Principalstackpanel}">
+ Style="{StaticResource Principalstackpanel}" Margin="10,10,10,10">
             <Label
                Style="{StaticResource titrePrincipal}">
                 Rechercher une location
@@ -192,7 +192,7 @@
             Grid.Row="2"
             Grid.ColumnSpan="2"
             Orientation="Horizontal"
-            Style="{StaticResource Principalstackpanel}">
+            Style="{StaticResource Principalstackpanel}" Margin="10,10,10,10">
             <Grid Width="auto">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="1*" />

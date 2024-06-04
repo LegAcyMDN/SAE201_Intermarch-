@@ -96,7 +96,7 @@
                     <TextBox Style="{StaticResource formulaireTextbox}" Text=" Ville" />
                     <DatePicker Style="{StaticResource formulaireDate}"></DatePicker>
                     <DatePicker Style="{StaticResource formulaireDate}"></DatePicker>
-                    <DataGrid Margin="0,5,20,0" Height="auto">Liste des véhicules choisis</DataGrid>
+                    <DataGrid Margin="0,5,20,0" Height="117">Liste des véhicules choisis</DataGrid>
                     <Button Content="Confirmer la location"  Style="{StaticResource PrincipalBouton}" />
                 </StackPanel>
             </Grid>
