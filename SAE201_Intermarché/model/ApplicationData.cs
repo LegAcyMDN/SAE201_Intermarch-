@@ -71,7 +71,7 @@ namespace SAE201_Intermarche.model
         {
             LesReservations = new ObservableCollection<EntiteReservation>();
             EntiteReservation entiteReservation = new EntiteReservation();
-            LesReservations = entiteReservation.FindAll();
+            //LesReservations = entiteReservation.
 
         }
     }
