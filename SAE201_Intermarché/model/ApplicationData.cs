@@ -47,10 +47,6 @@ namespace SAE201_Intermarche.model
                 ClientComboBoxItems.Add(client.Nom + "; " + client.Num);
 
             }
-
         }
-
-
-
     }
 }
