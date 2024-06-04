@@ -1,12 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace SAE201_Intermarche.model
 {
-    public class EntiteReservation : 
+    public class EntiteReservation : ICrud<EntiteReservation>
     {
 		private int numReservation;
 
@@ -86,6 +88,39 @@ namespace SAE201_Intermarche.model
             ForfaitKM = forfaitKM;
         }
 
-		
+		public void Create() 
+		{
+			DataAccess accesBD = new DataAccess();
+			accesBD.SetData("");
+		}
+
+		public void Read() 
+		{ }
+
+		public void Update() 
+		{ }
+
+		public void Delete() 
+		{ }
+
+		public ObservableCollection<EntiteReservation> FindAll() 
+		{
+			ObservableCollection<EntiteReservation> lesReservations = new ObservableCollection<EntiteReservation>();
+			DataAccess accesBD = new DataAccess();
+			String res = "";
+			DataTable dataTable = accesBD.GetData(res);
+			if (dataTable != null)
+			{
+				foreach(DataRow dataRow in dataTable.Rows)
+				{
+					EntiteReservation uneReservation = new EntiteReservation(int.Parse(dataRow["num_reservation"].ToString()),
+						int.Parse(dataRow["num_assurance"].ToString()), int.Parse(dataRow["num_client"].ToString()),
+						(DateTime)dataRow["date_reservation"], (DateTime)dataRow["date_debut_reservation"],
+						(DateTime)dataRow["date_fin_reservation"], (double)dataRow["montant_reservation"],
+						(String)dataRow["forfait_km"]);
+				}
+			}
+			return lesReservations;
+		}
     }
 }
