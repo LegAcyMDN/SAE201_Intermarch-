@@ -8,9 +8,9 @@ namespace SAE201_Intermarche.model
 {
     internal class DetailCaracteristique
     {
-		private int immatriculation;
+		private string immatriculation;
 
-		public int Immatriculation
+		public string Immatriculation
 		{
 			get { return immatriculation; }
 			set { immatriculation = value; }
@@ -32,7 +32,7 @@ namespace SAE201_Intermarche.model
 			set { valeurCaracteristique = value; }
 		}
 
-        public DetailCaracteristique(int immatriculation, int numCaracteristique, string valeurCaracteristique)
+        public DetailCaracteristique(string immatriculation, int numCaracteristique, string valeurCaracteristique)
         {
             Immatriculation = immatriculation;
             NumCaracteristique = numCaracteristique;

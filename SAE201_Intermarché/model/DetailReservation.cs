@@ -8,9 +8,9 @@ namespace SAE201_Intermarche.model
 {
     internal class DetailReservation
     {
-		private int immatriculation;
+		private string immatriculation;
 
-		public int Immatriculation
+		public string Immatriculation
 		{
 			get { return immatriculation; }
 			set { immatriculation = value; }
@@ -24,7 +24,7 @@ namespace SAE201_Intermarche.model
 			set { numReservation = value; }
 		}
 
-        public DetailReservation(int immatriculation, int numReservation)
+        public DetailReservation(string immatriculation, int numReservation)
         {
             Immatriculation = immatriculation;
             NumReservation = numReservation;
