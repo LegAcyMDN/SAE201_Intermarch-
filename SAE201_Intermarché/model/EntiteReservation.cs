@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SAE201_Intermarche.model
 {
-    internal class EntiteReservation
+    public class EntiteReservation
     {
 		private int numReservation;
 
