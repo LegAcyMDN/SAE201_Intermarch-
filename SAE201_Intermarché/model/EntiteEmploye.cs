@@ -40,5 +40,12 @@ namespace SAE201_Intermarche.model
 			set { mdp = value; }
 		}
 
-	}
+        public EntiteEmploye(int numEmploye, int numMagasin, string login, string mdp)
+        {
+            NumEmploye = numEmploye;
+            NumMagasin = numMagasin;
+            Login = login;
+            Mdp = mdp;
+        }
+    }
 }

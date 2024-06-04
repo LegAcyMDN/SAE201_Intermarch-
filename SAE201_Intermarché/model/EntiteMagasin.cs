@@ -8,29 +8,62 @@ namespace SAE201_Intermarche.model
 {
     internal class EntiteMagasin
     {
-		private int numAssurance;
+		private int numMagasin;
 
-		public int NumAssurance
+		public int NumMagasin
 		{
-			get { return  numAssurance; }
-			set {  numAssurance = value; }
+			get { return numMagasin; }
+			set { numMagasin = value; }
 		}
 
-		private String descriptionAssurance	;
+		private String nomMagasin;
 
-		public String DescriptionAssurance
+		public String NomMagasin
 		{
-			get { return descriptionAssurance; }
-			set { descriptionAssurance = value; }
+			get { return nomMagasin; }
+			set { nomMagasin = value; }
 		}
 
-		private double prixAssurance;
+		private String adresseRueMagasin;
 
-		public double PrixAssurance
+		public String AdresseRueMagasin
 		{
-			get { return prixAssurance; }
-			set { prixAssurance = value; }
+			get { return adresseRueMagasin; }
+			set { adresseRueMagasin = value; }
 		}
 
-	}
+		private String adresseCPMagasin;
+
+		public String AdresseCPMagasin
+		{
+			get { return adresseCPMagasin; }
+			set { adresseCPMagasin = value; }
+		}
+
+		private String adresseVilleMagasin;
+
+		public String AdresseVilleMagasin
+		{
+			get { return adresseVilleMagasin; }
+			set { adresseVilleMagasin = value; }
+		}
+
+		private String horaireMagasin;
+
+		public String HoraireMagasin
+		{
+			get { return horaireMagasin; }
+			set { horaireMagasin = value; }
+		}
+
+        public EntiteMagasin(int numMagasin, string nomMagasin, string adresseRueMagasin, string adresseCPMagasin, string adresseVilleMagasin, string horaireMagasin)
+        {
+            NumMagasin = numMagasin;
+            NomMagasin = nomMagasin;
+            AdresseRueMagasin = adresseRueMagasin;
+            AdresseCPMagasin = adresseCPMagasin;
+            AdresseVilleMagasin = adresseVilleMagasin;
+            HoraireMagasin = horaireMagasin;
+        }
+    }
 }
