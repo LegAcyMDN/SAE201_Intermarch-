@@ -10,12 +10,19 @@ namespace SAE201_Intermarche
     /// </summary>
     /// 
 
+
+
+
     public partial class MainWindow : Window
     {
         //public static ApplicationData appData = new ApplicationData();
         public MainWindow()
         {
             InitializeComponent();
+            if (data.ClientComboBoxItems.Count > 0)
+            {
+                cbRechercheClientLocation.SelectedItem = data.ClientComboBoxItems[0];
+            }
             Connexion connexion = new Connexion();
             connexion.ShowDialog();
 
