@@ -6,45 +6,45 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Controls;
 
-namespace SAE201_Intermarche
+namespace SAE201_Intermarche.model
 {
     public class ApplicationData
     {
         private ObservableCollection<EntiteClient> lesClients;
-        private List<String> clientComboBoxItems;
+        private List<string> clientComboBoxItems;
 
 
         public ObservableCollection<EntiteClient> LesClients
         {
             get
             {
-                return this.lesClients;
+                return lesClients;
             }
 
             set
             {
-                this.lesClients = value;
+                lesClients = value;
             }
         }
 
-        public List<String> ClientComboBoxItems { get => clientComboBoxItems; set => clientComboBoxItems = value; }
+        public List<string> ClientComboBoxItems { get => clientComboBoxItems; set => clientComboBoxItems = value; }
 
         public ApplicationData()
         {
-            this.LesClients = new ObservableCollection<EntiteClient>();
-            this.ClientComboBoxItems = new List<string>();
-            this.Charge();
+            LesClients = new ObservableCollection<EntiteClient>();
+            ClientComboBoxItems = new List<string>();
+            Charge();
         }
 
         public void Charge()
         {
             //TODO faire le lien avec la BDD pour remplir les valeurs
-            this.LesClients.Add(new EntiteClient(1, "aaa", "bbb", "74000", "ccc", "0677777777", "bite@penis.com"));
-            this.LesClients.Add(new EntiteClient(2, "iii", "jjj", "57000", "hhh", "0674890124", "test.bon@gmail.com"));
+            LesClients.Add(new EntiteClient(1, "aaa", "bbb", "74000", "ccc", "0677777777", "bite@penis.com"));
+            LesClients.Add(new EntiteClient(2, "iii", "jjj", "57000", "hhh", "0674890124", "test.bon@gmail.com"));
 
-            foreach(EntiteClient client in this.LesClients)
+            foreach (EntiteClient client in LesClients)
             {
-                this.ClientComboBoxItems.Add(client.Nom + "; " + client.Num);
+                ClientComboBoxItems.Add(client.Nom + "; " + client.Num);
 
             }
 
