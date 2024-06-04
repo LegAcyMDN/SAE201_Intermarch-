@@ -6,120 +6,132 @@
         xmlns:local="clr-namespace:SAE201_Intermarché"
         mc:Ignorable="d"
         Title="Client" ResizeMode="CanResize" WindowStartupLocation="CenterScreen"  Width="1200" Height="700">
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="1*"/>
-            <RowDefinition Height="5*"/>
-            <RowDefinition Height="4*"/>
-        </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition Width="2*"></ColumnDefinition>
-            <ColumnDefinition/>
-        </Grid.ColumnDefinitions>
-        <StackPanel x:Name="hautPage" Orientation="Horizontal" Grid.Row="0" Grid.ColumnSpan="4" Background="Gray">
-            <Image Height="auto" Source="/img/logo.png" Stretch="Fill" Width="auto" Margin="5,5,5,5" MouseDown="Image_MouseDown"/>
-            <Ellipse Height="30" Width="30" Fill="Yellow" Margin="20,0,0,0"/>
-            <Label Content="?" FontSize="20" Margin="5,0,5,0" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White" FontWeight="Bold"/>
-        </StackPanel>
-        <StackPanel Grid.Row="1" Grid.Column="0" Grid.RowSpan="2" Style="{StaticResource Principalstackpanel}" Grid.ColumnSpan="2" Margin="20,20,20,20">
-            <Label Width="80" Height="30" HorizontalAlignment="Left" Background="Orange" >Identité</Label>
-            <StackPanel Orientation="Horizontal">
-                <StackPanel Margin="10" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Orientation="Vertical" Grid.Row="2" Grid.RowSpan="2" Grid.Column="0">
-                    <Image Height="70" Width="70" Source="/img/icone.jpg" HorizontalAlignment="Left" Margin="20,10,0,20"></Image>
-                    <Label Style="{StaticResource formulaireLabel}" >Date création</Label>
-                    <Label Style="{StaticResource formulaireLabel}" >Nom</Label>
-                    <Label Style="{StaticResource formulaireLabel}">Prénom</Label>
-                    <Label Style="{StaticResource formulaireLabel}">Date de naissance</Label>
-                    <Label Style="{StaticResource formulaireLabel}" >Téléphone</Label>
-                    <Label Style="{StaticResource formulaireLabel}">Email</Label>
-                    <Label Style="{StaticResource formulaireLabel}">Adresse</Label>
-                    <Label Style="{StaticResource formulaireLabel}">Code postal</Label>
-                    <Label Style="{StaticResource formulaireLabel}">Ville</Label>
-                </StackPanel>
-                <StackPanel  HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Orientation="Vertical" Margin="0,110,10,20">
-                    <Label Style="{StaticResource ClientFormulaireLabel}" Content="Date création"/>
-                    <TextBox Style="{StaticResource ClientFormulaireTextbox}" Text=" Nom" />
-                    <TextBox Style="{StaticResource ClientFormulaireTextbox}" Text=" Prénom" />
-                    <DatePicker Style="{StaticResource ClientFormulaireDate}"></DatePicker>
-                    <TextBox Style="{StaticResource ClientFormulaireTextbox}" Text=" Téléphone" />
-                    <TextBox Style="{StaticResource ClientFormulaireTextbox}" Text=" Email" />
-                    <TextBox  Style="{StaticResource ClientFormulaireTextbox}" Text="Adresse" />
-                    <TextBox Style="{StaticResource ClientFormulaireTextbox}" Text=" Code postal"  />
-                    <TextBox Style="{StaticResource ClientFormulaireTextbox}" Text=" Ville"/>
-                </StackPanel>
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="5*"/>
+                <RowDefinition Height="4*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="2*"></ColumnDefinition>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <StackPanel x:Name="hautPage" Orientation="Horizontal" Grid.Row="0" Grid.ColumnSpan="4" Background="Gray">
+                <Image Height="auto" Source="/img/logo.png" Stretch="UniformToFill" Width="auto" Margin="5,5,5,5" MouseDown="Image_MouseDown"/>
+                <Ellipse Height="30" Width="30" Fill="Yellow" Margin="20,0,0,0"/>
+                <Label Content="?" FontSize="20" Margin="5,0,5,0" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White" FontWeight="Bold"/>
             </StackPanel>
-          
-            <StackPanel Orientation="Horizontal" Margin="20,0,20,20" HorizontalAlignment="Center">
-                <RadioButton Content="Particulier"/>
-                <RadioButton Content="Entreprise"
+            <StackPanel Grid.Row="1" Grid.Column="0" Grid.RowSpan="2" Style="{StaticResource Principalstackpanel}" Grid.ColumnSpan="2" Margin="20,20,20,20">
+                <Label Width="80" Height="30" HorizontalAlignment="Left" Background="Orange" >Identité</Label>
+
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Margin="20" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Orientation="Vertical" Grid.Row="1" Grid.RowSpan="2" Grid.Column="0">
+                        <Image Height="70" Width="70" Source="/img/icone.jpg" HorizontalAlignment="Left" Margin="20,0,0,20"></Image>
+                        <Label Style="{StaticResource formulaireLabel}" >Date création</Label>
+                        <Label Style="{StaticResource formulaireLabel}" >Nom</Label>
+                        <Label Style="{StaticResource formulaireLabel}">Prénom</Label>
+                        <Label Style="{StaticResource formulaireLabel}">Date de naissance</Label>
+                        <Label Style="{StaticResource formulaireLabel}" >Téléphone</Label>
+                        <Label Style="{StaticResource formulaireLabel}">Email</Label>
+                        <Label Style="{StaticResource formulaireLabel}">Adresse</Label>
+                        <Label Style="{StaticResource formulaireLabel}">Code postal</Label>
+                        <Label Style="{StaticResource formulaireLabel}">Ville</Label>
+                    </StackPanel>
+                    <StackPanel  Grid.Row="1" Grid.RowSpan="2" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Orientation="Vertical" Margin="0,110,10,20">
+                        <Label Style="{StaticResource ClientFormulaireLabel}" Content="Date création"/>
+                        <TextBox Style="{StaticResource ClientFormulaireTextbox}" Text=" Nom" />
+                        <TextBox Style="{StaticResource ClientFormulaireTextbox}" Text=" Prénom" />
+                        <DatePicker Style="{StaticResource ClientFormulaireDate}"></DatePicker>
+                        <TextBox Style="{StaticResource ClientFormulaireTextbox}" Text=" Téléphone" />
+                        <TextBox Style="{StaticResource ClientFormulaireTextbox}" Text=" Email" />
+                        <TextBox  Style="{StaticResource ClientFormulaireTextbox}" Text="Adresse" />
+                        <TextBox Style="{StaticResource ClientFormulaireTextbox}" Text=" Code postal"  />
+                        <TextBox Style="{StaticResource ClientFormulaireTextbox}" Text=" Ville"/>
+                    </StackPanel>
+
+                </Grid>
+                <StackPanel Orientation="Horizontal" Margin="20,0,20,20" HorizontalAlignment="Center">
+                    <RadioButton Content="Particulier"/>
+                    <RadioButton Content="Entreprise"
                      Margin="100,0,0,0"/>
+                </StackPanel>
             </StackPanel>
 
 
-        </StackPanel>
         <StackPanel Grid.Row="1" Grid.Column="2" Style="{StaticResource Principalstackpanel}" Margin="20,20,20,20">
             <Label Width="150" Height="30" HorizontalAlignment="Left" Background="Orange" >Pièces jointes</Label>
-            <StackPanel Margin="10,10,10,10">
-                <StackPanel Orientation="Horizontal">
-                    <Label Width="200" Height="30" HorizontalAlignment="Left" Background="Green" >Permis</Label>
-                    <Button Height="20" Width="20" Margin="-50,10,10,10">+</Button>
-                    <Ellipse Height="10" Width="10" Fill="Red" Margin="-15,10,10,10"></Ellipse>
-                    <TextBox TextWrapping="Wrap" Text="nomdufichier" Width="200" Height="20"/>
-                    <Button Height="20" Width="40" Margin="-40,10,10,10">ouvrir</Button>
+            <Grid Margin="0,20">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="4*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="3*"/>
+                    <ColumnDefinition Width="2*"/>
+                </Grid.ColumnDefinitions>
+                <StackPanel Grid.Column="0">
+                    <Label Style="{StaticResource formulaireLabel}" >Permis</Label>
+                    <Label Style="{StaticResource formulaireLabel}"  >Pièce identité</Label>
+                    <Label Style="{StaticResource formulaireLabel}"  >Assurance</Label>
                 </StackPanel>
-                <StackPanel Orientation="Horizontal">
-                    <Label Width="200" Height="30" HorizontalAlignment="Left" Background="Green" >Pièce identité</Label>
-                    <Button Height="20" Width="20" Margin="-50,10,10,10">+</Button>
-                    <Ellipse Height="10" Width="10" Fill="Red" Margin="-15,10,10,10"></Ellipse>
-                    <TextBox TextWrapping="Wrap" Text="nomdufichier" Width="200" Height="20"/>
-                    <Button Height="20" Width="40" Margin="-40,10,10,10">ouvrir</Button>
+                <StackPanel Grid.Column="1">
+                    <Button Height="20" Width="20" Background="Red" Margin="0,10,0,5" HorizontalAlignment="Left">+</Button>
+                    <Button Height="20" Width="20" Background="Red" Margin="0,10,0,5" HorizontalAlignment="Left" >+</Button>
+                    <Button Height="20" Width="20" Background="Red" Margin="0,10,0,0" HorizontalAlignment="Left">+</Button>
                 </StackPanel>
-                <StackPanel Orientation="Horizontal">
-                    <Label Width="200" Height="30" HorizontalAlignment="Left" Background="Green" >Assurance</Label>
-                    <Button Height="20" Width="20" Margin="-50,10,10,10">+</Button>
-                    <Ellipse Height="10" Width="10" Fill="Red" Margin="-15,10,10,10"></Ellipse>
-                    <TextBox TextWrapping="Wrap" Text="nomdufichier" Width="200" Height="20"/>
-                    <Button Height="20" Width="40" Margin="-40,10,10,10">ouvrir</Button>
+                <StackPanel Grid.Column="2">
+                    <TextBox TextWrapping="Wrap" Text="nomdufichier" Width="200" Height="20"  Margin="0,10,0,5" HorizontalAlignment="Left"/>
+                    <TextBox TextWrapping="Wrap" Text="nomdufichier" Width="200" Height="20"  Margin="0,10,0,5" HorizontalAlignment="Left"/>
+                    <TextBox TextWrapping="Wrap" Text="nomdufichier" Width="200" Height="20"  Margin="0,10,0,5" HorizontalAlignment="Left"/>
+                </StackPanel>
+                <StackPanel Grid.Column="3">
+                    <Button Height="20" Width="40"  Margin="0,10,0,5" HorizontalAlignment="Left">ouvrir</Button>
+                    <Button Height="20" Width="40" Margin="0,10,0,5" HorizontalAlignment="Left" >ouvrir</Button>
+                    <Button Height="20" Width="40"  Margin="0,10,0,5" HorizontalAlignment="Left">ouvrir</Button>
                 </StackPanel>
 
-            </StackPanel>
+            </Grid>
+
         </StackPanel>
-
         <StackPanel Grid.Row="1" Grid.Column="3" Style="{StaticResource Principalstackpanel}" Margin="20,20,20,25">
-            <Button Height="30" Background="red">Enregistrer le client</Button>
-            <Rectangle Height="20" Fill="White" ></Rectangle>
-            <Label Width="100" Height="30" HorizontalAlignment="Left" Background="Orange">Rechercher</Label>
-            <Label FontSize="15" Padding="3" Margin="10,10,10,5">Type véhicule</Label>
-            <ComboBox Margin="10,0,10,0"></ComboBox>
-            <Label Margin="10,10,10,5" FontSize="15" Padding="3">Date emprunt</Label>
-            <DatePicker Margin="10,0,10,0"></DatePicker>
-            <Label Margin="10,10,10,5" FontSize="15" Padding="3">Date retour</Label>
-            <DatePicker Margin="10,0,10,0"></DatePicker>
+                <Button Height="30" Background="red">Enregistrer le client</Button>
+                <Rectangle Height="20" Fill="White" ></Rectangle>
+                <Label Width="100" Height="30" HorizontalAlignment="Left" Background="Orange">Rechercher</Label>
+                <Label FontSize="15" Padding="3" Margin="10,10,10,5">Type véhicule</Label>
+                <ComboBox Margin="10,0,10,0"></ComboBox>
+                <Label Margin="10,10,10,5" FontSize="15" Padding="3">Date emprunt</Label>
+                <DatePicker Margin="10,0,10,0"></DatePicker>
+                <Label Margin="10,10,10,5" FontSize="15" Padding="3">Date retour</Label>
+                <DatePicker Margin="10,0,10,0"></DatePicker>
 
-        </StackPanel>
-        <StackPanel Grid.Row="2" Grid.Column="2" Grid.ColumnSpan="2" Style="{StaticResource Principalstackpanel}" Margin="20,20,20,20">
-            <Label Width="160" Height="30" HorizontalAlignment="Left" Background="Orange" >Historique des réservations</Label>
-            <StackPanel Background="Green" Height="30" Orientation="Horizontal">
-                <Label Margin="0,0,40,0">Numéro de réservation</Label>
-                <Label  Margin="0,0,40,0">Immatriculation</Label>
-                <Label  Margin="0,0,40,0">Date de début</Label>
-                <Label  Margin="0,0,40,0">Date de fin</Label>
-                <Label  Margin="0,0,40,0" Content="prix"/>
             </StackPanel>
-            <Rectangle Height="30" Fill="Gray"></Rectangle>
-            <Rectangle Height="30" Fill="DarkGray"></Rectangle>
-            <Rectangle Height="30" Fill="Gray"></Rectangle>
-            <Rectangle Height="30" Fill="DarkGray"></Rectangle>
-            <Rectangle Height="30" Fill="Gray"></Rectangle>
-            <Rectangle Height="30" Fill="DarkGray"></Rectangle>
-            <Rectangle Height="30" Fill="Gray"></Rectangle>
-            <Rectangle Height="30" Fill="DarkGray"></Rectangle>
-            <Rectangle Height="30" Fill="Gray"></Rectangle>
-            <Rectangle Height="30" Fill="DarkGray"></Rectangle>
-            <Rectangle Height="30" Fill="Gray"></Rectangle>
-        </StackPanel>
+            <StackPanel Grid.Row="2" Grid.Column="2" Grid.ColumnSpan="2" Style="{StaticResource Principalstackpanel}" Margin="20,20,20,20">
+                <Label Width="160" Height="30" HorizontalAlignment="Left" Background="Orange" >Historique des réservations</Label>
+                <StackPanel Background="Green" Height="30" Orientation="Horizontal">
+                    <Label Margin="0,0,40,0">Numéro de réservation</Label>
+                    <Label  Margin="0,0,40,0">Immatriculation</Label>
+                    <Label  Margin="0,0,40,0">Date de début</Label>
+                    <Label  Margin="0,0,40,0">Date de fin</Label>
+                    <Label  Margin="0,0,40,0" Content="prix"/>
+                </StackPanel>
+                <Rectangle Height="30" Fill="Gray"></Rectangle>
+                <Rectangle Height="30" Fill="DarkGray"></Rectangle>
+                <Rectangle Height="30" Fill="Gray"></Rectangle>
+                <Rectangle Height="30" Fill="DarkGray"></Rectangle>
+                <Rectangle Height="30" Fill="Gray"></Rectangle>
+                <Rectangle Height="30" Fill="DarkGray"></Rectangle>
+                <Rectangle Height="30" Fill="Gray"></Rectangle>
+                <Rectangle Height="30" Fill="DarkGray"></Rectangle>
+                <Rectangle Height="30" Fill="Gray"></Rectangle>
+                <Rectangle Height="30" Fill="DarkGray"></Rectangle>
+                <Rectangle Height="30" Fill="Gray"></Rectangle>
+            </StackPanel>
 
-    </Grid>
+        </Grid>
+
 </Window>
