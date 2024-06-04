@@ -72,6 +72,16 @@ namespace SAE201_Intermarche.model
 			set { forfaitKM = value; }
 		}
 
-		public EntiteReservation() { this.dateReservation = DateTime.Today; }
-	}
+        public EntiteReservation(int numReservation, int numAssurance, int numClient, DateTime dateReservation, DateTime dateDebut, DateTime dateFin, double montantReservation, string forfaitKM)
+        {
+            NumReservation = numReservation;
+            NumAssurance = numAssurance;
+            NumClient = numClient;
+            DateReservation = dateReservation;
+            DateDebut = dateDebut;
+            DateFin = dateFin;
+            MontantReservation = montantReservation;
+            ForfaitKM = forfaitKM;
+        }
+    }
 }
