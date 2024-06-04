@@ -11,7 +11,7 @@ namespace SAE201_Intermarche.model
     public class ApplicationData
     {
         private ObservableCollection<EntiteClient> lesClients;
-        private List<string> clientComboBoxItems;
+        private ObservableCollection<string> clientComboBoxItems;
 
 
         public ObservableCollection<EntiteClient> LesClients
@@ -27,12 +27,12 @@ namespace SAE201_Intermarche.model
             }
         }
 
-        public List<string> ClientComboBoxItems { get => clientComboBoxItems; set => clientComboBoxItems = value; }
+        public ObservableCollection<string> ClientComboBoxItems { get => clientComboBoxItems; set => clientComboBoxItems = value; }
 
         public ApplicationData()
         {
             LesClients = new ObservableCollection<EntiteClient>();
-            ClientComboBoxItems = new List<string>();
+            ClientComboBoxItems = new ObservableCollection<string>();
             Charge();
         }
 
