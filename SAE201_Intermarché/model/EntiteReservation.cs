@@ -74,6 +74,14 @@ namespace SAE201_Intermarche.model
 			set { forfaitKM = value; }
 		}
 
+		private ObservableCollection<EntiteReservation> lesReservations;
+
+		public ObservableCollection<EntiteReservation> LesReservations
+		{
+			get { return lesReservations; }
+			set { lesReservations = value; }
+		}
+
 		public EntiteReservation() { }
 
         public EntiteReservation(int numReservation, int numAssurance, int numClient, DateTime dateReservation, DateTime dateDebut, DateTime dateFin, double montantReservation, string forfaitKM)
@@ -91,23 +99,47 @@ namespace SAE201_Intermarche.model
 		public void Create() 
 		{
 			DataAccess accesBD = new DataAccess();
-			accesBD.SetData("");
+			accesBD.SetData($"insert into reservation (num_assurance, num_client, date_reservation, date_debut_reservation, date_fin_reservation, montant_reservation, forfait_km) " +
+				$"values ('{NumAssurance}','{NumClient}','{DateReservation}','{DateDebut}','{DateFin}','{MontantReservation}','{ForfaitKM}');");
 		}
 
 		public void Read() 
-		{ }
+		{
+			DataAccess dataAccess = new DataAccess();
+			String res = $"select * from reservation where num_reservation = '{NumReservation}');";
+			DataTable dataTable = dataAccess.GetData(res);
+			if (dataTable != null)
+			{
+				foreach(DataRow dataRow in dataTable.Rows)
+				{
+					NumReservation = int.Parse(dataRow["num_reservation"].ToString());
+					break;
+				}
+			}
+		}
 
 		public void Update() 
-		{ }
+		{
+			DataAccess dataAccess = new DataAccess();
+			String res = $"update reservation set (num_assurance, num_client, date_reservation, date_debut_reservation, date_fin_reservation, montant_reservation, forfait_km) " +
+                $"values ('{NumAssurance}','{NumClient}','{DateReservation}','{DateDebut}','{DateFin}','{MontantReservation}','{ForfaitKM}') where num_reservation = " + NumReservation + ";";
+        }
 
 		public void Delete() 
-		{ }
+		{ 
+			foreach (EntiteReservation entiteReservation in LesReservations)
+			{ entiteReservation.Delete(); }
+
+			DataAccess dataAccess = new DataAccess();
+			String res = $"delete from reservation where num_reservation = '{NumReservation}';";
+			dataAccess.SetData(res);
+		}
 
 		public ObservableCollection<EntiteReservation> FindAll() 
 		{
 			ObservableCollection<EntiteReservation> lesReservations = new ObservableCollection<EntiteReservation>();
 			DataAccess accesBD = new DataAccess();
-			String res = "";
+			String res = $"";
 			DataTable dataTable = accesBD.GetData(res);
 			if (dataTable != null)
 			{
