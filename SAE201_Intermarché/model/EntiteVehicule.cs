@@ -48,9 +48,10 @@ namespace SAE201_Intermarche.model
         }
 
 
-        public EntiteVehicule(string immatriculation, int numMagasin, string nom, string description, int nombrePlaces, double prixLocation, bool climatisation, string lienPhotoURL, TypeBoite typeBoite)
+        public EntiteVehicule(string immatriculation, TypeBoite typeBoite, int numMagasin, string nom, string description, int nombrePlaces, double prixLocation, bool climatisation, string lienPhotoURL)
         {
             Immatriculation = immatriculation;
+            TypeBoite = typeBoite;
             NumMagasin = numMagasin;
             NomVehicule = nom;
             DescriptionVehicule = description;
@@ -58,26 +59,25 @@ namespace SAE201_Intermarche.model
             PrixLocation = prixLocation;
             Climatisation = climatisation;
             LienPhotoURL = lienPhotoURL;
-            TypeBoite = typeBoite;
         }
 
         public void Create()
         {
             DataAccess accesBD = new DataAccess();
-            accesBD.SetData($"insert into vehicule (immatriculation, num_magasin, nom_vehicule, description_vehicule, nombres_places, prix_location, climatisation, lien_photo_url) " +
-                $"values ('{}','{}','{}','{}','{}','{}','{}');");
+            accesBD.SetData($"insert into vehicule (immatriculation, type_boite, num_magasin, nom_vehicule, description_vehicule, nombres_places, prix_location, climatisation, lien_photo_url) " +
+                $"values ('{Immatriculation}','{TypeBoite}','{NumMagasin}','{NomVehicule}','{DescriptionVehicule}','{NombrePlaces}','{PrixLocation}','{Climatisation}','{LienPhotoURL}');");
         }
 
         public void Read()
         {
             DataAccess dataAccess = new DataAccess();
-            String res = $"select * from reservation where num_reservation = '{}');";
+            String res = $"select * from vehicule where immatricualtion = '{Immatriculation}');";
             DataTable dataTable = dataAccess.GetData(res);
             if (dataTable != null)
             {
                 foreach (DataRow dataRow in dataTable.Rows)
                 {
-                     = int.Parse(dataRow["num_reservation"].ToString());
+                    Immatriculation = (String)dataRow["num_reservation"];
                     break;
                 }
             }
@@ -86,23 +86,23 @@ namespace SAE201_Intermarche.model
         public void Update()
         {
             DataAccess dataAccess = new DataAccess();
-            String res = $"update reservation set () " +
-                $"values ('{}','{}','{}','{}','{}','{}','{}') where num_reservation = " +  + ";";
+            String res = $"update vehicule set (immatriculation, type_boite, num_magasin, nom_vehicule, description_vehicule, nombres_places, prix_location, climatisation, lien_photo_url) " +
+                $"values ('{Immatriculation}','{TypeBoite}','{NumMagasin}','{NomVehicule}','{DescriptionVehicule}','{NombrePlaces}','{PrixLocation}','{Climatisation}','{LienPhotoURL}') where immatriculation = " + Immatriculation + ";";
         }
 
         public void Delete()
         {
-            foreach (EntiteReservation entiteReservation in LesReservations)
-            { entiteReservation.Delete(); }
+            foreach (EntiteVehicule entiteVehicule in LesVehicules)
+            { entiteVehicule.Delete(); }
 
             DataAccess dataAccess = new DataAccess();
-            String res = $"delete from reservation where num_reservation = '{}';";
+            String res = $"delete from vehicule where immatriculation = '{Immatriculation}';";
             dataAccess.SetData(res);
         }
 
-        public ObservableCollection<EntiteReservation> FindAll()
+        public ObservableCollection<EntiteVehicule> FindAll()
         {
-            ObservableCollection<EntiteReservation> lesReservations = new ObservableCollection<EntiteReservation>();
+            ObservableCollection<EntiteVehicule> lesVehicules = new ObservableCollection<EntiteVehicule>();
             DataAccess accesBD = new DataAccess();
             String res = $"";
             DataTable dataTable = accesBD.GetData(res);
@@ -110,14 +110,14 @@ namespace SAE201_Intermarche.model
             {
                 foreach (DataRow dataRow in dataTable.Rows)
                 {
-                    EntiteReservation uneReservation = new EntiteReservation(int.Parse(dataRow["num_reservation"].ToString()),
-                        int.Parse(dataRow["num_assurance"].ToString()), int.Parse(dataRow["num_client"].ToString()),
-                        (DateTime)dataRow["date_reservation"], (DateTime)dataRow["date_debut_reservation"],
-                        (DateTime)dataRow["date_fin_reservation"], (double)dataRow["montant_reservation"],
-                        (String)dataRow["forfait_km"]);
+                    EntiteVehicule unVehicule = new EntiteVehicule((String)dataRow["immatriculation"],
+                        (TypeBoite)dataRow["type_boite"], int.Parse(dataRow["num_magasin"].ToString()), 
+                        (String)dataRow["nom_vehicule"], (String)dataRow["description_vehicule"], 
+                        int.Parse(dataRow["nombres_places"].ToString()), int.Parse(dataRow["prix_location"].ToString()), 
+                        (bool)dataRow["climatisation"], (String)dataRow["lien_photo_url"]);
                 }
             }
-            return lesReservations;
+            return lesVehicules;
         }
     }
 }
