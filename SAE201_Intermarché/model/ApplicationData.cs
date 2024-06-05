@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,7 +14,7 @@ namespace SAE201_Intermarche.model
         private ObservableCollection<EntiteClient> lesClients;
         private ObservableCollection<string> clientEtIdComboBoxItems;
         private ObservableCollection<string> clientComboBoxItems;
-        private Array listeTypeVehicule = Enum.GetValues(typeof(CategorieVehicule));
+        private List<string> listeTypeVehicule = new List<string>();
 
 
         public ObservableCollection<EntiteClient> LesClients
@@ -38,7 +39,7 @@ namespace SAE201_Intermarche.model
         }
 
         public ObservableCollection<string> ClientEtIdComboBoxItems { get => clientEtIdComboBoxItems; set => clientEtIdComboBoxItems = value; }
-        public Array ListeTypeVehicule { get => listeTypeVehicule; set => listeTypeVehicule = value; }
+        public List<string> ListeTypeVehicule { get => listeTypeVehicule; set => listeTypeVehicule = value; }
         public ObservableCollection<string> ClientComboBoxItems { get => clientComboBoxItems; set => clientComboBoxItems = value; }
 
         public ApplicationData()
@@ -46,6 +47,7 @@ namespace SAE201_Intermarche.model
             LesClients = new ObservableCollection<EntiteClient>();
             ClientEtIdComboBoxItems = new ObservableCollection<string>();
             ClientComboBoxItems = new ObservableCollection<string>();
+
             Charge();
         }
 
@@ -74,6 +76,8 @@ namespace SAE201_Intermarche.model
         {
             LesReservations = new ObservableCollection<EntiteReservation>();
             EntiteReservation entiteReservation = new EntiteReservation();
+            this.ListeTypeVehicule.Add("eeeeee");
+            this.ListeTypeVehicule.Add("xD lol car");
             //LesReservations = entiteReservation.
 
         }
