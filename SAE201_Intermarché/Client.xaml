@@ -120,7 +120,7 @@
         </StackPanel>
         <StackPanel Grid.Row="3" Grid.Column="2" Grid.ColumnSpan="2" Style="{StaticResource Principalstackpanel}" >
             <Label Style="{StaticResource titrePrincipal}" >Historique des réservations</Label>
-            <DataGrid></DataGrid>
+            <DataGrid d:ItemsSource="{d:SampleData ItemCount=12}"></DataGrid>
         </StackPanel>
 
     </Grid>

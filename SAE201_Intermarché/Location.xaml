@@ -112,7 +112,7 @@
                 Liste véhicules
             </Label>
 
-            <DataGrid></DataGrid>
+            <DataGrid d:ItemsSource="{d:SampleData ItemCount=30}"></DataGrid>
 
         </StackPanel>
         <StackPanel
