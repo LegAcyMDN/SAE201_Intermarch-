@@ -10,8 +10,8 @@
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="68*"/>
-            <RowDefinition Height="71*"/>
-            <RowDefinition Height="271*"/>
+            <RowDefinition Height="93*"/>
+            <RowDefinition Height="249*"/>
             <RowDefinition Height="274*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
@@ -25,7 +25,7 @@
             <Ellipse Height="30" Width="30" Fill="Yellow" Margin="20,0,0,0"/>
             <Label Content="?" FontSize="20" Margin="5,0,5,0" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White" FontWeight="Bold"/>
         </StackPanel>
-        <StackPanel Grid.Row="1" Grid.Column="0" Grid.RowSpan="3" Style="{StaticResource Principalstackpanel}" Grid.ColumnSpan="2" Margin="20,20,20,20">
+        <StackPanel Grid.Row="1" Grid.Column="0" Grid.RowSpan="3" Style="{StaticResource Principalstackpanel}" Grid.ColumnSpan="2" Margin="10,10,10,10" >
             <Label Style="{StaticResource titrePrincipal}" >Identité</Label>
 
             <Grid>
@@ -66,7 +66,7 @@
         </StackPanel>
 
 
-        <StackPanel Grid.Row="1" Grid.Column="2" Style="{StaticResource Principalstackpanel}" Margin="20,20,20,20" Grid.RowSpan="2">
+        <StackPanel Grid.Row="1" Grid.Column="2" Style="{StaticResource Principalstackpanel}" Grid.RowSpan="2" Margin="10,10,10,10">
             <Label Style="{StaticResource titrePrincipal}" >Pièces jointes</Label>
             <Grid Margin="0,20">
                 <Grid.ColumnDefinitions>
@@ -99,8 +99,9 @@
             </Grid>
 
         </StackPanel>
-        <StackPanel Grid.Row="1" Grid.Column="3">
-            <Button  Style="{StaticResource PrincipalBouton}">Enregistrer le client</Button>
+        <StackPanel Grid.Row="1" Grid.Column="3" >
+            <Button  Style="{StaticResource PrincipalBouton}" >Enregistrer le client</Button>
+            <Button  Style="{StaticResource PrincipalBouton}" Visibility="Hidden" Margin="20,-10,20,0">Supprimer le client</Button>
         </StackPanel>
         <StackPanel Grid.Row="2" Grid.Column="3" Style="{StaticResource Principalstackpanel}">
 
@@ -113,7 +114,7 @@
             <DatePicker Style="{StaticResource formulaireDate}"></DatePicker>
 
         </StackPanel>
-        <StackPanel Grid.Row="3" Grid.Column="2" Grid.ColumnSpan="2" Style="{StaticResource Principalstackpanel}" Margin="20,20,20,20">
+        <StackPanel Grid.Row="3" Grid.Column="2" Grid.ColumnSpan="2" Style="{StaticResource Principalstackpanel}" >
             <Label Style="{StaticResource titrePrincipal}" >Historique des réservations</Label>
             <StackPanel Background="Green" Height="30" Orientation="Horizontal">
                 <Label Margin="0,0,40,0">Numéro de réservation</Label>
