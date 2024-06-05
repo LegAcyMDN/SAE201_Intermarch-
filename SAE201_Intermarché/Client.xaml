@@ -38,7 +38,6 @@
                     <Label Style="{StaticResource formulaireLabel}" >Date création</Label>
                     <Label Style="{StaticResource formulaireLabel}" >Numero client</Label>
                     <Label Style="{StaticResource formulaireLabel}" >Nom</Label>
-                    <Label Style="{StaticResource formulaireLabel}">Prénom</Label>
                     <Label Style="{StaticResource formulaireLabel}">Date de naissance</Label>
                     <Label Style="{StaticResource formulaireLabel}" >Téléphone</Label>
                     <Label Style="{StaticResource formulaireLabel}">Email</Label>
@@ -50,7 +49,6 @@
                     <Label Style="{StaticResource formulaireLabelReponse}" Content="Date création"/>
                     <Label Style="{StaticResource formulaireLabelReponse}" >Numero client</Label>
                     <TextBox Style="{StaticResource formulaireTextbox}" Text=" Nom" />
-                    <TextBox Style="{StaticResource formulaireTextbox}" Text=" Prénom" />
                     <DatePicker Style="{StaticResource formulaireDate}"></DatePicker>
                     <TextBox Style="{StaticResource formulaireTextbox}" Text=" Téléphone" />
                     <TextBox Style="{StaticResource formulaireTextbox}" Text=" Email" />
