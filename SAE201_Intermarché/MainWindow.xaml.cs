@@ -55,6 +55,7 @@ namespace SAE201_Intermarche
         {
             Client client = new Client();
             client.Show();
+            this.Hide();
         }
 
         private void resume_Click(object sender, RoutedEventArgs e)
@@ -62,7 +63,7 @@ namespace SAE201_Intermarche
 
             Resume resume = new Resume();
             resume.Show();
-
+            this.Hide();
         }
 
         private void ComboBox_SelectionChanged(object sender, RoutedEventArgs e)

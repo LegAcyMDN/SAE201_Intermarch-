@@ -19,9 +19,27 @@ namespace SAE201_Intermarche
     /// </summary>
     public partial class Resume : Window
     {
+        bool naturalClosing = true;
         public Resume()
         {
+            naturalClosing = true;
             InitializeComponent();
+        }
+
+        private void windowResume_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            if (naturalClosing)
+            {
+                //Si on ferme la fenêtre ça ferme l'application
+                Application.Current.Shutdown();
+            }
+        }
+
+        private void imageIntermarche_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            naturalClosing = false;
+            MainWindow.getInstance().Show();
+            this.Close();
         }
     }
 }

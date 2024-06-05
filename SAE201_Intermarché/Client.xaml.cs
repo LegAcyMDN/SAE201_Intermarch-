@@ -19,8 +19,7 @@ namespace SAE201_Intermarche
     /// </summary>
     public partial class Client : Window
     {
-
-
+        bool naturalClosing = true;
 
 
 
@@ -30,6 +29,7 @@ namespace SAE201_Intermarche
 
         public Client()
         {
+            naturalClosing = true;
             InitializeComponent();
         }
 
@@ -37,6 +37,18 @@ namespace SAE201_Intermarche
 
         private void Image_MouseDown(object sender, MouseButtonEventArgs e)
         {
+            naturalClosing = false;
+            MainWindow.getInstance().Show();
+            this.Close();
+        }
+
+        private void windowClient_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            if (naturalClosing)
+            {
+                //Si on ferme la fenêtre ça ferme l'application
+                Application.Current.Shutdown();
+            }
         }
     }
 }

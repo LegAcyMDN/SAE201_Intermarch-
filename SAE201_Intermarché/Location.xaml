@@ -1,4 +1,4 @@
-﻿<Window
+﻿<Window x:Name="windowLocation"
     x:Class="SAE201_Intermarche.Location"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
@@ -12,7 +12,7 @@
     WindowStartupLocation="CenterScreen"
     mc:Ignorable="d"
     MinWidth="800"
-     WindowState="Maximized">
+     WindowState="Maximized" Closing="windowLocation_Closing">
     <Grid>
 
         <Grid.RowDefinitions>
