@@ -14,8 +14,6 @@ namespace SAE201_Intermarche.model
         private ObservableCollection<EntiteClient> lesClients;
         private ObservableCollection<string> clientEtIdComboBoxItems;
         private ObservableCollection<string> clientComboBoxItems;
-        private List<string> listeTypeVehicule = new List<string>();
-
 
         public ObservableCollection<EntiteClient> LesClients
         {
@@ -23,11 +21,18 @@ namespace SAE201_Intermarche.model
             {
                 return lesClients;
             }
-
             set
             {
                 lesClients = value;
             }
+        }
+
+        private ObservableCollection<EntiteVehicule> lesVehicules;
+
+        public ObservableCollection<EntiteVehicule> LesVehicules 
+        { 
+            get { return lesVehicules; }
+            set { lesVehicules = value; }
         }
 
         private ObservableCollection<EntiteReservation> lesReservations;
@@ -39,12 +44,14 @@ namespace SAE201_Intermarche.model
         }
 
         public ObservableCollection<string> ClientEtIdComboBoxItems { get => clientEtIdComboBoxItems; set => clientEtIdComboBoxItems = value; }
-        public List<string> ListeTypeVehicule { get => listeTypeVehicule; set => listeTypeVehicule = value; }
         public ObservableCollection<string> ClientComboBoxItems { get => clientComboBoxItems; set => clientComboBoxItems = value; }
 
         public ApplicationData()
         {
             LesClients = new ObservableCollection<EntiteClient>();
+
+            LesVehicules = new ObservableCollection<EntiteVehicule>();
+
             ClientEtIdComboBoxItems = new ObservableCollection<string>();
             ClientComboBoxItems = new ObservableCollection<string>();
 
@@ -68,30 +75,13 @@ namespace SAE201_Intermarche.model
         }
 
         public void ChargeBD()
-        {
-            
+        {            
+            LesVehicules = new ObservableCollection<EntiteVehicule>();
+            EntiteVehicule vehicule = new EntiteVehicule();
+            LesVehicules = vehicule.FindAll();
         }
 
         public void ChargeListes()
-        {
-            LesReservations = new ObservableCollection<EntiteReservation>();
-            EntiteReservation entiteReservation = new EntiteReservation();
-            //this.ListeTypeVehicule.Add("eeeeee");
-            //this.ListeTypeVehicule.Add("xD lol car");
-
-            DataAccess accesBD = new DataAccess();
-            String res = $"select nom_categorie from categorie_vehicule;";
-            DataTable dataTable = accesBD.GetData(res);
-            if (dataTable != null)
-            {
-                foreach (DataRow dataRow in dataTable.Rows)
-                {
-                    ListeTypeVehicule.Add((String)dataRow["nom_categorie"]);
-                }
-            }
-
-                    //LesReservations = entiteReservation.
-
-                }
+        { }
     }
 }
