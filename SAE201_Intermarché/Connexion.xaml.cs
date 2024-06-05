@@ -20,14 +20,26 @@ namespace SAE201_Intermarche
     /// </summary>
     public partial class Connexion : Window
     {
+        bool naturalClosing = true;
         public Connexion()
         {
+            naturalClosing = true;
             InitializeComponent();
         }
 
         private void but_Valider_Click(object sender, RoutedEventArgs e)
         {
             this.DialogResult = true;
+        }
+
+        private void windowConnexion_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+
+            //Si on ferme la fenêtre ça ferme l'application
+            if (this.DialogResult != true)
+            {
+                Application.Current.Shutdown();
+            }
         }
     }
 }

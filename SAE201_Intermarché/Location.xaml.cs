@@ -20,15 +20,27 @@ namespace SAE201_Intermarche
     /// 
     public partial class Location : Window
     {
+        bool naturalClosing = true;
         public Location()
         {
+            naturalClosing = true;
             InitializeComponent();
         }
 
         private void imageIntermarche_MouseDown(object sender, MouseButtonEventArgs e)
         {
+            naturalClosing = false;
             MainWindow.getInstance().Show();
             this.Close();
+        }
+
+        private void windowLocation_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            if (naturalClosing)
+            {
+                //Si on ferme la fenêtre ça ferme l'application
+                Application.Current.Shutdown();
+            }
         }
     }
 }
