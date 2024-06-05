@@ -21,6 +21,11 @@ namespace SAE201_Intermarche.model
             {
                 return lesClients;
             }
+            set
+            {
+                lesClients = value;
+            }
+        }
 
         private ObservableCollection<EntiteVehicule> lesVehicules;
 
