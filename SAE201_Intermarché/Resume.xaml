@@ -25,10 +25,7 @@
 
         <StackPanel
             x:Name="hautPage"
-            Grid.Row="0"
-            Grid.ColumnSpan="3"
-            Background="Gray"
-            Orientation="Horizontal">
+            Style="{StaticResource hautdepage}">
             <Image x:Name="imageIntermarche"
                 Width="auto"
                 Height="auto"
@@ -55,10 +52,7 @@
     Grid.Column="0"
     Style="{StaticResource Principalstackpanel}">
             <Label
-        Width="100"
-        Height="30"
-        HorizontalAlignment="Left"
-        Background="Orange">
+        Style="{StaticResource titrePrincipal}">
                 Filtre
             </Label>
             <Label
@@ -85,13 +79,10 @@ Style="{StaticResource filtreLabel}">
         </StackPanel>
         <StackPanel Grid.Column="1" Grid.Row="1" Grid.RowSpan="2"  Style="{StaticResource Principalstackpanel}">
             <Label
-         Width="150"
-         Height="30"
-         HorizontalAlignment="Left"
-         Background="Orange">
+          Style="{StaticResource titrePrincipal}">
                Résumé des locations
             </Label>
-            <DataGrid Height="562" d:ItemsSource="{d:SampleData ItemCount=100}"/>
+            <DataGrid Height="auto" d:ItemsSource="{d:SampleData ItemCount=100}"/>
 
         </StackPanel>
     </Grid>

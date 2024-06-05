@@ -33,10 +33,7 @@
         <StackPanel
            
             x:Name="hautPage"
-            Grid.Row="0"
-            Grid.ColumnSpan="4"
-            Background="Gray"
-            Orientation="Horizontal">
+            Style="{StaticResource hautdepage}">
             <Image x:Name="imageIntermarche"
                 Width="auto"
                 Height="auto"
@@ -114,24 +111,8 @@
                 Style="{StaticResource titrePrincipal}">
                 Liste véhicules
             </Label>
-            
-            <Label Height="30" Background="DarkGray" />
-                        <Label Height="30" Background="Gray" />
-                        <Label Height="30" Background="DarkGray" />
-                        <Label Height="30" Background="Gray" />
-                        <Label Height="30" Background="DarkGray" />
-                        <Label Height="30" Background="Gray" />
-                        <Label Height="30" Background="DarkGray" />
-                        <Label Height="30" Background="Gray" />
-                        <Label Height="30" Background="DarkGray" />
-                        <Label Height="30" Background="Gray" />
-                        <Label Height="30" Background="DarkGray" />
-                        <Label Height="30" Background="Gray"/>
-                        <Label Height="30" Background="DarkGray" />
-                        <Label Height="30" Background="Gray" />
-                        <Label Height="30" Background="DarkGray" />
-                        <Label Height="30" Background="Gray" />
-            <Label Height="30" Background="DarkGray" />
+
+            <DataGrid d:ItemsSource="{d:SampleData ItemCount=30}"></DataGrid>
 
         </StackPanel>
         <StackPanel

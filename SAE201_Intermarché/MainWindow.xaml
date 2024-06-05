@@ -27,11 +27,8 @@
             <ColumnDefinition Width="450*" />
             <ColumnDefinition Width="301*" />
         </Grid.ColumnDefinitions>
-        <StackPanel
-            Grid.Row="0"
-            Grid.ColumnSpan="3"
-            Background="Gray"
-            Orientation="Horizontal">
+        <StackPanel  x:Name="hautPage"
+            Style="{StaticResource hautdepage}">
             <Image
                 Width="auto"
                 Height="auto"
