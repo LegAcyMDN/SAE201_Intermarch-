@@ -3,10 +3,12 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:SAE201_Intermarché"
+        xmlns:local="clr-namespace:SAE201_Intermarche.model"
         mc:Ignorable="d"
         Title="Client" ResizeMode="CanResize" WindowStartupLocation="CenterScreen"  Width="1200" Height="700" WindowState="Maximized" Closing="windowClient_Closing">
-
+    <Window.DataContext>
+        <local:ApplicationData x:Name="data"/>
+    </Window.DataContext>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="68*"/>
@@ -107,7 +109,9 @@
 
             <Label Style="{StaticResource titrePrincipal}">Rechercher</Label>
             <Label Style="{StaticResource filtreLabel}" >Type véhicule</Label>
-            <ComboBox Style="{StaticResource formulaireCombobox}"></ComboBox>
+            <ComboBox Style="{StaticResource formulaireCombobox}"
+                      ItemsSource="{Binding ListeTypeVehicule}"
+                      ></ComboBox>
             <Label Style="{StaticResource filtreLabel}">Date emprunt</Label>
             <DatePicker Style="{StaticResource formulaireDate}"></DatePicker>
             <Label Style="{StaticResource filtreLabel}">Date retour</Label>
