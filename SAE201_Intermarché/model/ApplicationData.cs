@@ -11,8 +11,8 @@ namespace SAE201_Intermarche.model
 {
     public class ApplicationData
     {
-        //private ObservableCollection<string> clientEtIdComboBoxItems;
-        //private ObservableCollection<string> clientComboBoxItems;
+        private ObservableCollection<string> clientEtIdComboBoxItems;
+        private ObservableCollection<string> clientComboBoxItems;
 
         private ObservableCollection<EntiteClient> lesClients;
         public ObservableCollection<EntiteClient> LesClients
@@ -26,16 +26,16 @@ namespace SAE201_Intermarche.model
         public ObservableCollection<EntiteReservation> LesReservations
         { get { return lesReservations; }  set { lesReservations = value; } }
 
-        //public ObservableCollection<string> ClientEtIdComboBoxItems { get => clientEtIdComboBoxItems; set => clientEtIdComboBoxItems = value; }
-        //public ObservableCollection<string> ClientComboBoxItems { get => clientComboBoxItems; set => clientComboBoxItems = value; }
+        public ObservableCollection<string> ClientEtIdComboBoxItems { get => clientEtIdComboBoxItems; set => clientEtIdComboBoxItems = value; }
+        public ObservableCollection<string> ClientComboBoxItems { get => clientComboBoxItems; set => clientComboBoxItems = value; }
 
         public ApplicationData()
         {
             LesClients = new ObservableCollection<EntiteClient>();
             LesVehicules = new ObservableCollection<EntiteVehicule>();
 
-            //ClientEtIdComboBoxItems = new ObservableCollection<string>();
-            //ClientComboBoxItems = new ObservableCollection<string>();
+            ClientEtIdComboBoxItems = new ObservableCollection<string>();
+            ClientComboBoxItems = new ObservableCollection<string>();
 
             Charge();
         }
@@ -43,14 +43,14 @@ namespace SAE201_Intermarche.model
         public void Charge()
         {
             //TODO faire le lien avec la BDD pour remplir les valeurs
-            /*LesClients.Add(new EntiteClient(1, "aaa", "bbb", "74000", "ccc", "0677777777", "bite@penis.com"));
+            LesClients.Add(new EntiteClient(1, "aaa", "bbb", "74000", "ccc", "0677777777", "bite@penis.com"));
             LesClients.Add(new EntiteClient(2, "iii", "jjj", "57000", "hhh", "0674890124", "test.bon@gmail.com"));
 
             foreach (EntiteClient client in LesClients)
             {
                 ClientEtIdComboBoxItems.Add(client.Nom + "; " + client.Num);
                 ClientComboBoxItems.Add(client.Nom);
-            }*/
+            }
 
             ChargeBD();
             ChargeListes();

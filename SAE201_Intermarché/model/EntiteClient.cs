@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -9,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace SAE201_Intermarche
 {
-    public class EntiteClient
+    public class EntiteClient : ICrud<EntiteClient>
     {
         private int num;
         private string nom;
@@ -78,8 +79,58 @@ namespace SAE201_Intermarche
             Mail = mail;
         }
 
+        public void Create()
+        {
+            DataAccess dataAccess = new DataAccess();
+            dataAccess.SetData("insert into client (num_client, nom_client, adresse_rue_client, adresse_cp_client, adresse_ville_client, telephone_client, mail_client) " +
+                $"values ('{Num}','{Nom}','{Rue}','{Cp}','{Ville}','{Telephone}','{Mail}');");
+        }
 
+        public void Delete()
+        {
+            DataAccess dataAccess = new DataAccess();
+            String res = $"delete from client where num_client = {Num};";
+            dataAccess.SetData(res);
+        }
 
+        public ObservableCollection<EntiteClient> FindAll()
+        {
+            ObservableCollection<EntiteClient> lesClients = new ObservableCollection<EntiteClient>();
+            DataAccess dataAccess = new DataAccess();
+            String res = $"select num_client, nom_client, adresse_rue_client, adresse_cp_client, adresse_ville_client, telephone_client, mail_client from client;";
+            DataTable dataTable = dataAccess.GetData(res);
+            if (dataTable != null)
+            {
+                foreach (DataRow dataRow in dataTable.Rows)
+                {
+                    EntiteClient unclient = new EntiteClient((int)dataRow["num_client"], (String)dataRow["nom_client"],
+                        (String)dataRow["adresse_rue_client"], (String)dataRow["adresse_cp_client"], (String)dataRow["adresse_ville_client"],
+                        (String)dataRow["telephone_client"], (String)dataRow["mail_client"]);
+                    //la liste a faire pour les clients !!!!!!!!!!!!!!!!!!!!!!!!!
+                }
+            }
+            return lesClients;
+        }
 
+        public void Read()
+        {
+            DataAccess dataAccess = new DataAccess();
+            String res = "select num_client, nom_client, adresse_rue_client, adresse_cp_client, adresse_ville_client, telephone_client, mail_client from client;" +
+                $"where num_client = {Num};";
+            DataTable dataTable = dataAccess.GetData(res);
+            if (dataTable != null)
+            {
+                foreach (DataRow dataRow in dataTable.Rows)
+                { Num = (int)dataRow["num_client"]; }
+            }
+        }
+
+        public void Update()
+        {
+            DataAccess dataAccess = new DataAccess();
+            String res = "update client set (num_client, nom_client, adresse_rue_client, adresse_cp_client, adresse_ville_client, telephone_client, mail_client) " + 
+                $"= ('{Num}','{Nom}','{Rue}','{Cp}','{Ville}','{Telephone}','{Mail}');";
+            dataAccess.SetData(res);
+        }
     }
 }
