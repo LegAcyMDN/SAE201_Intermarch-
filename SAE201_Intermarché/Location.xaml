@@ -16,9 +16,9 @@
     <Grid>
 
         <Grid.RowDefinitions>
-            <RowDefinition Height="1*" />
-            <RowDefinition Height="4*" />
-            <RowDefinition Height="4*" />
+            <RowDefinition Height="38*" />
+            <RowDefinition Height="179*" />
+            <RowDefinition Height="125*" />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="40*" />
@@ -30,7 +30,7 @@
         <StackPanel
            
             x:Name="hautPage"
-            Style="{StaticResource hautdepage}">
+            Style="{StaticResource hautdepage}" Grid.ColumnSpan="4">
             <Image x:Name="imageIntermarche"
                 Width="auto"
                 Height="auto"
@@ -53,6 +53,25 @@
                 FontWeight="Bold"
                 Foreground="White" />
         </StackPanel>
+        <StackPanel Grid.Row="2" Style="{StaticResource Principalstackpanel}">
+            <Label
+     Style="{StaticResource titrePrincipal}">
+                Option
+            </Label>
+            <Grid Margin="10">
+
+                <StackPanel Grid.Column="0">
+                    <CheckBox Margin="20,5" Content="Assurance corporel"/>
+                    <CheckBox Margin="20,5" Content="Assurance vol"/>
+                    <RadioButton Margin="20,5" Content="Forfait -100km"/>
+                    <RadioButton Margin="20,5" Content="Forfait 100km - 250km"/>
+                    <RadioButton Margin="20,5" Content="Forfait +250km"/>
+                </StackPanel>
+
+            </Grid>
+
+        </StackPanel>
+
         <StackPanel
             Grid.Row="1"
             Grid.RowSpan="2"
@@ -63,11 +82,16 @@
                 Résumé de la location
             </Label>
             <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="70*"/>
+                    <RowDefinition Height="20*"/>
+                    <RowDefinition Height="10*"/>
+                </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition/>
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
-                <StackPanel  HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  Grid.Column="0">
+                <StackPanel  Grid.Column="0">
                     <Label Style="{StaticResource formulaireLabel}">Numéro du client</Label>
                     <Label Style="{StaticResource formulaireLabel}" >Nom</Label>
                     <Label Style="{StaticResource formulaireLabel}">Email</Label>
@@ -77,11 +101,10 @@
                     <Label Style="{StaticResource formulaireLabel}" >Ville</Label>
                     <Label Style="{StaticResource formulaireLabel}">Date retour</Label>
                     <Label Style="{StaticResource formulaireLabel}" >Date emprunt</Label>
-                    <TextBox Style="{StaticResource formulaireTextbox}" Text="Prix" Margin="20"/>
-                    <Button Content="Confirmer la location"  Style="{StaticResource PrincipalBouton}" />
+                  
                 </StackPanel>
 
-                <StackPanel HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="1">
+                <StackPanel Grid.Column="1" Grid.Row="0">
                     <TextBox Style="{StaticResource formulaireTextbox}" Text=" Num client"  />
                     <TextBox Style="{StaticResource formulaireTextbox}" Text=" Nom" />
                     <TextBox Style="{StaticResource formulaireTextbox}" Text=" Email" />
@@ -91,9 +114,17 @@
                     <TextBox Style="{StaticResource formulaireTextbox}" Text=" Ville" />
                     <DatePicker Style="{StaticResource formulaireDate}"></DatePicker>
                     <DatePicker Style="{StaticResource formulaireDate}"></DatePicker>
-                    <DataGrid Margin="0,5,20,0" Height="117">Liste des véhicules choisis</DataGrid>
-
                 </StackPanel>
+                <StackPanel Grid.Row="1" Grid.ColumnSpan="2">
+                    <TextBox Style="{StaticResource formulaireTextbox}" Text="oe faut résumer les vehicules et les options"  />
+                </StackPanel>
+                <StackPanel Grid.Column="0" Grid.Row="2">
+                    <TextBox Style="{StaticResource formulaireTextbox}" Text="Prix" Margin="20"/>
+                </StackPanel>
+                <StackPanel Grid.Column="1" Grid.Row="2">
+                    <Button x:Name="confirmLocation" Content="Confirmer la location"  Style="{StaticResource PrincipalBouton}" Click="confirmLocation_Click"  />
+                </StackPanel>
+
             </Grid>
         </StackPanel>
 
@@ -101,7 +132,7 @@
             Grid.Row="1"
             Grid.RowSpan="2"
             Grid.Column="1"
-            Style="{StaticResource Principalstackpanel}"
+            Style="{StaticResource Principalstackpanel}" 
             >
             <Label
                 Style="{StaticResource titrePrincipal}">
@@ -113,8 +144,7 @@
         </StackPanel>
         <StackPanel
             Grid.Row="1"
-            Grid.RowSpan="2"
-            Style="{StaticResource Principalstackpanel}" >
+            Style="{StaticResource Principalstackpanel}"  >
             <Label
                 Style="{StaticResource titrePrincipal}">
                 Filtre
@@ -136,19 +166,21 @@
             </Label>
             <DatePicker Style="{StaticResource formulaireDate}" />
             <Label
-                Margin="10,10,10,5"
-                Padding="3"
-                FontSize="15">
-                Date retour
-            </Label>
-            <DatePicker Style="{StaticResource formulaireDate}" />
-            <Label
 Style="{StaticResource filtreLabel}">
                 Magasin
             </Label>
             <ComboBox  Style="{StaticResource formulaireCombobox}"
      />
+            <Label
+Style="{StaticResource filtreLabel}">
+                Type de boite de vitesse
+            </Label>
+            <StackPanel Margin="20,10" Orientation="Horizontal">
+                <RadioButton>Manuelle</RadioButton>
+                <RadioButton>Automatique</RadioButton>
+            </StackPanel>
         </StackPanel>
+
 
     </Grid>
 </Window>
