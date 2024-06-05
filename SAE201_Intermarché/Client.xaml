@@ -22,7 +22,7 @@
             <ColumnDefinition Width="2*"></ColumnDefinition>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <StackPanel x:Name="hautPage" Orientation="Horizontal" Grid.Row="0" Grid.ColumnSpan="4" Background="Gray">
+        <StackPanel x:Name="hautPage" Style="{StaticResource hautdepage}">
             <Image x:Name="imageIntermarche" Height="auto" Source="/img/logovNeg.png"  Stretch="UniformToFill" Width="auto" Margin="5,5,5,5" MouseDown="Image_MouseDown"/>
             <Ellipse Height="30" Width="30" Fill="Yellow" Margin="20,0,0,0"/>
             <Label Content="?" FontSize="20" Margin="5,0,5,0" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White" FontWeight="Bold"/>
@@ -120,7 +120,7 @@
         </StackPanel>
         <StackPanel Grid.Row="3" Grid.Column="2" Grid.ColumnSpan="2" Style="{StaticResource Principalstackpanel}" >
             <Label Style="{StaticResource titrePrincipal}" >Historique des réservations</Label>
-            <StackPanel Background="Green" Height="30" Orientation="Horizontal">
+            <StackPanel Background="White" Height="30" Orientation="Horizontal">
                 <Label Margin="0,0,40,0">Numéro de réservation</Label>
                 <Label  Margin="0,0,40,0">Immatriculation</Label>
                 <Label  Margin="0,0,40,0">Date de début</Label>
