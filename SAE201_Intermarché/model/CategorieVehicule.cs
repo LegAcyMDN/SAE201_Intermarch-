@@ -81,6 +81,7 @@ namespace SAE201_Intermarche.model
                 foreach (DataRow dataRow in dataTable.Rows)
                 {
                     CategorieVehicule uneCategorie = new CategorieVehicule((String)dataRow["nom_categorie"]);
+                    lesCategories.Add(uneCategorie);
                 }
             }
             return lesCategories;
