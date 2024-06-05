@@ -142,12 +142,12 @@
                 Date retour
             </Label>
             <DatePicker Style="{StaticResource formulaireDate}" />
-            <Button
-                Style="{StaticResource PlusBouton}"
-                Margin="10"
-                HorizontalAlignment="Right">
-                ok
-            </Button>
+            <Label
+Style="{StaticResource filtreLabel}">
+                Magasin
+            </Label>
+            <ComboBox  Style="{StaticResource formulaireCombobox}"
+     />
         </StackPanel>
 
     </Grid>
