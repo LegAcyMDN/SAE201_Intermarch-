@@ -121,6 +121,7 @@ namespace SAE201_Intermarche.model
                         (String)dataRow["nom_vehicule"], (String)dataRow["description_vehicule"], 
                         int.Parse(dataRow["nombres_places"].ToString()), int.Parse(dataRow["prix_location"].ToString()), 
                         (bool)dataRow["climatisation"], (String)dataRow["lien_photo_url"]);
+                    lesVehicules.Add(unVehicule);
                 }
             }
             return lesVehicules;

@@ -139,7 +139,7 @@ namespace SAE201_Intermarche.model
 		{
 			ObservableCollection<EntiteReservation> lesReservations = new ObservableCollection<EntiteReservation>();
 			DataAccess accesBD = new DataAccess();
-			String res = $"";
+			String res = $"select num_reservation from reservation where num_reservation = '{NumReservation}';";
 			DataTable dataTable = accesBD.GetData(res);
 			if (dataTable != null)
 			{
@@ -150,6 +150,7 @@ namespace SAE201_Intermarche.model
 						(DateTime)dataRow["date_reservation"], (DateTime)dataRow["date_debut_reservation"],
 						(DateTime)dataRow["date_fin_reservation"], (double)dataRow["montant_reservation"],
 						(String)dataRow["forfait_km"]);
+					lesReservations.Add(uneReservation);
 				}
 			}
 			return lesReservations;
