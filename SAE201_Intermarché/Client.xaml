@@ -74,10 +74,9 @@
                         Margin="20,0,0,20"
                         HorizontalAlignment="Left"
                         Source="/img/icone.jpg" />
-                    <Label Style="{StaticResource formulaireLabel}">Date création</Label>
-                    <Label Style="{StaticResource formulaireLabel}">Numero client</Label>
-                    <Label Style="{StaticResource formulaireLabel}">Nom</Label>
-                    <Label Style="{StaticResource formulaireLabel}">Date de naissance</Label>
+                    <Label Style="{StaticResource formulaireLabel}" >Date création</Label>
+                    <Label Style="{StaticResource formulaireLabel}" >Numero client</Label>
+                    <Label Style="{StaticResource formulaireLabel}" >Nom</Label>
                     <Label Style="{StaticResource formulaireLabel}">Téléphone</Label>
                     <Label Style="{StaticResource formulaireLabel}">Email</Label>
                     <Label Style="{StaticResource formulaireLabel}">Adresse</Label>
@@ -92,17 +91,16 @@
                     HorizontalAlignment="Stretch"
                     VerticalAlignment="Stretch"
                     Orientation="Vertical">
-                    <Label Content="Date création" Style="{StaticResource formulaireLabelReponse}" />
+                    <Label Content="{Binding LesReservations}" Style="{StaticResource formulaireLabelReponse}" />
                     <Label Style="{StaticResource formulaireLabelReponse}">Numero client</Label>
                     <TextBox
                         x:Name="tbNom"
                         Style="{StaticResource formulaireTextbox}"
                         Text=" Nom" />
-                    <DatePicker x:Name="dpNaissance" Style="{StaticResource formulaireDate}" />
                     <TextBox
                         x:Name="tbTelephone"
                         Style="{StaticResource formulaireTextbox}"
-                        Text=" Téléphone" />
+                        Text=" Téléphone"  />
                     <TextBox
                         x:Name="tbEmail"
                         Style="{StaticResource formulaireTextbox}"
@@ -155,53 +153,35 @@
                     <Label Style="{StaticResource formulaireLabel}">Assurance</Label>
                 </StackPanel>
                 <StackPanel Grid.Column="1">
-                    <Button Style="{StaticResource PlusBouton}">+</Button>
-                    <Button Style="{StaticResource PlusBouton}">+</Button>
-                    <Button Style="{StaticResource PlusBouton}">+</Button>
+                    <Button x:Name="pieceJointePermis" Style="{StaticResource PlusBouton}" Click="pieceJointePermis_Click" >+</Button>
+                    <Button  x:Name="pieceJointeid" Style="{StaticResource PlusBouton}" Click="pieceJointeid_Click">+</Button>
+                    <Button x:Name="pieceJointeAssurance"  Style="{StaticResource PlusBouton}" Click="pieceJointeAssurance_Click">+</Button>
                 </StackPanel>
                 <StackPanel Grid.Column="2">
                     <TextBox
-                        Width="200"
-                        Height="20"
-                        Margin="0,10,0,5"
-                        HorizontalAlignment="Left"
-                        Text="nomdufichier"
-                        TextWrapping="Wrap" />
+                      Style="{StaticResource textboxFichier}"
+                        Text="nomdufichier" />
                     <TextBox
-                        Width="200"
-                        Height="20"
-                        Margin="0,10,0,5"
-                        HorizontalAlignment="Left"
+                       Style="{StaticResource textboxFichier}"
                         Text="nomdufichier"
-                        TextWrapping="Wrap" />
+                        />
                     <TextBox
-                        Width="200"
-                        Height="20"
-                        Margin="0,10,0,5"
-                        HorizontalAlignment="Left"
+                        Style="{StaticResource textboxFichier}"
                         Text="nomdufichier"
-                        TextWrapping="Wrap" />
+                         />
                 </StackPanel>
-                <StackPanel Grid.Column="3">
-                    <Button
-                        Width="40"
-                        Height="20"
-                        Margin="0,10,0,5"
-                        HorizontalAlignment="Left">
+                <StackPanel Grid.Column="3" Margin="0,0,40,0">
+                    <Button x:Name="PieceJointeOuvrirPermis"
+                       Style="{StaticResource boutonFichier}" Click="PieceJointeOuvrirPermis_Click" 
+                        >
                         ouvrir
                     </Button>
-                    <Button
-                        Width="40"
-                        Height="20"
-                        Margin="0,10,0,5"
-                        HorizontalAlignment="Left">
+                    <Button x:Name="PieceJointeOuvririd"
+                       Style="{StaticResource boutonFichier}" Click="PieceJointeOuvririd_Click">
                         ouvrir
                     </Button>
-                    <Button
-                        Width="40"
-                        Height="20"
-                        Margin="0,10,0,5"
-                        HorizontalAlignment="Left">
+                    <Button x:Name="PieceJointeOuvrirAssurance"
+                       Style="{StaticResource boutonFichier}" Click="PieceJointeOuvrirAssurance_Click">
                         ouvrir
                     </Button>
                 </StackPanel>

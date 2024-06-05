@@ -67,6 +67,7 @@ namespace SAE201_Intermarche.model
             ListeTypeVehicule = new List<CategorieVehicule>();
 
 
+
             Charge();
         }
 

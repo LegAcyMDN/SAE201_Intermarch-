@@ -78,5 +78,35 @@ namespace SAE201_Intermarche
                 Application.Current.Shutdown();
             }
         }
+
+        private void pieceJointePermis_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void pieceJointeid_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void pieceJointeAssurance_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void PieceJointeOuvrirPermis_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void PieceJointeOuvririd_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void PieceJointeOuvrirAssurance_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
