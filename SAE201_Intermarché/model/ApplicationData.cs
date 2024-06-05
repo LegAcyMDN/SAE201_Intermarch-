@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Data;
@@ -15,29 +14,20 @@ namespace SAE201_Intermarche.model
         private ObservableCollection<EntiteClient> lesClients;
         private ObservableCollection<string> clientEtIdComboBoxItems;
         private ObservableCollection<string> clientComboBoxItems;
-        private List<CategorieVehicule> listeTypeVehicule;
+        private List<string> listeTypeVehicule = new List<string>();
 
 
         public ObservableCollection<EntiteClient> LesClients
         {
-            get { return lesClients; }
-            set { lesClients = value; }
-        }
+            get
+            {
+                return lesClients;
+            }
 
-        private ObservableCollection<CategorieVehicule> lesCategories;
-
-        public ObservableCollection<CategorieVehicule> LesCategories
-        {
-            get { return lesCategories; }
-            set { lesCategories = value; }
-        }
-
-        private ObservableCollection<EntiteVehicule> lesVehicules;
-
-        public ObservableCollection<EntiteVehicule> LesVehicules 
-        { 
-            get { return lesVehicules; }
-            set { lesVehicules = value; }
+            set
+            {
+                lesClients = value;
+            }
         }
 
         private ObservableCollection<EntiteReservation> lesReservations;
@@ -49,24 +39,14 @@ namespace SAE201_Intermarche.model
         }
 
         public ObservableCollection<string> ClientEtIdComboBoxItems { get => clientEtIdComboBoxItems; set => clientEtIdComboBoxItems = value; }
-        public List<CategorieVehicule> ListeTypeVehicule { get => listeTypeVehicule; set => listeTypeVehicule = value; }
+        public List<string> ListeTypeVehicule { get => listeTypeVehicule; set => listeTypeVehicule = value; }
         public ObservableCollection<string> ClientComboBoxItems { get => clientComboBoxItems; set => clientComboBoxItems = value; }
 
         public ApplicationData()
         {
             LesClients = new ObservableCollection<EntiteClient>();
-
-            LesCategories = new ObservableCollection<CategorieVehicule>();
-
-            LesVehicules = new ObservableCollection<EntiteVehicule>();
-
             ClientEtIdComboBoxItems = new ObservableCollection<string>();
-
             ClientComboBoxItems = new ObservableCollection<string>();
-
-            ListeTypeVehicule = new List<CategorieVehicule>();
-
-
 
             Charge();
         }
@@ -89,33 +69,29 @@ namespace SAE201_Intermarche.model
 
         public void ChargeBD()
         {
-            LesCategories = new ObservableCollection<CategorieVehicule>();
-            CategorieVehicule categorie = new CategorieVehicule();
-            LesCategories = categorie.FindAll();
-
-            LesVehicules = new ObservableCollection<EntiteVehicule>();
-            EntiteVehicule vehicule = new EntiteVehicule();
-            LesVehicules = vehicule.FindAll();
+            
         }
 
         public void ChargeListes()
         {
-            ChargeCategorie();
-            //ChargeVehicules();
-        }
+            LesReservations = new ObservableCollection<EntiteReservation>();
+            EntiteReservation entiteReservation = new EntiteReservation();
+            //this.ListeTypeVehicule.Add("eeeeee");
+            //this.ListeTypeVehicule.Add("xD lol car");
 
-        public void ChargeCategorie()
-        {
-            foreach (CategorieVehicule cv in LesCategories)
+            DataAccess accesBD = new DataAccess();
+            String res = $"select nom_categorie from categorie_vehicule;";
+            DataTable dataTable = accesBD.GetData(res);
+            if (dataTable != null)
             {
-                ObservableCollection<EntiteVehicule> vehicules = new ObservableCollection<EntiteVehicule>();
-                foreach (EntiteVehicule ev in LesVehicules)
+                foreach (DataRow dataRow in dataTable.Rows)
                 {
-                    if (cv.NomCategorie == ev.NomCategorie)
-                    { vehicules.Add(ev); }
+                    ListeTypeVehicule.Add((String)dataRow["nom_categorie"]);
                 }
-                cv.LesVehicules = vehicules;
             }
-        }
+
+                    //LesReservations = entiteReservation.
+
+                }
     }
 }
