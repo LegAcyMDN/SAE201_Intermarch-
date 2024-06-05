@@ -11,6 +11,7 @@ namespace SAE201_Intermarche.model
     public class ApplicationData
     {
         private ObservableCollection<EntiteClient> lesClients;
+        private ObservableCollection<string> clientEtIdComboBoxItems;
         private ObservableCollection<string> clientComboBoxItems;
         private Array listeTypeVehicule = Enum.GetValues(typeof(CategorieVehicule));
 
@@ -36,12 +37,14 @@ namespace SAE201_Intermarche.model
             set { lesReservations = value; }
         }
 
-        public ObservableCollection<string> ClientComboBoxItems { get => clientComboBoxItems; set => clientComboBoxItems = value; }
+        public ObservableCollection<string> ClientEtIdComboBoxItems { get => clientEtIdComboBoxItems; set => clientEtIdComboBoxItems = value; }
         public Array ListeTypeVehicule { get => listeTypeVehicule; set => listeTypeVehicule = value; }
+        public ObservableCollection<string> ClientComboBoxItems { get => clientComboBoxItems; set => clientComboBoxItems = value; }
 
         public ApplicationData()
         {
             LesClients = new ObservableCollection<EntiteClient>();
+            ClientEtIdComboBoxItems = new ObservableCollection<string>();
             ClientComboBoxItems = new ObservableCollection<string>();
             Charge();
         }
@@ -54,8 +57,8 @@ namespace SAE201_Intermarche.model
 
             foreach (EntiteClient client in LesClients)
             {
-                ClientComboBoxItems.Add(client.Nom + "; " + client.Num);
-
+                ClientEtIdComboBoxItems.Add(client.Nom + "; " + client.Num);
+                ClientComboBoxItems.Add(client.Nom);
             }
 
             ChargeBD();

@@ -24,9 +24,10 @@ namespace SAE201_Intermarche
         public MainWindow()
         {
             InitializeComponent();
-            if (data.ClientComboBoxItems.Count > 0)
+            if (data.ClientEtIdComboBoxItems.Count > 0)
             {
-                cbRechercheClientLocation.SelectedItem = data.ClientComboBoxItems[0];
+                cbRechercheClientLocation.SelectedItem = data.ClientEtIdComboBoxItems[0];
+                cbRechercheClient.SelectedItem = data.ClientComboBoxItems[0];
             }
 
             Connexion connexion = new Connexion();
@@ -81,6 +82,20 @@ namespace SAE201_Intermarche
         private void calPlanningReservation_MouseDown(object sender, MouseButtonEventArgs e)
         {
            // calPlanningReservation.SelectedDate
+        }
+
+        private void cbRechercheClient_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
+        {
+            tbNumClient.Text = (cbRechercheClient.SelectedIndex + 1).ToString();
+        }
+
+        private void tbNumClient_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)
+        {
+            bool bienParse = int.TryParse(tbNumClient.Text, out int num);
+            if (bienParse)
+            {
+                cbRechercheClient.SelectedIndex = num - 1;
+            }
         }
     }
 }

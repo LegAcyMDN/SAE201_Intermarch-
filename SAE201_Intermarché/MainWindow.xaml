@@ -84,7 +84,7 @@
                 </StackPanel>
                 <StackPanel Grid.Column="1">
                     <ComboBox x:Name="cbRechercheClientLocation"
-                                ItemsSource="{Binding ClientComboBoxItems}"
+                                ItemsSource="{Binding ClientEtIdComboBoxItems}"
                                 Text="" SelectionChanged="ComboBox_SelectionChanged"
                               Style="{StaticResource formulaireCombobox}"
                     />
@@ -147,9 +147,11 @@
                 Rechercher un client
             </Label>
             <Label Style="{StaticResource filtreLabel}" >Nom et prénom</Label>
-            <ComboBox Style="{StaticResource formulaireCombobox}" Text=" Prénom" />
+            <ComboBox x:Name="cbRechercheClient" Style="{StaticResource formulaireCombobox}" Text="" 
+                      ItemsSource="{Binding ClientComboBoxItems}" SelectionChanged="cbRechercheClient_SelectionChanged"
+                      />
             <Label Style="{StaticResource filtreLabel}" >Numéro client</Label>
-            <TextBox Style="{StaticResource formulaireTextbox}"> </TextBox>
+            <TextBox x:Name="tbNumClient" Style="{StaticResource formulaireTextbox}" TextChanged="tbNumClient_TextChanged"/>
             <Label Style="{StaticResource filtreLabel}" >Date de naissance</Label>
             <DatePicker Style="{StaticResource formulaireDate}"></DatePicker>
 
