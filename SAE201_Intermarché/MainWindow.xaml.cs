@@ -30,7 +30,7 @@ namespace SAE201_Intermarche
                 cbRechercheClientLocation.SelectedItem = data.ClientEtIdComboBoxItems[0];
                 cbRechercheClient.SelectedItem = data.ClientComboBoxItems[0];
             }
-
+            
             Connexion connexion = new Connexion();
             connexion.ShowDialog();
             instance = this;

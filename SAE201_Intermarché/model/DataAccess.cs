@@ -21,20 +21,20 @@ namespace SAE201_Intermarche.model
                 return instance;
             }
         }
-
+          
         public NpgsqlConnection NpgSQLConnection { get; set; }
 
         public void ConnexionBD()
         {
             try
             {
+                Console.WriteLine("oui je suis co");
                 NpgSQLConnection = new NpgsqlConnection();
                 NpgSQLConnection.ConnectionString = strConnexion;
                 NpgSQLConnection.Open();
             }
             catch (Exception e) { MessageBox.Show(e.ToString()); }
         }
-
         public void DeconnexionBD()
         {
             try { NpgSQLConnection.Close(); }
@@ -47,7 +47,12 @@ namespace SAE201_Intermarche.model
             {
                 NpgsqlDataAdapter dataAdapter = new NpgsqlDataAdapter(selectSQL, NpgSQLConnection);
                 DataTable dataTable = new DataTable();
-                dataAdapter.Fill(dataTable);
+                try
+                {
+                    dataAdapter.Fill(dataTable);
+                }
+                catch(Exception e) { Console.WriteLine(e.ToString()); }
+               
                 return dataTable;
             }
             catch (Exception e)
