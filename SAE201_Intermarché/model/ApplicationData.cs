@@ -15,6 +15,7 @@ namespace SAE201_Intermarche.model
         private ObservableCollection<string> clientComboBoxItems;
 
         private ObservableCollection<EntiteClient> lesClients;
+        private List<string> listeTypeVehicule;
         public ObservableCollection<EntiteClient> LesClients
         { get { return lesClients; } set { lesClients = value; } }
 
@@ -28,6 +29,7 @@ namespace SAE201_Intermarche.model
 
         public ObservableCollection<string> ClientEtIdComboBoxItems { get => clientEtIdComboBoxItems; set => clientEtIdComboBoxItems = value; }
         public ObservableCollection<string> ClientComboBoxItems { get => clientComboBoxItems; set => clientComboBoxItems = value; }
+        public List<string> ListeTypeVehicule { get => listeTypeVehicule; set => listeTypeVehicule = value; }
 
         public ApplicationData()
         {
@@ -36,6 +38,8 @@ namespace SAE201_Intermarche.model
 
             ClientEtIdComboBoxItems = new ObservableCollection<string>();
             ClientComboBoxItems = new ObservableCollection<string>();
+
+            ListeTypeVehicule = new List<string>();
 
             Charge();
         }
@@ -64,6 +68,26 @@ namespace SAE201_Intermarche.model
         }
 
         public void ChargeListes()
-        { }
+        {
+            DataAccess dataAccess = new DataAccess();
+            String res = $"select nom_categorie from categorie_vehicule;";
+            DataTable dataTable = dataAccess.GetData(res);
+            if (dataTable != null)
+            {
+                foreach (DataRow dataRow in dataTable.Rows)
+                {
+                    //Console.WriteLine(dataRow["nom_categorie"]);
+                    ListeTypeVehicule.Add((String)dataRow["nom_categorie"]);
+                }
+            }
+
+
+
+
+                }
+
+
+
+
     }
 }
