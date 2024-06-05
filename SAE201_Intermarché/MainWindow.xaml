@@ -6,12 +6,9 @@
     xmlns:local="clr-namespace:SAE201_Intermarche.model"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     Title="MainWindow"
-    Width="1200"
-    Height="700"
-    ResizeMode="CanResize"
+    Style="{StaticResource page}"
     WindowStartupLocation="CenterScreen"
-    mc:Ignorable="d"
-     WindowState="Maximized">
+    mc:Ignorable="d">
     <Window.DataContext>
         <local:ApplicationData x:Name="data"/>
     </Window.DataContext>

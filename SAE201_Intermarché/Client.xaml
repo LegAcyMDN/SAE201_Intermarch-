@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SAE201_Intermarche.model"
         mc:Ignorable="d"
-        Title="Client" ResizeMode="CanResize" WindowStartupLocation="CenterScreen"  Width="1200" Height="700" WindowState="Maximized" Closing="windowClient_Closing">
+        Title="Client" WindowStartupLocation="CenterScreen" Closing="windowClient_Closing"
+        Style="{StaticResource page}">
     <Window.DataContext>
         <local:ApplicationData x:Name="data"/>
     </Window.DataContext>

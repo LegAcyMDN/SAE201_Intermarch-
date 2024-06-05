@@ -6,12 +6,9 @@
     xmlns:local="clr-namespace:SAE201_Intermarche"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     Title="Resume"
-    Width="1200"
-    Height="700"
-    ResizeMode="CanResize"
+        Style="{StaticResource page}"
     WindowStartupLocation="CenterScreen"
-    mc:Ignorable="d"
-     WindowState="Maximized" Closing="windowResume_Closing">
+    mc:Ignorable="d" Closing="windowResume_Closing">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="1*" />
