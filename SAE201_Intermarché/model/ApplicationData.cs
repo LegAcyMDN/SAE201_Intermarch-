@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Data;
@@ -18,9 +17,10 @@ namespace SAE201_Intermarche.model
 
         public ObservableCollection<EntiteClient> LesClients
         {
-            get { return lesClients; }
-            set { lesClients = value; }
-        }
+            get
+            {
+                return lesClients;
+            }
 
         private ObservableCollection<EntiteVehicule> lesVehicules;
 
@@ -48,7 +48,6 @@ namespace SAE201_Intermarche.model
             LesVehicules = new ObservableCollection<EntiteVehicule>();
 
             ClientEtIdComboBoxItems = new ObservableCollection<string>();
-
             ClientComboBoxItems = new ObservableCollection<string>();
 
             Charge();

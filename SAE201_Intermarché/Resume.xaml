@@ -73,6 +73,12 @@ Style="{StaticResource filtreLabel}">
             </Label>
             <ComboBox  Style="{StaticResource formulaireCombobox}"
      />
+            <Label
+Style="{StaticResource filtreLabel}">
+                Magasin
+            </Label>
+            <ComboBox  Style="{StaticResource formulaireCombobox}"
+     />
         </StackPanel>
         <StackPanel Grid.Column="1" Grid.Row="1" Grid.RowSpan="2"  Style="{StaticResource Principalstackpanel}">
             <Label

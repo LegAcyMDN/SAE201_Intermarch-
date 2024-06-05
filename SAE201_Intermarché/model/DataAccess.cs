@@ -13,7 +13,7 @@ namespace SAE201_Intermarche.model
 
         public DataAccess() 
         {
-            ConnexionBD();
+            this.ConnexionBD();
         }
 
         public static DataAccess Instance

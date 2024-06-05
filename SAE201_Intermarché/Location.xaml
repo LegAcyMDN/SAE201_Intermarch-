@@ -70,7 +70,6 @@
                 <StackPanel  HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  Grid.Column="0">
                     <Label Style="{StaticResource formulaireLabel}">Numéro du client</Label>
                     <Label Style="{StaticResource formulaireLabel}" >Nom</Label>
-                    <Label  Style="{StaticResource formulaireLabel}" >Date de naissance</Label>
                     <Label Style="{StaticResource formulaireLabel}">Email</Label>
                     <Label Style="{StaticResource formulaireLabel}" >Téléphone</Label>
                     <Label Style="{StaticResource formulaireLabel}" >Adresse</Label>
@@ -85,7 +84,6 @@
                 <StackPanel HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="1">
                     <TextBox Style="{StaticResource formulaireTextbox}" Text=" Num client"  />
                     <TextBox Style="{StaticResource formulaireTextbox}" Text=" Nom" />
-                    <DatePicker Style="{StaticResource formulaireDate}"></DatePicker>
                     <TextBox Style="{StaticResource formulaireTextbox}" Text=" Email" />
                     <TextBox Style="{StaticResource formulaireTextbox}" Text="Téléphone"/>
                     <TextBox Style="{StaticResource formulaireTextbox}" Text=" Adresse" />
