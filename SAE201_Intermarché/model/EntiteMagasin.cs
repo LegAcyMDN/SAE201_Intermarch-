@@ -74,5 +74,7 @@ namespace SAE201_Intermarche.model
             AdresseVilleMagasin = adresseVilleMagasin;
             HoraireMagasin = horaireMagasin;
         }
+
+
     }
 }

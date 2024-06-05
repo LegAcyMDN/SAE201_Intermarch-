@@ -41,7 +41,7 @@ namespace SAE201_Intermarche.model
         public void Read()
         {
             DataAccess dataAccess = new DataAccess();
-            String res = $"select * from categorie_vehicule where nom_categorie = '{NomCategorie}');";
+            String res = "select * from categorie_vehicule;";
             DataTable dataTable = dataAccess.GetData(res);
             if (dataTable != null)
             {
