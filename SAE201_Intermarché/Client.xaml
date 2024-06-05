@@ -21,7 +21,7 @@
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <StackPanel x:Name="hautPage" Orientation="Horizontal" Grid.Row="0" Grid.ColumnSpan="4" Background="Gray">
-            <Image x:Name="imageIntermarche" Height="auto" Source="/img/logo.png" Stretch="UniformToFill" Width="auto" Margin="5,5,5,5" MouseDown="Image_MouseDown"/>
+            <Image x:Name="imageIntermarche" Height="auto" Source="/img/logovNeg.png"  Stretch="UniformToFill" Width="auto" Margin="5,5,5,5" MouseDown="Image_MouseDown"/>
             <Ellipse Height="30" Width="30" Fill="Yellow" Margin="20,0,0,0"/>
             <Label Content="?" FontSize="20" Margin="5,0,5,0" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White" FontWeight="Bold"/>
         </StackPanel>

@@ -41,8 +41,8 @@
                 Width="auto"
                 Height="auto"
                 Margin="5,5,5,5"
-                Source="/img/logo.png"
-                Stretch="Fill" MouseDown="imageIntermarche_MouseDown" />
+                Source="/img/logovNeg.png" 
+                   MouseDown="imageIntermarche_MouseDown" />
             <Ellipse
                 Width="30"
                 

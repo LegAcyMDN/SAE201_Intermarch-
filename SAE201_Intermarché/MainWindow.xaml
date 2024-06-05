@@ -37,7 +37,7 @@
                 Height="auto"
                 Margin="5,5,5,5"
                 MouseDown="Image_MouseDown"
-                Source="/img/logo.png"
+                Source="/img/logovNeg.png"
                 Stretch="Fill" />
             <Ellipse
                 Width="30"

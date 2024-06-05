@@ -11,6 +11,8 @@
   <ItemGroup>
     <None Remove="img\icone.jpg" />
     <None Remove="img\logo.png" />
+    <None Remove="img\logoNeg.png" />
+    <None Remove="img\logovNeg.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -22,6 +24,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
     <Resource Include="img\logo.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="img\logovNeg.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
   </ItemGroup>

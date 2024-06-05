@@ -15,6 +15,7 @@
         <Style x:Key="PrincipalBouton" TargetType="Button">
             <Setter Property="Height" Value="30" />
             <Setter Property="Margin" Value="20" />
+            <Setter Property="FontFamily" Value="Arial"/>
             <Setter Property="Background" Value="red"></Setter>
             <Setter Property="VerticalAlignment" Value="Bottom"></Setter>
         </Style>
@@ -22,12 +23,14 @@
             <Setter Property="Height" Value="20" />
             <Setter Property="Width" Value="20" />
             <Setter Property="Margin" Value="0,10,0,5" />
+            <Setter Property="FontFamily" Value="Arial"/>
             <Setter Property="Background" Value="red"></Setter>
             <Setter Property="HorizontalAlignment" Value="Left"></Setter>
         </Style>
         <Style x:Key="titrePrincipal" TargetType="Label">
             <Setter Property="Height" Value="30" />
             <Setter Property="Width" Value="auto" />
+            <Setter Property="FontFamily" Value="Arial"/>
             <Setter Property="Background" Value="orange"></Setter>
             <Setter Property="HorizontalAlignment" Value="Left"></Setter>
         </Style>
@@ -35,6 +38,7 @@
         <Style x:Key="formulaireLabel" TargetType="Label">
             <Setter Property="Margin" Value="20,5,20,0" />
             <Setter Property="Height" Value="30"></Setter>
+            <Setter Property="FontFamily" Value="Arial"/>
             <Setter Property="Background" Value="Green"></Setter>
 
         </Style>
@@ -46,25 +50,29 @@
         </Style>
         <Style x:Key="formulaireTextbox" TargetType="TextBox">
             <Setter Property="Margin" Value="20,5,20,0" />
+            <Setter Property="FontFamily" Value="Arial"/>
             <Setter Property="Height" Value="30"></Setter>
         </Style>
         <Style x:Key="formulaireDate" TargetType="DatePicker">
             <Setter Property="Margin" Value="20,5,20,0" />
-
+            <Setter Property="FontFamily" Value="Arial"/>
             <Setter Property="Height" Value="30"></Setter>
         </Style>
         <Style x:Key="formulaireLabelReponse" TargetType="Label">
             <Setter Property="Margin" Value="20,5,20,0" />
+            <Setter Property="FontFamily" Value="Arial"/>
             <Setter Property="Height" Value="30"></Setter>
             <Setter Property="Background" Value="White"></Setter>
         </Style>
         <Style x:Key="formulaireCombobox" TargetType="ComboBox">
             <Setter Property="Margin" Value="20,5,20,0" />
+            <Setter Property="FontFamily" Value="Arial"/>
             <Setter Property="Height" Value="20"></Setter>
         </Style>
         <!--filtre-->
         <Style x:Key="filtreLabel" TargetType="Label">
             <Setter Property="Margin" Value="10,5,20,0" />
+            <Setter Property="FontFamily" Value="Arial"/>
             <Setter Property="FontSize" Value="15"></Setter>
         </Style>
     </Application.Resources>
