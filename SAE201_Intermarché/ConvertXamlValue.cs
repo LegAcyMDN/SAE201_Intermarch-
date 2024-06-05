@@ -20,7 +20,7 @@ namespace SAE201_Intermarche
         {
 
             double width = (double)value;
-            Console.WriteLine("value : "+value + "\nwidth : "+ width);
+         //   Console.WriteLine("value : "+value + "\nwidth : "+ width);
             return width <= Min;
         }
 
