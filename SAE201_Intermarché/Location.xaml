@@ -3,7 +3,7 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-    xmlns:local="clr-namespace:SAE201_Intermarché"
+        xmlns:local="clr-namespace:SAE201_Intermarche.model"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     Title="Location"
     Width="1200"
@@ -13,6 +13,9 @@
     mc:Ignorable="d"
     MinWidth="800"
      WindowState="Maximized" Closing="windowLocation_Closing">
+    <Window.DataContext>
+        <local:ApplicationData x:Name="data"/>
+    </Window.DataContext>
     <Grid>
 
         <Grid.RowDefinitions>
@@ -147,7 +150,9 @@
                 FontSize="15">
                 Type véhicule
             </Label>
-            <ComboBox Style="{StaticResource formulaireCombobox}" />
+            <ComboBox Style="{StaticResource formulaireCombobox}" 
+                      ItemsSource="{Binding ListeTypeVehicule}"
+                      />
             <Label
                 Margin="10,10,10,5"
                 Padding="3"

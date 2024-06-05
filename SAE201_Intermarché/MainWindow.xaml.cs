@@ -78,7 +78,9 @@ namespace SAE201_Intermarche
             return instance;
         }
 
-
-
+        private void calPlanningReservation_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+           // calPlanningReservation.SelectedDate
+        }
     }
 }

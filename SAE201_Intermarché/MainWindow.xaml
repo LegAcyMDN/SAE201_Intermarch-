@@ -168,7 +168,9 @@
                 Style="{StaticResource filtreLabel}">
                 Type véhicule
             </Label>
-            <ComboBox Style="{StaticResource formulaireCombobox}" />
+            <ComboBox Style="{StaticResource formulaireCombobox}" 
+                      ItemsSource="{Binding ListeTypeVehicule}"
+                      />
             <Label
                 Style="{StaticResource filtreLabel}">
                 Date emprunt
@@ -200,7 +202,7 @@
                 </Grid.ColumnDefinitions>
                 <StackPanel Grid.Column="0">
                     <Label Style="{StaticResource titrePrincipal}" Content="Planning des réservations"/>
-                    <Calendar VerticalAlignment="Center" Margin="20,50,20,20"/>
+                    <Calendar x:Name="calPlanningReservation" VerticalAlignment="Center" Margin="20,50,20,20" MouseDown="calPlanningReservation_MouseDown"/>
                 </StackPanel>
                 <StackPanel Grid.Column="1">
                     <DataGrid
