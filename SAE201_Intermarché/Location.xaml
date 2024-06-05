@@ -6,13 +6,10 @@
         xmlns:local="clr-namespace:SAE201_Intermarche.model"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     Title="Location"
-    Width="1200"
-    Height="700"
-    ResizeMode="CanResize"
+        Style="{StaticResource page}"
     WindowStartupLocation="CenterScreen"
     mc:Ignorable="d"
-    MinWidth="800"
-     WindowState="Maximized" Closing="windowLocation_Closing">
+     Closing="windowLocation_Closing">
     <Window.DataContext>
         <local:ApplicationData x:Name="data"/>
     </Window.DataContext>
@@ -82,6 +79,7 @@
                     <Label Style="{StaticResource formulaireLabel}">Date retour</Label>
                     <Label Style="{StaticResource formulaireLabel}" >Date emprunt</Label>
                     <TextBox Style="{StaticResource formulaireTextbox}" Text="Prix" Margin="20"/>
+                    <Button Content="Confirmer la location"  Style="{StaticResource PrincipalBouton}" />
                 </StackPanel>
 
                 <StackPanel HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="1">
@@ -96,11 +94,11 @@
                     <DatePicker Style="{StaticResource formulaireDate}"></DatePicker>
                     <DatePicker Style="{StaticResource formulaireDate}"></DatePicker>
                     <DataGrid Margin="0,5,20,0" Height="117">Liste des véhicules choisis</DataGrid>
-                    <Button Content="Confirmer la location"  Style="{StaticResource PrincipalBouton}" />
+
                 </StackPanel>
             </Grid>
         </StackPanel>
-       
+
         <StackPanel
             Grid.Row="1"
             Grid.RowSpan="2"
@@ -117,8 +115,8 @@
         </StackPanel>
         <StackPanel
             Grid.Row="1"
-            Grid.RowSpan="1"
-            Style="{StaticResource Principalstackpanel}">
+            Grid.RowSpan="2"
+            Style="{StaticResource Principalstackpanel}" >
             <Label
                 Style="{StaticResource titrePrincipal}">
                 Filtre
@@ -147,9 +145,8 @@
             </Label>
             <DatePicker Style="{StaticResource formulaireDate}" />
             <Button
-                Width="50"
-                Height="30"
-                Margin="10,20,10,5"
+                Style="{StaticResource PlusBouton}"
+                Margin="10"
                 HorizontalAlignment="Right">
                 ok
             </Button>
