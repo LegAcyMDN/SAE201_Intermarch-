@@ -90,7 +90,7 @@
                 x:Name="resa"
                Style="{StaticResource PrincipalBouton}"
                 Click="resa_Click"
-                Content="Continuer la réservation" />
+                Content="Continuer" />
                 </StackPanel>
             </Grid>
 
@@ -126,7 +126,7 @@
                         x:Name="retourWin"
                         Style="{StaticResource PrincipalBouton}"
                         Click="retourWin_Click"
-                        Content="Ajouter un client" />
+                        Content="Ajouter" />
                 </StackPanel>
             </Grid>
 
@@ -151,7 +151,7 @@
 
             <Button x:Name="butRechercherClient"
             Style="{StaticResource PrincipalBouton}"
-            Content="Rechercher le client" Click="butRechercherClient_Click" />
+            Content="Rechercher" Click="butRechercherClient_Click" />
         </StackPanel>
         <StackPanel  Grid.Row="2"
  Grid.Column="2"
@@ -181,7 +181,7 @@
              x:Name="location"
              Style="{StaticResource PrincipalBouton}"
             Click="resume_Click"
-             Content="Rechercher la location" />
+             Content="Rechercher" />
 
 
         </StackPanel>
