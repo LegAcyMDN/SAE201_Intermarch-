@@ -21,7 +21,6 @@ namespace SAE201_Intermarche.model
         private double prixLocation;
         private bool climatisation;
         private string lienPhotoURL;
-        public static List<CategorieVehicule> lesCategories = new List<CategorieVehicule>();
         readonly Regex regexImmatriculation = new Regex("^[A-Z]{2}[0-9]{3}[A-Z]{2}$");
 
         public string Immatriculation
