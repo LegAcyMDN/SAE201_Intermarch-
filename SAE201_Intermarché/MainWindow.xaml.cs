@@ -27,6 +27,7 @@ namespace SAE201_Intermarche
             if (data.ClientComboBoxItems.Count > 0)
             {
                 cbRechercheClientLocation.SelectedItem = data.ClientComboBoxItems[0];
+                cbRechercheClient.SelectedItem = data.ClientComboBoxItems[0];
             }
 
             Connexion connexion = new Connexion();
