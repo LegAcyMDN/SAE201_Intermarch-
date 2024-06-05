@@ -42,5 +42,10 @@ namespace SAE201_Intermarche
                 Application.Current.Shutdown();
             }
         }
+
+        private void confirmLocation_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
