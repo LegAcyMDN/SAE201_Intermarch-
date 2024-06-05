@@ -110,7 +110,7 @@ namespace SAE201_Intermarche.model
         {
             ObservableCollection<EntiteVehicule> lesVehicules = new ObservableCollection<EntiteVehicule>();
             DataAccess accesBD = new DataAccess();
-            String res = $"";
+            String res = $"select immatriculation from vehicule where immatriculation = '{Immatriculation}';";
             DataTable dataTable = accesBD.GetData(res);
             if (dataTable != null)
             {

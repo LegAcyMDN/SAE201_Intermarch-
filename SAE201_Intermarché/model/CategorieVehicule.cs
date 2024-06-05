@@ -74,7 +74,7 @@ namespace SAE201_Intermarche.model
         {
             ObservableCollection<CategorieVehicule> lesCategories = new ObservableCollection<CategorieVehicule>();
             DataAccess accesBD = new DataAccess();
-            String res = $"";
+            String res = $"select nom_categorie from categorie_vehicule where nom_categorie = '{NomCategorie}';";
             DataTable dataTable = accesBD.GetData(res);
             if (dataTable != null)
             {
