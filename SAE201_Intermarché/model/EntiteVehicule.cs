@@ -22,6 +22,7 @@ namespace SAE201_Intermarche.model
         private bool climatisation;
         private string lienPhotoURL;
         readonly Regex regexImmatriculation = new Regex("^[A-Z]{2}[0-9]{3}[A-Z]{2}$");
+        public static List<string> listeTypeVehicule = new List<string>();
 
         public string Immatriculation
         {
@@ -49,6 +50,8 @@ namespace SAE201_Intermarche.model
             get { return lesVehicules; }
             set { lesVehicules = value; }
         }
+
+        public static List<string> ListeTypeVehicule { get => listeTypeVehicule; set => listeTypeVehicule = value; }
 
         public EntiteVehicule() { }
 
