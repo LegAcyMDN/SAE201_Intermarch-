@@ -57,7 +57,7 @@
         <StackPanel
             Grid.Row="1"
             Grid.Column="0"
-            Style="{StaticResource Principalstackpanel}" Margin="10,10,10,10">
+            Style="{StaticResource Principalstackpanel}" >
 
             <Label
                Style="{StaticResource titrePrincipal}">
@@ -105,7 +105,7 @@
         <StackPanel
             Grid.Row="1"
             Grid.Column="1"
-            Style="{StaticResource Principalstackpanel}" Margin="10,10,10,10">
+            Style="{StaticResource Principalstackpanel}">
             <Label
                Style="{StaticResource titrePrincipal}">
                 Ajouter un client
@@ -141,15 +141,13 @@
         <StackPanel
             Grid.Row="1"
             Grid.Column="2"
-            Style="{StaticResource Principalstackpanel}" Margin="10,10,10,10">
+            Style="{StaticResource Principalstackpanel}">
             <Label
                Style="{StaticResource titrePrincipal}">
                 Rechercher un client
             </Label>
-            <Label Style="{StaticResource filtreLabel}" >Nom</Label>
-            <TextBox Style="{StaticResource formulaireTextbox}" Text=" Nom"/>
-            <Label Style="{StaticResource filtreLabel}">Prénom</Label>
-            <TextBox Style="{StaticResource formulaireTextbox}" Text=" Prénom" />
+            <Label Style="{StaticResource filtreLabel}" >Nom et prénom</Label>
+            <ComboBox Style="{StaticResource formulaireCombobox}" Text=" Prénom" />
             <Label Style="{StaticResource filtreLabel}" >Date de naissance</Label>
             <DatePicker Style="{StaticResource formulaireDate}"></DatePicker>
 
@@ -159,7 +157,7 @@
         </StackPanel>
         <StackPanel  Grid.Row="2"
  Grid.Column="2"
- Style="{StaticResource Principalstackpanel}" Margin="10,10,10,10">
+ Style="{StaticResource Principalstackpanel}">
             <Label
                Style="{StaticResource titrePrincipal}">
                 Rechercher une location
@@ -194,7 +192,7 @@
             Grid.Row="2"
             Grid.ColumnSpan="2"
             Orientation="Horizontal"
-            Style="{StaticResource Principalstackpanel}" Margin="10,10,10,10">
+            Style="{StaticResource Principalstackpanel}">
             <Grid Width="auto">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="1*" />
