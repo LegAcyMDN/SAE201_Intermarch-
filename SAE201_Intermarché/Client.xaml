@@ -50,19 +50,19 @@
                 <StackPanel  Grid.Row="1" Grid.RowSpan="2" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Orientation="Vertical" Margin="0,110,10,20">
                     <Label Style="{StaticResource formulaireLabelReponse}" Content="Date création"/>
                     <Label Style="{StaticResource formulaireLabelReponse}" >Numero client</Label>
-                    <TextBox Style="{StaticResource formulaireTextbox}" Text=" Nom" />
-                    <DatePicker Style="{StaticResource formulaireDate}"></DatePicker>
-                    <TextBox Style="{StaticResource formulaireTextbox}" Text=" Téléphone" />
-                    <TextBox Style="{StaticResource formulaireTextbox}" Text=" Email" />
-                    <TextBox  Style="{StaticResource formulaireTextbox}" Text="Adresse" />
-                    <TextBox Style="{StaticResource formulaireTextbox}" Text=" Code postal"  />
-                    <TextBox Style="{StaticResource formulaireTextbox}" Text=" Ville"/>
+                    <TextBox x:Name="tbNom" Style="{StaticResource formulaireTextbox}" Text=" Nom" />
+                    <DatePicker x:Name="dpNaissance" Style="{StaticResource formulaireDate}"></DatePicker>
+                    <TextBox x:Name="tbTelephone" Style="{StaticResource formulaireTextbox}" Text=" Téléphone" />
+                    <TextBox x:Name="tbEmail" Style="{StaticResource formulaireTextbox}" Text=" Email" />
+                    <TextBox x:Name="tbAdresse"  Style="{StaticResource formulaireTextbox}" Text="Adresse" />
+                    <TextBox x:Name="tbCp" Style="{StaticResource formulaireTextbox}" Text=" Code postal"  />
+                    <TextBox x:Name="tbVille" Style="{StaticResource formulaireTextbox}" Text=" Ville"/>
                 </StackPanel>
 
             </Grid>
             <StackPanel Orientation="Horizontal" Margin="20,0,20,20" HorizontalAlignment="Center">
-                <RadioButton Content="Particulier"/>
-                <RadioButton Content="Entreprise"
+                <RadioButton x:Name="rbParticulier" Content="Particulier"/>
+                <RadioButton x:Name="rbEntreprise" Content="Entreprise"
                      Margin="100,0,0,0"/>
             </StackPanel>
         </StackPanel>
@@ -102,8 +102,8 @@
 
         </StackPanel>
         <StackPanel Grid.Row="1" Grid.Column="3" >
-            <Button  Style="{StaticResource PrincipalBouton}" >Enregistrer le client</Button>
-            <Button  Style="{StaticResource PrincipalBouton}" Visibility="Hidden" Margin="20,-10,20,0">Supprimer le client</Button>
+            <Button x:Name="butEnregistrerModifier"  Style="{StaticResource PrincipalBouton}" >Enregistrer le client</Button>
+            <Button x:Name="butSupprimer"  Style="{StaticResource PrincipalBouton}" Visibility="Hidden" Margin="20,-10,20,0">Supprimer le client</Button>
         </StackPanel>
         <StackPanel Grid.Row="2" Grid.Column="3" Style="{StaticResource Principalstackpanel}">
 

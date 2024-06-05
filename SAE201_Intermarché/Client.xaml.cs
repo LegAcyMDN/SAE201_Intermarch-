@@ -31,6 +31,34 @@ namespace SAE201_Intermarche
         {
             naturalClosing = true;
             InitializeComponent();
+            if (MainWindow.modeClientCreer)
+            {
+                butEnregistrerModifier.Content = "Enregistrer le client";
+                butSupprimer.Visibility = Visibility.Hidden;
+                tbNom.IsEnabled = true;
+                dpNaissance.IsEnabled = true;
+                tbTelephone.IsEnabled = true;
+                tbEmail.IsEnabled = true;
+                tbAdresse.IsEnabled = true;
+                tbCp.IsEnabled = true;
+                tbVille.IsEnabled = true;
+                rbParticulier.IsEnabled = true;
+                rbEntreprise.IsEnabled = true;
+            } else
+            {
+                butEnregistrerModifier.Content = "Modifier le client";
+                butSupprimer.Visibility = Visibility.Visible;
+                tbNom.IsEnabled = false;
+                dpNaissance.IsEnabled = false;
+                tbTelephone.IsEnabled = false;
+                tbEmail.IsEnabled = false;
+                tbAdresse.IsEnabled = false;
+                tbCp.IsEnabled = false;
+                tbVille.IsEnabled = false;
+                rbParticulier.IsEnabled = false;
+                rbEntreprise.IsEnabled = false;
+            }
+
         }
 
 

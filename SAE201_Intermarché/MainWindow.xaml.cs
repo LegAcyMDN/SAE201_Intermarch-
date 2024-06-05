@@ -21,6 +21,7 @@ namespace SAE201_Intermarche
     {
         //public static ApplicationData appData = new ApplicationData();
         public static MainWindow instance;
+        public static bool modeClientCreer;
         public MainWindow()
         {
             InitializeComponent();
@@ -54,6 +55,7 @@ namespace SAE201_Intermarche
 
         private void retourWin_Click(object sender, RoutedEventArgs e)
         {
+            modeClientCreer = true;
             Client client = new Client();
             client.Show();
             this.Hide();
@@ -96,6 +98,14 @@ namespace SAE201_Intermarche
             {
                 cbRechercheClient.SelectedIndex = num - 1;
             }
+        }
+
+        private void butRechercherClient_Click(object sender, RoutedEventArgs e)
+        {
+            modeClientCreer = false;
+            Client client = new Client();
+            client.Show();
+            this.Hide();
         }
     }
 }
