@@ -147,10 +147,9 @@
                 Rechercher un client
             </Label>
             <Label Style="{StaticResource filtreLabel}" >Nom et prénom</Label>
-            <ComboBox x:Name="cbRechercheClient" Style="{StaticResource formulaireCombobox}"
-                                                      ItemsSource="{Binding ClientComboBoxItems}"
-                                Text="" SelectionChanged="ComboBox_SelectionChanged"
-                      />
+            <ComboBox Style="{StaticResource formulaireCombobox}" Text=" Prénom" />
+            <Label Style="{StaticResource filtreLabel}" >Numéro client</Label>
+            <TextBox Style="{StaticResource formulaireTextbox}"> </TextBox>
             <Label Style="{StaticResource filtreLabel}" >Date de naissance</Label>
             <DatePicker Style="{StaticResource formulaireDate}"></DatePicker>
 

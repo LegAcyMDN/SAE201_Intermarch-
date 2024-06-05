@@ -36,6 +36,7 @@
                 <StackPanel Margin="20" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Orientation="Vertical" Grid.Row="1" Grid.RowSpan="2" Grid.Column="0">
                     <Image Height="70" Width="70" Source="/img/icone.jpg" HorizontalAlignment="Left" Margin="20,0,0,20"></Image>
                     <Label Style="{StaticResource formulaireLabel}" >Date création</Label>
+                    <Label Style="{StaticResource formulaireLabel}" >Numero client</Label>
                     <Label Style="{StaticResource formulaireLabel}" >Nom</Label>
                     <Label Style="{StaticResource formulaireLabel}">Prénom</Label>
                     <Label Style="{StaticResource formulaireLabel}">Date de naissance</Label>
@@ -47,6 +48,7 @@
                 </StackPanel>
                 <StackPanel  Grid.Row="1" Grid.RowSpan="2" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Orientation="Vertical" Margin="0,110,10,20">
                     <Label Style="{StaticResource formulaireLabelReponse}" Content="Date création"/>
+                    <Label Style="{StaticResource formulaireLabelReponse}" >Numero client</Label>
                     <TextBox Style="{StaticResource formulaireTextbox}" Text=" Nom" />
                     <TextBox Style="{StaticResource formulaireTextbox}" Text=" Prénom" />
                     <DatePicker Style="{StaticResource formulaireDate}"></DatePicker>
