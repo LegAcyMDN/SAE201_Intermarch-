@@ -36,7 +36,6 @@ namespace SAE201_Intermarche
                 butEnregistrerModifier.Content = "Enregistrer le client";
                 butSupprimer.Visibility = Visibility.Hidden;
                 tbNom.IsEnabled = true;
-                dpNaissance.IsEnabled = true;
                 tbTelephone.IsEnabled = true;
                 tbEmail.IsEnabled = true;
                 tbAdresse.IsEnabled = true;
@@ -49,7 +48,6 @@ namespace SAE201_Intermarche
                 butEnregistrerModifier.Content = "Modifier le client";
                 butSupprimer.Visibility = Visibility.Visible;
                 tbNom.IsEnabled = false;
-                dpNaissance.IsEnabled = false;
                 tbTelephone.IsEnabled = false;
                 tbEmail.IsEnabled = false;
                 tbAdresse.IsEnabled = false;
