@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -39,6 +40,14 @@ namespace SAE201_Intermarche.model
 			get { return mdp; }
 			set { mdp = value; }
 		}
+
+        private ObservableCollection<EntiteMagasin> lesMagasins = new ObservableCollection<EntiteMagasin>();
+
+        public ObservableCollection<EntiteMagasin> LesMagasins
+        {
+            get { return lesMagasins; }
+            set { lesMagasins = value; }
+        }
 
         public EntiteEmploye(int numEmploye, int numMagasin, string login, string mdp)
         {

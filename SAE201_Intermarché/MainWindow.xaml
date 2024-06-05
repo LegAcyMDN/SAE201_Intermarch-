@@ -149,9 +149,9 @@
             <Label Style="{StaticResource filtreLabel}" >Date de naissance</Label>
             <DatePicker Style="{StaticResource formulaireDate}"></DatePicker>
 
-            <Button
+            <Button x:Name="butRechercherClient"
             Style="{StaticResource PrincipalBouton}"
-            Content="Rechercher le client" />
+            Content="Rechercher le client" Click="butRechercherClient_Click" />
         </StackPanel>
         <StackPanel  Grid.Row="2"
  Grid.Column="2"
