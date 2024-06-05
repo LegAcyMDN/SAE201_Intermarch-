@@ -1,13 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace SAE201_Intermarche.model
 {
-    internal class DetailCaracteristique
+    internal class DetailCaracteristique //: ICrud<DetailCaracteristique>
     {
 		private string immatriculation;
 
@@ -41,6 +42,15 @@ namespace SAE201_Intermarche.model
 			set { lesCaracteristiques = value; }
 		}
 
+        private ObservableCollection<EntiteMagasin> lesVehicules = new ObservableCollection<EntiteMagasin>();
+
+        public ObservableCollection<EntiteMagasin> LesVehicules
+        {
+            get { return lesVehicules; }
+            set { lesVehicules = value; }
+        }
+
+        public DetailCaracteristique() { }
 
 		public DetailCaracteristique(string immatriculation, int numCaracteristique, string valeurCaracteristique)
         {
@@ -48,5 +58,7 @@ namespace SAE201_Intermarche.model
             NumCaracteristique = numCaracteristique;
             ValeurCaracteristique = valeurCaracteristique;
         }
+
+        
     }
 }

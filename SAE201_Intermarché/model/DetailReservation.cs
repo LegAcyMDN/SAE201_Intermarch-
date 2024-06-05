@@ -33,6 +33,14 @@ namespace SAE201_Intermarche.model
 			set { lesReservations = value; }
 		}
 
+        private ObservableCollection<EntiteMagasin> lesVehicules = new ObservableCollection<EntiteMagasin>();
+
+        public ObservableCollection<EntiteMagasin> LesVehicules
+        {
+            get { return lesVehicules; }
+            set { lesVehicules = value; }
+        }
+
         public DetailReservation(string immatriculation, int numReservation)
         {
             Immatriculation = immatriculation;

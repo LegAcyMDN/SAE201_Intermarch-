@@ -1,5 +1,7 @@
-﻿using System;
+﻿using SAE201_Intermarche.model;
+using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -48,6 +50,22 @@ namespace SAE201_Intermarche
 
 
         public string Mail { get => mail; set => mail = value; }
+
+        private ObservableCollection<EntiteReservation> lesReservations = new ObservableCollection<EntiteReservation>();
+
+        public ObservableCollection<EntiteReservation> LesReservations
+        {
+            get { return lesReservations; }
+            set { lesReservations = value; }
+        }
+
+        private ObservableCollection<EntiteClient> lesClients = new ObservableCollection<EntiteClient>();
+
+        public ObservableCollection<EntiteClient> LesClients
+        {
+            get { return lesClients; }
+            set { lesClients = value; }
+        }
 
         public EntiteClient(int num, string nom, string rue, string cp, string ville, string telephone, string mail)
         {

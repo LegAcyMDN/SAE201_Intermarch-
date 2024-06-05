@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -55,6 +56,14 @@ namespace SAE201_Intermarche.model
 			get { return horaireMagasin; }
 			set { horaireMagasin = value; }
 		}
+
+        private ObservableCollection<EntiteMagasin> lesVehicules = new ObservableCollection<EntiteMagasin>();
+
+        public ObservableCollection<EntiteMagasin> LesVehicules
+        {
+            get { return lesVehicules; }
+            set { lesVehicules = value; }
+        }
 
         public EntiteMagasin(int numMagasin, string nomMagasin, string adresseRueMagasin, string adresseCPMagasin, string adresseVilleMagasin, string horaireMagasin)
         {

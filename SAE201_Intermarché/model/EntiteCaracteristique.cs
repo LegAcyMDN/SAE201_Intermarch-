@@ -25,9 +25,9 @@ namespace SAE201_Intermarche.model
 			set { nomCaracteristique = value; }
 		}
 
-		private ObservableCollection<EntiteVehicule> lesVehicules = new ObservableCollection<EntiteVehicule>();
+		private ObservableCollection<EntiteMagasin> lesVehicules = new ObservableCollection<EntiteMagasin>();
 
-		public ObservableCollection<EntiteVehicule> LesVehicules
+		public ObservableCollection<EntiteMagasin> LesVehicules
 		{
 			get { return lesVehicules; }
 			set { lesVehicules = value; }
