@@ -23,7 +23,7 @@
             <Setter Property="Margin" Value="20" />
             <Setter Property="Foreground" Value="#ffff"></Setter>
             <Setter Property="FontFamily" Value="Arial"/>
-            <Setter Property="Background" Value="#ba2235"></Setter>
+            <Setter Property="Background" Value="#ff2d16"></Setter>
             <Setter Property="VerticalAlignment" Value="Bottom"></Setter>
         </Style>
         <Style x:Key="PlusBouton" TargetType="Button">

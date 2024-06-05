@@ -120,24 +120,7 @@
         </StackPanel>
         <StackPanel Grid.Row="3" Grid.Column="2" Grid.ColumnSpan="2" Style="{StaticResource Principalstackpanel}" >
             <Label Style="{StaticResource titrePrincipal}" >Historique des réservations</Label>
-            <StackPanel Background="White" Height="30" Orientation="Horizontal">
-                <Label Margin="0,0,40,0">Numéro de réservation</Label>
-                <Label  Margin="0,0,40,0">Immatriculation</Label>
-                <Label  Margin="0,0,40,0">Date de début</Label>
-                <Label  Margin="0,0,40,0">Date de fin</Label>
-                <Label  Margin="0,0,40,0" Content="prix"/>
-            </StackPanel>
-            <Rectangle Height="30" Fill="Gray"></Rectangle>
-            <Rectangle Height="30" Fill="DarkGray"></Rectangle>
-            <Rectangle Height="30" Fill="Gray"></Rectangle>
-            <Rectangle Height="30" Fill="DarkGray"></Rectangle>
-            <Rectangle Height="30" Fill="Gray"></Rectangle>
-            <Rectangle Height="30" Fill="DarkGray"></Rectangle>
-            <Rectangle Height="30" Fill="Gray"></Rectangle>
-            <Rectangle Height="30" Fill="DarkGray"></Rectangle>
-            <Rectangle Height="30" Fill="Gray"></Rectangle>
-            <Rectangle Height="30" Fill="DarkGray"></Rectangle>
-            <Rectangle Height="30" Fill="Gray"></Rectangle>
+            <DataGrid></DataGrid>
         </StackPanel>
 
     </Grid>

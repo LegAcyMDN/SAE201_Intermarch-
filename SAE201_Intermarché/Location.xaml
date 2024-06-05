@@ -111,24 +111,8 @@
                 Style="{StaticResource titrePrincipal}">
                 Liste véhicules
             </Label>
-            
-            <Label Height="30" Background="DarkGray" />
-                        <Label Height="30" Background="Gray" />
-                        <Label Height="30" Background="DarkGray" />
-                        <Label Height="30" Background="Gray" />
-                        <Label Height="30" Background="DarkGray" />
-                        <Label Height="30" Background="Gray" />
-                        <Label Height="30" Background="DarkGray" />
-                        <Label Height="30" Background="Gray" />
-                        <Label Height="30" Background="DarkGray" />
-                        <Label Height="30" Background="Gray" />
-                        <Label Height="30" Background="DarkGray" />
-                        <Label Height="30" Background="Gray"/>
-                        <Label Height="30" Background="DarkGray" />
-                        <Label Height="30" Background="Gray" />
-                        <Label Height="30" Background="DarkGray" />
-                        <Label Height="30" Background="Gray" />
-            <Label Height="30" Background="DarkGray" />
+
+            <DataGrid></DataGrid>
 
         </StackPanel>
         <StackPanel
