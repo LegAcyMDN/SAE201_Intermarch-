@@ -27,17 +27,14 @@
             <ColumnDefinition Width="450*" />
             <ColumnDefinition Width="301*" />
         </Grid.ColumnDefinitions>
-        <StackPanel
-            Grid.Row="0"
-            Grid.ColumnSpan="3"
-            Background="Gray"
-            Orientation="Horizontal">
+        <StackPanel  x:Name="hautPage"
+            Style="{StaticResource hautdepage}">
             <Image
                 Width="auto"
                 Height="auto"
                 Margin="5,5,5,5"
                 MouseDown="Image_MouseDown"
-                Source="/img/logo.png"
+                Source="/img/logovNeg.png"
                 Stretch="Fill" />
             <Ellipse
                 Width="30"
@@ -57,7 +54,7 @@
         <StackPanel
             Grid.Row="1"
             Grid.Column="0"
-            Style="{StaticResource Principalstackpanel}" Margin="10,10,10,10">
+            Style="{StaticResource Principalstackpanel}" >
 
             <Label
                Style="{StaticResource titrePrincipal}">
@@ -84,7 +81,7 @@
                 </StackPanel>
                 <StackPanel Grid.Column="1">
                     <ComboBox x:Name="cbRechercheClientLocation"
-                                ItemsSource="{Binding ClientComboBoxItems}"
+                                ItemsSource="{Binding ClientEtIdComboBoxItems}"
                                 Text="" SelectionChanged="ComboBox_SelectionChanged"
                               Style="{StaticResource formulaireCombobox}"
                     />
@@ -105,7 +102,7 @@
         <StackPanel
             Grid.Row="1"
             Grid.Column="1"
-            Style="{StaticResource Principalstackpanel}" Margin="10,10,10,10">
+            Style="{StaticResource Principalstackpanel}">
             <Label
                Style="{StaticResource titrePrincipal}">
                 Ajouter un client
@@ -141,15 +138,17 @@
         <StackPanel
             Grid.Row="1"
             Grid.Column="2"
-            Style="{StaticResource Principalstackpanel}" Margin="10,10,10,10">
+            Style="{StaticResource Principalstackpanel}">
             <Label
                Style="{StaticResource titrePrincipal}">
                 Rechercher un client
             </Label>
-            <Label Style="{StaticResource filtreLabel}" >Nom</Label>
-            <TextBox Style="{StaticResource formulaireTextbox}" Text=" Nom"/>
-            <Label Style="{StaticResource filtreLabel}">Prénom</Label>
-            <TextBox Style="{StaticResource formulaireTextbox}" Text=" Prénom" />
+            <Label Style="{StaticResource filtreLabel}" >Nom et prénom</Label>
+            <ComboBox x:Name="cbRechercheClient" Style="{StaticResource formulaireCombobox}" Text="" 
+                      ItemsSource="{Binding ClientComboBoxItems}" SelectionChanged="cbRechercheClient_SelectionChanged"
+                      />
+            <Label Style="{StaticResource filtreLabel}" >Numéro client</Label>
+            <TextBox x:Name="tbNumClient" Style="{StaticResource formulaireTextbox}" TextChanged="tbNumClient_TextChanged"/>
             <Label Style="{StaticResource filtreLabel}" >Date de naissance</Label>
             <DatePicker Style="{StaticResource formulaireDate}"></DatePicker>
 
@@ -159,7 +158,7 @@
         </StackPanel>
         <StackPanel  Grid.Row="2"
  Grid.Column="2"
- Style="{StaticResource Principalstackpanel}" Margin="10,10,10,10">
+ Style="{StaticResource Principalstackpanel}">
             <Label
                Style="{StaticResource titrePrincipal}">
                 Rechercher une location
@@ -168,7 +167,9 @@
                 Style="{StaticResource filtreLabel}">
                 Type véhicule
             </Label>
-            <ComboBox Style="{StaticResource formulaireCombobox}" />
+            <ComboBox Style="{StaticResource formulaireCombobox}" 
+                      ItemsSource="{Binding ListeTypeVehicule}"
+                      />
             <Label
                 Style="{StaticResource filtreLabel}">
                 Date emprunt
@@ -192,7 +193,7 @@
             Grid.Row="2"
             Grid.ColumnSpan="2"
             Orientation="Horizontal"
-            Style="{StaticResource Principalstackpanel}" Margin="10,10,10,10">
+            Style="{StaticResource Principalstackpanel}">
             <Grid Width="auto">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="1*" />
@@ -200,7 +201,7 @@
                 </Grid.ColumnDefinitions>
                 <StackPanel Grid.Column="0">
                     <Label Style="{StaticResource titrePrincipal}" Content="Planning des réservations"/>
-                    <Calendar VerticalAlignment="Center" Margin="20,50,20,20"/>
+                    <Calendar x:Name="calPlanningReservation" VerticalAlignment="Center" Margin="20,50,20,20" MouseDown="calPlanningReservation_MouseDown"/>
                 </StackPanel>
                 <StackPanel Grid.Column="1">
                     <DataGrid

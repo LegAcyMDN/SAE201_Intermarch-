@@ -3,7 +3,7 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-    xmlns:local="clr-namespace:SAE201_Intermarché"
+        xmlns:local="clr-namespace:SAE201_Intermarche.model"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     Title="Location"
     Width="1200"
@@ -13,12 +13,15 @@
     mc:Ignorable="d"
     MinWidth="800"
      WindowState="Maximized" Closing="windowLocation_Closing">
+    <Window.DataContext>
+        <local:ApplicationData x:Name="data"/>
+    </Window.DataContext>
     <Grid>
 
         <Grid.RowDefinitions>
-            <RowDefinition Height="96*" />
-            <RowDefinition Height="383*" />
-            <RowDefinition Height="205*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="4*" />
+            <RowDefinition Height="4*" />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="40*" />
@@ -30,16 +33,13 @@
         <StackPanel
            
             x:Name="hautPage"
-            Grid.Row="0"
-            Grid.ColumnSpan="4"
-            Background="Gray"
-            Orientation="Horizontal">
+            Style="{StaticResource hautdepage}">
             <Image x:Name="imageIntermarche"
                 Width="auto"
                 Height="auto"
                 Margin="5,5,5,5"
-                Source="/img/logo.png"
-                Stretch="Fill" MouseDown="imageIntermarche_MouseDown" />
+                Source="/img/logovNeg.png" 
+                   MouseDown="imageIntermarche_MouseDown" />
             <Ellipse
                 Width="30"
                 
@@ -71,8 +71,8 @@
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
                 <StackPanel  HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  Grid.Column="0">
+                    <Label Style="{StaticResource formulaireLabel}">Numéro du client</Label>
                     <Label Style="{StaticResource formulaireLabel}" >Nom</Label>
-                    <Label Style="{StaticResource formulaireLabel}">Prénom</Label>
                     <Label  Style="{StaticResource formulaireLabel}" >Date de naissance</Label>
                     <Label Style="{StaticResource formulaireLabel}">Email</Label>
                     <Label Style="{StaticResource formulaireLabel}" >Téléphone</Label>
@@ -85,8 +85,8 @@
                 </StackPanel>
 
                 <StackPanel HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="1">
-                    <TextBox Style="{StaticResource formulaireTextbox}" Text=" Nom"  />
-                    <TextBox Style="{StaticResource formulaireTextbox}" Text=" Prénom" />
+                    <TextBox Style="{StaticResource formulaireTextbox}" Text=" Num client"  />
+                    <TextBox Style="{StaticResource formulaireTextbox}" Text=" Nom" />
                     <DatePicker Style="{StaticResource formulaireDate}"></DatePicker>
                     <TextBox Style="{StaticResource formulaireTextbox}" Text=" Email" />
                     <TextBox Style="{StaticResource formulaireTextbox}" Text="Téléphone"/>
@@ -105,37 +105,19 @@
             Grid.Row="1"
             Grid.RowSpan="2"
             Grid.Column="1"
-            Margin="20,20,20,20"
             Style="{StaticResource Principalstackpanel}"
             >
             <Label
                 Style="{StaticResource titrePrincipal}">
                 Liste véhicules
             </Label>
-            
-            <Label Height="30" Background="DarkGray" />
-                        <Label Height="30" Background="Gray" />
-                        <Label Height="30" Background="DarkGray" />
-                        <Label Height="30" Background="Gray" />
-                        <Label Height="30" Background="DarkGray" />
-                        <Label Height="30" Background="Gray" />
-                        <Label Height="30" Background="DarkGray" />
-                        <Label Height="30" Background="Gray" />
-                        <Label Height="30" Background="DarkGray" />
-                        <Label Height="30" Background="Gray" />
-                        <Label Height="30" Background="DarkGray" />
-                        <Label Height="30" Background="Gray"/>
-                        <Label Height="30" Background="DarkGray" />
-                        <Label Height="30" Background="Gray" />
-                        <Label Height="30" Background="DarkGray" />
-                        <Label Height="30" Background="Gray" />
-            <Label Height="30" Background="DarkGray" />
+
+            <DataGrid d:ItemsSource="{d:SampleData ItemCount=30}"></DataGrid>
 
         </StackPanel>
         <StackPanel
             Grid.Row="1"
             Grid.RowSpan="1"
-            Margin="20,20,20,20"
             Style="{StaticResource Principalstackpanel}">
             <Label
                 Style="{StaticResource titrePrincipal}">
@@ -147,7 +129,9 @@
                 FontSize="15">
                 Type véhicule
             </Label>
-            <ComboBox Style="{StaticResource formulaireCombobox}" />
+            <ComboBox Style="{StaticResource formulaireCombobox}" 
+                      ItemsSource="{Binding ListeTypeVehicule}"
+                      />
             <Label
                 Margin="10,10,10,5"
                 Padding="3"
