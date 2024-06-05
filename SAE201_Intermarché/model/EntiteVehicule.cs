@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Data;
 using System.Text.RegularExpressions;
@@ -13,12 +14,14 @@ namespace SAE201_Intermarche.model
         private string immatriculation;
         private TypeBoite typeBoite;
         private int numMagasin;
+        private string nomCategorie;
         private string nomVehicule;
         private string descriptionVehicule;
         private int nombrePlaces;
         private double prixLocation;
         private bool climatisation;
         private string lienPhotoURL;
+        public static List<CategorieVehicule> lesCategories = new List<CategorieVehicule>();
         readonly Regex regexImmatriculation = new Regex("^[A-Z]{2}[0-9]{3}[A-Z]{2}$");
 
         public string Immatriculation
@@ -31,6 +34,7 @@ namespace SAE201_Intermarche.model
             }
         }
         public int NumMagasin { get => numMagasin; set => numMagasin = value; }
+        public string NomCategorie { get => nomCategorie; set => nomCategorie = value; }
         public string NomVehicule { get => nomVehicule; set => nomVehicule = value; }
         public string DescriptionVehicule { get => descriptionVehicule; set => descriptionVehicule = value; }
         public int NombrePlaces { get => nombrePlaces; set => nombrePlaces = value; }
@@ -47,13 +51,15 @@ namespace SAE201_Intermarche.model
             set { lesVehicules = value; }
         }
 
+        public EntiteVehicule() { }
 
-        public EntiteVehicule(string immatriculation, TypeBoite typeBoite, int numMagasin, string nom, string description, int nombrePlaces, double prixLocation, bool climatisation, string lienPhotoURL)
+        public EntiteVehicule(string immatriculation, TypeBoite typeBoite, int numMagasin, string nomCategorie, string nomVehicule, string description, int nombrePlaces, double prixLocation, bool climatisation, string lienPhotoURL)
         {
             Immatriculation = immatriculation;
             TypeBoite = typeBoite;
             NumMagasin = numMagasin;
-            NomVehicule = nom;
+            NomCategorie = nomCategorie;
+            NomVehicule = nomVehicule;
             DescriptionVehicule = description;
             NombrePlaces = nombrePlaces;
             PrixLocation = prixLocation;
@@ -111,7 +117,7 @@ namespace SAE201_Intermarche.model
                 foreach (DataRow dataRow in dataTable.Rows)
                 {
                     EntiteVehicule unVehicule = new EntiteVehicule((String)dataRow["immatriculation"],
-                        (TypeBoite)dataRow["type_boite"], int.Parse(dataRow["num_magasin"].ToString()), 
+                        (TypeBoite)dataRow["type_boite"], int.Parse(dataRow["num_magasin"].ToString()), (String)dataRow["nom_categorie"], 
                         (String)dataRow["nom_vehicule"], (String)dataRow["description_vehicule"], 
                         int.Parse(dataRow["nombres_places"].ToString()), int.Parse(dataRow["prix_location"].ToString()), 
                         (bool)dataRow["climatisation"], (String)dataRow["lien_photo_url"]);

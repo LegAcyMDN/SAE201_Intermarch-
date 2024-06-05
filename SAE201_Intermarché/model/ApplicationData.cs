@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -13,20 +14,29 @@ namespace SAE201_Intermarche.model
         private ObservableCollection<EntiteClient> lesClients;
         private ObservableCollection<string> clientEtIdComboBoxItems;
         private ObservableCollection<string> clientComboBoxItems;
-        private Array listeTypeVehicule = Enum.GetValues(typeof(CategorieVehicule));
+        private List<CategorieVehicule> listeTypeVehicule;
 
 
         public ObservableCollection<EntiteClient> LesClients
         {
-            get
-            {
-                return lesClients;
-            }
+            get { return lesClients; }
+            set { lesClients = value; }
+        }
 
-            set
-            {
-                lesClients = value;
-            }
+        private ObservableCollection<CategorieVehicule> lesCategories;
+
+        public ObservableCollection<CategorieVehicule> LesCategories
+        {
+            get { return lesCategories; }
+            set { lesCategories = value; }
+        }
+
+        private ObservableCollection<EntiteVehicule> lesVehicules;
+
+        public ObservableCollection<EntiteVehicule> LesVehicules 
+        { 
+            get { return lesVehicules; }
+            set { lesVehicules = value; }
         }
 
         private ObservableCollection<EntiteReservation> lesReservations;
@@ -38,14 +48,24 @@ namespace SAE201_Intermarche.model
         }
 
         public ObservableCollection<string> ClientEtIdComboBoxItems { get => clientEtIdComboBoxItems; set => clientEtIdComboBoxItems = value; }
-        public Array ListeTypeVehicule { get => listeTypeVehicule; set => listeTypeVehicule = value; }
+        public List<CategorieVehicule> ListeTypeVehicule { get => listeTypeVehicule; set => listeTypeVehicule = value; }
         public ObservableCollection<string> ClientComboBoxItems { get => clientComboBoxItems; set => clientComboBoxItems = value; }
 
         public ApplicationData()
         {
             LesClients = new ObservableCollection<EntiteClient>();
+
+            LesCategories = new ObservableCollection<CategorieVehicule>();
+
+            LesVehicules = new ObservableCollection<EntiteVehicule>();
+
             ClientEtIdComboBoxItems = new ObservableCollection<string>();
+
             ClientComboBoxItems = new ObservableCollection<string>();
+
+            ListeTypeVehicule = new List<CategorieVehicule>();
+
+
             Charge();
         }
 
@@ -67,15 +87,33 @@ namespace SAE201_Intermarche.model
 
         public void ChargeBD()
         {
-            
+            LesCategories = new ObservableCollection<CategorieVehicule>();
+            CategorieVehicule categorie = new CategorieVehicule();
+            LesCategories = categorie.FindAll();
+
+            LesVehicules = new ObservableCollection<EntiteVehicule>();
+            EntiteVehicule vehicule = new EntiteVehicule();
+            LesVehicules = vehicule.FindAll();
         }
 
         public void ChargeListes()
         {
-            LesReservations = new ObservableCollection<EntiteReservation>();
-            EntiteReservation entiteReservation = new EntiteReservation();
-            //LesReservations = entiteReservation.
+            ChargeCategorie();
+            //ChargeVehicules();
+        }
 
+        public void ChargeCategorie()
+        {
+            foreach (CategorieVehicule cv in LesCategories)
+            {
+                ObservableCollection<EntiteVehicule> vehicules = new ObservableCollection<EntiteVehicule>();
+                foreach (EntiteVehicule ev in LesVehicules)
+                {
+                    if (cv.NomCategorie == ev.NomCategorie)
+                    { vehicules.Add(ev); }
+                }
+                cv.LesVehicules = vehicules;
+            }
         }
     }
 }
