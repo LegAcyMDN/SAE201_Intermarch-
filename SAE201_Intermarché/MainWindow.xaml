@@ -148,6 +148,8 @@
             </Label>
             <Label Style="{StaticResource filtreLabel}" >Nom et prénom</Label>
             <ComboBox Style="{StaticResource formulaireCombobox}" Text=" Prénom" />
+            <Label Style="{StaticResource filtreLabel}" >Numéro client</Label>
+            <TextBox Style="{StaticResource formulaireTextbox}"> </TextBox>
             <Label Style="{StaticResource filtreLabel}" >Date de naissance</Label>
             <DatePicker Style="{StaticResource formulaireDate}"></DatePicker>
 
