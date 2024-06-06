@@ -10,13 +10,13 @@
     WindowStartupLocation="CenterScreen"
     mc:Ignorable="d">
     <Window.DataContext>
-        <local:ApplicationData x:Name="data"/>
+        <local:ApplicationData x:Name="data" />
     </Window.DataContext>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="19*" />
             <RowDefinition Height="5*" />
-            <RowDefinition Height="71*"/>
+            <RowDefinition Height="71*" />
             <RowDefinition Height="76*" />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
@@ -24,37 +24,46 @@
             <ColumnDefinition Width="450*" />
         </Grid.ColumnDefinitions>
 
-        <StackPanel  x:Name="hautPage"
-     Style="{StaticResource hautdepage}" Grid.ColumnSpan="2">
+        <StackPanel
+            x:Name="hautPage"
+            Grid.ColumnSpan="2"
+            Style="{StaticResource hautdepage}">
             <Image
-         Width="auto"
-         Height="auto"
-         Margin="5,5,5,5"
-         Source="/img/logovNeg.png"
-         Stretch="Fill" />
+                Width="auto"
+                Height="auto"
+                Margin="5,5,5,5"
+                Source="/img/logovNeg.png"
+                Stretch="Fill" />
         </StackPanel>
 
-        <TabControl Grid.Column="0" Grid.ColumnSpan="2" Grid.RowSpan="4" Grid.Row="1" >
+        <TabControl
+            Grid.Row="1"
+            Grid.RowSpan="4"
+            Grid.Column="0"
+            Grid.ColumnSpan="2">
 
-            <!--location -->
+            <!--  location  -->
             <TabItem Header="Nouvelle location">
                 <Grid>
 
                     <Grid.RowDefinitions>
                         <RowDefinition Height="347*" />
                         <RowDefinition Height="122*" />
-                        <RowDefinition Height="111*"/>
+                        <RowDefinition Height="111*" />
                     </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="40*" />
                         <ColumnDefinition Width="80*" />
                         <ColumnDefinition Width="33*" />
-                        <ColumnDefinition Width="47*"/>
+                        <ColumnDefinition Width="47*" />
                     </Grid.ColumnDefinitions>
 
-                    <StackPanel Grid.Row="1" Style="{StaticResource Principalstackpanel}" Margin="20,20,20,20" Grid.RowSpan="2">
-                        <Label
-     Style="{StaticResource titrePrincipal}">
+                    <StackPanel
+                        Grid.Row="1"
+                        Grid.RowSpan="2"
+                        Margin="20,20,20,20"
+                        Style="{StaticResource Principalstackpanel}">
+                        <Label Style="{StaticResource titrePrincipal}">
                             Option
                         </Label>
                         <Grid Margin="10">
@@ -72,114 +81,156 @@
                     </StackPanel>
 
                     <StackPanel
-            Grid.Row="0"
-            Grid.RowSpan="2"
-            Grid.Column="2"
-            Style="{StaticResource Principalstackpanel}" Grid.ColumnSpan="2" Margin="20,20,20,20">
-                        <Label
-                Style="{StaticResource titrePrincipal}">
+                        Grid.Row="0"
+                        Grid.RowSpan="2"
+                        Grid.Column="2"
+                        Grid.ColumnSpan="2"
+                        Margin="20,20,20,20"
+                        Style="{StaticResource Principalstackpanel}">
+                        <Label Style="{StaticResource titrePrincipal}">
                             Client et dates
                         </Label>
                         <Grid>
                             <Grid.RowDefinitions>
-                                <RowDefinition Height="70*"/>
-                                <RowDefinition Height="20*"/>
-                                <RowDefinition Height="10*"/>
+                                <RowDefinition Height="70*" />
+                                <RowDefinition Height="20*" />
+                                <RowDefinition Height="10*" />
                             </Grid.RowDefinitions>
                             <Grid.ColumnDefinitions>
-                                <ColumnDefinition/>
-                                <ColumnDefinition/>
+                                <ColumnDefinition />
+                                <ColumnDefinition />
                             </Grid.ColumnDefinitions>
-                            <StackPanel  Grid.Column="0">
+                            <StackPanel Grid.Column="0">
                                 <Label Style="{StaticResource formulaireLabel}">Numéro du client</Label>
-                                <Label Style="{StaticResource formulaireLabel}" >Nom</Label>
+                                <Label Style="{StaticResource formulaireLabel}">Nom</Label>
                                 <Label Style="{StaticResource formulaireLabel}">Email</Label>
-                                <Label Style="{StaticResource formulaireLabel}" >Téléphone</Label>
-                                <Label Style="{StaticResource formulaireLabel}" >Adresse</Label>
-                                <Label Style="{StaticResource formulaireLabel}" >Code postal</Label>
-                                <Label Style="{StaticResource formulaireLabel}" >Ville</Label>
+                                <Label Style="{StaticResource formulaireLabel}">Téléphone</Label>
+                                <Label Style="{StaticResource formulaireLabel}">Adresse</Label>
+                                <Label Style="{StaticResource formulaireLabel}">Code postal</Label>
+                                <Label Style="{StaticResource formulaireLabel}">Ville</Label>
                                 <Label Style="{StaticResource formulaireLabel}">Date retour</Label>
-                                <Label Style="{StaticResource formulaireLabel}" >Date emprunt</Label>
-                                <Button x:Name="clientExistant" Content="Séléction client existant"  Style="{StaticResource PrincipalBouton}" Click="clientExistant_Click"   />
+                                <Label Style="{StaticResource formulaireLabel}">Date emprunt</Label>
+                                <Button
+                                    x:Name="clientExistant"
+                                    Click="clientExistant_Click"
+                                    Content="Séléction client existant"
+                                    Style="{StaticResource PrincipalBouton}" />
                             </StackPanel>
 
-                            <StackPanel Grid.Column="1" Grid.Row="0">
-                                <TextBox Style="{StaticResource formulaireTextbox}" Text="" Focusable="False"/>
-                                <TextBox Style="{StaticResource formulaireTextbox}" Text="" Focusable="False" />
-                                <TextBox Style="{StaticResource formulaireTextbox}" Text="" Focusable="False" />
-                                <TextBox Style="{StaticResource formulaireTextbox}" Text="" Focusable="False"/>
-                                <TextBox Style="{StaticResource formulaireTextbox}" Text="" Focusable="False"/>
-                                <TextBox Style="{StaticResource formulaireTextbox}" Text=""  Focusable="False"/>
-                                <TextBox Style="{StaticResource formulaireTextbox}" Text="" Focusable="False"/>
-                                <DatePicker Style="{StaticResource formulaireDate}"></DatePicker>
-                                <DatePicker Style="{StaticResource formulaireDate}"></DatePicker>
-                                <Button x:Name="nouveauClient" Content="Création nouveau client"  Style="{StaticResource PrincipalBouton}" Click="nouveauClient_Click"   />
+                            <StackPanel Grid.Row="0" Grid.Column="1">
+                                <TextBox
+                                    Focusable="False"
+                                    Style="{StaticResource formulaireTextbox}"
+                                    Text="" />
+                                <TextBox
+                                    Focusable="False"
+                                    Style="{StaticResource formulaireTextbox}"
+                                    Text="" />
+                                <TextBox
+                                    Focusable="False"
+                                    Style="{StaticResource formulaireTextbox}"
+                                    Text="" />
+                                <TextBox
+                                    Focusable="False"
+                                    Style="{StaticResource formulaireTextbox}"
+                                    Text="" />
+                                <TextBox
+                                    Focusable="False"
+                                    Style="{StaticResource formulaireTextbox}"
+                                    Text="" />
+                                <TextBox
+                                    Focusable="False"
+                                    Style="{StaticResource formulaireTextbox}"
+                                    Text="" />
+                                <TextBox
+                                    Focusable="False"
+                                    Style="{StaticResource formulaireTextbox}"
+                                    Text="" />
+                                <DatePicker Style="{StaticResource formulaireDate}" />
+                                <DatePicker Style="{StaticResource formulaireDate}" />
+                                <Button
+                                    x:Name="nouveauClient"
+                                    Click="nouveauClient_Click"
+                                    Content="Création nouveau client"
+                                    Style="{StaticResource PrincipalBouton}" />
                             </StackPanel>
 
                         </Grid>
                     </StackPanel>
-                    <StackPanel Grid.Column="2" Grid.Row="2"  Style="{StaticResource Principalstackpanel}" Margin="20,20,20,20">
-                        <TextBox Style="{StaticResource formulaireTextbox}" Text="Prix :" Margin="20" Focusable="False"/>
-                    </StackPanel>
-                    <StackPanel Grid.Column="3" Grid.Row="2" Style="{StaticResource Principalstackpanel}" Margin="20,20,20,20">
-                        <Button x:Name="confirmLocation" Content="Confirmer la location"  Style="{StaticResource PrincipalBouton}" Click="confirmLocation_Click"  />
-                    </StackPanel>
-                    <StackPanel Grid.Column="1" Grid.Row="1" Grid.RowSpan="2" Style="{StaticResource Principalstackpanel}" >
-                        <Label
-Style="{StaticResource titrePrincipal}">
-                            Véhicules séléctionnés
-                        </Label>
-                        <DataGrid d:ItemsSource="{d:SampleData ItemCount=15}"></DataGrid>
+                    <StackPanel
+                        Grid.Row="2"
+                        Grid.Column="2"
+                        Margin="20,20,20,20"
+                        Style="{StaticResource Principalstackpanel}">
+                        <TextBox
+                            Margin="20"
+                            Focusable="False"
+                            Style="{StaticResource formulaireTextbox}"
+                            Text="Prix :" />
                     </StackPanel>
                     <StackPanel
-            Grid.Row="0"
-            Grid.Column="1"
-            Style="{StaticResource Principalstackpanel}"
-            >
-                        <Label
-                Style="{StaticResource titrePrincipal}">
+                        Grid.Row="2"
+                        Grid.Column="3"
+                        Margin="20,20,20,20"
+                        Style="{StaticResource Principalstackpanel}">
+                        <Button
+                            x:Name="confirmLocation"
+                            Click="confirmLocation_Click"
+                            Content="Confirmer la location"
+                            Style="{StaticResource PrincipalBouton}" />
+                    </StackPanel>
+                    <StackPanel
+                        Grid.Row="1"
+                        Grid.RowSpan="2"
+                        Grid.Column="1"
+                        Style="{StaticResource Principalstackpanel}">
+                        <Label Style="{StaticResource titrePrincipal}">
+                            Véhicules séléctionnés
+                        </Label>
+                        <DataGrid d:ItemsSource="{d:SampleData ItemCount=15}" />
+                    </StackPanel>
+                    <StackPanel
+                        Grid.Row="0"
+                        Grid.Column="1"
+                        Style="{StaticResource Principalstackpanel}">
+                        <Label Style="{StaticResource titrePrincipal}">
                             Liste véhicules
                         </Label>
 
-                        <DataGrid d:ItemsSource="{d:SampleData ItemCount=15}"></DataGrid>
+                        <DataGrid d:ItemsSource="{d:SampleData ItemCount=15}" />
 
                     </StackPanel>
                     <StackPanel
-            Grid.Row="0"
-            Style="{StaticResource Principalstackpanel}" Margin="20,20,20,20"  >
-                        <Label
-                Style="{StaticResource titrePrincipal}">
+                        Grid.Row="0"
+                        Margin="20,20,20,20"
+                        Style="{StaticResource Principalstackpanel}">
+                        <Label Style="{StaticResource titrePrincipal}">
                             Filtre
                         </Label>
                         <Label
-                Margin="10,10,10,5"
-                Padding="3"
-                FontSize="15">
+                            Margin="10,10,10,5"
+                            Padding="3"
+                            FontSize="15">
                             Type véhicule
                         </Label>
-                        <ComboBox Style="{StaticResource formulaireCombobox}" 
-                      ItemsSource="{Binding ListeTypeVehicule}"
-                      />
+                        <ComboBox ItemsSource="{Binding ListeTypeVehicule}" Style="{StaticResource formulaireCombobox}" />
                         <Label
-                Margin="10,10,10,5"
-                Padding="3"
-                FontSize="15">
+                            Margin="10,10,10,5"
+                            Padding="3"
+                            FontSize="15">
                             Date emprunt
                         </Label>
                         <DatePicker Style="{StaticResource formulaireDate}" />
-                        <Label
-Style="{StaticResource filtreLabel}">
+                        <Label Style="{StaticResource filtreLabel}">
                             Magasin
                         </Label>
-                        <ComboBox  Style="{StaticResource formulaireCombobox}" ItemsSource="{Binding ListeNomMagasin}"
-     />
-                        <Label
-Style="{StaticResource filtreLabel}">
+                        <ComboBox ItemsSource="{Binding ListeNomsMagasins}" Style="{StaticResource formulaireCombobox}" />
+                        <Label Style="{StaticResource filtreLabel}">
                             Type de boite de vitesse
                         </Label>
                         <StackPanel Margin="20,10" Orientation="Horizontal">
-                            <RadioButton GroupName="typeBoite" x:Name="Manuelle" >Manuelle</RadioButton>
-                            <RadioButton GroupName="typeBoite" x:Name="Automatique" >Automatique</RadioButton>
+                            <RadioButton x:Name="Manuelle" GroupName="typeBoite">Manuelle</RadioButton>
+                            <RadioButton x:Name="Automatique" GroupName="typeBoite">Automatique</RadioButton>
                         </StackPanel>
                     </StackPanel>
                 </Grid>
@@ -187,58 +238,45 @@ Style="{StaticResource filtreLabel}">
 
 
 
-            <!--réservation -->
+            <!--  réservation  -->
             <TabItem Header="Locations existantes">
                 <Grid>
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="1*"></ColumnDefinition>
-                        <ColumnDefinition Width="5*"></ColumnDefinition>
+                        <ColumnDefinition Width="1*" />
+                        <ColumnDefinition Width="5*" />
                     </Grid.ColumnDefinitions>
 
-                    <StackPanel 
-    Grid.Column="0"
-    Style="{StaticResource Principalstackpanel}">
-                        <Label
-        Style="{StaticResource titrePrincipal}">
+                    <StackPanel Grid.Column="0" Style="{StaticResource Principalstackpanel}">
+                        <Label Style="{StaticResource titrePrincipal}">
                             Filtre
                         </Label>
-                        <Label
-        Style="{StaticResource filtreLabel}">
+                        <Label Style="{StaticResource filtreLabel}">
                             Type véhicule
                         </Label>
-                        <ComboBox  Style="{StaticResource formulaireCombobox}" />
-                        <Label
-       Style="{StaticResource filtreLabel}">
+                        <ComboBox Style="{StaticResource formulaireCombobox}" />
+                        <Label Style="{StaticResource filtreLabel}">
                             Date emprunt
                         </Label>
                         <DatePicker Style="{StaticResource formulaireDate}" />
-                        <Label
-        Style="{StaticResource filtreLabel}">
+                        <Label Style="{StaticResource filtreLabel}">
                             Date retour
                         </Label>
                         <DatePicker Style="{StaticResource formulaireDate}" />
-                        <Label
-Style="{StaticResource filtreLabel}">
+                        <Label Style="{StaticResource filtreLabel}">
                             Nom client
                         </Label>
-                        <ComboBox  Style="{StaticResource formulaireCombobox}"
-     />
-                        <Label
-Style="{StaticResource filtreLabel}">
+                        <ComboBox Style="{StaticResource formulaireCombobox}" />
+                        <Label Style="{StaticResource filtreLabel}">
                             Numéro client
                         </Label>
-                        <ComboBox  Style="{StaticResource formulaireCombobox}"
-     />
-                        <Label
-Style="{StaticResource filtreLabel}">
+                        <ComboBox Style="{StaticResource formulaireCombobox}" />
+                        <Label Style="{StaticResource filtreLabel}">
                             Magasin
                         </Label>
-                        <ComboBox  Style="{StaticResource formulaireCombobox}"
-     />
+                        <ComboBox Style="{StaticResource formulaireCombobox}" ItemsSource="{Binding ListeNomsMagasins}" />
                     </StackPanel>
-                    <StackPanel Grid.Column="1"  Style="{StaticResource Principalstackpanel}">
-                        <Label
-          Style="{StaticResource titrePrincipal}">
+                    <StackPanel Grid.Column="1" Style="{StaticResource Principalstackpanel}">
+                        <Label Style="{StaticResource titrePrincipal}">
                             Résumé des locations
                         </Label>
                         <DataGrid Height="auto" d:ItemsSource="{d:SampleData ItemCount=100}" ItemsSource="{Binding ListeDetailReservation}">

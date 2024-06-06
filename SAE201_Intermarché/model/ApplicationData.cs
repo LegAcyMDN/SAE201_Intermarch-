@@ -109,19 +109,15 @@ namespace SAE201_Intermarche.model
 
         public void ChargeDataGridListe()
         {
-            
 
+            foreach (EntiteReservation resa in LesReservations) {
+                foreach (EntiteVehicule vehicule in resa.LesVehicules) {
 
-            //foreach (DetailReservation detail in this.ListeDetailReservation)
-            //{
-            //    ListePourPremiereDataGrid.Add(new LignePremiereDataGrid())
+                    
 
-            //}
-
-            //    foreach (EntiteReservation resa in this.LesReservations)
-            //{
-                
-            //}
+                    //ListePourPremiereDataGrid.Add(new LignePremiereDataGrid(vehicule.NomVehicule, resa.ForfaitKM, resa, resa.UnClient.Nom, resa.UnClient., vehicule.TypeBoite))
+                        }
+                    }
 
 
 
