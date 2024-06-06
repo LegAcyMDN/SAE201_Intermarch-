@@ -194,7 +194,7 @@
                 </Grid.ColumnDefinitions>
                 <StackPanel Grid.Column="0">
                     <Label Style="{StaticResource titrePrincipal}" Content="Planning des réservations"/>
-                    <Calendar x:Name="calPlanningReservation" VerticalAlignment="Center" Margin="20,50,20,20" MouseDown="calPlanningReservation_MouseDown"/>
+                    <Calendar x:Name="calPlanningReservation" VerticalAlignment="Center" Margin="20,50,20,20" SelectedDatesChanged="calPlanningReservation_SelectedDatesChanged"/>
                 </StackPanel>
                 <StackPanel Grid.Column="1">
                     <DataGrid

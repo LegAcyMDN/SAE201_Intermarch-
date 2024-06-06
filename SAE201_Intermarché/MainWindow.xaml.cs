@@ -83,11 +83,6 @@ namespace SAE201_Intermarche
             return instance;
         }
 
-        private void calPlanningReservation_MouseDown(object sender, MouseButtonEventArgs e)
-        {
-           // calPlanningReservation.SelectedDate
-        }
-
         private void cbRechercheClient_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
         {
             tbNumClient.Text = (cbRechercheClient.SelectedIndex + 1).ToString();
@@ -108,6 +103,11 @@ namespace SAE201_Intermarche
             Client client = new Client();
             client.Show();
             this.Hide();
+        }
+
+        private void calPlanningReservation_SelectedDatesChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
+        {
+            Console.WriteLine(calPlanningReservation.SelectedDate);
         }
     }
 }
