@@ -21,6 +21,7 @@ namespace SAE201_Intermarche
     {
         //public static ApplicationData appData = new ApplicationData();
         public static MainWindow instance;
+        public static bool modeClientCreer;
 
         public MainWindow()
         {
@@ -44,18 +45,20 @@ namespace SAE201_Intermarche
             this.Hide();
         }
 
-        private void clientWin_Click(object sender, RoutedEventArgs e)
-        {
-            Client client = new Client();
-            client.Show();
-        }
+
 
         private void ComboBox_SelectionChanged(object sender, RoutedEventArgs e)
         {
 
 
         }
-
+        private void retourWin_Click(object sender, RoutedEventArgs e)
+        {
+            modeClientCreer = true;
+            Client client = new Client();
+            client.Show();
+            this.Hide();
+        }
 
         public static MainWindow getInstance()
         {
