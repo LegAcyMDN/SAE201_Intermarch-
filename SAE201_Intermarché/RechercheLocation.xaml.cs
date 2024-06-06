@@ -25,10 +25,6 @@ namespace SAE201_Intermarche
         }
         private void resume_Click(object sender, RoutedEventArgs e)
         {
-
-            Resume resume = new Resume();
-            resume.Show();
-            this.Hide();
         }
     }
 }
