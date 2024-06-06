@@ -32,19 +32,6 @@
          Margin="5,5,5,5"
          Source="/img/logovNeg.png"
          Stretch="Fill" />
-            <Ellipse
-         Width="30"
-         Height="30"
-         Margin="20,0,0,0"
-         Fill="Yellow" />
-            <Label
-         Margin="5,0,5,0"
-         HorizontalAlignment="Center"
-         VerticalAlignment="Center"
-         Content="?"
-         FontSize="20"
-         FontWeight="Bold"
-         Foreground="White" />
         </StackPanel>
 
         <TabControl Grid.Column="0" Grid.ColumnSpan="2" Grid.RowSpan="4" Grid.Row="1" >
@@ -91,7 +78,7 @@
             Style="{StaticResource Principalstackpanel}" Grid.ColumnSpan="2" Margin="20,20,20,20">
                         <Label
                 Style="{StaticResource titrePrincipal}">
-                            Résumé de la location
+                            Client et dates
                         </Label>
                         <Grid>
                             <Grid.RowDefinitions>
@@ -117,13 +104,13 @@
                             </StackPanel>
 
                             <StackPanel Grid.Column="1" Grid.Row="0">
-                                <TextBox Style="{StaticResource formulaireTextbox}" Text=" Num client"  />
-                                <TextBox Style="{StaticResource formulaireTextbox}" Text=" Nom" />
-                                <TextBox Style="{StaticResource formulaireTextbox}" Text=" Email" />
-                                <TextBox Style="{StaticResource formulaireTextbox}" Text="Téléphone"/>
-                                <TextBox Style="{StaticResource formulaireTextbox}" Text=" Adresse" />
-                                <TextBox Style="{StaticResource formulaireTextbox}" Text=" Code postal"  />
-                                <TextBox Style="{StaticResource formulaireTextbox}" Text=" Ville" />
+                                <TextBox Style="{StaticResource formulaireTextbox}" Text="" Focusable="False"/>
+                                <TextBox Style="{StaticResource formulaireTextbox}" Text="" Focusable="False" />
+                                <TextBox Style="{StaticResource formulaireTextbox}" Text="" Focusable="False" />
+                                <TextBox Style="{StaticResource formulaireTextbox}" Text="" Focusable="False"/>
+                                <TextBox Style="{StaticResource formulaireTextbox}" Text="" Focusable="False"/>
+                                <TextBox Style="{StaticResource formulaireTextbox}" Text=""  Focusable="False"/>
+                                <TextBox Style="{StaticResource formulaireTextbox}" Text="" Focusable="False"/>
                                 <DatePicker Style="{StaticResource formulaireDate}"></DatePicker>
                                 <DatePicker Style="{StaticResource formulaireDate}"></DatePicker>
                                 <Button x:Name="nouveauClient" Content="Création nouveau client"  Style="{StaticResource PrincipalBouton}" Click="nouveauClient_Click"   />
@@ -132,7 +119,7 @@
                         </Grid>
                     </StackPanel>
                     <StackPanel Grid.Column="2" Grid.Row="2"  Style="{StaticResource Principalstackpanel}" Margin="20,20,20,20">
-                        <TextBox Style="{StaticResource formulaireTextbox}" Text="Prix" Margin="20"/>
+                        <TextBox Style="{StaticResource formulaireTextbox}" Text="Prix :" Margin="20" Focusable="False"/>
                     </StackPanel>
                     <StackPanel Grid.Column="3" Grid.Row="2" Style="{StaticResource Principalstackpanel}" Margin="20,20,20,20">
                         <Button x:Name="confirmLocation" Content="Confirmer la location"  Style="{StaticResource PrincipalBouton}" Click="confirmLocation_Click"  />
@@ -184,15 +171,15 @@ Style="{StaticResource titrePrincipal}">
 Style="{StaticResource filtreLabel}">
                             Magasin
                         </Label>
-                        <ComboBox  Style="{StaticResource formulaireCombobox}"
+                        <ComboBox  Style="{StaticResource formulaireCombobox}" ItemsSource="{Binding ListeNomMagasin}"
      />
                         <Label
 Style="{StaticResource filtreLabel}">
                             Type de boite de vitesse
                         </Label>
                         <StackPanel Margin="20,10" Orientation="Horizontal">
-                            <RadioButton>Manuelle</RadioButton>
-                            <RadioButton>Automatique</RadioButton>
+                            <RadioButton GroupName="typeBoite" x:Name="Manuelle" >Manuelle</RadioButton>
+                            <RadioButton GroupName="typeBoite" x:Name="Automatique" >Automatique</RadioButton>
                         </StackPanel>
                     </StackPanel>
                 </Grid>

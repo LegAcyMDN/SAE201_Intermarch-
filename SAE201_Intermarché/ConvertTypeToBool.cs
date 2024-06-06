@@ -1,32 +1,26 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Drawing.Printing;
 using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows;
 using System.Windows.Data;
-using System.Windows.Forms.VisualStyles;
 
 namespace SAE201_Intermarche
 {
-    internal class ConvertXamlValue : IValueConverter
+    class ConvertTypeToBool : IValueConverter
     {
-
-        public double Min { get; set; }
-
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-
-            double width = (double)value;
-         //   Console.WriteLine("value : "+value + "\nwidth : "+ width);
-            return width <= Min;
+            bool rep = value.Equals(parameter);
+            return rep;
         }
-
+        /* Convertit la value de la cible dans le type de la source. (Ici,GenrePersonne 
+       ) si IsChecked du radiobouton est true, on renvoie le paramètre pour mettre à jour 
+       la propriété sinon on stoppe l'action de Binding */
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            throw new NotImplementedException();
+            return value?.Equals(true) == true ? parameter : Binding.DoNothing;
         }
     }
 }
