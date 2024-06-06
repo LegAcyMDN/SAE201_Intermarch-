@@ -8,8 +8,8 @@ using System.Threading.Tasks;
 
 namespace SAE201_Intermarche.model
 {
-    public class EntiteReservation : ICrud
-    {
+	public class EntiteReservation : ICrud
+	{
 		private int numReservation;
 
 		public int NumReservation
@@ -76,55 +76,55 @@ namespace SAE201_Intermarche.model
 
 		public EntiteReservation() { }
 
-        public EntiteReservation(int numReservation, int numAssurance, int numClient, DateTime dateReservation, DateTime dateDebut, DateTime dateFin, double montantReservation, string forfaitKM)
-        {
-            NumReservation = numReservation;
-            NumAssurance = numAssurance;
-            NumClient = numClient;
-            DateReservation = dateReservation;
-            DateDebut = dateDebut;
-            DateFin = dateFin;
-            MontantReservation = montantReservation;
-            ForfaitKM = forfaitKM;
-        }
+		public EntiteReservation(int numReservation, int numAssurance, int numClient, DateTime dateReservation, DateTime dateDebut, DateTime dateFin, double montantReservation, string forfaitKM)
+		{
+			NumReservation = numReservation;
+			NumAssurance = numAssurance;
+			NumClient = numClient;
+			DateReservation = dateReservation;
+			DateDebut = dateDebut;
+			DateFin = dateFin;
+			MontantReservation = montantReservation;
+			ForfaitKM = forfaitKM;
+		}
 
-		public void Create() 
+		public void Create()
 		{
 			DataAccess accesBD = new DataAccess();
 			accesBD.SetData($"insert into reservation (num_assurance, num_client, date_reservation, date_debut_reservation, date_fin_reservation, montant_reservation, forfait_km) " +
 				$"values ('{NumAssurance}','{NumClient}','{DateReservation}','{DateDebut}','{DateFin}','{MontantReservation}','{ForfaitKM}');");
 		}
 
-		public static ObservableCollection<EntiteReservation> Read() 
+		public static ObservableCollection<EntiteReservation> Read()
 		{
-            ObservableCollection<EntiteReservation> lesReservations = new ObservableCollection<EntiteReservation>();
-            DataAccess accesBD = new DataAccess();
-            String res = $"select * from reservation;";
-            DataTable dataTable = accesBD.GetData(res);
-            if (dataTable != null)
-            {
-                foreach (DataRow dataRow in dataTable.Rows)
-                {
-                    EntiteReservation uneReservation = new EntiteReservation(int.Parse(dataRow["num_reservation"].ToString()),
-                        int.Parse(dataRow["num_assurance"].ToString()), int.Parse(dataRow["num_client"].ToString()),
-                        (DateTime)dataRow["date_reservation"], (DateTime)dataRow["date_debut_reservation"],
-                        (DateTime)dataRow["date_fin_reservation"], (double)dataRow["montant_reservation"],
-                        (String)dataRow["forfait_km"]);
-                    lesReservations.Add(uneReservation);
-                }
-            }
-            return lesReservations;
-        }
+			ObservableCollection<EntiteReservation> lesReservations = new ObservableCollection<EntiteReservation>();
+			DataAccess accesBD = new DataAccess();
+			String res = $"select * from reservation;";
+			DataTable dataTable = accesBD.GetData(res);
+			if (dataTable != null)
+			{
+				foreach (DataRow dataRow in dataTable.Rows)
+				{
+					EntiteReservation uneReservation = new EntiteReservation(int.Parse(dataRow["num_reservation"].ToString()),
+						int.Parse(dataRow["num_assurance"].ToString()), int.Parse(dataRow["num_client"].ToString()),
+						(DateTime)dataRow["date_reservation"], (DateTime)dataRow["date_debut_reservation"],
+						(DateTime)dataRow["date_fin_reservation"], (double)dataRow["montant_reservation"],
+						(String)dataRow["forfait_km"]);
+					lesReservations.Add(uneReservation);
+				}
+			}
+			return lesReservations;
+		}
 
-		public void Update() 
+		public void Update()
 		{
 			DataAccess dataAccess = new DataAccess();
 			String res = $"update reservation set (num_assurance, num_client, date_reservation, date_debut_reservation, date_fin_reservation, montant_reservation, forfait_km) " +
-                $"values ('{NumAssurance}','{NumClient}','{DateReservation}','{DateDebut}','{DateFin}','{MontantReservation}','{ForfaitKM}') where num_reservation = " + NumReservation + ";";
-            dataAccess.SetData(res);
-        }
+				$"values ('{NumAssurance}','{NumClient}','{DateReservation}','{DateDebut}','{DateFin}','{MontantReservation}','{ForfaitKM}') where num_reservation = " + NumReservation + ";";
+			dataAccess.SetData(res);
+		}
 
-		public void Delete() 
+		public void Delete()
 		{
 			ObservableCollection<EntiteReservation> lesReservations = new ObservableCollection<EntiteReservation>();
 			foreach (EntiteReservation uneReservation in lesReservations)
@@ -134,5 +134,9 @@ namespace SAE201_Intermarche.model
 			String res = $"delete from reservation where num_reservation = '{NumReservation}';";
 			dataAccess.SetData(res);
 		}
-    }
+
+		List<DetailReservation> lesDetails = DetailReservation.Read().ToList();
+		List<EntiteVehicule> lesVehicules = EntiteVehicule.Read().ToList();
+
+	}
 }

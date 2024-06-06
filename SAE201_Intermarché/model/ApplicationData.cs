@@ -63,6 +63,10 @@ namespace SAE201_Intermarche.model
         {
             LesVehicules = new ObservableCollection<EntiteVehicule>();
             EntiteVehicule vehicule = new EntiteVehicule();
+
+            LesReservations = new ObservableCollection<EntiteReservation>();
+            EntiteReservation reservation = new EntiteReservation();
+            
         }
 
         public void ChargeListes()

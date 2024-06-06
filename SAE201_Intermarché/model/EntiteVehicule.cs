@@ -104,5 +104,6 @@ namespace SAE201_Intermarche.model
             String res = $"delete from vehicule where immatriculation = '{Immatriculation}';";
             dataAccess.SetData(res);
         }
+
     }
 }
