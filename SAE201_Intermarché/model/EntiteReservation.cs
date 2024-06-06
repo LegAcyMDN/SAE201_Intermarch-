@@ -108,7 +108,7 @@ namespace SAE201_Intermarche.model
 					EntiteReservation uneReservation = new EntiteReservation(int.Parse(dataRow["num_reservation"].ToString()),
 						int.Parse(dataRow["num_assurance"].ToString()), int.Parse(dataRow["num_client"].ToString()),
 						(DateTime)dataRow["date_reservation"], (DateTime)dataRow["date_debut_reservation"],
-						(DateTime)dataRow["date_fin_reservation"], (double)dataRow["montant_reservation"],
+						(DateTime)dataRow["date_fin_reservation"], double.Parse(dataRow["montant_reservation"].ToString()),
 						(String)dataRow["forfait_km"]);
 					lesReservations.Add(uneReservation);
 				}
