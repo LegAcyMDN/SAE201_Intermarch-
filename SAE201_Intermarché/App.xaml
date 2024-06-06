@@ -14,7 +14,7 @@
             <Setter Property="Height" Value="700"></Setter>
             <Setter Property="WindowState" Value="Maximized"></Setter>
             <Setter Property="MinHeight" Value="690"></Setter>
-            <Setter Property="MinWidth" Value="875"></Setter>
+            <Setter Property="MinWidth" Value="1200"></Setter>
         </Style>
         <Style x:Key="hautdepage" TargetType="StackPanel">
             <Setter Property="Orientation" Value="Horizontal"></Setter>

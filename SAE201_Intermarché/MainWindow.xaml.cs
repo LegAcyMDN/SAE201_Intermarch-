@@ -34,127 +34,48 @@ namespace SAE201_Intermarche
             instance = this;
 
 
-            if (MainWindow.modeClientCreer)
-            {
-                butEnregistrerModifier.Content = "Enregistrer le client";
-                butSupprimer.Visibility = Visibility.Hidden;
-                tbNom.IsEnabled = true;
-                tbTelephone.IsEnabled = true;
-                tbEmail.IsEnabled = true;
-                tbAdresse.IsEnabled = true;
-                tbCp.IsEnabled = true;
-                tbVille.IsEnabled = true;
-                rbParticulier.IsEnabled = true;
-                rbEntreprise.IsEnabled = true;
-            }
-            else
-            {
-                butEnregistrerModifier.Content = "Modifier le client";
-                butSupprimer.Visibility = Visibility.Visible;
-                tbNom.IsEnabled = false;
-                tbTelephone.IsEnabled = false;
-                tbEmail.IsEnabled = false;
-                tbAdresse.IsEnabled = false;
-                tbCp.IsEnabled = false;
-                tbVille.IsEnabled = false;
-                rbParticulier.IsEnabled = false;
-                rbEntreprise.IsEnabled = false;
-            }
+        }
+
+
+        // location 
+
+
+        private void confirmLocation_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Location réalisé avec succès");
+        }
+
+        private void butEnregistrerNouveau_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void butSupprimer_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void butModifier_Click(object sender, RoutedEventArgs e)
+        {
 
         }
 
         private void Image_MouseDown(object sender, MouseButtonEventArgs e)
         {
+
         }
 
-        private void resa_Click(object sender, RoutedEventArgs e)
+        private void nouveauClient_Click(object sender, RoutedEventArgs e)
         {
-
+            AjoutClient ajout = new AjoutClient();
+            ajout.ShowDialog();
         }
 
-
-
-        private void ComboBox_SelectionChanged(object sender, RoutedEventArgs e)
+        private void clientExistant_Click(object sender, RoutedEventArgs e)
         {
-
-
+            RechercheClient recherche = new RechercheClient();
+            recherche.ShowDialog();
         }
-        private void retourWin_Click(object sender, RoutedEventArgs e)
-        {
- 
-        }
-
-        public static MainWindow getInstance()
-        {
-            return instance;
-        }
-
-
-
-        private void calPlanningReservation_SelectedDatesChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
-        {
-            Console.WriteLine(calPlanningReservation.SelectedDate);
-        }
-
-        //Client 
-        private void windowClient_Closing(object sender, System.ComponentModel.CancelEventArgs e)
-        {
-            if (naturalClosing)
-            {
-                //Si on ferme la fenêtre ça ferme l'application
-                Application.Current.Shutdown();
-            }
-        }
-
-        private void pieceJointePermis_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void pieceJointeid_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void pieceJointeAssurance_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void PieceJointeOuvrirPermis_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void PieceJointeOuvririd_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void PieceJointeOuvrirAssurance_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        // location 
-
-
-        private void imageIntermarche_MouseDown(object sender, MouseButtonEventArgs e)
-        {
-            naturalClosing = false;
-            MainWindow.getInstance().Show();
-            this.Close();
-        }
-
-
-        private void confirmLocation_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        // resumé 
-
-  
 
 
 

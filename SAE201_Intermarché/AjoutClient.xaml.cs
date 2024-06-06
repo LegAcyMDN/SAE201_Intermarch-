@@ -15,16 +15,13 @@ using System.Windows.Shapes;
 namespace SAE201_Intermarche
 {
     /// <summary>
-    /// Logique d'interaction pour RechercheLocation.xaml
+    /// Logique d'interaction pour AjoutClient.xaml
     /// </summary>
-    public partial class RechercheLocation : Window
+    public partial class AjoutClient : Window
     {
-        public RechercheLocation()
+        public AjoutClient()
         {
             InitializeComponent();
-        }
-        private void resume_Click(object sender, RoutedEventArgs e)
-        {
         }
     }
 }
