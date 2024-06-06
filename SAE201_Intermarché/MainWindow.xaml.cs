@@ -77,7 +77,14 @@ namespace SAE201_Intermarche
             recherche.ShowDialog();
         }
 
+        private void Corpo_Checked(object sender, RoutedEventArgs e)
+        {
 
+        }
 
+        private void vol_Checked(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

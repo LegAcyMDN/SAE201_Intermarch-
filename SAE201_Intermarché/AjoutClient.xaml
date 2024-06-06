@@ -9,7 +9,8 @@
     <Grid>
       
         <StackPanel
-            Style="{StaticResource Principalstackpanel}">
+            Style="{StaticResource Principalstackpanel}"
+            x:Name="ajoutClientReponses">
             <Label
     Style="{StaticResource titrePrincipal}">
                 Ajout client
@@ -29,14 +30,14 @@
                     <Label Style="{StaticResource formulaireLabel}" >Ville</Label>
                 </StackPanel>
                 <StackPanel Grid.Column="1">
-                    <TextBox Style="{StaticResource formulaireTextbox}" Text=" Num client"  />
-                    <TextBox Style="{StaticResource formulaireTextbox}" Text=" Nom" />
-                    <TextBox Style="{StaticResource formulaireTextbox}" Text=" Email" />
-                    <TextBox Style="{StaticResource formulaireTextbox}" Text="Téléphone"/>
-                    <TextBox Style="{StaticResource formulaireTextbox}" Text=" Adresse" />
-                    <TextBox Style="{StaticResource formulaireTextbox}" Text=" Code postal"  />
-                    <TextBox Style="{StaticResource formulaireTextbox}" Text=" Ville" />
-                    <Button x:Name="nouveauClient" Content="Création nouveau client"  Style="{StaticResource PrincipalBouton}"   />
+                    <TextBox Style="{StaticResource formulaireTextbox}" Text="{Binding NumClient, ValidatesOnExceptions=True,UpdateSourceTrigger=Explicit}"  />
+                    <TextBox Style="{StaticResource formulaireTextbox}" Text="{Binding Nom, ValidatesOnExceptions=True,UpdateSourceTrigger=Explicit}" />
+                    <TextBox Style="{StaticResource formulaireTextbox}" Text="{Binding Email, ValidatesOnExceptions=True,UpdateSourceTrigger=Explicit}" />
+                    <TextBox Style="{StaticResource formulaireTextbox}" Text="{Binding Telephone, ValidatesOnExceptions=True,UpdateSourceTrigger=Explicit}"/>
+                    <TextBox Style="{StaticResource formulaireTextbox}" Text="{Binding Adresse, ValidatesOnExceptions=True,UpdateSourceTrigger=Explicit}" />
+                    <TextBox Style="{StaticResource formulaireTextbox}" Text="{Binding CodePostal, ValidatesOnExceptions=True,UpdateSourceTrigger=Explicit}"  />
+                    <TextBox Style="{StaticResource formulaireTextbox}" Text="{Binding Ville, ValidatesOnExceptions=True,UpdateSourceTrigger=Explicit}" />
+                    <Button x:Name="nouveauClient" Content="Création nouveau client"  Style="{StaticResource PrincipalBouton}" Click="nouveauClient_Click"   />
                 </StackPanel>
                
             </Grid>

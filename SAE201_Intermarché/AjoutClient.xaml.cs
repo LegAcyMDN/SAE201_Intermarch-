@@ -23,5 +23,27 @@ namespace SAE201_Intermarche
         {
             InitializeComponent();
         }
+
+        private void nouveauClient_Click(object sender, RoutedEventArgs e)
+        {
+            bool ok = true;
+            foreach (UIElement uie in ajoutClientReponses.Children)
+            {
+                if (uie is TextBox)
+                {
+                    TextBox txt = (TextBox)uie;
+                    txt.GetBindingExpression(TextBox.TextProperty).UpdateSource();
+                }
+                if (Validation.GetHasError(uie))
+                    ok = false;
+            }
+            if (ok == true)
+            {
+                DialogResult = true;
+                MessageBox.Show(this,"Client ajouté", "Récap", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
+            else
+                MessageBox.Show("erreur");
+        }
     }
 }
