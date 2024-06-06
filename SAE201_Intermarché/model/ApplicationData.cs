@@ -2,10 +2,6 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Controls;
 
 namespace SAE201_Intermarche.model
 {
@@ -13,6 +9,7 @@ namespace SAE201_Intermarche.model
     {
         private ObservableCollection<string> clientEtIdComboBoxItems;
         private ObservableCollection<string> clientComboBoxItems;
+        private ObservableCollection<LignePremiereDataGrid> listePourPremiereDataGrid;
 
         private ObservableCollection<EntiteClient> lesClients;
         private List<string> listeTypeVehicule;
@@ -20,16 +17,17 @@ namespace SAE201_Intermarche.model
         { get { return lesClients; } set { lesClients = value; } }
 
         private ObservableCollection<EntiteVehicule> lesVehicules;
-        public ObservableCollection<EntiteVehicule> LesVehicules 
+        public ObservableCollection<EntiteVehicule> LesVehicules
         { get { return lesVehicules; } set { lesVehicules = value; } }
 
         private ObservableCollection<EntiteReservation> lesReservations;
         public ObservableCollection<EntiteReservation> LesReservations
-        { get { return lesReservations; }  set { lesReservations = value; } }
+        { get { return lesReservations; } set { lesReservations = value; } }
 
         public ObservableCollection<string> ClientEtIdComboBoxItems { get => clientEtIdComboBoxItems; set => clientEtIdComboBoxItems = value; }
         public ObservableCollection<string> ClientComboBoxItems { get => clientComboBoxItems; set => clientComboBoxItems = value; }
         public List<string> ListeTypeVehicule { get => listeTypeVehicule; set => listeTypeVehicule = value; }
+        public ObservableCollection<LignePremiereDataGrid> ListePourPremiereDataGrid { get => listePourPremiereDataGrid; set => listePourPremiereDataGrid = value; }
 
         public ApplicationData()
         {
@@ -40,6 +38,7 @@ namespace SAE201_Intermarche.model
             ClientComboBoxItems = new ObservableCollection<string>();
 
             ListeTypeVehicule = new List<string>();
+            ListePourPremiereDataGrid = new ObservableCollection<LignePremiereDataGrid>();
 
             Charge();
         }
@@ -61,7 +60,7 @@ namespace SAE201_Intermarche.model
         }
 
         public void ChargeBD()
-        {            
+        {
             LesVehicules = new ObservableCollection<EntiteVehicule>();
             EntiteVehicule vehicule = new EntiteVehicule();
         }
@@ -79,11 +78,26 @@ namespace SAE201_Intermarche.model
                     ListeTypeVehicule.Add((String)dataRow["nom_categorie"]);
                 }
             }
+            this.LesReservations = EntiteReservation.Read();
+
+            ChargeDataGridListe();
 
 
 
 
-                }
+
+
+
+        }
+
+        public void ChargeDataGridListe()
+        {
+            
+
+
+
+
+        }
 
 
 
