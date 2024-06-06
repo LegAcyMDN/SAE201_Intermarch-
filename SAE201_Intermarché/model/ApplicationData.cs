@@ -79,14 +79,6 @@ namespace SAE201_Intermarche.model
                     ListeTypeVehicule.Add((String)dataRow["nom_categorie"]);
                 }
             }
-
-
-
-
-                }
-
-
-
-
+        }
     }
 }
