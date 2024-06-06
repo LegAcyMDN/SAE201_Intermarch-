@@ -13,7 +13,7 @@ namespace SAE201_Intermarche.model
     {
         private string immatriculation;
         private TypeBoite typeBoite;
-        private int numMagasin;
+        private EntiteMagasin unMagasin;
         private string nomCategorie;
         private string nomVehicule;
         private string descriptionVehicule;
@@ -32,7 +32,7 @@ namespace SAE201_Intermarche.model
                 immatriculation = value;
             }
         }
-        public int NumMagasin { get => numMagasin; set => numMagasin = value; }
+        public EntiteMagasin UnMagasin { get => unMagasin; set => unMagasin = value; }
         public string NomCategorie { get => nomCategorie; set => nomCategorie = value; }
         public string NomVehicule { get => nomVehicule; set => nomVehicule = value; }
         public string DescriptionVehicule { get => descriptionVehicule; set => descriptionVehicule = value; }
@@ -44,11 +44,11 @@ namespace SAE201_Intermarche.model
 
         public EntiteVehicule() { }
 
-        public EntiteVehicule(string immatriculation, TypeBoite typeBoite, int numMagasin, string nomCategorie, string nomVehicule, string description, int nombrePlaces, double prixLocation, bool climatisation, string lienPhotoURL)
+        public EntiteVehicule(string immatriculation, TypeBoite typeBoite, EntiteMagasin numMagasin, string nomCategorie, string nomVehicule, string description, int nombrePlaces, double prixLocation, bool climatisation, string lienPhotoURL)
         {
             Immatriculation = immatriculation;
             TypeBoite = typeBoite;
-            NumMagasin = numMagasin;
+            UnMagasin = numMagasin;
             NomCategorie = nomCategorie;
             NomVehicule = nomVehicule;
             DescriptionVehicule = description;
@@ -77,12 +77,21 @@ namespace SAE201_Intermarche.model
                 {
                     try
                     {
-                        EntiteVehicule unVehicule = new EntiteVehicule((String)dataRow["immatriculation"],
-                            (TypeBoite)Enum.Parse(typeof(TypeBoite), dataRow["type_boite"].ToString().ToUpper()), int.Parse(dataRow["num_magasin"].ToString()), (String)dataRow["nom_categorie"],
-                            (String)dataRow["nom_vehicule"], (String)dataRow["description_vehicule"],
-                            int.Parse(dataRow["nombre_places"].ToString()), double.Parse(dataRow["prix_location"].ToString()),
-                            (bool)dataRow["climatisation"], (String)dataRow["lien_photo_url"]);
-                        lesVehicules.Add(unVehicule);
+                        DataTable autreTable = accesBD.GetData($"select * from magasin where num_magasin={(int)dataRow["num_magasin"]}");
+
+                        foreach (DataRow dataRow1 in autreTable.Rows)
+                        {
+                            EntiteMagasin unMagasin = new EntiteMagasin((int)dataRow1["num_magasin"], (String)dataRow1["nom_magasin"],
+                                (String)dataRow1["adresse_rue_magasin"], (String)dataRow1["adresse_cp_magasin"],
+                                (String)dataRow1["adresse_ville_magasin"], (String)dataRow1["horaire_magasin"]);
+
+                            EntiteVehicule unVehicule = new EntiteVehicule((String)dataRow["immatriculation"],
+                                (TypeBoite)Enum.Parse(typeof(TypeBoite), dataRow["type_boite"].ToString().ToUpper()), unMagasin, (String)dataRow["nom_categorie"],
+                                (String)dataRow["nom_vehicule"], (String)dataRow["description_vehicule"],
+                                int.Parse(dataRow["nombre_places"].ToString()), double.Parse(dataRow["prix_location"].ToString()),
+                                (bool)dataRow["climatisation"], (String)dataRow["lien_photo_url"]);
+                            lesVehicules.Add(unVehicule);
+                        }
                     } catch (Exception ex)
                     {
                         Console.WriteLine("Il y a eu une erreur dans le read d'EntiteVehicule : " + ex.StackTrace);

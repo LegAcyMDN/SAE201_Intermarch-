@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Data;
+using System.Linq;
 
 namespace SAE201_Intermarche.model
 {
@@ -10,6 +11,9 @@ namespace SAE201_Intermarche.model
         private ObservableCollection<string> clientEtIdComboBoxItems;
         private ObservableCollection<string> clientComboBoxItems;
         private ObservableCollection<LignePremiereDataGrid> listePourPremiereDataGrid;
+        private ObservableCollection<DetailReservation> listeDetailReservation;
+        private List<string> listeNomsMagasins;
+        private List<EntiteMagasin> listeEntiteMagasins;
 
         private ObservableCollection<EntiteClient> lesClients;
         private List<string> listeTypeVehicule;
@@ -28,6 +32,9 @@ namespace SAE201_Intermarche.model
         public ObservableCollection<string> ClientComboBoxItems { get => clientComboBoxItems; set => clientComboBoxItems = value; }
         public List<string> ListeTypeVehicule { get => listeTypeVehicule; set => listeTypeVehicule = value; }
         public ObservableCollection<LignePremiereDataGrid> ListePourPremiereDataGrid { get => listePourPremiereDataGrid; set => listePourPremiereDataGrid = value; }
+        public ObservableCollection<DetailReservation> ListeDetailReservation { get => listeDetailReservation; set => listeDetailReservation = value; }
+        public List<string> ListeNomsMagasins { get => listeNomsMagasins; set => listeNomsMagasins = value; }
+        public List<EntiteMagasin> ListeEntiteMagasins { get => listeEntiteMagasins; set => listeEntiteMagasins = value; }
 
         public ApplicationData()
         {
@@ -39,6 +46,11 @@ namespace SAE201_Intermarche.model
 
             ListeTypeVehicule = new List<string>();
             ListePourPremiereDataGrid = new ObservableCollection<LignePremiereDataGrid>();
+
+            ListeDetailReservation = new ObservableCollection<DetailReservation>();
+            ListeEntiteMagasins = new List<EntiteMagasin>();
+            ListeNomsMagasins = new List<string>();
+            
 
             Charge();
         }
@@ -83,10 +95,11 @@ namespace SAE201_Intermarche.model
                 }
             }
             this.LesReservations = EntiteReservation.Read();
+            EntiteMagasin.Read().ToList().ForEach(x => this.ListeNomsMagasins.Add(x.NomMagasin));
 
             ChargeDataGridListe();
 
-
+            
 
 
 
@@ -97,6 +110,18 @@ namespace SAE201_Intermarche.model
         public void ChargeDataGridListe()
         {
             
+
+
+            //foreach (DetailReservation detail in this.ListeDetailReservation)
+            //{
+            //    ListePourPremiereDataGrid.Add(new LignePremiereDataGrid())
+
+            //}
+
+            //    foreach (EntiteReservation resa in this.LesReservations)
+            //{
+                
+            //}
 
 
 
