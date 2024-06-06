@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace SAE201_Intermarche
 {
-    public class EntiteClient : ICrud<EntiteClient>
+    public class EntiteClient : ICrud
     {
         private int num;
         private string nom;
@@ -52,22 +52,6 @@ namespace SAE201_Intermarche
 
         public string Mail { get => mail; set => mail = value; }
 
-        private ObservableCollection<EntiteReservation> lesReservations = new ObservableCollection<EntiteReservation>();
-
-        public ObservableCollection<EntiteReservation> LesReservations
-        {
-            get { return lesReservations; }
-            set { lesReservations = value; }
-        }
-
-        private ObservableCollection<EntiteClient> lesClients = new ObservableCollection<EntiteClient>();
-
-        public ObservableCollection<EntiteClient> LesClients
-        {
-            get { return lesClients; }
-            set { lesClients = value; }
-        }
-
         public EntiteClient(int num, string nom, string rue, string cp, string ville, string telephone, string mail)
         {
             Num = num;
@@ -88,16 +72,21 @@ namespace SAE201_Intermarche
 
         public void Delete()
         {
+
+            ObservableCollection<EntiteClient> lesClients = new ObservableCollection<EntiteClient>();
+            foreach (EntiteClient unClient in lesClients)
+            { unClient.Delete(); }
+
             DataAccess dataAccess = new DataAccess();
-            String res = $"delete from client where num_client = {Num};";
+            String res = $"delete from cleitn where num_client = '{Num}';";
             dataAccess.SetData(res);
         }
 
-        public ObservableCollection<EntiteClient> FindAll()
+        public static ObservableCollection<EntiteClient> Read()
         {
             ObservableCollection<EntiteClient> lesClients = new ObservableCollection<EntiteClient>();
             DataAccess dataAccess = new DataAccess();
-            String res = $"select num_client, nom_client, adresse_rue_client, adresse_cp_client, adresse_ville_client, telephone_client, mail_client from client;";
+            String res = $"select * from client;";
             DataTable dataTable = dataAccess.GetData(res);
             if (dataTable != null)
             {
@@ -106,23 +95,10 @@ namespace SAE201_Intermarche
                     EntiteClient unclient = new EntiteClient((int)dataRow["num_client"], (String)dataRow["nom_client"],
                         (String)dataRow["adresse_rue_client"], (String)dataRow["adresse_cp_client"], (String)dataRow["adresse_ville_client"],
                         (String)dataRow["telephone_client"], (String)dataRow["mail_client"]);
-                    //la liste a faire pour les clients !!!!!!!!!!!!!!!!!!!!!!!!!
+                    lesClients.Add(unclient);
                 }
             }
             return lesClients;
-        }
-
-        public void Read()
-        {
-            DataAccess dataAccess = new DataAccess();
-            String res = "select num_client, nom_client, adresse_rue_client, adresse_cp_client, adresse_ville_client, telephone_client, mail_client from client;" +
-                $"where num_client = {Num};";
-            DataTable dataTable = dataAccess.GetData(res);
-            if (dataTable != null)
-            {
-                foreach (DataRow dataRow in dataTable.Rows)
-                { Num = (int)dataRow["num_client"]; }
-            }
         }
 
         public void Update()

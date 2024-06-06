@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace SAE201_Intermarche.model
 {
-    public class EntiteReservation : ICrud<EntiteReservation>
+    public class EntiteReservation : ICrud
     {
 		private int numReservation;
 
@@ -74,14 +74,6 @@ namespace SAE201_Intermarche.model
 			set { forfaitKM = value; }
 		}
 
-		private ObservableCollection<EntiteReservation> lesReservations;
-
-		public ObservableCollection<EntiteReservation> LesReservations
-		{
-			get { return lesReservations; }
-			set { lesReservations = value; }
-		}
-
 		public EntiteReservation() { }
 
         public EntiteReservation(int numReservation, int numAssurance, int numClient, DateTime dateReservation, DateTime dateDebut, DateTime dateFin, double montantReservation, string forfaitKM)
@@ -103,57 +95,44 @@ namespace SAE201_Intermarche.model
 				$"values ('{NumAssurance}','{NumClient}','{DateReservation}','{DateDebut}','{DateFin}','{MontantReservation}','{ForfaitKM}');");
 		}
 
-		public void Read() 
+		public static ObservableCollection<EntiteReservation> Read() 
 		{
-			DataAccess dataAccess = new DataAccess();
-			String res = $"select * from reservation where num_reservation = '{NumReservation}');";
-			DataTable dataTable = dataAccess.GetData(res);
-			if (dataTable != null)
-			{
-				foreach(DataRow dataRow in dataTable.Rows)
-				{
-					NumReservation = int.Parse(dataRow["num_reservation"].ToString());
-					break;
-				}
-			}
-		}
+            ObservableCollection<EntiteReservation> lesReservations = new ObservableCollection<EntiteReservation>();
+            DataAccess accesBD = new DataAccess();
+            String res = $"select * from reservation;";
+            DataTable dataTable = accesBD.GetData(res);
+            if (dataTable != null)
+            {
+                foreach (DataRow dataRow in dataTable.Rows)
+                {
+                    EntiteReservation uneReservation = new EntiteReservation(int.Parse(dataRow["num_reservation"].ToString()),
+                        int.Parse(dataRow["num_assurance"].ToString()), int.Parse(dataRow["num_client"].ToString()),
+                        (DateTime)dataRow["date_reservation"], (DateTime)dataRow["date_debut_reservation"],
+                        (DateTime)dataRow["date_fin_reservation"], (double)dataRow["montant_reservation"],
+                        (String)dataRow["forfait_km"]);
+                    lesReservations.Add(uneReservation);
+                }
+            }
+            return lesReservations;
+        }
 
 		public void Update() 
 		{
 			DataAccess dataAccess = new DataAccess();
 			String res = $"update reservation set (num_assurance, num_client, date_reservation, date_debut_reservation, date_fin_reservation, montant_reservation, forfait_km) " +
                 $"values ('{NumAssurance}','{NumClient}','{DateReservation}','{DateDebut}','{DateFin}','{MontantReservation}','{ForfaitKM}') where num_reservation = " + NumReservation + ";";
+            dataAccess.SetData(res);
         }
 
 		public void Delete() 
-		{ 
-			foreach (EntiteReservation entiteReservation in LesReservations)
-			{ entiteReservation.Delete(); }
+		{
+			ObservableCollection<EntiteReservation> lesReservations = new ObservableCollection<EntiteReservation>();
+			foreach (EntiteReservation uneReservation in lesReservations)
+			{ uneReservation.Delete(); }
 
 			DataAccess dataAccess = new DataAccess();
 			String res = $"delete from reservation where num_reservation = '{NumReservation}';";
 			dataAccess.SetData(res);
-		}
-
-		public ObservableCollection<EntiteReservation> FindAll() 
-		{
-			ObservableCollection<EntiteReservation> lesReservations = new ObservableCollection<EntiteReservation>();
-			DataAccess accesBD = new DataAccess();
-			String res = $"select num_reservation from reservation where num_reservation = '{NumReservation}';";
-			DataTable dataTable = accesBD.GetData(res);
-			if (dataTable != null)
-			{
-				foreach(DataRow dataRow in dataTable.Rows)
-				{
-					EntiteReservation uneReservation = new EntiteReservation(int.Parse(dataRow["num_reservation"].ToString()),
-						int.Parse(dataRow["num_assurance"].ToString()), int.Parse(dataRow["num_client"].ToString()),
-						(DateTime)dataRow["date_reservation"], (DateTime)dataRow["date_debut_reservation"],
-						(DateTime)dataRow["date_fin_reservation"], (double)dataRow["montant_reservation"],
-						(String)dataRow["forfait_km"]);
-					lesReservations.Add(uneReservation);
-				}
-			}
-			return lesReservations;
 		}
     }
 }

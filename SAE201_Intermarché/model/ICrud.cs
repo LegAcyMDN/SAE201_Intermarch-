@@ -7,16 +7,12 @@ using System.Threading.Tasks;
 
 namespace SAE201_Intermarche.model
 {
-    public interface ICrud<T>
+    public interface ICrud
     {
         void Create();
-
-        void Read();
 
         void Update();
 
         void Delete();
-
-        ObservableCollection<T> FindAll();
     }
 }
