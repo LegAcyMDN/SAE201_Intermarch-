@@ -10,6 +10,14 @@ namespace SAE201_Intermarche.model
 {
 	public class EntiteReservation : ICrud
 	{
+		private List<EntiteVehicule> lesVehicules = EntiteVehicule.Read().ToList();
+
+		public List<EntiteVehicule> LesVehicules
+		{
+			get { return lesVehicules; }
+			set { lesVehicules = value; }
+		}
+
 		private int numReservation;
 
 		public int NumReservation
@@ -135,8 +143,8 @@ namespace SAE201_Intermarche.model
 			dataAccess.SetData(res);
 		}
 
-		List<DetailReservation> lesDetails = DetailReservation.Read().ToList();
-		List<EntiteVehicule> lesVehicules = EntiteVehicule.Read().ToList();
-		List<EntiteClient> lesClients = EntiteClient.Read().ToList();
+		//lesDetails = DetailReservation.Read().ToList();
+		//lesVehicules = EntiteVehicule.Read().ToList();
+		//lesClients = EntiteClient.Read().ToList();
 	}
 }
