@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -57,14 +58,6 @@ namespace SAE201_Intermarche.model
 			set { horaireMagasin = value; }
 		}
 
-        private ObservableCollection<EntiteVehicule> lesVehicules = new ObservableCollection<EntiteVehicule>();
-
-        public ObservableCollection<EntiteVehicule> LesVehicules
-        {
-            get { return lesVehicules; }
-            set { lesVehicules = value; }
-        }
-
         public EntiteMagasin(int numMagasin, string nomMagasin, string adresseRueMagasin, string adresseCPMagasin, string adresseVilleMagasin, string horaireMagasin)
         {
             NumMagasin = numMagasin;
@@ -75,6 +68,24 @@ namespace SAE201_Intermarche.model
             HoraireMagasin = horaireMagasin;
         }
 
-
+		public static ObservableCollection<EntiteMagasin> Read()
+		{
+            ObservableCollection<EntiteMagasin> lesMagasins = new ObservableCollection<EntiteMagasin>();
+            DataAccess accesBD = new DataAccess();
+            String res = $"select * from magasin;";
+            DataTable dataTable = accesBD.GetData(res);
+            if (dataTable != null)
+            {
+                foreach (DataRow dataRow in dataTable.Rows)
+                {
+                    EntiteMagasin unMagasin = new EntiteMagasin(int.Parse(dataRow["num_magasin"].ToString()),
+						(String)dataRow["nom_magasin"], (String)dataRow["adresse_rue_magasin"],
+                        (String)dataRow["adresse_cp_magasin"], (String)dataRow["adresse_ville_magasin"],
+                        (String)dataRow["horaire_magasin"]);
+                    lesMagasins.Add(unMagasin);
+                }
+            }
+            return lesMagasins;
+        }
     }
 }
