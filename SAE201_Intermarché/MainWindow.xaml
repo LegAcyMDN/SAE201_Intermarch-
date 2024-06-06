@@ -241,7 +241,28 @@ Style="{StaticResource filtreLabel}">
           Style="{StaticResource titrePrincipal}">
                             Résumé des locations
                         </Label>
-                        <DataGrid Height="auto" d:ItemsSource="{d:SampleData ItemCount=100}"/>
+                        <DataGrid Height="auto" d:ItemsSource="{d:SampleData ItemCount=100}">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn
+Header="Nom"
+Binding="{Binding Nom}"/>
+                                <DataGridTextColumn
+Header="Prénom"
+Binding="{Binding Prenom}"/>
+                                <DataGridTextColumn
+Header="Genre"
+Binding="{Binding Genre}"/>
+                                <DataGridTextColumn
+Header="Date Naissance" 
+Binding="{Binding DateNaissance, StringFormat=dd/MM/yyyy}"/>
+                                <DataGridTextColumn
+Header="Email"
+Binding="{Binding Email}"/>
+                                <DataGridTextColumn
+Header="Téléphone"
+Binding="{Binding Telephone}"/>
+                            </DataGrid.Columns>
+                        </DataGrid>
 
                     </StackPanel>
                 </Grid>
