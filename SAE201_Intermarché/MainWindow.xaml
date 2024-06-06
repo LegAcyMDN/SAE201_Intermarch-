@@ -60,11 +60,11 @@
                         <Grid Margin="10">
 
                             <StackPanel Grid.Column="0">
-                                <CheckBox Margin="20,5" Content="Assurance corporel"/>
-                                <CheckBox Margin="20,5" Content="Assurance vol"/>
-                                <RadioButton Margin="20,5" Content="Forfait -100km"/>
-                                <RadioButton Margin="20,5" Content="Forfait 100km - 250km"/>
-                                <RadioButton Margin="20,5" Content="Forfait +250km"/>
+                                <CheckBox x:Name="Corpo" Margin="20,5" Content="Assurance corporel" Checked="Corpo_Checked" />
+                                <CheckBox x:Name="vol" Margin="20,5" Content="Assurance vol" Checked="vol_Checked"  />
+                                <RadioButton GroupName="forfait" Margin="20,5" Content="Forfait -100km"/>
+                                <RadioButton GroupName="forfait" Margin="20,5" Content="Forfait 100km - 250km"/>
+                                <RadioButton GroupName="forfait" Margin="20,5" Content="Forfait +250km"/>
                             </StackPanel>
 
                         </Grid>
