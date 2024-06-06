@@ -10,44 +10,57 @@ namespace SAE201_Intermarche.model
 {
     public class DetailReservation
     {
-		private String immatriculation;
+		private EntiteVehicule uneImmatriculation;
 
-		public String Immatriculation
+		public EntiteVehicule UneImmatriculation
 		{
-			get { return immatriculation; }
-			set { immatriculation = value; }
+			get { return uneImmatriculation; }
+			set { uneImmatriculation = value; }
 		}
 
-		private int numReservation;
+		private EntiteReservation uneRservation;
 
-		public int NumReservation
+		public EntiteReservation UneReservation
 		{
-			get { return numReservation; }
-			set { numReservation = value; }
+			get { return uneRservation; }
+			set { uneRservation = value; }
 		}
 
-        public DetailReservation(string immatriculation, int numReservation)
+        public DetailReservation(EntiteVehicule immatriculation, EntiteReservation numReservation)
         {
-            Immatriculation = immatriculation;
-            NumReservation = numReservation;
+            UneImmatriculation = immatriculation;
+            UneReservation = numReservation;
         }
 
         public static ObservableCollection<DetailReservation> Read()
 		{
 			ObservableCollection<DetailReservation> lesDetails = new ObservableCollection<DetailReservation>();
 			DataAccess dataAccess = new DataAccess();
-			String res = "select * from detail_reservation;";
+			String res = "select dr.immatriculation, dr.num_reservation from detail_reservation dr " +
+				"join vehicule v on dr.immatriculation = v.immatriculation " +
+				"join reservation r on dr.num_reservation = r.num_reservation;";
 			DataTable dataTable = dataAccess.GetData(res);
 			if (dataTable != null)
 			{
 				foreach (DataRow dataRow in dataTable.Rows)
 				{
-					DetailReservation unDetail = new DetailReservation((String)dataRow["immatriculation"], 
-						int.Parse(dataRow["num_reservation"].ToString()));
+					EntiteVehicule unVehicule = new EntiteVehicule((String)dataRow["immatriculation"],
+							(TypeBoite)Enum.Parse(typeof(TypeBoite), dataRow["type_boite"].ToString().ToUpper()), (EntiteMagasin)dataRow["num_magasin"], (String)dataRow["nom_categorie"],
+							(String)dataRow["nom_vehicule"], (String)dataRow["description_vehicule"],
+							int.Parse(dataRow["nombre_places"].ToString()), double.Parse(dataRow["prix_location"].ToString()),
+							(bool)dataRow["climatisation"], (String)dataRow["lien_photo_url"]);
+
+					EntiteReservation uneReservation = new EntiteReservation(int.Parse(dataRow["num_reservation"].ToString()),
+                        int.Parse(dataRow["num_assurance"].ToString()), int.Parse(dataRow["num_client"].ToString()),
+                        (DateTime)dataRow["date_reservation"], (DateTime)dataRow["date_debut_reservation"],
+                        (DateTime)dataRow["date_fin_reservation"], double.Parse(dataRow["montant_reservation"].ToString()),
+                        (String)dataRow["forfait_km"]);
+
+					DetailReservation unDetail = new DetailReservation( unVehicule, uneReservation);
 					lesDetails.Add(unDetail);
 				}
 			}
-			return lesDetails;
+            return lesDetails;
 		}
 	}
 }
