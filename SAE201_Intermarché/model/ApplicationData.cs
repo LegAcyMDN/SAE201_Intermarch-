@@ -64,7 +64,6 @@ namespace SAE201_Intermarche.model
         {            
             LesVehicules = new ObservableCollection<EntiteVehicule>();
             EntiteVehicule vehicule = new EntiteVehicule();
-            LesVehicules = vehicule.FindAll();
         }
 
         public void ChargeListes()
