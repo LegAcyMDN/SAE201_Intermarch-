@@ -10,6 +10,7 @@ namespace SAE201_Intermarche.model
         private ObservableCollection<string> clientEtIdComboBoxItems;
         private ObservableCollection<string> clientComboBoxItems;
         private ObservableCollection<LignePremiereDataGrid> listePourPremiereDataGrid;
+        private ObservableCollection<DetailReservation> listeDetailReservation;
 
         private ObservableCollection<EntiteClient> lesClients;
         private List<string> listeTypeVehicule;
@@ -28,6 +29,7 @@ namespace SAE201_Intermarche.model
         public ObservableCollection<string> ClientComboBoxItems { get => clientComboBoxItems; set => clientComboBoxItems = value; }
         public List<string> ListeTypeVehicule { get => listeTypeVehicule; set => listeTypeVehicule = value; }
         public ObservableCollection<LignePremiereDataGrid> ListePourPremiereDataGrid { get => listePourPremiereDataGrid; set => listePourPremiereDataGrid = value; }
+        public ObservableCollection<DetailReservation> ListeDetailReservation { get => listeDetailReservation; set => listeDetailReservation = value; }
 
         public ApplicationData()
         {
@@ -39,6 +41,9 @@ namespace SAE201_Intermarche.model
 
             ListeTypeVehicule = new List<string>();
             ListePourPremiereDataGrid = new ObservableCollection<LignePremiereDataGrid>();
+
+            ListeDetailReservation = new ObservableCollection<DetailReservation>();
+            
 
             Charge();
         }
@@ -97,6 +102,18 @@ namespace SAE201_Intermarche.model
         public void ChargeDataGridListe()
         {
             
+
+
+            //foreach (DetailReservation detail in this.ListeDetailReservation)
+            //{
+            //    ListePourPremiereDataGrid.Add(new LignePremiereDataGrid())
+
+            //}
+
+            //    foreach (EntiteReservation resa in this.LesReservations)
+            //{
+                
+            //}
 
 
 
