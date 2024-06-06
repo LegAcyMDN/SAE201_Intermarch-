@@ -137,6 +137,6 @@ namespace SAE201_Intermarche.model
 
 		List<DetailReservation> lesDetails = DetailReservation.Read().ToList();
 		List<EntiteVehicule> lesVehicules = EntiteVehicule.Read().ToList();
-
+		List<EntiteClient> lesClients = EntiteClient.Read().ToList();
 	}
 }
