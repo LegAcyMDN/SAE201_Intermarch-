@@ -34,12 +34,12 @@ namespace SAE201_Intermarche.model
 			set { numAssurance = value; }
 		}
 
-		private int numClient;
+		private EntiteClient unClient;
 
-		public int NumClient
+		public EntiteClient UnClient
 		{
-			get { return numClient; }
-			set { numClient = value; }
+			get { return unClient; }
+			set { unClient = value; }
 		}
 
 		private DateTime dateReservation;
@@ -84,11 +84,11 @@ namespace SAE201_Intermarche.model
 
 		public EntiteReservation() { }
 
-		public EntiteReservation(int numReservation, int numAssurance, int numClient, DateTime dateReservation, DateTime dateDebut, DateTime dateFin, double montantReservation, string forfaitKM)
+		public EntiteReservation(int numReservation, int numAssurance, EntiteClient numClient, DateTime dateReservation, DateTime dateDebut, DateTime dateFin, double montantReservation, string forfaitKM)
 		{
 			NumReservation = numReservation;
 			NumAssurance = numAssurance;
-			NumClient = numClient;
+			UnClient = numClient;
 			DateReservation = dateReservation;
 			DateDebut = dateDebut;
 			DateFin = dateFin;
@@ -100,7 +100,7 @@ namespace SAE201_Intermarche.model
 		{
 			DataAccess accesBD = new DataAccess();
 			accesBD.SetData($"insert into reservation (num_assurance, num_client, date_reservation, date_debut_reservation, date_fin_reservation, montant_reservation, forfait_km) " +
-				$"values ('{NumAssurance}','{NumClient}','{DateReservation}','{DateDebut}','{DateFin}','{MontantReservation}','{ForfaitKM}');");
+				$"values ('{NumAssurance}','{UnClient}','{DateReservation}','{DateDebut}','{DateFin}','{MontantReservation}','{ForfaitKM}');");
 		}
 
 		public static ObservableCollection<EntiteReservation> Read()
@@ -113,11 +113,14 @@ namespace SAE201_Intermarche.model
 			{
 				foreach (DataRow dataRow in dataTable.Rows)
 				{
+					EntiteClient unClient = new EntiteClient((int)dataRow["num_client"], (String)dataRow["nom_client"],
+						(String)dataRow["adresse_rue_client"], (String)dataRow["adresse_cp_client"], (String)dataRow["adresse_ville_client"],
+						(String)dataRow["telephone_client"], (String)dataRow["mail_client"]);
+
 					EntiteReservation uneReservation = new EntiteReservation(int.Parse(dataRow["num_reservation"].ToString()),
-						int.Parse(dataRow["num_assurance"].ToString()), int.Parse(dataRow["num_client"].ToString()),
-						(DateTime)dataRow["date_reservation"], (DateTime)dataRow["date_debut_reservation"],
-						(DateTime)dataRow["date_fin_reservation"], double.Parse(dataRow["montant_reservation"].ToString()),
-						(String)dataRow["forfait_km"]);
+						int.Parse(dataRow["num_assurance"].ToString()), unClient, (DateTime)dataRow["date_reservation"], 
+						(DateTime)dataRow["date_debut_reservation"], (DateTime)dataRow["date_fin_reservation"], 
+						double.Parse(dataRow["montant_reservation"].ToString()), (String)dataRow["forfait_km"]);
 					lesReservations.Add(uneReservation);
 				}
 			}
@@ -128,7 +131,7 @@ namespace SAE201_Intermarche.model
 		{
 			DataAccess dataAccess = new DataAccess();
 			String res = $"update reservation set (num_assurance, num_client, date_reservation, date_debut_reservation, date_fin_reservation, montant_reservation, forfait_km) " +
-				$"values ('{NumAssurance}','{NumClient}','{DateReservation}','{DateDebut}','{DateFin}','{MontantReservation}','{ForfaitKM}') where num_reservation = " + NumReservation + ";";
+				$"values ('{NumAssurance}','{UnClient}','{DateReservation}','{DateDebut}','{DateFin}','{MontantReservation}','{ForfaitKM}') where num_reservation = " + NumReservation + ";";
 			dataAccess.SetData(res);
 		}
 
