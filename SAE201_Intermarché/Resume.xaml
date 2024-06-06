@@ -75,6 +75,12 @@ Style="{StaticResource filtreLabel}">
      />
             <Label
 Style="{StaticResource filtreLabel}">
+                Numéro client
+            </Label>
+            <ComboBox  Style="{StaticResource formulaireCombobox}"
+     />
+            <Label
+Style="{StaticResource filtreLabel}">
                 Magasin
             </Label>
             <ComboBox  Style="{StaticResource formulaireCombobox}"

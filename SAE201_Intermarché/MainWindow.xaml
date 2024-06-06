@@ -22,7 +22,6 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="450*" />
             <ColumnDefinition Width="450*" />
-            <ColumnDefinition Width="301*" />
         </Grid.ColumnDefinitions>
         <StackPanel  x:Name="hautPage"
             Style="{StaticResource hautdepage}">
@@ -129,59 +128,6 @@
             </Grid>
 
         </StackPanel>
-
-        <StackPanel
-            Grid.Row="1"
-            Grid.Column="2"
-            Style="{StaticResource Principalstackpanel}">
-            <Label
-               Style="{StaticResource titrePrincipal}">
-                Rechercher un client
-            </Label>
-            <Label Style="{StaticResource filtreLabel}" >Nom</Label>
-            <ComboBox x:Name="cbRechercheClient" Style="{StaticResource formulaireCombobox}" Text="" 
-                      ItemsSource="{Binding ClientComboBoxItems}" SelectionChanged="cbRechercheClient_SelectionChanged"
-                      />
-            <Label Style="{StaticResource filtreLabel}" >Numéro client</Label>
-            <TextBox x:Name="tbNumClient" Style="{StaticResource formulaireTextbox}" TextChanged="tbNumClient_TextChanged"/>
-
-            <Button x:Name="butRechercherClient"
-            Style="{StaticResource PrincipalBouton}"
-            Content="Rechercher" Click="butRechercherClient_Click" />
-        </StackPanel>
-        <StackPanel  Grid.Row="2"
- Grid.Column="2"
- Style="{StaticResource Principalstackpanel}">
-            <Label
-               Style="{StaticResource titrePrincipal}">
-                Rechercher une location
-            </Label>
-            <Label
-                Style="{StaticResource filtreLabel}">
-                Type véhicule
-            </Label>
-            <ComboBox Style="{StaticResource formulaireCombobox}" 
-                      ItemsSource="{Binding ListeTypeVehicule}"
-                      />
-            <Label
-                Style="{StaticResource filtreLabel}">
-                Date emprunt
-            </Label>
-            <DatePicker Style="{StaticResource formulaireDate}"/>
-            <Label
-                Style="{StaticResource filtreLabel}">
-                Date retour
-            </Label>
-            <DatePicker Style="{StaticResource formulaireDate}" />
-            <Button
-             x:Name="location"
-             Style="{StaticResource PrincipalBouton}"
-            Click="resume_Click"
-             Content="Rechercher" />
-
-
-        </StackPanel>
-
         <StackPanel
             Grid.Row="2"
             Grid.ColumnSpan="2"

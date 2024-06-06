@@ -1,0 +1,27 @@
+﻿<Window x:Class="SAE201_Intermarche.RechercheClient"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SAE201_Intermarche"
+        mc:Ignorable="d"
+        Title="RechercheClient" Height="300" Width="300" WindowStartupLocation="CenterScreen" Closing="windowClient_Closing"  ResizeMode="NoResize">
+    <Grid>
+        <StackPanel
+            Style="{StaticResource Principalstackpanel}">
+            <Label
+               Style="{StaticResource titrePrincipal}">
+                Rechercher un client
+            </Label>
+            <Label Style="{StaticResource filtreLabel}" >Nom</Label>
+            <ComboBox x:Name="cbRechercheClient" Style="{StaticResource formulaireCombobox}" Text="" 
+                      ItemsSource="{Binding ClientComboBoxItems}" SelectionChanged="cbRechercheClient_SelectionChanged"
+                      />
+            <Label Style="{StaticResource filtreLabel}" >Numéro client</Label>
+            <TextBox x:Name="tbNumClient" Style="{StaticResource formulaireTextbox}" TextChanged="tbNumClient_TextChanged"/>
+            <Button x:Name="butRechercherClient"
+Style="{StaticResource PrincipalBouton}"
+Content="Rechercher un client" Click="butRechercherClient_Click" />
+        </StackPanel>
+    </Grid>
+</Window>
