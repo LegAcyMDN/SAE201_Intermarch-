@@ -44,15 +44,11 @@ namespace SAE201_Intermarche
 
         private void butRechercherClient_Click(object sender, RoutedEventArgs e)
         {
-            modeClientCreer = false;
-            Client client = new Client();
-            client.Show();
-            this.Hide();
+
         }
         private void clientWin_Click(object sender, RoutedEventArgs e)
         {
-            Client client = new Client();
-            client.Show();
+
         }
     }
 }
