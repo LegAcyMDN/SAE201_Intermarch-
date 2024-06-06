@@ -78,9 +78,12 @@ namespace SAE201_Intermarche.model
                     try
                     {
                         DataTable autreTable = accesBD.GetData($"select * from magasin where num_magasin={(int)dataRow["num_magasin"]}");
-                        EntiteMagasin entMag = new EntiteMagasin((int)dataRow["num_magasin"], (String)dataRow["nom_magasin"], 
-                            (String)dataRow["adresse_rue_magasin"], (String)dataRow["adresse_cp_magasin"], 
-                            (String)dataRow["adresse_ville_magasin"], (String)dataRow["horaire_magasin"]);
+                    foreach (DataRow dataRow1 in autreTable.Rows)//S'exécute une fois normalement
+                    {
+                        EntiteMagasin entMag = new EntiteMagasin((int)dataRow1["num_magasin"], (String)dataRow1["nom_magasin"],
+                            (String)dataRow1["adresse_rue_magasin"], (String)dataRow1["adresse_cp_magasin"],
+                            (String)dataRow1["adresse_ville_magasin"], (String)dataRow1["horaire_magasin"]);
+
 
 
                         EntiteVehicule unVehicule = new EntiteVehicule((String)dataRow["immatriculation"],
@@ -89,6 +92,7 @@ namespace SAE201_Intermarche.model
                             int.Parse(dataRow["nombre_places"].ToString()), double.Parse(dataRow["prix_location"].ToString()),
                             (bool)dataRow["climatisation"], (String)dataRow["lien_photo_url"]);
                         lesVehicules.Add(unVehicule);
+                    }
                     } catch (Exception ex)
                     {
                         Console.WriteLine("Il y a eu une erreur dans le read d'EntiteVehicule : " + ex.StackTrace);
