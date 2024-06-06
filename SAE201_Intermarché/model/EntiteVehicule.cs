@@ -9,7 +9,7 @@ namespace SAE201_Intermarche.model
     public enum TypeBoite
     { MANUELLE, AUTOMATIQUE }
 
-    public class EntiteVehicule
+    public class EntiteVehicule : ICrud
     {
         private string immatriculation;
         private TypeBoite typeBoite;
