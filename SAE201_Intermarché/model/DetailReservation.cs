@@ -51,7 +51,7 @@ namespace SAE201_Intermarche.model
 							(bool)dataRow["climatisation"], (String)dataRow["lien_photo_url"]);
 
 					EntiteReservation uneReservation = new EntiteReservation(int.Parse(dataRow["num_reservation"].ToString()),
-                        int.Parse(dataRow["num_assurance"].ToString()), int.Parse(dataRow["num_client"].ToString()),
+                        int.Parse(dataRow["num_assurance"].ToString()), (EntiteClient)dataRow["num_client"],
                         (DateTime)dataRow["date_reservation"], (DateTime)dataRow["date_debut_reservation"],
                         (DateTime)dataRow["date_fin_reservation"], double.Parse(dataRow["montant_reservation"].ToString()),
                         (String)dataRow["forfait_km"]);
