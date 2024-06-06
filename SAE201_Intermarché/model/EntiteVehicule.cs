@@ -42,14 +42,6 @@ namespace SAE201_Intermarche.model
         public string LienPhotoURL { get => lienPhotoURL; set => lienPhotoURL = value; }
         public TypeBoite TypeBoite { get => typeBoite; set => typeBoite = value; }
 
-        private ObservableCollection<EntiteVehicule> lesVehicules;
-
-        public ObservableCollection<EntiteVehicule> LesVehicules
-        {
-            get { return lesVehicules; }
-            set { lesVehicules = value; }
-        }
-
         public EntiteVehicule() { }
 
         public EntiteVehicule(string immatriculation, TypeBoite typeBoite, int numMagasin, string nomCategorie, string nomVehicule, string description, int nombrePlaces, double prixLocation, bool climatisation, string lienPhotoURL)
@@ -73,19 +65,25 @@ namespace SAE201_Intermarche.model
                 $"values ('{Immatriculation}','{TypeBoite}','{NumMagasin}','{NomVehicule}','{DescriptionVehicule}','{NombrePlaces}','{PrixLocation}','{Climatisation}','{LienPhotoURL}');");
         }
 
-        public void Read()
+        public static ObservableCollection<EntiteVehicule> Read()
         {
-            DataAccess dataAccess = new DataAccess();
-            String res = $"select * from vehicule where immatricualtion = '{Immatriculation}');";
-            DataTable dataTable = dataAccess.GetData(res);
+            ObservableCollection<EntiteVehicule> lesVehicules = new ObservableCollection<EntiteVehicule>();
+            DataAccess accesBD = new DataAccess();
+            String res = $"selectc * from vehicule;";
+            DataTable dataTable = accesBD.GetData(res);
             if (dataTable != null)
             {
                 foreach (DataRow dataRow in dataTable.Rows)
                 {
-                    Immatriculation = (String)dataRow["num_reservation"];
-                    break;
+                    EntiteVehicule unVehicule = new EntiteVehicule((String)dataRow["immatriculation"],
+                        (TypeBoite)dataRow["type_boite"], int.Parse(dataRow["num_magasin"].ToString()), (String)dataRow["nom_categorie"],
+                        (String)dataRow["nom_vehicule"], (String)dataRow["description_vehicule"],
+                        int.Parse(dataRow["nombres_places"].ToString()), int.Parse(dataRow["prix_location"].ToString()),
+                        (bool)dataRow["climatisation"], (String)dataRow["lien_photo_url"]);
+                    lesVehicules.Add(unVehicule);
                 }
             }
+            return lesVehicules;
         }
 
         public void Update()
@@ -93,37 +91,18 @@ namespace SAE201_Intermarche.model
             DataAccess dataAccess = new DataAccess();
             String res = $"update vehicule set (immatriculation, type_boite, num_magasin, nom_vehicule, description_vehicule, nombres_places, prix_location, climatisation, lien_photo_url) " +
                 $"values ('{Immatriculation}','{TypeBoite}','{NumMagasin}','{NomVehicule}','{DescriptionVehicule}','{NombrePlaces}','{PrixLocation}','{Climatisation}','{LienPhotoURL}') where immatriculation = " + Immatriculation + ";";
+            dataAccess.SetData(res);
         }
 
         public void Delete()
         {
-            foreach (EntiteVehicule entiteVehicule in LesVehicules)
-            { entiteVehicule.Delete(); }
+            ObservableCollection<EntiteVehicule> lesVehicules = new ObservableCollection<EntiteVehicule>();
+            foreach (EntiteVehicule unVehicule in lesVehicules)
+            { unVehicule.Delete(); }
 
             DataAccess dataAccess = new DataAccess();
             String res = $"delete from vehicule where immatriculation = '{Immatriculation}';";
             dataAccess.SetData(res);
-        }
-
-        public ObservableCollection<EntiteVehicule> FindAll()
-        {
-            ObservableCollection<EntiteVehicule> lesVehicules = new ObservableCollection<EntiteVehicule>();
-            DataAccess accesBD = new DataAccess();
-            String res = $"select immatriculation from vehicule where immatriculation = '{Immatriculation}';";
-            DataTable dataTable = accesBD.GetData(res);
-            if (dataTable != null)
-            {
-                foreach (DataRow dataRow in dataTable.Rows)
-                {
-                    EntiteVehicule unVehicule = new EntiteVehicule((String)dataRow["immatriculation"],
-                        (TypeBoite)dataRow["type_boite"], int.Parse(dataRow["num_magasin"].ToString()), (String)dataRow["nom_categorie"], 
-                        (String)dataRow["nom_vehicule"], (String)dataRow["description_vehicule"], 
-                        int.Parse(dataRow["nombres_places"].ToString()), int.Parse(dataRow["prix_location"].ToString()), 
-                        (bool)dataRow["climatisation"], (String)dataRow["lien_photo_url"]);
-                    lesVehicules.Add(unVehicule);
-                }
-            }
-            return lesVehicules;
         }
     }
 }
