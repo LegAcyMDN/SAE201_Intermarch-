@@ -40,13 +40,7 @@ namespace SAE201_Intermarche
                 cbRechercheClient.SelectedIndex = num - 1;
             }
         }
-        private void retourWin_Click(object sender, RoutedEventArgs e)
-        {
-            modeClientCreer = true;
-            Client client = new Client();
-            client.Show();
-            this.Hide();
-        }
+
 
         private void butRechercherClient_Click(object sender, RoutedEventArgs e)
         {
@@ -54,6 +48,11 @@ namespace SAE201_Intermarche
             Client client = new Client();
             client.Show();
             this.Hide();
+        }
+        private void clientWin_Click(object sender, RoutedEventArgs e)
+        {
+            Client client = new Client();
+            client.Show();
         }
     }
 }

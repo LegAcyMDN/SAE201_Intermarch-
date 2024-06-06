@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SAE201_Intermarche"
         mc:Ignorable="d"
-        Title="RechercheLocation" Height="350" Width="300" WindowStartupLocation="CenterScreen" Closing="windowClient_Closing"  ResizeMode="NoResize">
+        Title="RechercheLocation" Height="350" Width="300" WindowStartupLocation="CenterScreen"   ResizeMode="NoResize">
     <Grid>
         <StackPanel  
  Style="{StaticResource Principalstackpanel}">
