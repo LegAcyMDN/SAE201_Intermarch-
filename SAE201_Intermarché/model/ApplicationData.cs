@@ -21,7 +21,7 @@ namespace SAE201_Intermarche.model
         private bool selectionForfaitHaut = false;
         private bool selectionAssuCorpo = false;
         private bool selectionAssuVol = false;
-        // const calcul prix
+        // const calcul prix et date
         private const double FORFAIT_BAS = 1;
         private const double FORFAIT_MOYEN = 10;
         private const double FORFAIT_HAUT = 100;
@@ -95,7 +95,7 @@ namespace SAE201_Intermarche.model
             ListeTousVehiculesDetail = new ObservableCollection<DataGridMain>();
 
             Charge();
-            CalculPrixFinal();
+           
         }
 
         public void Charge()
@@ -109,7 +109,9 @@ namespace SAE201_Intermarche.model
                 ClientEtIdComboBoxItems.Add(client.Nom + "; " + client.Num);
                 ClientComboBoxItems.Add(client.Nom);
             }
-
+            selectionDateEmprunt = DateTime.Now;
+            selectionDateRetour = DateTime.Now;
+            CalculPrixFinal();
             ChargeBD();
             ChargeListes();
         }
@@ -210,7 +212,7 @@ namespace SAE201_Intermarche.model
                 prixAssuVol = nbjours * ASSU_VOL;
 
             prix = prixAssuCorpo + prixAssuVol + prix;
-            return PrixFinal = $"prix : {prix.ToString()} euros";
+            return PrixFinal = $"prix : {prix} euros";
         }
     }
 
