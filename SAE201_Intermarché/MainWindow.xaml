@@ -79,18 +79,18 @@
                                     Margin="20,5"
                                     Checked="vol_Checked"
                                     Content="Assurance vol" />
-                                <RadioButton
+                                <RadioButton x:Name="forfaitBas"
                                     Margin="20,5"
                                     Content="Forfait -100km"
-                                    GroupName="forfait" />
-                                <RadioButton
+                                    GroupName="forfait"  Checked="forfaitBas_Checked"/>
+                                <RadioButton x:Name="forfaitMoyen"
                                     Margin="20,5"
                                     Content="Forfait 100km - 250km"
-                                    GroupName="forfait" />
-                                <RadioButton
+                                    GroupName="forfait"  Checked="forfaitMoyen_Checked"/>
+                                <RadioButton x:Name="forfaitHaut"
                                     Margin="20,5"
                                     Content="Forfait +250km"
-                                    GroupName="forfait" />
+                                    GroupName="forfait"  Checked="forfaitHaut_Checked"/>
                             </StackPanel>
 
                         </Grid>

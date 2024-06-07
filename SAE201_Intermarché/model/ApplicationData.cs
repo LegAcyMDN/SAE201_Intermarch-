@@ -16,7 +16,18 @@ namespace SAE201_Intermarche.model
         private DateTime selectionDateEmprunt;
         private DateTime selectionDateRetour;
         private string prixFinal;
-        
+        private bool selectionForfaitBas = false;
+        private bool selectionForfaitMoyen = false;
+        private bool selectionForfaitHaut = false;
+        private bool selectionAssuCorpo = false;
+        private bool selectionAssuVol = false;
+        // const calcul prix
+        private const double FORFAIT_BAS = 1;
+        private const double FORFAIT_MOYEN = 10;
+        private const double FORFAIT_HAUT = 100;
+        private const double ASSU_CORPO = 0.2;
+        private const double ASSU_VOL = 0.2;
+
         //listes items
         private ObservableCollection<string> clientEtIdComboBoxItems;
         private ObservableCollection<string> clientComboBoxItems;
@@ -60,6 +71,11 @@ namespace SAE201_Intermarche.model
         public DateTime SelectionDateEmprunt { get => selectionDateEmprunt; set => selectionDateEmprunt = value; }
         public DateTime SelectionDateRetour { get => selectionDateRetour; set => selectionDateRetour = value; }
         public string PrixFinal { get => prixFinal; set => prixFinal = value; }
+        public bool SelectionForfaitBas { get => selectionForfaitBas; set => selectionForfaitBas = value; }
+        public bool SelectionForfaitMoyen { get => selectionForfaitMoyen; set => selectionForfaitMoyen = value; }
+        public bool SelectionForfaitHaut { get => selectionForfaitHaut; set => selectionForfaitHaut = value; }
+        public bool SelectionAssuCorpo { get => selectionAssuCorpo; set => selectionAssuCorpo = value; }
+        public bool SelectionAssuVol { get => selectionAssuVol; set => selectionAssuVol = value; }
 
         public ApplicationData()
         {
@@ -170,13 +186,31 @@ namespace SAE201_Intermarche.model
             }
 
         }
-        public void CalculPrixFinal()    
+        public string CalculPrixFinal()         
         
-       {
+        {
+            double prixAssuCorpo=0;
+            double prixAssuVol=0;
             double prix = 0;
             TimeSpan difference = selectionDateRetour - selectionDateEmprunt;
             int nbjours = difference.Days;
-            PrixFinal = $"prix : {prix.ToString()} euros";
+            nbjours = 8;
+            switch (selectionForfaitBas)
+            {
+                case true: prix += FORFAIT_BAS; break;
+                case false: switch (selectionForfaitMoyen)
+                    {
+                        case true: prix += FORFAIT_MOYEN; break;
+                        case false: prix+=FORFAIT_HAUT; break;
+                    }; break;
+            }
+            if (selectionAssuCorpo)
+                prixAssuCorpo = nbjours * ASSU_CORPO;
+            if (selectionAssuVol)
+                prixAssuVol = nbjours * ASSU_VOL;
+
+            prix = prixAssuCorpo + prixAssuVol + prix;
+            return PrixFinal = $"prix : {prix.ToString()} euros";
         }
     }
 

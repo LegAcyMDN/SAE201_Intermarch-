@@ -65,15 +65,7 @@ namespace SAE201_Intermarche
             recherche.ShowDialog();
         }
 
-        private void Corpo_Checked(object sender, RoutedEventArgs e)
-        {
 
-        }
-
-        private void vol_Checked(object sender, RoutedEventArgs e)
-        {
-            
-        }
 
         private void colonnegridmain_KeyDown(object sender, KeyEventArgs e)
         {
@@ -95,6 +87,35 @@ namespace SAE201_Intermarche
         private void dateRetourChoix_DataContextChanged(object sender, DependencyPropertyChangedEventArgs e)
         {
             MainWindow.getInstance().data.SelectionDateRetour = (DateTime)dateRetourChoix.DataContext;
+            MainWindow.getInstance().data.CalculPrixFinal();
+        }
+
+        private void forfaitHaut_Checked(object sender, RoutedEventArgs e)
+        {
+            MainWindow.getInstance().data.SelectionForfaitHaut = true;
+            MainWindow.getInstance().data.PrixFinal = MainWindow.getInstance().data.CalculPrixFinal();
+        }
+
+        private void forfaitMoyen_Checked(object sender, RoutedEventArgs e)
+        {
+            MainWindow.getInstance().data.SelectionForfaitMoyen = true;
+            MainWindow.getInstance().data.CalculPrixFinal();
+        }
+
+        private void forfaitBas_Checked(object sender, RoutedEventArgs e)
+        {
+            MainWindow.getInstance().data.SelectionForfaitBas = true;
+            MainWindow.getInstance().data.CalculPrixFinal();
+        }
+        private void Corpo_Checked(object sender, RoutedEventArgs e)
+        {
+            MainWindow.getInstance().data.SelectionAssuCorpo = true;
+            MainWindow.getInstance().data.CalculPrixFinal();
+        }
+
+        private void vol_Checked(object sender, RoutedEventArgs e)
+        {
+            MainWindow.getInstance().data.SelectionAssuVol = true;
             MainWindow.getInstance().data.CalculPrixFinal();
         }
     }
