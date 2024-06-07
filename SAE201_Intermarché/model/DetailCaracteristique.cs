@@ -45,7 +45,7 @@ namespace SAE201_Intermarche.model
 		{
 			ObservableCollection<DetailCaracteristique> lesDetailsCaract = new ObservableCollection<DetailCaracteristique>();
 			DataAccess dataAccess = new DataAccess();
-			String res = "select distinct dc.*, v.*, c.* from detail_caracteristique " +
+			String res = "select dc.*, v.*, c.* from detail_caracteristique " +
 				"join vehicule v on dc.immatriculation = v.immatriculation " +
 				"join caracteristique c on dc.num_caracteristique = c.num_caracteristique;";
 			DataTable dataTable = dataAccess.GetData(res);

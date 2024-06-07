@@ -10,7 +10,7 @@ namespace SAE201_Intermarche.model
 {
 	public class EntiteReservation : ICrud
 	{
-		private List<EntiteVehicule> lesVehicules = EntiteVehicule.Read().ToList();
+		private List<EntiteVehicule> lesVehicules;
 
 		public List<EntiteVehicule> LesVehicules
 		{
@@ -92,6 +92,7 @@ namespace SAE201_Intermarche.model
 			DateFin = dateFin;
 			MontantReservation = montantReservation;
 			ForfaitKM = forfaitKM;
+			LesVehicules = EntiteVehicule.Read(numReservation).ToList();
 		}
 
 		public void Create()
@@ -105,7 +106,7 @@ namespace SAE201_Intermarche.model
 		{
 			ObservableCollection<EntiteReservation> lesReservations = new ObservableCollection<EntiteReservation>();
 			DataAccess accesBD = new DataAccess();
-			String res = $"select distinct r.*, a.*, c.* from reservation r "+
+			String res = $"select r.*, a.*, c.* from reservation r "+
 				"join assurance a on r.num_assurance = a.num_assurance " +
 				"join client c on r.num_client = c.num_client;";
 			DataTable dataTable = accesBD.GetData(res);
