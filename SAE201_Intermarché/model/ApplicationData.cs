@@ -11,7 +11,13 @@ namespace SAE201_Intermarche.model
 {
     public class ApplicationData
     {
+        //selection pour resa 
         private EntiteClient selectionClient;
+        private DateTime selectionDateEmprunt;
+        private DateTime selectionDateRetour;
+        private string prixFinal;
+        
+        //listes items
         private ObservableCollection<string> clientEtIdComboBoxItems;
         private ObservableCollection<string> clientComboBoxItems;
         private ObservableCollection<LignePremiereDataGrid> listePourPremiereDataGrid;
@@ -51,6 +57,9 @@ namespace SAE201_Intermarche.model
         public List<EntiteMagasin> ListeEntiteMagasins { get => listeEntiteMagasins; set => listeEntiteMagasins = value; }
         public ObservableCollection<DataGridMain> ListeTousVehiculesDetail { get => listeTousVehiculesDetail; set => listeTousVehiculesDetail = value; }
         public EntiteClient SelectionClient { get => selectionClient; set => selectionClient = value; }
+        public DateTime SelectionDateEmprunt { get => selectionDateEmprunt; set => selectionDateEmprunt = value; }
+        public DateTime SelectionDateRetour { get => selectionDateRetour; set => selectionDateRetour = value; }
+        public string PrixFinal { get => prixFinal; set => prixFinal = value; }
 
         public ApplicationData()
         {
@@ -70,6 +79,7 @@ namespace SAE201_Intermarche.model
             ListeTousVehiculesDetail = new ObservableCollection<DataGridMain>();
 
             Charge();
+            CalculPrixFinal();
         }
 
         public void Charge()
@@ -133,7 +143,7 @@ namespace SAE201_Intermarche.model
                     {
 
 
-                        ListePourPremiereDataGrid.Add(new LignePremiereDataGrid(vehicule.NomVehicule, resa.ForfaitKM, resa.UneAssurance.DescriptionAssurance, resa.UnClient.Nom, vehicule.TypeBoite, resa.DateDebut, resa.DateFin));
+                      //  ListePourPremiereDataGrid.Add(new LignePremiereDataGrid(vehicule.NomVehicule, resa.ForfaitKM, resa.UneAssurance.DescriptionAssurance, resa.UnClient.Nom, vehicule.TypeBoite, resa.DateDebut, resa.DateFin));
                     }
                 //}
             }
@@ -160,9 +170,14 @@ namespace SAE201_Intermarche.model
             }
 
         }
-
-
-
-
+        public void CalculPrixFinal()    
+        
+       {
+            double prix = 0;
+            TimeSpan difference = selectionDateRetour - selectionDateEmprunt;
+            int nbjours = difference.Days;
+            PrixFinal = $"prix : {prix.ToString()} euros";
+        }
     }
+
 }

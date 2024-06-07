@@ -47,9 +47,9 @@
                 <Grid>
 
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="347*" />
-                        <RowDefinition Height="122*" />
-                        <RowDefinition Height="111*" />
+                        <RowDefinition Height="195*" />
+                        <RowDefinition Height="43*" />
+                        <RowDefinition Height="52*" />
                     </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="40*" />
@@ -125,13 +125,14 @@
                                 <Label Style="{StaticResource formulaireLabel}">Adresse</Label>
                                 <Label Style="{StaticResource formulaireLabel}">Code postal</Label>
                                 <Label Style="{StaticResource formulaireLabel}">Ville</Label>
+                                <Button
+       x:Name="clientExistant"
+       Click="clientExistant_Click"
+       Content="Séléction client existant"
+       Style="{StaticResource PrincipalBouton}" />
                                 <Label Style="{StaticResource formulaireLabel}">Date retour</Label>
                                 <Label Style="{StaticResource formulaireLabel}">Date emprunt</Label>
-                                <Button
-                                    x:Name="clientExistant"
-                                    Click="clientExistant_Click"
-                                    Content="Séléction client existant"
-                                    Style="{StaticResource PrincipalBouton}" />
+                             
                             </StackPanel>
 
                             <StackPanel Grid.Row="0" Grid.Column="1">
@@ -163,13 +164,14 @@
                                     Focusable="False"
                                     Style="{StaticResource formulaireTextbox}"
                                     Text="{Binding SelectionClient.Ville}" />
-                                <DatePicker Style="{StaticResource formulaireDate}"/>
-                                <DatePicker Style="{StaticResource formulaireDate}" />
                                 <Button
-                                    x:Name="nouveauClient"
-                                    Click="nouveauClient_Click"
-                                    Content="Création nouveau client"
-                                    Style="{StaticResource PrincipalBouton}" />
+      x:Name="nouveauClient"
+      Click="nouveauClient_Click"
+      Content="Création nouveau client"
+      Style="{StaticResource PrincipalBouton}" />
+                                <DatePicker Focusable="False" Style="{StaticResource formulaireDate}" SelectedDate="{Binding SelectionDateEmprunt }"/>
+                                <DatePicker Focusable="False" Style="{StaticResource formulaireDate}" SelectedDate="{Binding SelectionDateRetour }" />
+                              
                             </StackPanel>
 
                         </Grid>
@@ -183,7 +185,7 @@
                             Margin="20"
                             Focusable="False"
                             Style="{StaticResource formulaireTextbox}"
-                            Text="Prix :" />
+                            Text="{Binding PrixFinal}" />
                     </StackPanel>
                     <StackPanel
                         Grid.Row="2"
@@ -200,11 +202,11 @@
                         Grid.Row="1"
                         Grid.RowSpan="2"
                         Grid.Column="1"
-                        Style="{StaticResource Principalstackpanel}">
+                        Style="{StaticResource Principalstackpanel}" Margin="20,20,20,20">
                         <Label Style="{StaticResource titrePrincipal}">
                             Véhicules séléctionnés
                         </Label>
-                        <DataGrid x:Name="colonnegridmain" ItemsSource="{Binding}" KeyDown="colonnegridmain_KeyDown">
+                        <DataGrid x:Name="colonnegridmain" KeyDown="colonnegridmain_KeyDown">
                             <DataGrid.Columns>
                                 <DataGridTextColumn
 Header="Nom véhicule"
@@ -225,7 +227,7 @@ Binding="{Binding Vehicule.TypeBoite}"/>
                     <StackPanel
                         Grid.Row="0"
                         Grid.Column="1"
-                        Style="{StaticResource Principalstackpanel}">
+                        Style="{StaticResource Principalstackpanel}" Margin="20,20,20,20">
                         <Label Style="{StaticResource titrePrincipal}">
                             Liste véhicules
                         </Label>
@@ -258,7 +260,14 @@ Binding="{Binding Vehicule.TypeBoite}"/>
                             FontSize="15">
                             Date emprunt
                         </Label>
-                        <DatePicker Style="{StaticResource formulaireDate}" />
+                        <DatePicker x:Name="dateEmpruntChoix" Style="{StaticResource formulaireDate}" SelectedDate="{Binding SelectionDateEmprunt}" DataContextChanged="dateEmpruntChoix_DataContextChanged" />
+                        <Label
+                           Margin="10,10,10,5"
+                            Padding="3"
+                             FontSize="15">
+                            Date retour
+                        </Label>
+                        <DatePicker x:Name="dateRetourChoix"  SelectedDate="{Binding SelectionDateRetour}" Style="{StaticResource formulaireDate}" DataContextChanged="dateRetourChoix_DataContextChanged"  />
                         <Label Style="{StaticResource filtreLabel}">
                             Magasin
                         </Label>

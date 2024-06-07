@@ -86,5 +86,16 @@ namespace SAE201_Intermarche
             return instance;
         }
 
+        private void dateEmpruntChoix_DataContextChanged(object sender, DependencyPropertyChangedEventArgs e)
+        {
+            MainWindow.getInstance().data.SelectionDateEmprunt = (DateTime)dateEmpruntChoix.DataContext;
+            MainWindow.getInstance().data.CalculPrixFinal();
+        }
+
+        private void dateRetourChoix_DataContextChanged(object sender, DependencyPropertyChangedEventArgs e)
+        {
+            MainWindow.getInstance().data.SelectionDateRetour = (DateTime)dateRetourChoix.DataContext;
+            MainWindow.getInstance().data.CalculPrixFinal();
+        }
     }
 }
