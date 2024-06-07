@@ -298,26 +298,26 @@ Binding="{Binding Telephone}"/>
                         <Label Style="{StaticResource titrePrincipal}">
                             Résumé des locations
                         </Label>
-                        <DataGrid Height="auto" d:ItemsSource="{d:SampleData ItemCount=100}" ItemsSource="{Binding ListeDetailReservation}">
+                        <DataGrid Height="auto" ItemsSource="{Binding ListePourPremiereDataGrid}">
                             <DataGrid.Columns>
                                 <DataGridTextColumn
 Header="Nom"
-Binding="{Binding Source={}}"/>
+Binding="{Binding NomVehicule}"/>
                                 <DataGridTextColumn
 Header="Prénom"
-Binding="{Binding Prenom}"/>
+Binding="{Binding TypeBoiteData}"/>
                                 <DataGridTextColumn
 Header="Genre"
-Binding="{Binding Genre}"/>
+Binding="{Binding Forfait}"/>
                                 <DataGridTextColumn
 Header="Date Naissance" 
 Binding="{Binding DateNaissance, StringFormat=dd/MM/yyyy}"/>
                                 <DataGridTextColumn
 Header="Email"
-Binding="{Binding Email}"/>
+Binding="{Binding Assurance}"/>
                                 <DataGridTextColumn
 Header="Téléphone"
-Binding="{Binding Telephone}"/>
+Binding="{Binding Nom}"/>
                             </DataGrid.Columns>
                         </DataGrid>
 
