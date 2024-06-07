@@ -21,6 +21,7 @@ namespace SAE201_Intermarche
 
         public static MainWindow instance;
         bool naturalClosing = true;
+        bool modif = false;
         public MainWindow()
         {
             InitializeComponent();
@@ -46,7 +47,16 @@ namespace SAE201_Intermarche
         private void nouveauClient_Click(object sender, RoutedEventArgs e)
         {
             AjoutClient ajout = new AjoutClient();
+            nouveauClient.DataContext = new EntiteClient();
             ajout.ShowDialog();
+
+
+            if (ajout.DialogResult == true)
+            {
+                data.LesClients.Add((EntiteClient)ajout.DataContext);
+                modif = true;
+                MainWindow.getInstance().data.SelectionClient = (EntiteClient)ajout.DataContext;
+            }
         }
 
         private void clientExistant_Click(object sender, RoutedEventArgs e)
