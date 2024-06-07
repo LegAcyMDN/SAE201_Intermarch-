@@ -39,5 +39,10 @@ namespace SAE201_Intermarche.model
             }
             return lesCategories;
         }
+
+        public override string? ToString()
+        {
+            return this.NomCategorie;
+        }
     }
 }
