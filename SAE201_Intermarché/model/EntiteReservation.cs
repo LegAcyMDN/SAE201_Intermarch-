@@ -10,7 +10,7 @@ namespace SAE201_Intermarche.model
 {
 	public class EntiteReservation : ICrud
 	{
-		private List<EntiteVehicule> lesVehicules = EntiteVehicule.Read().ToList();
+		private List<EntiteVehicule> lesVehicules;
 
 		public List<EntiteVehicule> LesVehicules
 		{
@@ -92,6 +92,7 @@ namespace SAE201_Intermarche.model
 			DateFin = dateFin;
 			MontantReservation = montantReservation;
 			ForfaitKM = forfaitKM;
+			LesVehicules = EntiteVehicule.Read(numReservation).ToList();
 		}
 
 		public void Create()

@@ -83,5 +83,34 @@ namespace SAE201_Intermarche.model
             }
             return lesVehicules;
         }
+
+        public static ObservableCollection<EntiteVehicule> Read(int numReservation)
+        {
+            ObservableCollection<EntiteVehicule> lesVehicules = new ObservableCollection<EntiteVehicule>();
+            DataAccess accesBD = new DataAccess();
+            String res = "select v.*, m.*, cv.* from vehicule v join magasin m on v.num_magasin = m.num_magasin " +
+                "join categorie_vehicule cv on v.nom_categorie = cv.nom_categorie join detail_reservation dc on v.immatriculation = dc.immatriculation " +
+                $"join reservation r on dc.num_reservation = r.num_reservation where r.num_reservation = {numReservation};";
+            DataTable dataTable = accesBD.GetData(res);
+            if (dataTable != null)
+            {
+                foreach (DataRow dataRow in dataTable.Rows)
+                {
+                    EntiteMagasin unMagasin = new EntiteMagasin((int)dataRow["num_magasin"], (String)dataRow["nom_magasin"],
+                        (String)dataRow["adresse_rue_magasin"], (String)dataRow["adresse_cp_magasin"],
+                        (String)dataRow["adresse_ville_magasin"], (String)dataRow["horaire_magasin"]);
+
+                    CategorieVehicule uneCategorie = new CategorieVehicule((String)dataRow["nom_categorie"]);
+
+                    EntiteVehicule unVehicule = new EntiteVehicule((String)dataRow["immatriculation"],
+                        (TypeBoite)Enum.Parse(typeof(TypeBoite), dataRow["type_boite"].ToString().ToUpper()), unMagasin, uneCategorie,
+                        (String)dataRow["nom_vehicule"], (String)dataRow["description_vehicule"],
+                        int.Parse(dataRow["nombre_places"].ToString()), double.Parse(dataRow["prix_location"].ToString()),
+                        (bool)dataRow["climatisation"], (String)dataRow["lien_photo_url"]);
+                    lesVehicules.Add(unVehicule);
+                }
+            }
+            return lesVehicules;
+        }
     }
 }
