@@ -119,7 +119,23 @@ namespace SAE201_Intermarche.model
 
             foreach (EntiteVehicule vehicule in LesVehicules)
             {
-            //    ListeTousVehiculesDetail.Add(new DataGridMain(vehicule, dispo));
+                ListeTousVehiculesDetail.Add(new DataGridMain(vehicule, dispo));
+
+                ListeTousVehiculesDetail.ToList().ForEach(x =>
+                {
+                    LesReservations.ToList().ForEach(resa =>
+                    {
+                        if(resa.LesVehicules.Find(y => y == x.Vehicule) != null)
+                        {
+                            x.Dispo = false;
+                        }
+
+
+                    });
+
+                });
+
+
             }
 
         }
