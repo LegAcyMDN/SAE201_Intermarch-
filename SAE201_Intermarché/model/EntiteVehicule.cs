@@ -41,8 +41,6 @@ namespace SAE201_Intermarche.model
         public string LienPhotoURL { get => lienPhotoURL; set => lienPhotoURL = value; }
         public TypeBoite TypeBoite { get => typeBoite; set => typeBoite = value; }
 
-        public EntiteVehicule() { }
-
         public EntiteVehicule(string immatriculation, TypeBoite typeBoite, EntiteMagasin numMagasin, CategorieVehicule nomCategorie, string nomVehicule, string description, int nombrePlaces, double prixLocation, bool climatisation, string lienPhotoURL)
         {
             Immatriculation = immatriculation;
@@ -61,7 +59,7 @@ namespace SAE201_Intermarche.model
         {
             ObservableCollection<EntiteVehicule> lesVehicules = new ObservableCollection<EntiteVehicule>();
             DataAccess accesBD = new DataAccess();
-            String res = $"select v.num_vehicule, type_boite, v.num_magasin, r.nom_categorie, description_vehicule, nombre_places, prix_location, climatisation, lien_photo_url from vehicule v " +
+            String res = $"select distinct v.*, m.*, cv.* from vehicule v " +
                 "join magasin m on v.num_magasin = m.num_magasin " +
                 "join categorie_vehicule cv on v.nom_categorie = cv.nom_categorie;";
             DataTable dataTable = accesBD.GetData(res);

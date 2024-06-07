@@ -49,7 +49,6 @@ namespace SAE201_Intermarche
                 telephone = value; }
         }
 
-
         public string Mail { get => mail; set => mail = value; }
 
         public EntiteClient(int num, string nom, string rue, string cp, string ville, string telephone, string mail)
