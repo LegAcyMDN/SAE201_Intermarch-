@@ -36,7 +36,7 @@ namespace SAE201_Intermarche.model
 		{
 			ObservableCollection<DetailReservation> lesDetailsReserv = new ObservableCollection<DetailReservation>();
 			DataAccess dataAccess = new DataAccess();
-			String res = "select dr.immatriculation, dr.num_reservation from detail_reservation dr " +
+			String res = "select distinct dr.*, v.*, r.* from detail_reservation dr " +
 				"join vehicule v on dr.immatriculation = v.immatriculation " +
 				"join reservation r on dr.num_reservation = r.num_reservation;";
 			DataTable dataTable = dataAccess.GetData(res);
@@ -45,8 +45,8 @@ namespace SAE201_Intermarche.model
 				foreach (DataRow dataRow in dataTable.Rows)
 				{
 					EntiteVehicule unVehicule = new EntiteVehicule((String)dataRow["immatriculation"],
-							(TypeBoite)Enum.Parse(typeof(TypeBoite), dataRow["type_boite"].ToString().ToUpper()), (EntiteMagasin)dataRow["num_magasin"], (String)dataRow["nom_categorie"],
-							(String)dataRow["nom_vehicule"], (String)dataRow["description_vehicule"],
+							(TypeBoite)Enum.Parse(typeof(TypeBoite), dataRow["type_boite"].ToString().ToUpper()), (EntiteMagasin)dataRow["num_magasin"], 
+							(CategorieVehicule)dataRow["nom_categorie"], (String)dataRow["nom_vehicule"], (String)dataRow["description_vehicule"],
 							int.Parse(dataRow["nombre_places"].ToString()), double.Parse(dataRow["prix_location"].ToString()),
 							(bool)dataRow["climatisation"], (String)dataRow["lien_photo_url"]);
 

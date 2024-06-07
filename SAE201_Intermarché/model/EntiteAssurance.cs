@@ -52,7 +52,7 @@ namespace SAE201_Intermarche.model
                 foreach (DataRow dataRow in dataTable.Rows)
                 {
                     EntiteAssurance uneAssurance = new EntiteAssurance((int)dataRow["num_assurance"], 
-                        (String)dataRow["description_assurance"], (int)dataRow["prix_assurance"]);
+                        (String)dataRow["description_assurance"], (Int16)dataRow["prix_assurance"]);
                     lesAssurances.Add(uneAssurance);
                 }
             }

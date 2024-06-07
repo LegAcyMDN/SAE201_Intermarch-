@@ -77,10 +77,10 @@ namespace SAE201_Intermarche.model
         public void ChargeBD()
         {
             LesVehicules = new ObservableCollection<EntiteVehicule>();
-            EntiteVehicule vehicule = new EntiteVehicule();
+            //EntiteVehicule vehicule = new EntiteVehicule();
 
             LesReservations = new ObservableCollection<EntiteReservation>();
-            EntiteReservation reservation = new EntiteReservation();
+            //EntiteReservation reservation = new EntiteReservation();
             
         }
 
