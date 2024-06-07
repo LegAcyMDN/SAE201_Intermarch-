@@ -107,16 +107,19 @@ namespace SAE201_Intermarche.model
 		{
 			ObservableCollection<EntiteReservation> lesReservations = new ObservableCollection<EntiteReservation>();
 			DataAccess accesBD = new DataAccess();
-			String res = $"select r.num_assurance, r.num_client, date_reservation, date_debut_reservation, date_fin_reservation, montant_reservation, forfait_km from reservation r "+
-				"join assurance a on r.num_assurance = a.num_assurance " +
+			String res = $"select distinct r.*, a.*, c.* from reservation r " +
+                "join assurance a on r.num_assurance = a.num_assurance " +
 				"join client c on r.num_client = c.num_client;";
 			DataTable dataTable = accesBD.GetData(res);
 			if (dataTable != null)
 			{
 				foreach (DataRow dataRow in dataTable.Rows)
 				{
-                    EntiteAssurance uneAssurance = new EntiteAssurance((int)dataRow["num_assurance"],
-                        (String)dataRow["description_assurance"], (int)dataRow["prix_assurance"]);
+#if DEBUG
+					Console.WriteLine(dataRow["description_assurance"].ToString());
+#endif
+					EntiteAssurance uneAssurance = new EntiteAssurance((int)dataRow["num_assurance"],
+                        (String)dataRow["description_assurance"], (Int16)dataRow["prix_assurance"]);
 
                     EntiteClient unClient = new EntiteClient((int)dataRow["num_client"], (String)dataRow["nom_client"],
 						(String)dataRow["adresse_rue_client"], (String)dataRow["adresse_cp_client"], (String)dataRow["adresse_ville_client"],
