@@ -14,6 +14,7 @@ namespace SAE201_Intermarche.model
         private string assurance;
         private string nom;
         private string prenom;
+        private bool dispo;
 
         public string NomVehicule { get => nomVehicule; set => nomVehicule = value; }
         public string Forfait { get => forfait; set => forfait = value; }
@@ -21,8 +22,9 @@ namespace SAE201_Intermarche.model
         public string Nom { get => nom; set => nom = value; }
         public string Prenom { get => prenom; set => prenom = value; }
         public string TypeBoiteData { get => typeBoiteData; set => typeBoiteData = value; }
+        public bool Dispo { get => dispo; set => dispo = value; }
 
-        public LignePremiereDataGrid(string nomVehicule, string forfait, string assurance, string nom, string prenom, TypeBoite typeBoiteData)
+        public LignePremiereDataGrid(string nomVehicule, string forfait, string assurance, string nom, string prenom, TypeBoite typeBoiteData, bool dispo)
         {
             NomVehicule = nomVehicule;
             Forfait = forfait;
@@ -30,6 +32,8 @@ namespace SAE201_Intermarche.model
             Nom = nom;
             Prenom = prenom;
             TypeBoiteData = typeBoiteData.ToString();
+            Dispo = dispo;
+
         }
     }
 }
