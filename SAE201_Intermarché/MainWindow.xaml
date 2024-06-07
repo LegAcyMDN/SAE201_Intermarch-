@@ -187,7 +187,23 @@
                         <Label Style="{StaticResource titrePrincipal}">
                             Véhicules séléctionnés
                         </Label>
-                        <DataGrid d:ItemsSource="{d:SampleData ItemCount=15}" />
+                        <DataGrid x:Name="colonnegridmain" ItemsSource="{Binding}" KeyDown="colonnegridmain_KeyDown">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn
+Header="Nom véhicule"
+Binding="{Binding Vehicule.NomVehicule}"/>
+                                <DataGridTextColumn
+Header="Nom catégorie"
+Binding="{Binding Vehicule.UneCategorie }"/>
+                                <DataGridTextColumn
+Header="Immatriculation"
+Binding="{Binding Vehicule.Immatriculation}"/>
+                                <DataGridTextColumn
+Header="Type boite" 
+Binding="{Binding Vehicule.TypeBoite}"/>
+
+                            </DataGrid.Columns>
+                        </DataGrid>
                     </StackPanel>
                     <StackPanel
                         Grid.Row="0"
@@ -196,7 +212,7 @@
                         <Label Style="{StaticResource titrePrincipal}">
                             Liste véhicules
                         </Label>
-                        <DataGrid d:ItemsSource="{Binding ListeTousVehiculesDetail}">
+                        <DataGrid ItemsSource="{Binding ListeTousVehiculesDetail}">
                         <DataGrid.Columns>
                             <DataGridTextColumn
 Header="Nom véhicule"
@@ -207,12 +223,9 @@ Binding="{Binding Vehicule.UneCategorie }"/>
                             <DataGridTextColumn
 Header="Immatriculation"
 Binding="{Binding Vehicule.Immatriculation}"/>
-                            <DataGridTextColumn
+                                <DataGridTextColumn
 Header="Type boite" 
 Binding="{Binding Vehicule.TypeBoite}"/>
-                                <DataGridTextColumn
-Header="Disponibilité"
-Binding="{Binding  Dispo}"/>
                             </DataGrid.Columns>
                         </DataGrid>
                     </StackPanel>
