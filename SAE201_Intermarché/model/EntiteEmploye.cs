@@ -54,7 +54,7 @@ namespace SAE201_Intermarche.model
 		{
 			ObservableCollection<EntiteEmploye> lesEmployes = new ObservableCollection<EntiteEmploye>();
             DataAccess dataAccess = new DataAccess();
-            String res = "select distinct e.*, m.* from employe e " +
+            String res = "select e.*, m.* from employe e " +
                 "join magasin m on e.num_magasin = m.num_magasin;";
             DataTable dataTable = dataAccess.GetData(res);
             if (dataTable != null)

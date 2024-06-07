@@ -59,7 +59,7 @@ namespace SAE201_Intermarche.model
         {
             ObservableCollection<EntiteVehicule> lesVehicules = new ObservableCollection<EntiteVehicule>();
             DataAccess accesBD = new DataAccess();
-            String res = $"select distinct v.*, m.*, cv.* from vehicule v " +
+            String res = $"select v.*, m.*, cv.* from vehicule v " +
                 "join magasin m on v.num_magasin = m.num_magasin " +
                 "join categorie_vehicule cv on v.nom_categorie = cv.nom_categorie;";
             DataTable dataTable = accesBD.GetData(res);

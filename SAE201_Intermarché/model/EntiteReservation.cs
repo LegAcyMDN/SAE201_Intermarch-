@@ -105,7 +105,7 @@ namespace SAE201_Intermarche.model
 		{
 			ObservableCollection<EntiteReservation> lesReservations = new ObservableCollection<EntiteReservation>();
 			DataAccess accesBD = new DataAccess();
-			String res = $"select distinct r.*, a.*, c.* from reservation r "+
+			String res = $"select r.*, a.*, c.* from reservation r "+
 				"join assurance a on r.num_assurance = a.num_assurance " +
 				"join client c on r.num_client = c.num_client;";
 			DataTable dataTable = accesBD.GetData(res);
