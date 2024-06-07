@@ -235,6 +235,12 @@ Binding="{Binding Vehicule.TypeBoite}"/>
                                 <DataGridTextColumn Binding="{Binding Vehicule.UneCategorie}" Header="Nom catégorie" />
                                 <DataGridTextColumn Binding="{Binding Vehicule.Immatriculation}" Header="Immatriculation" />
                                 <DataGridTextColumn Binding="{Binding Vehicule.TypeBoite}" Header="Type boite" />
+                                <!--num_magasin
+                                description_vehicule
+                                nombre_places
+                                prix_location
+                                climatisation
+                                lien_photo_url-->
                             </DataGrid.Columns>
                         </DataGrid>
                     </StackPanel>
