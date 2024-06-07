@@ -13,25 +13,20 @@ namespace SAE201_Intermarche.model
         private string forfait;
         private string assurance;
         private string nom;
-        private string prenom;
-        private bool dispo;
 
         public string NomVehicule { get => nomVehicule; set => nomVehicule = value; }
         public string Forfait { get => forfait; set => forfait = value; }
         public string Assurance { get => assurance; set => assurance = value; }
         public string Nom { get => nom; set => nom = value; }
         public string TypeBoiteData { get => typeBoiteData; set => typeBoiteData = value; }
-        public bool Dispo { get => dispo; set => dispo = value; }
 
-        public LignePremiereDataGrid(string nomVehicule, string forfait, string assurance, string nom, string prenom, TypeBoite typeBoiteData)
+        public LignePremiereDataGrid(string nomVehicule, string forfait, string assurance, string nom, TypeBoite typeBoiteData)
         {
             NomVehicule = nomVehicule;
             Forfait = forfait;
             Assurance = assurance;
             Nom = nom;
             TypeBoiteData = typeBoiteData.ToString();
-            Dispo = dispo;
-
         }
     }
 }
