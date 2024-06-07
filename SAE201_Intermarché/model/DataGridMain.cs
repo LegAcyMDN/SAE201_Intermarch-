@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SAE201_Intermarche.model
 {
-    class DataGridMain
+    public class DataGridMain
     {
         private EntiteVehicule vehicule;
         private bool dispo;

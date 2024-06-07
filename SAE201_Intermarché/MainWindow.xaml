@@ -200,19 +200,19 @@
                         <DataGrid.Columns>
                             <DataGridTextColumn
 Header="Nom véhicule"
-Binding="{Binding Nom}"/>
+Binding="{Binding Vehicule.NomVehicule}"/>
                             <DataGridTextColumn
 Header="Nom catégorie"
-Binding="{Binding ve}"/>
+Binding="{Binding Vehicule.UneCategorie }"/>
                             <DataGridTextColumn
 Header="Immatriculation"
-Binding="{Binding Genre}"/>
+Binding="{Binding Vehicule.Immatriculation}"/>
                             <DataGridTextColumn
 Header="Type boite" 
-Binding="{Binding DateNaissance, StringFormat=dd/MM/yyyy}"/>
+Binding="{Binding Vehicule.TypeBoite}"/>
                                 <DataGridTextColumn
 Header="Disponibilité"
-Binding="{Binding Email}"/>
+Binding="{Binding  Dispo}"/>
                             </DataGrid.Columns>
                         </DataGrid>
                     </StackPanel>

@@ -4,6 +4,7 @@ using System.Collections.ObjectModel;
 using System.Data;
 using System.Linq;
 using System.Security.Cryptography;
+using System.Windows.Documents;
 using System.Xml;
 
 namespace SAE201_Intermarche.model
@@ -107,7 +108,7 @@ namespace SAE201_Intermarche.model
 
         public void ChargeDataGridListe()
         {
-            bool dispo = true;
+            bool dispo = false;
 
             foreach (EntiteReservation resa in LesReservations) {
                 foreach (EntiteVehicule vehicule in resa.LesVehicules) {
@@ -116,11 +117,6 @@ namespace SAE201_Intermarche.model
                     ListePourPremiereDataGrid.Add(new LignePremiereDataGrid(vehicule.NomVehicule, resa.ForfaitKM, resa.UneAssurance.DescriptionAssurance, resa.UnClient.Nom, vehicule.TypeBoite));
                         }
                     }
-
-            foreach (EntiteVehicule vehicule in LesVehicules)
-            {
-            //    ListeTousVehiculesDetail.Add(new DataGridMain(vehicule, dispo));
-            }
 
         }
 
