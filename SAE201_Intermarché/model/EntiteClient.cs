@@ -61,6 +61,9 @@ namespace SAE201_Intermarche
             Telephone = telephone;
             Mail = mail;
         }
+        public EntiteClient()
+        {
+        }
 
         public void Create()
         {

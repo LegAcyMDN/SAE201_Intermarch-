@@ -5,9 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SAE201_Intermarche"
         mc:Ignorable="d"
-        Title="AjoutClient"  Height="466" Width="400" WindowStartupLocation="CenterScreen"  ResizeMode="NoResize">
+        Title="AjoutClient"  Height="429" Width="400" WindowStartupLocation="CenterScreen"  ResizeMode="NoResize">
+
+
     <Grid>
-      
         <StackPanel
             Style="{StaticResource Principalstackpanel}"
             x:Name="ajoutClientReponses">
@@ -29,7 +30,6 @@
                     <Label Style="{StaticResource formulaireLabel}" >Adresse</Label>
                     <Label Style="{StaticResource formulaireLabel}" >Code postal</Label>
                     <Label Style="{StaticResource formulaireLabel}" >Ville</Label>
-                    <RadioButton Margin="20,10">Particulier</RadioButton>
                 </StackPanel>
                 <StackPanel Grid.Column="1">
                     <TextBox x:Name="dateCrea"  Style="{StaticResource formulaireTextbox}" Text="{Binding dateCrea, ValidatesOnExceptions=True,UpdateSourceTrigger=Explicit}" Focusable="False" />
@@ -40,10 +40,9 @@
                     <TextBox Style="{StaticResource formulaireTextbox}" Text="{Binding Adresse, ValidatesOnExceptions=True,UpdateSourceTrigger=Explicit}" />
                     <TextBox Style="{StaticResource formulaireTextbox}" Text="{Binding CodePostal, ValidatesOnExceptions=True,UpdateSourceTrigger=Explicit}"  />
                     <TextBox Style="{StaticResource formulaireTextbox}" Text="{Binding Ville, ValidatesOnExceptions=True,UpdateSourceTrigger=Explicit}" />
-                    <RadioButton Margin="20,10">Entreprise</RadioButton>
-                    <Button x:Name="nouveauClient" Content="Création nouveau client"  Style="{StaticResource PrincipalBouton}" Click="nouveauClient_Click"   />
+   
+                    <Button x:Name="nouveauClient" Content="Création nouveau client"  Style="{StaticResource PrincipalBouton}" Click="nouveauClient_Click" />
                 </StackPanel>
-               
             </Grid>
         </StackPanel>
             

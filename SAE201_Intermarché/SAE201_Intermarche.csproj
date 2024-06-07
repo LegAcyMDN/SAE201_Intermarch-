@@ -31,10 +31,4 @@
     </Resource>
   </ItemGroup>
 
-  <ItemGroup>
-    <Compile Update="ConvertTypeToBool.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Compile>
-  </ItemGroup>
-
 </Project>
