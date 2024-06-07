@@ -113,9 +113,9 @@ namespace SAE201_Intermarche.model
             foreach (EntiteReservation resa in LesReservations) {
                 foreach (EntiteVehicule vehicule in resa.LesVehicules) {
 
-                    
 
-                    //ListePourPremiereDataGrid.Add(new LignePremiereDataGrid(vehicule.NomVehicule, resa.ForfaitKM, resa, resa.UnClient.Nom, resa.UnClient., vehicule.TypeBoite))
+
+                    ListePourPremiereDataGrid.Add(new LignePremiereDataGrid(vehicule.NomVehicule, resa.ForfaitKM, resa.UneAssurance.DescriptionAssurance, resa.UnClient.Nom, vehicule.TypeBoite));
                         }
                     }
 
