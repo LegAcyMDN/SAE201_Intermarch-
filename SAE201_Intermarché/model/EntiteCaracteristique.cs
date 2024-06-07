@@ -32,7 +32,7 @@ namespace SAE201_Intermarche.model
             NomCaracteristique = nomCaracteristique;
         }
 
-		public ObservableCollection<EntiteCaracteristique> Read()
+		public static ObservableCollection<EntiteCaracteristique> Read()
 		{
 			ObservableCollection<EntiteCaracteristique> lesCaracteristiques = new ObservableCollection<EntiteCaracteristique>();
 			DataAccess dataAccess = new DataAccess();

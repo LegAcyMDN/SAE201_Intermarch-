@@ -34,7 +34,7 @@ namespace SAE201_Intermarche.model
 
         public static ObservableCollection<DetailReservation> Read()
 		{
-			ObservableCollection<DetailReservation> lesDetails = new ObservableCollection<DetailReservation>();
+			ObservableCollection<DetailReservation> lesDetailsReserv = new ObservableCollection<DetailReservation>();
 			DataAccess dataAccess = new DataAccess();
 			String res = "select dr.immatriculation, dr.num_reservation from detail_reservation dr " +
 				"join vehicule v on dr.immatriculation = v.immatriculation " +
@@ -56,11 +56,11 @@ namespace SAE201_Intermarche.model
                         (DateTime)dataRow["date_fin_reservation"], double.Parse(dataRow["montant_reservation"].ToString()),
                         (String)dataRow["forfait_km"]);
 
-					DetailReservation unDetail = new DetailReservation( unVehicule, uneReservation);
-					lesDetails.Add(unDetail);
+					DetailReservation unDetailReserv = new DetailReservation( unVehicule, uneReservation);
+					lesDetailsReserv.Add(unDetailReserv);
 				}
 			}
-            return lesDetails;
+            return lesDetailsReserv;
 		}
 	}
 }
