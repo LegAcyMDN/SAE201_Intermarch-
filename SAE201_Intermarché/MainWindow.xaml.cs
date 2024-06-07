@@ -86,5 +86,12 @@ namespace SAE201_Intermarche
         {
 
         }
+
+
+        public MainWindow getInstance()
+        {
+            return instance;
+        }
+
     }
 }
