@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Microsoft.Extensions.Logging;
+using SAE201_Intermarche.model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,11 +22,11 @@ namespace SAE201_Intermarche
     /// </summary>
     public partial class RechercheClient : Window
     {
-        public static bool modeClientCreer;
+
         public RechercheClient()
         {
+            
             InitializeComponent();
-      
 
         }
         private void cbRechercheClient_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
@@ -44,11 +46,22 @@ namespace SAE201_Intermarche
 
         private void butRechercherClient_Click(object sender, RoutedEventArgs e)
         {
-
-        }
-        private void clientWin_Click(object sender, RoutedEventArgs e)
-        {
-
+            bool ok = true;
+            foreach (UIElement uie in recherche.Children)
+            {
+                if (uie is TextBox)
+                {
+                }
+                if (Validation.GetHasError(uie))
+                    ok = false;
+            }
+            if (ok == true)
+            {
+                DialogResult = true;
+                MessageBox.Show(this, recherche.ToString(), "Récap", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
+            else
+                MessageBox.Show("erreur");
         }
     }
 }

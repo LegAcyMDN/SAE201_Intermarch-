@@ -2,6 +2,7 @@
 using SAE201_Intermarche.model;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Net.Sockets;
 using System.Windows;
 using System.Windows.Documents;
@@ -21,19 +22,14 @@ namespace SAE201_Intermarche
     {
         //public static ApplicationData appData = new ApplicationData();
         public static MainWindow instance;
-        public static bool modeClientCreer;
         bool naturalClosing = true;
+        ObservableCollection<DataGridMain> selection;
         public MainWindow()
         {
             InitializeComponent();
-       
-
-            
             Connexion connexion = new Connexion();
             connexion.ShowDialog();
             instance = this;
-
-
         }
 
 
@@ -43,21 +39,6 @@ namespace SAE201_Intermarche
         private void confirmLocation_Click(object sender, RoutedEventArgs e)
         {
             MessageBox.Show("Location réalisé avec succès");
-        }
-
-        private void butEnregistrerNouveau_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void butSupprimer_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void butModifier_Click(object sender, RoutedEventArgs e)
-        {
-
         }
 
         private void Image_MouseDown(object sender, MouseButtonEventArgs e)
@@ -84,7 +65,19 @@ namespace SAE201_Intermarche
 
         private void vol_Checked(object sender, RoutedEventArgs e)
         {
-
+            
         }
+
+        private void colonnegridmain_KeyDown(object sender, KeyEventArgs e)
+        {
+          //  selection.Add()
+        }
+
+
+        public MainWindow getInstance()
+        {
+            return instance;
+        }
+
     }
 }

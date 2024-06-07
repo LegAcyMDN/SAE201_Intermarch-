@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SAE201_Intermarche"
         mc:Ignorable="d"
-        Title="AjoutClient"  Height="400" Width="400" WindowStartupLocation="CenterScreen"  ResizeMode="NoResize">
+        Title="AjoutClient"  Height="466" Width="400" WindowStartupLocation="CenterScreen"  ResizeMode="NoResize">
     <Grid>
       
         <StackPanel
@@ -21,6 +21,7 @@
                     <ColumnDefinition></ColumnDefinition>
                 </Grid.ColumnDefinitions>
                 <StackPanel Grid.Column="0">
+                    <Label Style="{StaticResource formulaireLabel}">Date création client</Label>
                     <Label Style="{StaticResource formulaireLabel}">Numéro du client</Label>
                     <Label Style="{StaticResource formulaireLabel}" >Nom</Label>
                     <Label Style="{StaticResource formulaireLabel}">Email</Label>
@@ -28,8 +29,10 @@
                     <Label Style="{StaticResource formulaireLabel}" >Adresse</Label>
                     <Label Style="{StaticResource formulaireLabel}" >Code postal</Label>
                     <Label Style="{StaticResource formulaireLabel}" >Ville</Label>
+                    <RadioButton Margin="20,10">Particulier</RadioButton>
                 </StackPanel>
                 <StackPanel Grid.Column="1">
+                    <TextBox Style="{StaticResource formulaireTextbox}" Text="{Binding DateCrea, ValidatesOnExceptions=True,UpdateSourceTrigger=Explicit}" Focusable="False" />
                     <TextBox Style="{StaticResource formulaireTextbox}" Text="{Binding NumClient, ValidatesOnExceptions=True,UpdateSourceTrigger=Explicit}"  />
                     <TextBox Style="{StaticResource formulaireTextbox}" Text="{Binding Nom, ValidatesOnExceptions=True,UpdateSourceTrigger=Explicit}" />
                     <TextBox Style="{StaticResource formulaireTextbox}" Text="{Binding Email, ValidatesOnExceptions=True,UpdateSourceTrigger=Explicit}" />
@@ -37,6 +40,7 @@
                     <TextBox Style="{StaticResource formulaireTextbox}" Text="{Binding Adresse, ValidatesOnExceptions=True,UpdateSourceTrigger=Explicit}" />
                     <TextBox Style="{StaticResource formulaireTextbox}" Text="{Binding CodePostal, ValidatesOnExceptions=True,UpdateSourceTrigger=Explicit}"  />
                     <TextBox Style="{StaticResource formulaireTextbox}" Text="{Binding Ville, ValidatesOnExceptions=True,UpdateSourceTrigger=Explicit}" />
+                    <RadioButton Margin="20,10">Entreprise</RadioButton>
                     <Button x:Name="nouveauClient" Content="Création nouveau client"  Style="{StaticResource PrincipalBouton}" Click="nouveauClient_Click"   />
                 </StackPanel>
                
