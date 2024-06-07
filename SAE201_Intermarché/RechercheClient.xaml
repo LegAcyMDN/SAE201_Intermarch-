@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="RechercheClient" Height="300" Width="300" WindowStartupLocation="CenterScreen"  ResizeMode="NoResize">
     <Grid>
-        <StackPanel
+        <StackPanel x:Name="recherche"
             Style="{StaticResource Principalstackpanel}">
             <Label
                Style="{StaticResource titrePrincipal}">
@@ -21,7 +21,7 @@
             <TextBox x:Name="tbNumClient" Style="{StaticResource formulaireTextbox}" TextChanged="tbNumClient_TextChanged"/>
             <Button x:Name="butRechercherClient"
 Style="{StaticResource PrincipalBouton}"
-Content="Rechercher un client" Click="butRechercherClient_Click" />
+Content="Rechercher un client" Click="butRechercherClient_Click"  />
         </StackPanel>
     </Grid>
 </Window>
