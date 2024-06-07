@@ -69,11 +69,28 @@
                         <Grid Margin="10">
 
                             <StackPanel Grid.Column="0">
-                                <CheckBox x:Name="Corpo" Margin="20,5" Content="Assurance corporel" Checked="Corpo_Checked" />
-                                <CheckBox x:Name="vol" Margin="20,5" Content="Assurance vol" Checked="vol_Checked"  />
-                                <RadioButton GroupName="forfait" Margin="20,5" Content="Forfait -100km"/>
-                                <RadioButton GroupName="forfait" Margin="20,5" Content="Forfait 100km - 250km"/>
-                                <RadioButton GroupName="forfait" Margin="20,5" Content="Forfait +250km"/>
+                                <CheckBox
+                                    x:Name="Corpo"
+                                    Margin="20,5"
+                                    Checked="Corpo_Checked"
+                                    Content="Assurance corporel" />
+                                <CheckBox
+                                    x:Name="vol"
+                                    Margin="20,5"
+                                    Checked="vol_Checked"
+                                    Content="Assurance vol" />
+                                <RadioButton
+                                    Margin="20,5"
+                                    Content="Forfait -100km"
+                                    GroupName="forfait" />
+                                <RadioButton
+                                    Margin="20,5"
+                                    Content="Forfait 100km - 250km"
+                                    GroupName="forfait" />
+                                <RadioButton
+                                    Margin="20,5"
+                                    Content="Forfait +250km"
+                                    GroupName="forfait" />
                             </StackPanel>
 
                         </Grid>
@@ -213,19 +230,11 @@ Binding="{Binding Vehicule.TypeBoite}"/>
                             Liste véhicules
                         </Label>
                         <DataGrid ItemsSource="{Binding ListeTousVehiculesDetail}">
-                        <DataGrid.Columns>
-                            <DataGridTextColumn
-Header="Nom véhicule"
-Binding="{Binding Vehicule.NomVehicule}"/>
-                            <DataGridTextColumn
-Header="Nom catégorie"
-Binding="{Binding Vehicule.UneCategorie }"/>
-                            <DataGridTextColumn
-Header="Immatriculation"
-Binding="{Binding Vehicule.Immatriculation}"/>
-                                <DataGridTextColumn
-Header="Type boite" 
-Binding="{Binding Vehicule.TypeBoite}"/>
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Binding="{Binding Vehicule.NomVehicule}" Header="Nom véhicule" />
+                                <DataGridTextColumn Binding="{Binding Vehicule.UneCategorie}" Header="Nom catégorie" />
+                                <DataGridTextColumn Binding="{Binding Vehicule.Immatriculation}" Header="Immatriculation" />
+                                <DataGridTextColumn Binding="{Binding Vehicule.TypeBoite}" Header="Type boite" />
                             </DataGrid.Columns>
                         </DataGrid>
                     </StackPanel>
@@ -302,7 +311,7 @@ Binding="{Binding Vehicule.TypeBoite}"/>
                         <Label Style="{StaticResource filtreLabel}">
                             Magasin
                         </Label>
-                        <ComboBox Style="{StaticResource formulaireCombobox}" ItemsSource="{Binding ListeNomsMagasins}" />
+                        <ComboBox ItemsSource="{Binding ListeNomsMagasins}" Style="{StaticResource formulaireCombobox}" />
                     </StackPanel>
                     <StackPanel Grid.Column="1" Style="{StaticResource Principalstackpanel}">
                         <Label Style="{StaticResource titrePrincipal}">
@@ -310,24 +319,7 @@ Binding="{Binding Vehicule.TypeBoite}"/>
                         </Label>
                         <DataGrid Height="auto" ItemsSource="{Binding ListePourPremiereDataGrid}">
                             <DataGrid.Columns>
-                                <DataGridTextColumn
-Header="Nom"
-Binding="{Binding NomVehicule}"/>
-                                <DataGridTextColumn
-Header="Prénom"
-Binding="{Binding TypeBoiteData}"/>
-                                <DataGridTextColumn
-Header="Genre"
-Binding="{Binding Forfait}"/>
-                                <DataGridTextColumn
-Header="Date Naissance" 
-Binding="{Binding DateNaissance, StringFormat=dd/MM/yyyy}"/>
-                                <DataGridTextColumn
-Header="Email"
-Binding="{Binding Assurance}"/>
-                                <DataGridTextColumn
-Header="Téléphone"
-Binding="{Binding Nom}"/>
+                                <DataGridTextColumn Binding="{Binding DateEmprunt, StringFormat=dd/MM/yyyy}" Header="Date Naissance" />
                             </DataGrid.Columns>
                         </DataGrid>
 
