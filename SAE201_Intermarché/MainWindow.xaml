@@ -279,11 +279,11 @@
                         <Label Style="{StaticResource titrePrincipal}">
                             Résumé des locations
                         </Label>
-                        <DataGrid Height="auto" d:ItemsSource="{d:SampleData ItemCount=100}">
+                        <DataGrid Height="auto" d:ItemsSource="{d:SampleData ItemCount=100}" ItemsSource="{Binding ListeDetailReservation}">
                             <DataGrid.Columns>
                                 <DataGridTextColumn
 Header="Nom"
-Binding="{Binding Nom}"/>
+Binding="{Binding Source={}}"/>
                                 <DataGridTextColumn
 Header="Prénom"
 Binding="{Binding Prenom}"/>
