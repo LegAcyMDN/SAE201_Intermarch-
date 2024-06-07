@@ -3,6 +3,7 @@ using SAE201_Intermarche.model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -23,9 +24,9 @@ namespace SAE201_Intermarche
     public partial class RechercheClient : Window
     {
 
+
         public RechercheClient()
         {
-            
             InitializeComponent();
 
         }
@@ -51,6 +52,14 @@ namespace SAE201_Intermarche
             {
                 if (uie is TextBox)
                 {
+                foreach(EntiteClient client in MainWindow.getInstance().data.LesClients)
+                    {
+                        if(client.Num.ToString() == uie.ToString())
+                        {
+                            MainWindow.getInstance().data.SelectionClient = client;
+                        }
+                    }
+                   
                 }
                 if (Validation.GetHasError(uie))
                     ok = false;

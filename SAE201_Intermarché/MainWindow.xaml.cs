@@ -16,14 +16,11 @@ namespace SAE201_Intermarche
     /// 
 
 
-
-
     public partial class MainWindow : Window
     {
-        //public static ApplicationData appData = new ApplicationData();
+
         public static MainWindow instance;
         bool naturalClosing = true;
-        ObservableCollection<DataGridMain> selection;
         public MainWindow()
         {
             InitializeComponent();
@@ -70,11 +67,11 @@ namespace SAE201_Intermarche
 
         private void colonnegridmain_KeyDown(object sender, KeyEventArgs e)
         {
-          //  selection.Add()
+
         }
 
 
-        public MainWindow getInstance()
+        public static MainWindow getInstance()
         {
             return instance;
         }

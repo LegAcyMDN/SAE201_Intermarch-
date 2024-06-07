@@ -138,32 +138,32 @@
                                 <TextBox
                                     Focusable="False"
                                     Style="{StaticResource formulaireTextbox}"
-                                    Text="" />
+                                    Text="{Binding SelectionClient.Num}" />
                                 <TextBox
                                     Focusable="False"
                                     Style="{StaticResource formulaireTextbox}"
-                                    Text="" />
+                                    Text="{Binding SelectionClient.Nom}" />
                                 <TextBox
                                     Focusable="False"
                                     Style="{StaticResource formulaireTextbox}"
-                                    Text="" />
+                                    Text="{Binding SelectionClient.Mail}" />
                                 <TextBox
                                     Focusable="False"
                                     Style="{StaticResource formulaireTextbox}"
-                                    Text="" />
+                                    Text="{Binding SelectionClient.Telephone}" />
                                 <TextBox
                                     Focusable="False"
                                     Style="{StaticResource formulaireTextbox}"
-                                    Text="" />
+                                    Text="{Binding SelectionClient.Rue}" />
                                 <TextBox
                                     Focusable="False"
                                     Style="{StaticResource formulaireTextbox}"
-                                    Text="" />
+                                    Text="{Binding SelectionClient.Cp}" />
                                 <TextBox
                                     Focusable="False"
                                     Style="{StaticResource formulaireTextbox}"
-                                    Text="" />
-                                <DatePicker Style="{StaticResource formulaireDate}" />
+                                    Text="{Binding SelectionClient.Ville}" />
+                                <DatePicker Style="{StaticResource formulaireDate}"/>
                                 <DatePicker Style="{StaticResource formulaireDate}" />
                                 <Button
                                     x:Name="nouveauClient"

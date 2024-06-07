@@ -11,6 +11,7 @@ namespace SAE201_Intermarche.model
 {
     public class ApplicationData
     {
+        private EntiteClient selectionClient;
         private ObservableCollection<string> clientEtIdComboBoxItems;
         private ObservableCollection<string> clientComboBoxItems;
         private ObservableCollection<LignePremiereDataGrid> listePourPremiereDataGrid;
@@ -49,6 +50,7 @@ namespace SAE201_Intermarche.model
         public List<string> ListeNomsMagasins { get => listeNomsMagasins; set => listeNomsMagasins = value; }
         public List<EntiteMagasin> ListeEntiteMagasins { get => listeEntiteMagasins; set => listeEntiteMagasins = value; }
         public ObservableCollection<DataGridMain> ListeTousVehiculesDetail { get => listeTousVehiculesDetail; set => listeTousVehiculesDetail = value; }
+        public EntiteClient SelectionClient { get => selectionClient; set => selectionClient = value; }
 
         public ApplicationData()
         {
