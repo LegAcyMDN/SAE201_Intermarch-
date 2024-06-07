@@ -184,6 +184,7 @@
                         <TextBox
                             Margin="20"
                             Focusable="False"
+                            x:Name="AffichagePrix"
                             Style="{StaticResource formulaireTextbox}"
                             Text="{Binding PrixFinal}" />
                     </StackPanel>
