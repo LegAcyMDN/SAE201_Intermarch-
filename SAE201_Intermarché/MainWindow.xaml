@@ -196,27 +196,24 @@
                         <Label Style="{StaticResource titrePrincipal}">
                             Liste véhicules
                         </Label>
-                        <DataGrid d:ItemsSource="{Binding }">
+                        <DataGrid d:ItemsSource="{Binding ListeTousVehiculesDetail}">
                         <DataGrid.Columns>
                             <DataGridTextColumn
 Header="Nom véhicule"
-Binding="{Binding Source={}}"/>
+Binding="{Binding Nom}"/>
                             <DataGridTextColumn
 Header="Nom catégorie"
-Binding="{Binding Prenom}"/>
+Binding="{Binding ve}"/>
                             <DataGridTextColumn
 Header="Immatriculation"
 Binding="{Binding Genre}"/>
                             <DataGridTextColumn
 Header="Type boite" 
 Binding="{Binding DateNaissance, StringFormat=dd/MM/yyyy}"/>
-                            <DataGridTextColumn
+                                <DataGridTextColumn
 Header="Disponibilité"
 Binding="{Binding Email}"/>
-                            <DataGridTextColumn
-Header="Téléphone"
-Binding="{Binding Telephone}"/>
-                        </DataGrid.Columns>
+                            </DataGrid.Columns>
                         </DataGrid>
                     </StackPanel>
                     <StackPanel

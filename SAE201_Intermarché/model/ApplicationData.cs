@@ -4,6 +4,7 @@ using System.Collections.ObjectModel;
 using System.Data;
 using System.Linq;
 using System.Security.Cryptography;
+using System.Xml;
 
 namespace SAE201_Intermarche.model
 {
@@ -13,7 +14,7 @@ namespace SAE201_Intermarche.model
         private ObservableCollection<string> clientComboBoxItems;
         private ObservableCollection<LignePremiereDataGrid> listePourPremiereDataGrid;
         private ObservableCollection<DetailReservation> listeDetailReservation;
-        private ObservableCollection<LignePremiereDataGrid> listeTousVehiculesDetail;
+        private ObservableCollection<DataGridMain> listeTousVehiculesDetail;
         private List<string> listeNomsMagasins;
         private List<EntiteMagasin> listeEntiteMagasins;
 
@@ -37,7 +38,7 @@ namespace SAE201_Intermarche.model
         public ObservableCollection<DetailReservation> ListeDetailReservation { get => listeDetailReservation; set => listeDetailReservation = value; }
         public List<string> ListeNomsMagasins { get => listeNomsMagasins; set => listeNomsMagasins = value; }
         public List<EntiteMagasin> ListeEntiteMagasins { get => listeEntiteMagasins; set => listeEntiteMagasins = value; }
-        public ObservableCollection<LignePremiereDataGrid> ListeTousVehiculesDetail { get => listeTousVehiculesDetail; set => listeTousVehiculesDetail = value; }
+        public ObservableCollection<DataGridMain> ListeTousVehiculesDetail { get => listeTousVehiculesDetail; set => listeTousVehiculesDetail = value; }
 
         public ApplicationData()
         {
@@ -53,7 +54,7 @@ namespace SAE201_Intermarche.model
             ListeDetailReservation = new ObservableCollection<DetailReservation>();
             ListeEntiteMagasins = new List<EntiteMagasin>();
             ListeNomsMagasins = new List<string>();
-            ListeTousVehiculesDetail = new ObservableCollection<LignePremiereDataGrid>();
+            ListeTousVehiculesDetail = new ObservableCollection<DataGridMain>();
 
             Charge();
         }
@@ -106,17 +107,20 @@ namespace SAE201_Intermarche.model
 
         public void ChargeDataGridListe()
         {
+            bool dispo = true;
 
             foreach (EntiteReservation resa in LesReservations) {
                 foreach (EntiteVehicule vehicule in resa.LesVehicules) {
               
 
-                    //ListePourPremiereDataGrid.Add(new LignePremiereDataGrid(vehicule.NomVehicule, resa.ForfaitKM, resa, resa.UnClient.Nom, resa.UnClient., vehicule.TypeBoite));
+                    ListePourPremiereDataGrid.Add(new LignePremiereDataGrid(vehicule.NomVehicule, resa.ForfaitKM, resa.UneAssurance.DescriptionAssurance, resa.UnClient.Nom, vehicule.TypeBoite));
                         }
                     }
 
-
-
+            foreach (EntiteVehicule vehicule in LesVehicules)
+            {
+            //    ListeTousVehiculesDetail.Add(new DataGridMain(vehicule, dispo));
+            }
 
         }
 
