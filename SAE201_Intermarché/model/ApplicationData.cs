@@ -3,9 +3,6 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Data;
 using System.Linq;
-using System.Security.Cryptography;
-using System.Windows.Documents;
-using System.Xml;
 
 namespace SAE201_Intermarche.model
 {
@@ -95,7 +92,7 @@ namespace SAE201_Intermarche.model
             ListeTousVehiculesDetail = new ObservableCollection<DataGridMain>();
 
             Charge();
-           
+
         }
 
         public void Charge()
@@ -125,7 +122,7 @@ namespace SAE201_Intermarche.model
             //EntiteReservation reservation = new EntiteReservation();
 
             LesDetailsReserv = new ObservableCollection<DetailReservation>();
-            
+
         }
 
         public void ChargeListes()
@@ -157,12 +154,12 @@ namespace SAE201_Intermarche.model
             {
                 //foreach (DetailReservation detaRes in LesDetailsReserv)
                 //{
-                    foreach (EntiteVehicule vehicule in resa.LesVehicules)
-                    {
+                foreach (EntiteVehicule vehicule in resa.LesVehicules)
+                {
 
 
-                      //  ListePourPremiereDataGrid.Add(new LignePremiereDataGrid(vehicule.NomVehicule, resa.ForfaitKM, resa.UneAssurance.DescriptionAssurance, resa.UnClient.Nom, vehicule.TypeBoite, resa.DateDebut, resa.DateFin));
-                    }
+                    //  ListePourPremiereDataGrid.Add(new LignePremiereDataGrid(vehicule.NomVehicule, resa.ForfaitKM, resa.UneAssurance.DescriptionAssurance, resa.UnClient.Nom, vehicule.TypeBoite, resa.DateDebut, resa.DateFin));
+                }
                 //}
             }
 
@@ -174,7 +171,7 @@ namespace SAE201_Intermarche.model
                 {
                     LesReservations.ToList().ForEach(resa =>
                     {
-                    if (resa.LesVehicules.Find(y => y.Immatriculation == x.ImmatriculationVehicule) != null)
+                        if (resa.LesVehicules.Find(y => y.Immatriculation == x.ImmatriculationVehicule) != null)
                         {
                             x.Dispo = false;
                         }
@@ -188,11 +185,11 @@ namespace SAE201_Intermarche.model
             }
 
         }
-        public string CalculPrixFinal()         
-        
+        public string CalculPrixFinal()
+
         {
-            double prixAssuCorpo=0;
-            double prixAssuVol=0;
+            double prixAssuCorpo = 0;
+            double prixAssuVol = 0;
             double prix = 0;
             TimeSpan difference = selectionDateRetour - selectionDateEmprunt;
             int nbjours = difference.Days;
@@ -200,10 +197,11 @@ namespace SAE201_Intermarche.model
             switch (selectionForfaitBas)
             {
                 case true: prix += FORFAIT_BAS; break;
-                case false: switch (selectionForfaitMoyen)
+                case false:
+                    switch (selectionForfaitMoyen)
                     {
                         case true: prix += FORFAIT_MOYEN; break;
-                        case false: prix+=FORFAIT_HAUT; break;
+                        case false: prix += FORFAIT_HAUT; break;
                     }; break;
             }
             if (selectionAssuCorpo)
