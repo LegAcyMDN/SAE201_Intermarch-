@@ -101,18 +101,29 @@ namespace SAE201_Intermarche.model
         public void Charge()
         {
             //TODO faire le lien avec la BDD pour remplir les valeurs
-            LesClients.Add(new EntiteClient(1, "aaa", "bbb", "74000", "ccc", "0677777777", "bite@penis.com"));
-            LesClients.Add(new EntiteClient(2, "iii", "jjj", "57000", "hhh", "0674890124", "test.bon@gmail.com"));
 
             foreach (EntiteClient client in LesClients)
             {
                 ClientEtIdComboBoxItems.Add(client.Nom + "; " + client.Num);
                 ClientComboBoxItems.Add(client.Nom);
             }
+
             selectionDateEmprunt = DateTime.Now;
             selectionDateRetour = DateTime.Now;
             CalculPrixFinal();
             ChargeBD();
+
+#if DEBUG
+            AjouteDonneesDebug();
+            Console.WriteLine("Les données ne sont pas prises de la BDD car tu es en debug mode (ApplicationData ligne 133)");
+            foreach (EntiteClient client in LesClients)
+            {
+                ClientEtIdComboBoxItems.Add(client.Nom + "; " + client.Num);
+                ClientComboBoxItems.Add(client.Nom);
+            }
+            return;
+#endif
+
             ChargeListes();
         }
 
@@ -130,6 +141,9 @@ namespace SAE201_Intermarche.model
 
         public void ChargeListes()
         {
+
+
+
             DataAccess dataAccess = new DataAccess();
             String res = $"select nom_categorie from categorie_vehicule;";
             DataTable dataTable = dataAccess.GetData(res);
@@ -214,6 +228,35 @@ namespace SAE201_Intermarche.model
             prix = prixAssuCorpo + prixAssuVol + prix;
             return PrixFinal = $"prix : {prix} euros";
         }
+
+
+
+        public void AjouteDonneesDebug()
+        {
+
+            EntiteClient client1 = new EntiteClient(1, "aaa", "bbb", "74000", "ccc", "0677777777", "jackie@michel.com");
+
+            LesClients.Add(client1);
+            LesClients.Add(new EntiteClient(2, "iii", "jjj", "57000", "hhh", "0674890124", "test.bon@gmail.com"));
+
+            EntiteMagasin magasin1 = new EntiteMagasin(1, "testMagasin1", "adresse du test", "74700", "Sallanches", "15-18h");
+
+            EntiteAssurance assurance1 = new EntiteAssurance(1, "cette assurance existe", 169);
+
+            EntiteVehicule vehicule4L = new EntiteVehicule("AI394OF", TypeBoite.MANUELLE, magasin1, new CategorieVehicule("testCategorie"), "LA 4L", "JACKIE, JACKIE, TA 4L, TA 4LLLLL", 4, 29, false, "https://images.caradisiac.com/logos/7/1/7/6/267176/S7-renault-sent-une-attente-pour-une-nouvelle-4l-190779.jpg");
+
+            LesVehicules.Add(vehicule4L);
+
+            EntiteReservation resa1 = new EntiteReservation(1, assurance1, client1, new DateTime(2023, 6, 6), new DateTime(2023, 6, 10), new DateTime(2023, 6, 25), 15, "Forfait -100km");
+
+            LesReservations.Add(resa1);
+
+            ListePourPremiereDataGrid.Add(new LignePremiereDataGrid(vehicule4L.NomVehicule, resa1.ForfaitKM, resa1.UneAssurance.DescriptionAssurance, resa1.UnClient.Nom, vehicule4L.TypeBoite, resa1.DateDebut, resa1.DateFin));
+
+
+        }
+
+
     }
 
 }
