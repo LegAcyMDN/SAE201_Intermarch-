@@ -1,13 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Drawing.Printing;
 using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
 using System.Windows.Data;
-using System.Windows.Forms.VisualStyles;
 
 namespace SAE201_Intermarche
 {
@@ -20,7 +13,7 @@ namespace SAE201_Intermarche
         {
 
             double width = (double)value;
-         //   Console.WriteLine("value : "+value + "\nwidth : "+ width);
+            //Console.WriteLine("value : "+value + "\nwidth : "+ width);
             return width <= Min;
         }
 

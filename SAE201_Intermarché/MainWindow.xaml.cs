@@ -1,14 +1,7 @@
-﻿using SAE201_Intermarché;
-using SAE201_Intermarche.model;
-using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Net.Sockets;
+﻿using System;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Documents;
 using System.Windows.Input;
-using static System.Net.Mime.MediaTypeNames;
 
 namespace SAE201_Intermarche
 {
@@ -89,8 +82,8 @@ namespace SAE201_Intermarche
             MainWindow.getInstance().data.SelectionDateEmprunt = (DateTime)dateEmpruntChoix.DataContext;
             MainWindow.getInstance().data.CalculPrixFinal();
             AffichagePrix.GetBindingExpression(TextBox.TextProperty).UpdateSource();
-            
-            
+
+
         }
 
         private void dateRetourChoix_DataContextChanged(object sender, DependencyPropertyChangedEventArgs e)
@@ -117,7 +110,7 @@ namespace SAE201_Intermarche
         private void forfaitBas_Checked(object sender, RoutedEventArgs e)
         {
             MainWindow.getInstance().data.SelectionForfaitBas = true;
-           MainWindow.getInstance().data.CalculPrixFinal();
+            MainWindow.getInstance().data.CalculPrixFinal();
             AffichagePrix.GetBindingExpression(TextBox.TextProperty).UpdateSource();
         }
         private void Corpo_Checked(object sender, RoutedEventArgs e)
@@ -130,7 +123,7 @@ namespace SAE201_Intermarche
         private void vol_Checked(object sender, RoutedEventArgs e)
         {
             MainWindow.getInstance().data.SelectionAssuVol = true;
-           MainWindow.getInstance().data.CalculPrixFinal();
+            MainWindow.getInstance().data.CalculPrixFinal();
             AffichagePrix.GetBindingExpression(TextBox.TextProperty).UpdateSource();
         }
     }
