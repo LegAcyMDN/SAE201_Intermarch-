@@ -1,100 +1,148 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
-  <Class Name="SAE201_Intermarche.model.ApplicationData">
-    <Position X="10.5" Y="0.5" Width="2" />
+  <Class Name="SAE201_Intermarche.EntiteClient" Collapsed="true">
+    <Position X="0.5" Y="1.25" Width="1.75" />
     <TypeIdentifier>
-      <HashCode>AKkIIAwCAAQCgiCAkLCyAYQgAAAAu4IICBDABACAqCA=</HashCode>
-      <FileName>model\ApplicationData.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="SAE201_Intermarche.model.CategorieVehicule">
-    <Position X="5.5" Y="8.25" Width="1.75" />
-    <TypeIdentifier>
-      <HashCode>AAAAAQAAAAAAAAAEAAAAAAAgAAAAAAABAAAAAAAAAAA=</HashCode>
-      <FileName>model\CategorieVehicule.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="SAE201_Intermarche.model.DataAccess">
-    <Position X="8" Y="6.5" Width="1.75" />
-    <TypeIdentifier>
-      <HashCode>AAIAAAABEAAAAAAAAAAAAAAAAAFABAAAQAAAAAAABAA=</HashCode>
-      <FileName>model\DataAccess.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="SAE201_Intermarche.model.DataGridMain">
-    <Position X="8" Y="0.5" Width="1.75" />
-    <TypeIdentifier>
-      <HashCode>AAAQAAAAEAAECCBAAAiEACCIBAABgAAAAYCAAKCAAAI=</HashCode>
-      <FileName>model\DataGridMain.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="SAE201_Intermarche.model.DetailCaracteristique">
-    <Position X="13.25" Y="5" Width="2" />
-    <TypeIdentifier>
-      <HashCode>AAACAAAAAAAAAgAAAAAAAAAgCAAAAAAAAICAAAAACAA=</HashCode>
-      <FileName>model\DetailCaracteristique.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="SAE201_Intermarche.model.DetailReservation">
-    <Position X="16" Y="0.5" Width="1.75" />
-    <TypeIdentifier>
-      <HashCode>AAQCAAAAAAAAAAAAACAAAAAgAAMAAEAAAIAAAAAAAAA=</HashCode>
-      <FileName>model\DetailReservation.cs</FileName>
+      <HashCode>IAQAAiAAAAAAAAAAAAAQIAAgECEAAEAAAIAAAQCAAAc=</HashCode>
+      <FileName>model\EntiteClient.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
-  <Class Name="SAE201_Intermarche.model.EntiteAssurance">
-    <Position X="16" Y="4" Width="1.75" />
+  <Class Name="SAE201_Intermarche.model.EntiteVehicule" Collapsed="true">
+    <Position X="2.5" Y="1.25" Width="1.75" />
     <TypeIdentifier>
-      <HashCode>AAAgAAAAAAAAAAAAAAAAAAAgAAAAACAEIAAABCAAAAA=</HashCode>
-      <FileName>model\EntiteAssurance.cs</FileName>
+      <HashCode>AAABAQAEAQEABAAAAAAEACCgBgAAgAKIAAAAiKBAAAI=</HashCode>
+      <FileName>model\EntiteVehicule.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="SAE201_Intermarche.model.EntiteCaracteristique">
-    <Position X="0.5" Y="6.5" Width="1.75" />
-    <TypeIdentifier>
-      <HashCode>ACAAAAAIAAAAAAAAAAAAAAAoAAAAIAAAAAAAAAAAAAA=</HashCode>
-      <FileName>model\EntiteCaracteristique.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="SAE201_Intermarche.model.EntiteEmploye">
-    <Position X="5.5" Y="4.75" Width="1.75" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAACAACAAgAAAAAAAAgAAACAAAAAAAYAAAgEAA=</HashCode>
-      <FileName>model\EntiteEmploye.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="SAE201_Intermarche.model.EntiteMagasin">
-    <Position X="5.5" Y="0.5" Width="1.75" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAACAAAAAAAAAAAAAIwAACAGAAAgAAYAAIAIAA=</HashCode>
-      <FileName>model\EntiteMagasin.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="SAE201_Intermarche.model.EntiteReservation">
-    <Position X="0.5" Y="0.5" Width="1.75" />
+  <Class Name="SAE201_Intermarche.model.EntiteReservation" Collapsed="true">
+    <Position X="4.5" Y="1.25" Width="1.75" />
     <TypeIdentifier>
       <HashCode>BAQCAAACEgAAAhAACACAAIGgAAGBgEAACACAAAQAAAA=</HashCode>
       <FileName>model\EntiteReservation.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
-  <Class Name="SAE201_Intermarche.model.EntiteVehicule">
-    <Position X="2.75" Y="1.75" Width="1.75" />
+  <Class Name="SAE201_Intermarche.model.EntiteMagasin" Collapsed="true">
+    <Position X="6.5" Y="1.25" Width="1.75" />
     <TypeIdentifier>
-      <HashCode>AAABAQAEAQEABAAAAAAEACCgBgAAgAKIAAAAiKBAAAI=</HashCode>
-      <FileName>model\EntiteVehicule.cs</FileName>
+      <HashCode>AAAAAAAACAAAAAAAAAAAAAIwAACAGAAAgAAYAAIAIAA=</HashCode>
+      <FileName>model\EntiteMagasin.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="SAE201_Intermarche.model.LignePremiereDataGrid">
-    <Position X="13.25" Y="0.5" Width="2" />
+  <Class Name="SAE201_Intermarche.model.EntiteEmploye" Collapsed="true">
+    <Position X="8.5" Y="1.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAACAACAAgAAAAAAAAgAAACAAAAAAAYAAAgEAA=</HashCode>
+      <FileName>model\EntiteEmploye.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SAE201_Intermarche.model.EntiteCaracteristique" Collapsed="true">
+    <Position X="10.5" Y="1.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAIAAAAAAAAAAAAAAAoAAAAIAAAAAAAAAAAAAA=</HashCode>
+      <FileName>model\EntiteCaracteristique.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SAE201_Intermarche.model.EntiteAssurance" Collapsed="true">
+    <Position X="12.5" Y="1.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAAAAAAAAAAAAAAAAAgAAAAACAEIAAABCAAAAA=</HashCode>
+      <FileName>model\EntiteAssurance.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SAE201_Intermarche.model.DetailReservation" Collapsed="true">
+    <Position X="14.5" Y="1.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAQCAAAAAAAAAAAAACAAAAAgAAMAAEAAAIAAAAAAAAA=</HashCode>
+      <FileName>model\DetailReservation.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="SAE201_Intermarche.model.DetailCaracteristique" Collapsed="true">
+    <Position X="16.5" Y="1.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAgAAAAAAAAAgCAAAAAAAAICAAAAACAA=</HashCode>
+      <FileName>model\DetailCaracteristique.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SAE201_Intermarche.model.CategorieVehicule" Collapsed="true">
+    <Position X="18.5" Y="1.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQAAAAAAAAAEAAAAAAAgAAAAAAABAAAAAAAAAAA=</HashCode>
+      <FileName>model\CategorieVehicule.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SAE201_Intermarche.model.ApplicationData" Collapsed="true">
+    <Position X="0.5" Y="2.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AKkIIAwCAAQCgiCAkLCyAYQgAAAAu4IICBDABACAqCA=</HashCode>
+      <FileName>model\ApplicationData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SAE201_Intermarche.model.DataAccess" Collapsed="true">
+    <Position X="2.5" Y="2.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAABEAAAAAAAAAAAAAAAAAFABAAAQAAAAAAABAA=</HashCode>
+      <FileName>model\DataAccess.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SAE201_Intermarche.model.DataGridMain" Collapsed="true">
+    <Position X="0.5" Y="3.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAQAAAAEAAECCBAAAiEACCIBAABgAAAAYCAAKCAAAI=</HashCode>
+      <FileName>model\DataGridMain.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SAE201_Intermarche.model.LignePremiereDataGrid" Collapsed="true">
+    <Position X="2.5" Y="3.75" Width="1.75" />
     <TypeIdentifier>
       <HashCode>DAAAAQQAAAEAAAAAAAAAICAAACAAAAAAAIAAgCiAAIA=</HashCode>
       <FileName>model\LignePremiereDataGrid.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Enum Name="SAE201_Intermarche.model.TypeBoite">
-    <Position X="2.75" Y="0.5" Width="1.75" />
+  <Class Name="SAE201_Intermarche.MainWindow" Collapsed="true">
+    <Position X="0.5" Y="5.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AQEAAAAECTAAAAIAAAAAAAAAAABAEAQAAAAABAAATQA=</HashCode>
+      <FileName>MainWindow.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="SAE201_Intermarche.Connexion" Collapsed="true">
+    <Position X="2.5" Y="5.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAgAAA=</HashCode>
+      <FileName>Connexion.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="SAE201_Intermarche.AjoutClient" Collapsed="true">
+    <Position X="4.5" Y="5.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAA=</HashCode>
+      <FileName>AjoutClient.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="SAE201_Intermarche.RechercheClient" Collapsed="true">
+    <Position X="6.5" Y="5.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAQAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAQAAAA=</HashCode>
+      <FileName>RechercheClient.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="SAE201_Intermarche.ConvertXamlValue" Collapsed="true">
+    <Position X="4.5" Y="3.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAEIAAAAAAAAgAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ConvertXamlValue.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Enum Name="SAE201_Intermarche.model.TypeBoite" Collapsed="true">
+    <Position X="2.5" Y="0.5" Width="1.75" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAiAAAAAAAAAAAAAAA=</HashCode>
       <FileName>model\EntiteVehicule.cs</FileName>
