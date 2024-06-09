@@ -206,7 +206,7 @@
                         Grid.Column="1"
                         Style="{StaticResource Principalstackpanel}" Margin="20,20,20,20">
                         <Label Style="{StaticResource titrePrincipal}">
-                            Véhicules séléctionnés
+                            Véhicules sélectionnés
                         </Label>
                         <DataGrid x:Name="colonnegridmain" KeyDown="colonnegridmain_KeyDown">
                             <DataGrid.Columns>
@@ -233,18 +233,18 @@ Binding="{Binding Vehicule.TypeBoite}"/>
                         <Label Style="{StaticResource titrePrincipal}">
                             Liste véhicules
                         </Label>
-                        <DataGrid ItemsSource="{Binding ListeTousVehiculesDetail}">
+                        <DataGrid ItemsSource="{Binding ListeTousVehiculesDetail}" AutoGenerateColumns="False">
                             <DataGrid.Columns>
                                 <DataGridTextColumn Binding="{Binding Vehicule.NomVehicule}" Header="Nom véhicule" />
                                 <DataGridTextColumn Binding="{Binding Vehicule.UneCategorie}" Header="Nom catégorie" />
                                 <DataGridTextColumn Binding="{Binding Vehicule.Immatriculation}" Header="Immatriculation" />
                                 <DataGridTextColumn Binding="{Binding Vehicule.TypeBoite}" Header="Type boite" />
-                                <!--num_magasin
-                                description_vehicule
-                                nombre_places
-                                prix_location
-                                climatisation
-                                lien_photo_url-->
+                                <DataGridTextColumn Binding="{Binding Vehicule.NumMagasinVehicule}" Header="N° magasin" />
+                                <DataGridTextColumn Binding="{Binding Vehicule.DescriptionVehicule}" Header="Description" />
+                                <DataGridTextColumn Binding="{Binding Vehicule.NombrePlaceVehicule}" Header="Nombre de places" />
+                                <DataGridTextColumn Binding="{Binding Vehicule.PrixLocationVehicule}" Header="Prix location" />
+                                <DataGridTextColumn Binding="{Binding Vehicule.Climatisation}" Header="Climatisation" />
+                                <DataGridTextColumn Binding="{Binding Vehicule.LienPhotoUrlVehicule}" Header="Lien photo URL" />
                             </DataGrid.Columns>
                         </DataGrid>
                     </StackPanel>
