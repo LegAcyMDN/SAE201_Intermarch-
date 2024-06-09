@@ -9,6 +9,7 @@
     Width="400"
     Height="225"
     WindowStartupLocation="CenterScreen"
+    Icon="img/logo.ico"
     mc:Ignorable="d" Closing="windowConnexion_Closing">
     <Grid>
         <Label

@@ -5,11 +5,11 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:local="clr-namespace:SAE201_Intermarche.model"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    Title="MainWindow"
+    Title="Réservation Véhicule"
     Style="{StaticResource page}"
     WindowStartupLocation="CenterScreen"
+    Icon="img/logo.ico"
     mc:Ignorable="d">
-    <!--Icon=""-->
     <Window.DataContext>
         <local:ApplicationData x:Name="data" />
     </Window.DataContext>

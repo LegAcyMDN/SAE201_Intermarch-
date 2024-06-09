@@ -20,10 +20,10 @@ namespace SAE201_Intermarche
     /// </summary>
     public partial class Connexion : Window
     {
-        public static string identifiant; //il faut mettre le login de la classe employe
-        public static string mdp; //il faut mettre le mdp de la classe employe
+        public static string identifiant = "admin"; //il faut mettre le login de la classe employe
+        public static string mdp = "admin"; //il faut mettre le mdp de la classe employe
 
-        EntiteEmploye unEmploye = new EntiteEmploye(identifiant, mdp);
+        //EntiteEmploye unEmploye = new EntiteEmploye(identifiant, mdp);
 
         bool naturalClosing = true;
         public Connexion()
@@ -34,8 +34,8 @@ namespace SAE201_Intermarche
 
         private void but_Valider_Click(object sender, RoutedEventArgs e)
         {
-            unEmploye.Login = identifiant;
-            unEmploye.MDP = mdp;
+            //unEmploye.Login = identifiant;
+            //unEmploye.MDP = mdp;
 
             if (identifiant == tb_identifiant.Text && mdp == tb_mdp.Password.ToString())
             {
