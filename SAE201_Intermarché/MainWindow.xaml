@@ -333,9 +333,15 @@ Binding="{Binding Vehicule.TypeBoite}"/>
                         <Label Style="{StaticResource titrePrincipal}">
                             Résumé des locations
                         </Label>
-                        <DataGrid Height="auto" ItemsSource="{Binding ListePourPremiereDataGrid}">
+                        <DataGrid Height="auto" AutoGenerateColumns="False" ItemsSource="{Binding ListePourPremiereDataGrid}">
                             <DataGrid.Columns>
-                                <DataGridTextColumn Binding="{Binding DateEmprunt, StringFormat=dd/MM/yyyy}" Header="Date Naissance" />
+                                <DataGridTextColumn Binding="{Binding NomVehicule}" Header="Nom véhicule" />
+                                <DataGridTextColumn Binding="{Binding Forfait}" Header="Forfait" />
+                                <DataGridTextColumn Binding="{Binding Assurance}" Header="Assurance" />
+                                <DataGridTextColumn Binding="{Binding Nom}" Header="Nom client"/>
+                                <DataGridTextColumn Binding="{Binding TypeBoiteData}" Header="Type de boite" />
+                                <DataGridTextColumn Binding="{Binding DateEmprunt, StringFormat=dd/MM/yyyy}" Header="Date emprunt" />
+                                <DataGridTextColumn Binding="{Binding DateRetour, StringFormat=dd/MM/yyyy}" Header="Date retour" />
                             </DataGrid.Columns>
                         </DataGrid>
 
