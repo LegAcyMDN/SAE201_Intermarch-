@@ -9,6 +9,7 @@
     Style="{StaticResource page}"
     WindowStartupLocation="CenterScreen"
     mc:Ignorable="d">
+    <!--Icon=""-->
     <Window.DataContext>
         <local:ApplicationData x:Name="data" />
     </Window.DataContext>

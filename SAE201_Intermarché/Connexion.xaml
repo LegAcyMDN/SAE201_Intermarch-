@@ -16,7 +16,7 @@
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="Utilisateur :" />
-        <TextBox
+        <TextBox x:Name="tb_identifiant"
             Width="120"
             Margin="49,62,0,0"
             HorizontalAlignment="Left"
@@ -28,7 +28,7 @@
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="Mot de passe :" />
-        <PasswordBox
+        <PasswordBox x:Name="tb_mdp"
             Width="120"
             Margin="49,105,0,0"
             HorizontalAlignment="Left"
