@@ -40,6 +40,9 @@ namespace SAE201_Intermarche
             MainWindow.getInstance().data.SelectionDateEmprunt = DateTime.Now;
 
             MessageBox.Show("Location réalisé avec succès");
+
+            EntiteReservation uneReservation = new EntiteReservation();
+            uneReservation.Create();
         }
 
         private void Image_MouseDown(object sender, MouseButtonEventArgs e)
