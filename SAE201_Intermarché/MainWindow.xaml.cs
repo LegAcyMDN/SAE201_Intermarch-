@@ -167,5 +167,13 @@ namespace SAE201_Intermarche
         {
             CollectionViewSource.GetDefaultView(dgListeVehicules.ItemsSource).Refresh();
         }
+
+        private void colonnegridmain_AddingNewItem(object sender, AddingNewItemEventArgs e)
+        {
+           foreach (DataGridMain entite in dgListeVehicules.ItemsSource)
+            {
+                MainWindow.getInstance().data.PrixVoituresSelectionnees += double.Parse(entite.PrixLocationVehicule);
+            }
+        }
     }
 }
