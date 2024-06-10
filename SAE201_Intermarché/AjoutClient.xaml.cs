@@ -41,6 +41,8 @@ namespace SAE201_Intermarche
             {
                 DialogResult = true;
                 MessageBox.Show(this,"Client ajouté", "Récap", MessageBoxButton.OK, MessageBoxImage.Information);
+                EntiteClient unClient = new EntiteClient();
+                unClient.Create();
             }
             else
                 MessageBox.Show("erreur");

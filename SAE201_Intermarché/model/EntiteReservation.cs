@@ -95,6 +95,8 @@ namespace SAE201_Intermarche.model
 			LesVehicules = EntiteVehicule.Read(numReservation).ToList();
 		}
 
+		public EntiteReservation() { }
+
 		public void Create()
 		{
 			DataAccess accesBD = new DataAccess();
