@@ -229,18 +229,18 @@ Binding="{Binding Vehicule.TypeBoite}"/>
                         <Label Style="{StaticResource titrePrincipal}">
                             Liste véhicules
                         </Label>
-                        <DataGrid ItemsSource="{Binding ListeTousVehiculesDetail}">
+                        <DataGrid ItemsSource="{Binding ListeTousVehiculesDetail}" AutoGenerateColumns="False">
                             <DataGrid.Columns>
-                                <DataGridTextColumn Binding="{Binding Vehicule.NomVehicule}" Header="Nom véhicule" />
-                                <DataGridTextColumn Binding="{Binding Vehicule.UneCategorie}" Header="Nom catégorie" />
-                                <DataGridTextColumn Binding="{Binding Vehicule.Immatriculation}" Header="Immatriculation" />
-                                <DataGridTextColumn Binding="{Binding Vehicule.TypeBoite}" Header="Type boite" />
-                                <!--num_magasin
-                                description_vehicule
-                                nombre_places
-                                prix_location
-                                climatisation
-                                lien_photo_url-->
+                                <DataGridTextColumn Binding="{Binding NomVehicule}" Header="Nom véhicule" />
+                                <DataGridTextColumn Binding="{Binding CategorieVehicule}" Header="Nom catégorie" />
+                                <DataGridTextColumn Binding="{Binding ImmatriculationVehicule}" Header="Immatriculation" />
+                                <DataGridTextColumn Binding="{Binding TypeBoite}" Header="Type boite" />
+                                <DataGridTextColumn Binding="{Binding NumMagasinVehicule}" Header="N° magasin" />
+                                <DataGridTextColumn Binding="{Binding DescriptionVehicule}" Header="Description" />
+                                <DataGridTextColumn Binding="{Binding NombrePlaceVehicule}" Header="Nombre de places" />
+                                <DataGridTextColumn Binding="{Binding PrixLocationVehicule}" Header="Prix location" />
+                                <DataGridTextColumn Binding="{Binding Climatisation}" Header="Climatisation" />
+                                <DataGridTextColumn Binding="{Binding LienPhotoUrlVehicule}" Header="Lien photo URL" />
                             </DataGrid.Columns>
                         </DataGrid>
                     </StackPanel>
@@ -297,7 +297,7 @@ Binding="{Binding Vehicule.TypeBoite}"/>
                         <Label Style="{StaticResource filtreLabel}">
                             Type véhicule
                         </Label>
-                        <ComboBox Style="{StaticResource formulaireCombobox}" />
+                        <ComboBox Style="{StaticResource formulaireCombobox}" ItemsSource="{Binding ListeTypeVehicule}"/>
                         <Label Style="{StaticResource filtreLabel}">
                             Date emprunt
                         </Label>
@@ -309,7 +309,7 @@ Binding="{Binding Vehicule.TypeBoite}"/>
                         <Label Style="{StaticResource filtreLabel}">
                             Nom client
                         </Label>
-                        <ComboBox Style="{StaticResource formulaireCombobox}" />
+                        <ComboBox Style="{StaticResource formulaireCombobox}" ItemsSource="{Binding ClientComboBoxItems}"/>
                         <Label Style="{StaticResource filtreLabel}">
                             Numéro client
                         </Label>
@@ -317,15 +317,21 @@ Binding="{Binding Vehicule.TypeBoite}"/>
                         <Label Style="{StaticResource filtreLabel}">
                             Magasin
                         </Label>
-                        <ComboBox ItemsSource="{Binding ListeNomsMagasins}" Style="{StaticResource formulaireCombobox}" />
+                        <ComboBox ItemsSource="{Binding ListeNomsMagasins}" Style="{StaticResource formulaireCombobox}"/>
                     </StackPanel>
                     <StackPanel Grid.Column="1" Style="{StaticResource Principalstackpanel}">
                         <Label Style="{StaticResource titrePrincipal}">
                             Résumé des locations
                         </Label>
-                        <DataGrid Height="auto" ItemsSource="{Binding ListePourPremiereDataGrid}">
+                        <DataGrid Height="auto" ItemsSource="{Binding ListePourPremiereDataGrid}" AutoGenerateColumns="False">
                             <DataGrid.Columns>
-                                <DataGridTextColumn Binding="{Binding DateEmprunt, StringFormat=dd/MM/yyyy}" Header="Date Naissance" />
+                                <DataGridTextColumn Binding="{Binding NomVehicule}" Header="Nom véhicule" />
+                                <DataGridTextColumn Binding="{Binding Forfait}" Header="Forfait" />
+                                <DataGridTextColumn Binding="{Binding Assurance}" Header="Assurance" />
+                                <DataGridTextColumn Binding="{Binding Nom}" Header="Nom client"/>
+                                <DataGridTextColumn Binding="{Binding TypeBoiteData}" Header="Type de boite" />
+                                <DataGridTextColumn Binding="{Binding DateEmprunt, StringFormat=dd/MM/yyyy}" Header="Date emprunt" />
+                                <DataGridTextColumn Binding="{Binding DateRetour, StringFormat=dd/MM/yyyy}" Header="Date retour" />
                             </DataGrid.Columns>
                         </DataGrid>
 
