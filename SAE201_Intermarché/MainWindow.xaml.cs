@@ -96,27 +96,6 @@ namespace SAE201_Intermarche
             MainWindow.getInstance().data.CalculPrixFinal();
             AffichagePrix.GetBindingExpression(TextBox.TextProperty).UpdateSource();
         }
-
-        private void forfaitHaut_Checked(object sender, RoutedEventArgs e)
-        {
-            MainWindow.getInstance().data.SelectionForfaitHaut = true;
-            MainWindow.getInstance().data.CalculPrixFinal();
-            AffichagePrix.GetBindingExpression(TextBox.TextProperty).UpdateSource();
-        }
-
-        private void forfaitMoyen_Checked(object sender, RoutedEventArgs e)
-        {
-            MainWindow.getInstance().data.SelectionForfaitMoyen = true;
-            MainWindow.getInstance().data.CalculPrixFinal();
-            AffichagePrix.GetBindingExpression(TextBox.TextProperty).UpdateSource();
-        }
-
-        private void forfaitBas_Checked(object sender, RoutedEventArgs e)
-        {
-            MainWindow.getInstance().data.SelectionForfaitBas = true;
-            MainWindow.getInstance().data.CalculPrixFinal();
-            AffichagePrix.GetBindingExpression(TextBox.TextProperty).UpdateSource();
-        }
         private void Corpo_Checked(object sender, RoutedEventArgs e)
         {
             MainWindow.getInstance().data.SelectionAssuCorpo = true;
