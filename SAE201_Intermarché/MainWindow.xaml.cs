@@ -184,5 +184,19 @@ namespace SAE201_Intermarche
         {
             CollectionViewSource.GetDefaultView(dgListeVehicules.ItemsSource).Refresh();
         }
+
+        private void forfaitBas_Checked(object sender, RoutedEventArgs e)
+        {
+
+        }
+            private void forfaitMoyen_Checked(object sender, RoutedEventArgs e)
+        {
+
+        }
+            private void forfaitHaut_Checked(object sender, RoutedEventArgs e)
+        {
+
+        }
+
     }
 }
