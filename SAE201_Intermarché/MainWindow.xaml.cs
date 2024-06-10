@@ -217,5 +217,19 @@ namespace SAE201_Intermarche
             MainWindow.getInstance().data.CalculPrixFinal();
             AffichagePrix.Text = this.data.PrixFinal;
         }
+
+        private void cbNomClient_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            cbNumClient.Text = (cbNomClient.SelectedIndex + 1).ToString();
+        }
+
+        private void cbNumClient_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            bool bienParse = int.TryParse(cbNumClient.Text, out int num);
+            if (bienParse)
+            {
+                cbNomClient.SelectedIndex = num - 1;
+            }
+        }
     }
 }
