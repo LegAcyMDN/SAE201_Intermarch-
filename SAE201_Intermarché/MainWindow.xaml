@@ -225,7 +225,7 @@
                             
                             AutoGenerateColumns="False"
                             IsReadOnly="True"
-                            KeyDown="colonnegridmain_KeyDown" AddingNewItem="colonnegridmain_AddingNewItem" >
+                            KeyDown="colonnegridmain_KeyDown" >
                             <DataGrid.Columns>
                                 <DataGridTextColumn Binding="{Binding NomVehicule}" Header="Nom véhicule" />
                                 <DataGridTextColumn Binding="{Binding CategorieVehicule}" Header="Nom catégorie" />
