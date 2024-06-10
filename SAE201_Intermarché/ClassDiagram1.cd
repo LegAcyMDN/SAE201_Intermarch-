@@ -76,7 +76,7 @@
   <Class Name="SAE201_Intermarche.model.ApplicationData" Collapsed="true">
     <Position X="0.5" Y="2.5" Width="1.75" />
     <TypeIdentifier>
-      <HashCode>AKkIIAwCAAQCgiCAkLCyAYQgAAAAu4IICBDABACAqCA=</HashCode>
+      <HashCode>AKkIIAQCAAQCACCAkLCyBYUgAAABO4AIABDABACAyCA=</HashCode>
       <FileName>model\ApplicationData.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -90,7 +90,7 @@
   <Class Name="SAE201_Intermarche.model.DataGridMain" Collapsed="true">
     <Position X="0.5" Y="3.75" Width="1.75" />
     <TypeIdentifier>
-      <HashCode>AAAQAAAAEAAECCBAAAiEACCIBAABgAAAAYCAAKCAAAI=</HashCode>
+      <HashCode>AAAQAAAAEAAECDBAAAiEACKIBAABgAAAAYCAAKKAAAI=</HashCode>
       <FileName>model\DataGridMain.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -104,7 +104,7 @@
   <Class Name="SAE201_Intermarche.MainWindow" Collapsed="true">
     <Position X="0.5" Y="5.25" Width="1.75" />
     <TypeIdentifier>
-      <HashCode>AQEAAAAECTAAAAIAAAAAAAAAAABAEAQAAAAABAAATQA=</HashCode>
+      <HashCode>AQEAAAAECTAAAAIICQAAAAAAAABAEAQBgBCABAgATQA=</HashCode>
       <FileName>MainWindow.xaml.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -141,6 +141,13 @@
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
+  <Interface Name="SAE201_Intermarche.model.ICrud" Collapsed="true">
+    <Position X="4.5" Y="2.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAAAAAAAAAAAAEAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>model\ICrud.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
   <Enum Name="SAE201_Intermarche.model.TypeBoite" Collapsed="true">
     <Position X="2.5" Y="0.5" Width="1.75" />
     <TypeIdentifier>

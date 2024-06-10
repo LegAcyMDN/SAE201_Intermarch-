@@ -20,6 +20,8 @@ namespace SAE201_Intermarche
         public static MainWindow instance;
         bool naturalClosing = true;
         bool modif = false;
+        bool boiteManuelle;
+        bool boiteAutomatique;
         public MainWindow()
         {
             InitializeComponent();
@@ -40,6 +42,9 @@ namespace SAE201_Intermarche
             MainWindow.getInstance().data.SelectionDateEmprunt = DateTime.Now;
 
             MessageBox.Show("Location réalisé avec succès");
+
+            EntiteReservation uneReservation = new EntiteReservation();
+            uneReservation.Create();
         }
 
         private void Image_MouseDown(object sender, MouseButtonEventArgs e)
@@ -111,31 +116,31 @@ namespace SAE201_Intermarche
             DataGridMain unClient = obj as DataGridMain;
             if (Manuelle.IsChecked != null && Automatique.IsChecked != null)
             {
-                Console.WriteLine(unClient.TypeBoite.ToString());
-                if (Manuelle.IsChecked == true)
+                //Console.WriteLine(unClient.TypeBoite.ToString());
+                if (boiteManuelle)
                 {
-                    Console.WriteLine(unClient.TypeBoite.ToString());
+                    //Console.WriteLine(unClient.TypeBoite.ToString());
                     if (String.IsNullOrEmpty(cbCategorieVehicule.Text) || String.IsNullOrEmpty(cbMagasin.Text) || dateEmpruntChoix.SelectedDate == DateTime.Today || dateRetourChoix.SelectedDate == DateTime.Today)
                             return true;
                         else
-                            return (unClient.CategorieVehicule.StartsWith(cbCategorieVehicule.Text, StringComparison.OrdinalIgnoreCase)
-                            && unClient.NomMagasin.StartsWith(cbMagasin.Text, StringComparison.OrdinalIgnoreCase)
+                            return (unClient.CategorieVehicule.Equals(cbCategorieVehicule.Text, StringComparison.OrdinalIgnoreCase)
+                            && unClient.NomMagasin.Equals(cbMagasin.Text, StringComparison.OrdinalIgnoreCase)
                             && unClient.DateDebut.Value.ToString().StartsWith(dateEmpruntChoix.Text, StringComparison.OrdinalIgnoreCase)
                             && unClient.DateFin.Value.ToString().StartsWith(dateRetourChoix.Text, StringComparison.OrdinalIgnoreCase)
-                            /*&& unClient.TypeBoite.ToString().Equals("MANUELLE")*/);
+                            && unClient.TypeBoite == TypeBoite.MANUELLE.ToString());
                     
                 }
-                if (Automatique.IsChecked == true)
+                if (boiteAutomatique)
                 {
-                    Console.WriteLine(unClient.TypeBoite.ToString());
+                    //Console.WriteLine(unClient.TypeBoite.ToString());
                     if (String.IsNullOrEmpty(cbCategorieVehicule.Text) || String.IsNullOrEmpty(cbMagasin.Text) || dateEmpruntChoix.SelectedDate == DateTime.Today || dateRetourChoix.SelectedDate == DateTime.Today)
                             return true;
                         else
-                            return (unClient.CategorieVehicule.StartsWith(cbCategorieVehicule.Text, StringComparison.OrdinalIgnoreCase)
-                            && unClient.NomMagasin.StartsWith(cbMagasin.Text, StringComparison.OrdinalIgnoreCase)
+                            return (unClient.CategorieVehicule.Equals(cbCategorieVehicule.Text, StringComparison.OrdinalIgnoreCase)
+                            && unClient.NomMagasin.Equals(cbMagasin.Text, StringComparison.OrdinalIgnoreCase)
                             && unClient.DateDebut.Value.ToString().StartsWith(dateEmpruntChoix.Text, StringComparison.OrdinalIgnoreCase)
                             && unClient.DateFin.Value.ToString().StartsWith(dateRetourChoix.Text, StringComparison.OrdinalIgnoreCase)
-                            /*&& unClient.TypeBoite.ToString().Equals("AUTOMATIQUE")*/);
+                            && unClient.TypeBoite == TypeBoite.AUTOMATIQUE.ToString());
                     
                 }
             }
@@ -166,11 +171,15 @@ namespace SAE201_Intermarche
 
         private void Manuelle_Click(object sender, RoutedEventArgs e)
         {
+            boiteManuelle = true;
+            boiteAutomatique = false;
             CollectionViewSource.GetDefaultView(dgListeVehicules.ItemsSource).Refresh();
         }
 
         private void Automatique_Click(object sender, RoutedEventArgs e)
         {
+            boiteAutomatique = true;
+            boiteManuelle = false;
             CollectionViewSource.GetDefaultView(dgListeVehicules.ItemsSource).Refresh();
         }
 
