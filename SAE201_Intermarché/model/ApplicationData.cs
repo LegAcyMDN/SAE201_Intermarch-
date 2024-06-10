@@ -95,6 +95,7 @@ namespace SAE201_Intermarche.model
         {
             //TODO faire le lien avec la BDD pour remplir les valeurs
 
+            LesClients = EntiteClient.Read();
             foreach (EntiteClient client in LesClients)
             {
                 ClientEtIdComboBoxItems.Add(client.Nom + "; " + client.Num);
