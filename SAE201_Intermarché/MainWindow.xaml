@@ -222,9 +222,10 @@
                         </Label>
                         <DataGrid
                             x:Name="colonnegridmain"
+                            
                             AutoGenerateColumns="False"
                             IsReadOnly="True"
-                            KeyDown="colonnegridmain_KeyDown">
+                            KeyDown="colonnegridmain_KeyDown" AddingNewItem="colonnegridmain_AddingNewItem" >
                             <DataGrid.Columns>
                                 <DataGridTextColumn Binding="{Binding NomVehicule}" Header="Nom véhicule" />
                                 <DataGridTextColumn Binding="{Binding CategorieVehicule}" Header="Nom catégorie" />
