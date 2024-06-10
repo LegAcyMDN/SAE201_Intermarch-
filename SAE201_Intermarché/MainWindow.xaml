@@ -308,8 +308,8 @@
                             Type de boite de vitesse
                         </Label>
                         <StackPanel Margin="20,10" Orientation="Horizontal">
-                            <RadioButton x:Name="Manuelle" GroupName="typeBoite">Manuelle</RadioButton>
-                            <RadioButton x:Name="Automatique" GroupName="typeBoite">Automatique</RadioButton>
+                            <RadioButton x:Name="Manuelle" GroupName="typeBoite" Click="Manuelle_Click">Manuelle</RadioButton>
+                            <RadioButton x:Name="Automatique" GroupName="typeBoite" Click="Automatique_Click">Automatique</RadioButton>
                         </StackPanel>
                     </StackPanel>
                 </Grid>

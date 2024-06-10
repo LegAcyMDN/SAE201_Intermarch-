@@ -1,5 +1,6 @@
 ﻿using SAE201_Intermarche.model;
 using System;
+using System.Linq.Expressions;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -138,14 +139,37 @@ namespace SAE201_Intermarche
         private bool ContientMotClef(object obj)
         {
             DataGridMain unClient = obj as DataGridMain;
-            if (String.IsNullOrEmpty(cbCategorieVehicule.Text) || String.IsNullOrEmpty(cbMagasin.Text) || dateEmpruntChoix.SelectedDate == DateTime.Today || dateRetourChoix.SelectedDate == DateTime.Today)
-                return true;
-            else
-                return (unClient.CategorieVehicule.StartsWith(cbCategorieVehicule.Text, StringComparison.OrdinalIgnoreCase)
-                && unClient.NomMagasin.StartsWith(cbMagasin.Text, StringComparison.OrdinalIgnoreCase)
-                && unClient.DateDebut.Value.ToString().StartsWith(dateEmpruntChoix.Text, StringComparison.OrdinalIgnoreCase)
-                && unClient.DateFin.Value.ToString().StartsWith(dateRetourChoix.Text, StringComparison.OrdinalIgnoreCase)
-                /*&& unClient.TypeBoite.StartsWith(cb.Text, StringComparison.OrdinalIgnoreCase)*/);
+            if (Manuelle.IsChecked != null && Automatique.IsChecked != null)
+            {
+                Console.WriteLine(unClient.TypeBoite.ToString());
+                if (Manuelle.IsChecked == true)
+                {
+                    Console.WriteLine(unClient.TypeBoite.ToString());
+                    if (String.IsNullOrEmpty(cbCategorieVehicule.Text) || String.IsNullOrEmpty(cbMagasin.Text) || dateEmpruntChoix.SelectedDate == DateTime.Today || dateRetourChoix.SelectedDate == DateTime.Today)
+                            return true;
+                        else
+                            return (unClient.CategorieVehicule.StartsWith(cbCategorieVehicule.Text, StringComparison.OrdinalIgnoreCase)
+                            && unClient.NomMagasin.StartsWith(cbMagasin.Text, StringComparison.OrdinalIgnoreCase)
+                            && unClient.DateDebut.Value.ToString().StartsWith(dateEmpruntChoix.Text, StringComparison.OrdinalIgnoreCase)
+                            && unClient.DateFin.Value.ToString().StartsWith(dateRetourChoix.Text, StringComparison.OrdinalIgnoreCase)
+                            /*&& unClient.TypeBoite.ToString().Equals("MANUELLE")*/);
+                    
+                }
+                if (Automatique.IsChecked == true)
+                {
+                    Console.WriteLine(unClient.TypeBoite.ToString());
+                    if (String.IsNullOrEmpty(cbCategorieVehicule.Text) || String.IsNullOrEmpty(cbMagasin.Text) || dateEmpruntChoix.SelectedDate == DateTime.Today || dateRetourChoix.SelectedDate == DateTime.Today)
+                            return true;
+                        else
+                            return (unClient.CategorieVehicule.StartsWith(cbCategorieVehicule.Text, StringComparison.OrdinalIgnoreCase)
+                            && unClient.NomMagasin.StartsWith(cbMagasin.Text, StringComparison.OrdinalIgnoreCase)
+                            && unClient.DateDebut.Value.ToString().StartsWith(dateEmpruntChoix.Text, StringComparison.OrdinalIgnoreCase)
+                            && unClient.DateFin.Value.ToString().StartsWith(dateRetourChoix.Text, StringComparison.OrdinalIgnoreCase)
+                            /*&& unClient.TypeBoite.ToString().Equals("AUTOMATIQUE")*/);
+                    
+                }
+            }
+            return true;
         }
 
         private void cbCategorieVehicule_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -164,6 +188,16 @@ namespace SAE201_Intermarche
         }
 
         private void cbMagasin_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            CollectionViewSource.GetDefaultView(dgListeVehicules.ItemsSource).Refresh();
+        }
+
+        private void Manuelle_Click(object sender, RoutedEventArgs e)
+        {
+            CollectionViewSource.GetDefaultView(dgListeVehicules.ItemsSource).Refresh();
+        }
+
+        private void Automatique_Click(object sender, RoutedEventArgs e)
         {
             CollectionViewSource.GetDefaultView(dgListeVehicules.ItemsSource).Refresh();
         }
