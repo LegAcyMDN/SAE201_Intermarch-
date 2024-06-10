@@ -13,9 +13,7 @@ namespace SAE201_Intermarche.model
         private DateTime selectionDateEmprunt;
         private DateTime selectionDateRetour;
         private string prixFinal;
-        private bool selectionForfaitBas = false;
-        private bool selectionForfaitMoyen = false;
-        private bool selectionForfaitHaut = false;
+        private double prixVoituresSelectionnees;
         private bool selectionAssuCorpo = false;
         private bool selectionAssuVol = false;
         // const calcul prix et date
@@ -71,6 +69,7 @@ namespace SAE201_Intermarche.model
         public bool SelectionForfaitHaut { get => selectionForfaitHaut; set => selectionForfaitHaut = value; }
         public bool SelectionAssuCorpo { get => selectionAssuCorpo; set => selectionAssuCorpo = value; }
         public bool SelectionAssuVol { get => selectionAssuVol; set => selectionAssuVol = value; }
+        public double PrixVoituresSelectionnees { get => prixVoituresSelectionnees; set => prixVoituresSelectionnees = value; }
 
         public ApplicationData()
         {
@@ -202,7 +201,6 @@ namespace SAE201_Intermarche.model
         {
             double pourcentageAssu = 0;
             double prix = 0;
-            double prixvoiture = 0;
             TimeSpan difference = selectionDateRetour - selectionDateEmprunt;
             int nbjours = difference.Days;
             nbjours = 8;
@@ -212,7 +210,7 @@ namespace SAE201_Intermarche.model
                 pourcentageAssu = ASSU_VOL;
             else if (selectionAssuCorpo == true && selectionAssuVol == true)
                 pourcentageAssu = ASSU_VOL_CORPO;
-            prix = prixvoiture * nbjours + (prixvoiture * nbjours * pourcentageAssu); 
+            prix = prixVoituresSelectionnees * nbjours + (prixVoituresSelectionnees * nbjours * pourcentageAssu); 
             return PrixFinal = $"prix : {prix} euros";
         }
 
