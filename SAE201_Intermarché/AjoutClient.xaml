@@ -38,8 +38,7 @@
                     <TextBox
                         x:Name="dateCrea"
                         Focusable="False"
-                        Style="{StaticResource formulaireTextbox}"
-                        Text="{Binding dateCrea, ValidatesOnExceptions=True, UpdateSourceTrigger=Explicit}" />
+                        Style="{StaticResource formulaireTextbox}" />
                     <TextBox Style="{StaticResource formulaireTextbox}" Text="{Binding NumClient, ValidatesOnExceptions=True, UpdateSourceTrigger=Explicit}" />
                     <TextBox Style="{StaticResource formulaireTextbox}" Text="{Binding Nom, ValidatesOnExceptions=True, UpdateSourceTrigger=Explicit}" />
                     <TextBox Style="{StaticResource formulaireTextbox}" Text="{Binding Email, ValidatesOnExceptions=True, UpdateSourceTrigger=Explicit}" />

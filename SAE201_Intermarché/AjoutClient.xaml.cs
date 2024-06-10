@@ -21,7 +21,9 @@ namespace SAE201_Intermarche
     {
         public AjoutClient()
         {
+            dateCrea.Text = DateTime.Today.ToString();
             InitializeComponent();
+
         }
 
         private void nouveauClient_Click(object sender, RoutedEventArgs e)
@@ -47,5 +49,6 @@ namespace SAE201_Intermarche
             else
                 MessageBox.Show("erreur");
         }
+
     }
 }

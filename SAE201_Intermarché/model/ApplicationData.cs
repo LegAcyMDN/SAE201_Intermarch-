@@ -227,7 +227,7 @@ namespace SAE201_Intermarche.model
             }
             else
             {
-                nbjours = difference.Days;
+                nbjours = difference.Days+1;
             }
             if (selectionAssuCorpo == true && selectionAssuVol == false)
                 pourcentageAssu = ASSU_CORPO;

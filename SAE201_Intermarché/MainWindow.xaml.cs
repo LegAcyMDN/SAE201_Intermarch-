@@ -37,14 +37,13 @@ namespace SAE201_Intermarche
 
         private void confirmLocation_Click(object sender, RoutedEventArgs e)
         {
+            EntiteReservation uneReservation = new EntiteReservation();
+            uneReservation.Create();
             MainWindow.getInstance().data.SelectionClient = null;
             MainWindow.getInstance().data.SelectionDateRetour = DateTime.Now;
             MainWindow.getInstance().data.SelectionDateEmprunt = DateTime.Now;
 
             MessageBox.Show("Location réalisé avec succès");
-
-            EntiteReservation uneReservation = new EntiteReservation();
-            uneReservation.Create();
         }
 
         private void Image_MouseDown(object sender, MouseButtonEventArgs e)
