@@ -37,7 +37,7 @@ namespace SAE201_Intermarche
 
         private void confirmLocation_Click(object sender, RoutedEventArgs e)
         {
-            MainWindow.getInstance().data.SelectionClient.Delete();
+            MainWindow.getInstance().data.SelectionClient = null;
             MainWindow.getInstance().data.SelectionDateRetour = DateTime.Now;
             MainWindow.getInstance().data.SelectionDateEmprunt = DateTime.Now;
 
