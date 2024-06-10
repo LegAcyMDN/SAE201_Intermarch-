@@ -3,15 +3,29 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Data;
 using System.Linq;
-using System.Security.Cryptography;
-using System.Windows.Documents;
-using System.Xml;
 
 namespace SAE201_Intermarche.model
 {
     public class ApplicationData
     {
+        //selection pour resa 
         private EntiteClient selectionClient;
+        private DateTime selectionDateEmprunt;
+        private DateTime selectionDateRetour;
+        private string prixFinal;
+        private bool selectionForfaitBas = false;
+        private bool selectionForfaitMoyen = false;
+        private bool selectionForfaitHaut = false;
+        private bool selectionAssuCorpo = false;
+        private bool selectionAssuVol = false;
+        // const calcul prix et date
+        private const double FORFAIT_BAS = 1;
+        private const double FORFAIT_MOYEN = 10;
+        private const double FORFAIT_HAUT = 100;
+        private const double ASSU_CORPO = 0.2;
+        private const double ASSU_VOL = 0.2;
+
+        //listes items
         private ObservableCollection<string> clientEtIdComboBoxItems;
         private ObservableCollection<string> clientComboBoxItems;
         private ObservableCollection<LignePremiereDataGrid> listePourPremiereDataGrid;
@@ -51,6 +65,14 @@ namespace SAE201_Intermarche.model
         public List<EntiteMagasin> ListeEntiteMagasins { get => listeEntiteMagasins; set => listeEntiteMagasins = value; }
         public ObservableCollection<DataGridMain> ListeTousVehiculesDetail { get => listeTousVehiculesDetail; set => listeTousVehiculesDetail = value; }
         public EntiteClient SelectionClient { get => selectionClient; set => selectionClient = value; }
+        public DateTime SelectionDateEmprunt { get => selectionDateEmprunt; set => selectionDateEmprunt = value; }
+        public DateTime SelectionDateRetour { get => selectionDateRetour; set => selectionDateRetour = value; }
+        public string PrixFinal { get => prixFinal; set => prixFinal = value; }
+        public bool SelectionForfaitBas { get => selectionForfaitBas; set => selectionForfaitBas = value; }
+        public bool SelectionForfaitMoyen { get => selectionForfaitMoyen; set => selectionForfaitMoyen = value; }
+        public bool SelectionForfaitHaut { get => selectionForfaitHaut; set => selectionForfaitHaut = value; }
+        public bool SelectionAssuCorpo { get => selectionAssuCorpo; set => selectionAssuCorpo = value; }
+        public bool SelectionAssuVol { get => selectionAssuVol; set => selectionAssuVol = value; }
 
         public ApplicationData()
         {
@@ -70,13 +92,12 @@ namespace SAE201_Intermarche.model
             ListeTousVehiculesDetail = new ObservableCollection<DataGridMain>();
 
             Charge();
+
         }
 
         public void Charge()
         {
             //TODO faire le lien avec la BDD pour remplir les valeurs
-            LesClients.Add(new EntiteClient(1, "aaa", "bbb", "74000", "ccc", "0677777777", "bite@penis.com"));
-            LesClients.Add(new EntiteClient(2, "iii", "jjj", "57000", "hhh", "0674890124", "test.bon@gmail.com"));
 
             foreach (EntiteClient client in LesClients)
             {
@@ -84,7 +105,22 @@ namespace SAE201_Intermarche.model
                 ClientComboBoxItems.Add(client.Nom);
             }
 
+            selectionDateEmprunt = DateTime.Now;
+            selectionDateRetour = DateTime.Now;
+            CalculPrixFinal();
             ChargeBD();
+
+/*#if DEBUG
+            AjouteDonneesDebug();
+            Console.WriteLine("Les données ne sont pas prises de la BDD car tu es en debug mode (ApplicationData ligne 133)");
+            foreach (EntiteClient client in LesClients)
+            {
+                ClientEtIdComboBoxItems.Add(client.Nom + "; " + client.Num);
+                ClientComboBoxItems.Add(client.Nom);
+            }
+            return;
+#endif*/
+
             ChargeListes();
         }
 
@@ -97,11 +133,14 @@ namespace SAE201_Intermarche.model
             //EntiteReservation reservation = new EntiteReservation();
 
             LesDetailsReserv = new ObservableCollection<DetailReservation>();
-            
+
         }
 
         public void ChargeListes()
         {
+
+
+
             DataAccess dataAccess = new DataAccess();
             String res = $"select nom_categorie from categorie_vehicule;";
             DataTable dataTable = dataAccess.GetData(res);
@@ -129,12 +168,12 @@ namespace SAE201_Intermarche.model
             {
                 //foreach (DetailReservation detaRes in LesDetailsReserv)
                 //{
-                    foreach (EntiteVehicule vehicule in resa.LesVehicules)
-                    {
+                foreach (EntiteVehicule vehicule in resa.LesVehicules)
+                {
 
 
-                        ListePourPremiereDataGrid.Add(new LignePremiereDataGrid(vehicule.NomVehicule, resa.ForfaitKM, resa.UneAssurance.DescriptionAssurance, resa.UnClient.Nom, vehicule.TypeBoite, resa.DateDebut, resa.DateFin));
-                    }
+                    //  ListePourPremiereDataGrid.Add(new LignePremiereDataGrid(vehicule.NomVehicule, resa.ForfaitKM, resa.UneAssurance.DescriptionAssurance, resa.UnClient.Nom, vehicule.TypeBoite, resa.DateDebut, resa.DateFin));
+                }
                 //}
             }
 
@@ -146,7 +185,7 @@ namespace SAE201_Intermarche.model
                 {
                     LesReservations.ToList().ForEach(resa =>
                     {
-                    if (resa.LesVehicules.Find(y => y.Immatriculation == x.ImmatriculationVehicule) != null)
+                        if (resa.LesVehicules.Find(y => y.Immatriculation == x.ImmatriculationVehicule) != null)
                         {
                             x.Dispo = false;
                         }
@@ -160,9 +199,62 @@ namespace SAE201_Intermarche.model
             }
 
         }
+        public string CalculPrixFinal()
+
+        {
+            double prixAssuCorpo = 0;
+            double prixAssuVol = 0;
+            double prix = 0;
+            TimeSpan difference = selectionDateRetour - selectionDateEmprunt;
+            int nbjours = difference.Days;
+            nbjours = 8;
+            switch (selectionForfaitBas)
+            {
+                case true: prix += FORFAIT_BAS; break;
+                case false:
+                    switch (selectionForfaitMoyen)
+                    {
+                        case true: prix += FORFAIT_MOYEN; break;
+                        case false: prix += FORFAIT_HAUT; break;
+                    }; break;
+            }
+            if (selectionAssuCorpo)
+                prixAssuCorpo = nbjours * ASSU_CORPO;
+            if (selectionAssuVol)
+                prixAssuVol = nbjours * ASSU_VOL;
+
+            prix = prixAssuCorpo + prixAssuVol + prix;
+            return PrixFinal = $"prix : {prix} euros";
+        }
 
 
+
+        public void AjouteDonneesDebug()
+        {
+
+            EntiteClient client1 = new EntiteClient(1, "aaa", "bbb", "74000", "ccc", "0677777777", "jackie@michel.com");
+
+            LesClients.Add(client1);
+            LesClients.Add(new EntiteClient(2, "iii", "jjj", "57000", "hhh", "0674890124", "test.bon@gmail.com"));
+
+            EntiteMagasin magasin1 = new EntiteMagasin(1, "testMagasin1", "adresse du test", "74700", "Sallanches", "15-18h");
+
+            EntiteAssurance assurance1 = new EntiteAssurance(1, "cette assurance existe", 169);
+
+            EntiteVehicule vehicule4L = new EntiteVehicule("AI394OF", TypeBoite.MANUELLE, magasin1, new CategorieVehicule("testCategorie"), "LA 4L", "JACKIE, JACKIE, TA 4L, TA 4LLLLL", 4, 29, false, "https://images.caradisiac.com/logos/7/1/7/6/267176/S7-renault-sent-une-attente-pour-une-nouvelle-4l-190779.jpg");
+
+            LesVehicules.Add(vehicule4L);
+
+            EntiteReservation resa1 = new EntiteReservation(1, assurance1, client1, new DateTime(2023, 6, 6), new DateTime(2023, 6, 10), new DateTime(2023, 6, 25), 15, "Forfait -100km");
+
+            LesReservations.Add(resa1);
+
+            ListePourPremiereDataGrid.Add(new LignePremiereDataGrid(vehicule4L.NomVehicule, resa1.ForfaitKM, resa1.UneAssurance.DescriptionAssurance, resa1.UnClient.Nom, vehicule4L.TypeBoite, resa1.DateDebut, resa1.DateFin));
+
+
+        }
 
 
     }
+
 }

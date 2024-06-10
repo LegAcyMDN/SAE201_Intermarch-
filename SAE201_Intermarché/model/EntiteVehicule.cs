@@ -41,11 +41,11 @@ namespace SAE201_Intermarche.model
         public string LienPhotoURL { get => lienPhotoURL; set => lienPhotoURL = value; }
         public TypeBoite TypeBoite { get => typeBoite; set => typeBoite = value; }
 
-        public EntiteVehicule(string immatriculation, TypeBoite typeBoite, EntiteMagasin numMagasin, CategorieVehicule nomCategorie, string nomVehicule, string description, int nombrePlaces, double prixLocation, bool climatisation, string lienPhotoURL)
+        public EntiteVehicule(string immatriculation, TypeBoite typeBoite, EntiteMagasin unMagasin, CategorieVehicule nomCategorie, string nomVehicule, string description, int nombrePlaces, double prixLocation, bool climatisation, string lienPhotoURL)
         {
             Immatriculation = immatriculation;
             TypeBoite = typeBoite;
-            UnMagasin = numMagasin;
+            UnMagasin = unMagasin;
             UneCategorie = nomCategorie;
             NomVehicule = nomVehicule;
             DescriptionVehicule = description;
