@@ -33,6 +33,7 @@ namespace SAE201_Intermarche.model
         private List<string> listeNomsMagasins;
         private List<EntiteMagasin> listeEntiteMagasins;
         private List<string> listeTypeVehicule;
+        private List<int> listeIdClients;
 
         private ObservableCollection<EntiteClient> lesClients;
         public ObservableCollection<EntiteClient> LesClients
@@ -71,6 +72,7 @@ namespace SAE201_Intermarche.model
         public bool SelectionAssuVol { get => selectionAssuVol; set => selectionAssuVol = value; }
         public double PrixVoituresSelectionnees { get => prixVoituresSelectionnees; set => prixVoituresSelectionnees = value; }
         public bool BoolTypeBoite { get => boolTypeBoite; set => boolTypeBoite = value; }
+        public List<int> ListeIdClients { get => listeIdClients; set => listeIdClients = value; }
 
         public ApplicationData()
         {
@@ -80,6 +82,7 @@ namespace SAE201_Intermarche.model
 
             ClientEtIdComboBoxItems = new ObservableCollection<string>();
             ClientComboBoxItems = new ObservableCollection<string>();
+            ListeIdClients = new List<int>();
 
             ListeTypeVehicule = new List<string>();
             ListePourPremiereDataGrid = new ObservableCollection<LignePremiereDataGrid>();
@@ -97,10 +100,12 @@ namespace SAE201_Intermarche.model
         {
             //TODO faire le lien avec la BDD pour remplir les valeurs
 
+            LesClients = EntiteClient.Read();
             foreach (EntiteClient client in LesClients)
             {
                 ClientEtIdComboBoxItems.Add(client.Nom + "; " + client.Num);
                 ClientComboBoxItems.Add(client.Nom);
+                ListeIdClients.Add(client.Num);
             }
 
             selectionDateEmprunt = DateTime.Now;
@@ -227,7 +232,7 @@ namespace SAE201_Intermarche.model
             }
             else
             {
-                nbjours = difference.Days;
+                nbjours = difference.Days+1;
             }
             if (selectionAssuCorpo == true && selectionAssuVol == false)
                 pourcentageAssu = ASSU_CORPO;
@@ -264,8 +269,6 @@ namespace SAE201_Intermarche.model
             LesReservations.Add(resa1);
 
             ListePourPremiereDataGrid.Add(new LignePremiereDataGrid(vehicule4L.NomVehicule, resa1.ForfaitKM, resa1.UneAssurance.DescriptionAssurance, resa1.UnClient.Nom, vehicule4L.TypeBoite, resa1.DateDebut, resa1.DateFin));
-
-
         }
 
 

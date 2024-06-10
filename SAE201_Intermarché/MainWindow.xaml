@@ -346,11 +346,11 @@
                         <Label Style="{StaticResource filtreLabel}">
                             Nom client
                         </Label>
-                        <ComboBox ItemsSource="{Binding ClientComboBoxItems}" Style="{StaticResource formulaireCombobox}" />
+                        <ComboBox x:Name="cbNomClient" ItemsSource="{Binding ClientComboBoxItems}" Style="{StaticResource formulaireCombobox}" SelectionChanged="cbNomClient_SelectionChanged" />
                         <Label Style="{StaticResource filtreLabel}">
                             Numéro client
                         </Label>
-                        <ComboBox Style="{StaticResource formulaireCombobox}" />
+                        <ComboBox x:Name="cbNumClient" Style="{StaticResource formulaireCombobox}" ItemsSource="{Binding ListeIdClients}" SelectionChanged="cbNumClient_SelectionChanged" />
                         <Label Style="{StaticResource filtreLabel}">
                             Magasin
                         </Label>

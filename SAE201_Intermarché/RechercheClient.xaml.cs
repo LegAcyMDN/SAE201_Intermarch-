@@ -67,7 +67,7 @@ namespace SAE201_Intermarche
             if (ok == true)
             {
                 DialogResult = true;
-                MessageBox.Show(this, recherche.ToString(), "Récap", MessageBoxButton.OK, MessageBoxImage.Information);
+                MessageBox.Show(this, "Client recherché", "Récap", MessageBoxButton.OK, MessageBoxImage.Information);
             }
             else
                 MessageBox.Show("erreur");
