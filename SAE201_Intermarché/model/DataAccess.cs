@@ -32,10 +32,10 @@ namespace SAE201_Intermarche.model
             try
             {
                 Console.WriteLine("oui je suis co");
-#if DEBUG
+/*#if DEBUG
                 Console.WriteLine("La connexion ne se fait pas car tu es en debug mode (DataAccess ligne 36)");
                 return;
-#endif
+#endif*/
                 NpgSQLConnection = new NpgsqlConnection();
                 NpgSQLConnection.ConnectionString = strConnexion;
                 NpgSQLConnection.Open();
@@ -52,10 +52,10 @@ namespace SAE201_Intermarche.model
         {
             try
             {
-#if DEBUG
+/*#if DEBUG
                 Console.WriteLine("La connexion ne se fait pas car tu es en debug mode (DataAccess ligne 56)");
                 return null;
-#endif
+#endif*/
                 NpgsqlDataAdapter dataAdapter = new NpgsqlDataAdapter(selectSQL, NpgSQLConnection);
                 DataTable dataTable = new DataTable();
                 try

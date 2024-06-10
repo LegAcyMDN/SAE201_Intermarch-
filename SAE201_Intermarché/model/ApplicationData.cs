@@ -110,7 +110,7 @@ namespace SAE201_Intermarche.model
             CalculPrixFinal();
             ChargeBD();
 
-#if DEBUG
+/*#if DEBUG
             AjouteDonneesDebug();
             Console.WriteLine("Les données ne sont pas prises de la BDD car tu es en debug mode (ApplicationData ligne 133)");
             foreach (EntiteClient client in LesClients)
@@ -119,7 +119,7 @@ namespace SAE201_Intermarche.model
                 ClientComboBoxItems.Add(client.Nom);
             }
             return;
-#endif
+#endif*/
 
             ChargeListes();
         }
