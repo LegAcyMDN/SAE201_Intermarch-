@@ -16,6 +16,7 @@ namespace SAE201_Intermarche.model
         private double prixVoituresSelectionnees;
         private bool selectionAssuCorpo = false;
         private bool selectionAssuVol = false;
+        private bool boolTypeBoite; // false = manuelle, true = automatique. 
         // const calcul prix et date
         private const double ASSU_CORPO = 0.07;
         private const double ASSU_VOL = 0.05;
@@ -67,6 +68,7 @@ namespace SAE201_Intermarche.model
         public bool SelectionAssuCorpo { get => selectionAssuCorpo; set => selectionAssuCorpo = value; }
         public bool SelectionAssuVol { get => selectionAssuVol; set => selectionAssuVol = value; }
         public double PrixVoituresSelectionnees { get => prixVoituresSelectionnees; set => prixVoituresSelectionnees = value; }
+        public bool BoolTypeBoite { get => boolTypeBoite; set => boolTypeBoite = value; }
 
         public ApplicationData()
         {

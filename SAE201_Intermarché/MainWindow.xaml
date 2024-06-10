@@ -253,7 +253,7 @@
                                 <DataGridTextColumn Binding="{Binding CategorieVehicule}" Header="Nom catégorie" />
                                 <DataGridTextColumn Binding="{Binding ImmatriculationVehicule}" Header="Immatriculation" />
                                 <DataGridTextColumn Binding="{Binding TypeBoite}" Header="Type boite" />
-                                <DataGridTextColumn Binding="{Binding NumMagasinVehicule}" Header="N° magasin" />
+                                <DataGridTextColumn Binding="{Binding NomMagasin}" Header="Nom magasin" />
                                 <DataGridTextColumn Binding="{Binding DescriptionVehicule}" Header="Description" />
                                 <DataGridTextColumn Binding="{Binding NombrePlaceVehicule}" Header="Nombre de places" />
                                 <DataGridTextColumn Binding="{Binding PrixLocationVehicule}" Header="Prix location" />
@@ -309,8 +309,10 @@
                             Type de boite de vitesse
                         </Label>
                         <StackPanel Margin="20,10" Orientation="Horizontal">
-                            <RadioButton x:Name="Manuelle" GroupName="typeBoite" Click="Manuelle_Click">Manuelle</RadioButton>
-                            <RadioButton x:Name="Automatique" GroupName="typeBoite" Click="Automatique_Click">Automatique</RadioButton>
+                            <RadioButton x:Name="Manuelle" GroupName="typeBoite" Click="Manuelle_Click"
+                                         >Manuelle</RadioButton>
+                            <RadioButton x:Name="Automatique" GroupName="typeBoite" Click="Automatique_Click"
+                                         >Automatique</RadioButton>
                         </StackPanel>
                     </StackPanel>
                 </Grid>
