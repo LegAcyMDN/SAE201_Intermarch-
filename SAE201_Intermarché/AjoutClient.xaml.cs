@@ -19,12 +19,11 @@ namespace SAE201_Intermarche
     /// </summary>
     public partial class AjoutClient : Window
     {
+        private string dateJour = DateTime.Now.ToString();
         public AjoutClient()
         {
             InitializeComponent();
-            dateCrea.Text = DateTime.Today.ToString();
-            
-
+            dateCrea.Text = dateJour;
         }
 
         private void nouveauClient_Click(object sender, RoutedEventArgs e)

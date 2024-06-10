@@ -68,8 +68,8 @@ namespace SAE201_Intermarche
         public void Create()
         {
             DataAccess dataAccess = new DataAccess();
-            dataAccess.SetData("insert into client (num_client, nom_client, adresse_rue_client, adresse_cp_client, adresse_ville_client, telephone_client, mail_client) " +
-                $"values ('{Num}','{Nom}','{Rue}','{Cp}','{Ville}','{Telephone}','{Mail}');");
+            dataAccess.SetData("insert into client (nom_client, adresse_rue_client, adresse_cp_client, adresse_ville_client, telephone_client, mail_client) " +
+                $"values ('{Nom}','{Rue}','{Cp}','{Ville}','{Telephone}','{Mail}');");
         }
 
         public void Delete()
@@ -106,8 +106,8 @@ namespace SAE201_Intermarche
         public void Update()
         {
             DataAccess dataAccess = new DataAccess();
-            String res = "update client set (num_client, nom_client, adresse_rue_client, adresse_cp_client, adresse_ville_client, telephone_client, mail_client) " + 
-                $"= ('{Num}','{Nom}','{Rue}','{Cp}','{Ville}','{Telephone}','{Mail}');";
+            String res = "update client set (nom_client, adresse_rue_client, adresse_cp_client, adresse_ville_client, telephone_client, mail_client) " + 
+                $"= ('{Nom}','{Rue}','{Cp}','{Ville}','{Telephone}','{Mail}');";
             dataAccess.SetData(res);
         }
     }
