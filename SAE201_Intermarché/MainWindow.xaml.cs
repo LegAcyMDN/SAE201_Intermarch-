@@ -113,7 +113,7 @@ namespace SAE201_Intermarche
 
         private bool ContientMotClef(object obj)
         {
-            DataGridMain unClient = obj as DataGridMain;
+            DataGridMain laDatagrid = obj as DataGridMain;
             if (Manuelle.IsChecked != null && Automatique.IsChecked != null)
             {
                 //Console.WriteLine(unClient.TypeBoite.ToString());
@@ -123,11 +123,11 @@ namespace SAE201_Intermarche
                     if (String.IsNullOrEmpty(cbCategorieVehicule.Text) || String.IsNullOrEmpty(cbMagasin.Text) || dateEmpruntChoix.SelectedDate == DateTime.Today || dateRetourChoix.SelectedDate == DateTime.Today)
                             return true;
                         else
-                            return (unClient.CategorieVehicule.Equals(cbCategorieVehicule.Text, StringComparison.OrdinalIgnoreCase)
-                            && unClient.NomMagasin.Equals(cbMagasin.Text, StringComparison.OrdinalIgnoreCase)
-                            && unClient.DateDebut.Value.ToString().StartsWith(dateEmpruntChoix.Text, StringComparison.OrdinalIgnoreCase)
-                            && unClient.DateFin.Value.ToString().StartsWith(dateRetourChoix.Text, StringComparison.OrdinalIgnoreCase)
-                            && unClient.TypeBoite == TypeBoite.MANUELLE.ToString());
+                            return (laDatagrid.CategorieVehicule.Equals(cbCategorieVehicule.Text, StringComparison.OrdinalIgnoreCase)
+                            && laDatagrid.NomMagasin.Equals(cbMagasin.Text, StringComparison.OrdinalIgnoreCase)
+                            && laDatagrid.DateDebut.Value.ToString().StartsWith(dateEmpruntChoix.Text, StringComparison.OrdinalIgnoreCase)
+                            && laDatagrid.DateFin.Value.ToString().StartsWith(dateRetourChoix.Text, StringComparison.OrdinalIgnoreCase)
+                            && laDatagrid.TypeBoite == TypeBoite.MANUELLE.ToString());
                     
                 }
                 if (boiteAutomatique)
@@ -136,16 +136,20 @@ namespace SAE201_Intermarche
                     if (String.IsNullOrEmpty(cbCategorieVehicule.Text) || String.IsNullOrEmpty(cbMagasin.Text) || dateEmpruntChoix.SelectedDate == DateTime.Today || dateRetourChoix.SelectedDate == DateTime.Today)
                             return true;
                         else
-                            return (unClient.CategorieVehicule.Equals(cbCategorieVehicule.Text, StringComparison.OrdinalIgnoreCase)
-                            && unClient.NomMagasin.Equals(cbMagasin.Text, StringComparison.OrdinalIgnoreCase)
-                            && unClient.DateDebut.Value.ToString().StartsWith(dateEmpruntChoix.Text, StringComparison.OrdinalIgnoreCase)
-                            && unClient.DateFin.Value.ToString().StartsWith(dateRetourChoix.Text, StringComparison.OrdinalIgnoreCase)
-                            && unClient.TypeBoite == TypeBoite.AUTOMATIQUE.ToString());
+                            return (laDatagrid.CategorieVehicule.Equals(cbCategorieVehicule.Text, StringComparison.OrdinalIgnoreCase)
+                            && laDatagrid.NomMagasin.Equals(cbMagasin.Text, StringComparison.OrdinalIgnoreCase)
+                            && laDatagrid.DateDebut.Value.ToString().StartsWith(dateEmpruntChoix.Text, StringComparison.OrdinalIgnoreCase)
+                            && laDatagrid.DateFin.Value.ToString().StartsWith(dateRetourChoix.Text, StringComparison.OrdinalIgnoreCase)
+                            && laDatagrid.TypeBoite == TypeBoite.AUTOMATIQUE.ToString());
                     
                 }
             }
             return true;
         }
+
+
+
+
 
         private void cbCategorieVehicule_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
