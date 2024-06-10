@@ -264,8 +264,6 @@ namespace SAE201_Intermarche.model
             LesReservations.Add(resa1);
 
             ListePourPremiereDataGrid.Add(new LignePremiereDataGrid(vehicule4L.NomVehicule, resa1.ForfaitKM, resa1.UneAssurance.DescriptionAssurance, resa1.UnClient.Nom, vehicule4L.TypeBoite, resa1.DateDebut, resa1.DateFin));
-
-
         }
 
 

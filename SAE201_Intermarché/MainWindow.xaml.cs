@@ -156,12 +156,14 @@ namespace SAE201_Intermarche
         {
             CollectionViewSource.GetDefaultView(dgListeVehicules.ItemsSource).Refresh();
             this.data.CalculPrixFinal();
+            AffichagePrix.Text = this.data.PrixFinal;
         }
 
         private void dateRetourChoix_SelectedDateChanged(object sender, SelectionChangedEventArgs e)
         {
             CollectionViewSource.GetDefaultView(dgListeVehicules.ItemsSource).Refresh();
             this.data.CalculPrixFinal();
+            AffichagePrix.Text = this.data.PrixFinal;
         }
 
         private void cbMagasin_SelectionChanged(object sender, SelectionChangedEventArgs e)
