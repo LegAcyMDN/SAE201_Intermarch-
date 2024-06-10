@@ -20,11 +20,6 @@ namespace SAE201_Intermarche
     /// </summary>
     public partial class Connexion : Window
     {
-        public static string identifiant = "admin"; //il faut mettre le login de la classe employe
-        public static string mdp = "admin"; //il faut mettre le mdp de la classe employe
-
-        //EntiteEmploye unEmploye = new EntiteEmploye(identifiant, mdp);
-
         bool naturalClosing = true;
         public Connexion()
         {
@@ -34,13 +29,35 @@ namespace SAE201_Intermarche
 
         private void but_Valider_Click(object sender, RoutedEventArgs e)
         {
-            //unEmploye.Login = identifiant;
-            //unEmploye.MDP = mdp;
+            String login = tb_identifiant.Text;
+            String password = tb_mdp.Password.ToString();
 
-            if (identifiant == tb_identifiant.Text && mdp == tb_mdp.Password.ToString())
+            try
             {
-                this.DialogResult = true;
-                Close();
+                var lesEmployes = EntiteEmploye.Read();
+                EntiteEmploye unEmploye = null;
+
+                foreach (var emp in lesEmployes)
+                {
+                    if (emp.Login == login && emp.MDP == password)
+                    {
+                        unEmploye = emp;
+                        break;
+                    }
+                }
+
+                if (unEmploye != null)
+                {
+                    this.DialogResult = true;
+                    Close();
+                }
+
+                else { MessageBox.Show("Identifiant ou mot de passe incorrect"); }
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Erreur lors de la connexion à la base de données: {ex.Message}");
             }
         }
 

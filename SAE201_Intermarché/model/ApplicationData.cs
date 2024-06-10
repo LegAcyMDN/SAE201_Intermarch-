@@ -19,11 +19,9 @@ namespace SAE201_Intermarche.model
         private bool selectionAssuCorpo = false;
         private bool selectionAssuVol = false;
         // const calcul prix et date
-        private const double FORFAIT_BAS = 1;
-        private const double FORFAIT_MOYEN = 10;
-        private const double FORFAIT_HAUT = 100;
-        private const double ASSU_CORPO = 0.2;
-        private const double ASSU_VOL = 0.2;
+        private const double ASSU_CORPO = 0.07;
+        private const double ASSU_VOL = 0.05;
+        private const double ASSU_VOL_CORPO = 0.10;
 
         //listes items
         private ObservableCollection<string> clientEtIdComboBoxItems;
@@ -216,28 +214,19 @@ namespace SAE201_Intermarche.model
         public string CalculPrixFinal()
 
         {
-            double prixAssuCorpo = 0;
-            double prixAssuVol = 0;
+            double pourcentageAssu = 0;
             double prix = 0;
+            double prixvoiture = 0;
             TimeSpan difference = selectionDateRetour - selectionDateEmprunt;
             int nbjours = difference.Days;
             nbjours = 8;
-            switch (selectionForfaitBas)
-            {
-                case true: prix += FORFAIT_BAS; break;
-                case false:
-                    switch (selectionForfaitMoyen)
-                    {
-                        case true: prix += FORFAIT_MOYEN; break;
-                        case false: prix += FORFAIT_HAUT; break;
-                    }; break;
-            }
-            if (selectionAssuCorpo)
-                prixAssuCorpo = nbjours * ASSU_CORPO;
-            if (selectionAssuVol)
-                prixAssuVol = nbjours * ASSU_VOL;
-
-            prix = prixAssuCorpo + prixAssuVol + prix;
+            if (selectionAssuCorpo == true && selectionAssuVol == false)
+                pourcentageAssu = ASSU_CORPO;
+            else if (selectionAssuVol == true && selectionAssuCorpo == false)
+                pourcentageAssu = ASSU_VOL;
+            else if (selectionAssuCorpo == true && selectionAssuVol == true)
+                pourcentageAssu = ASSU_VOL_CORPO;
+            prix = prixvoiture * nbjours + (prixvoiture * nbjours * pourcentageAssu); 
             return PrixFinal = $"prix : {prix} euros";
         }
 

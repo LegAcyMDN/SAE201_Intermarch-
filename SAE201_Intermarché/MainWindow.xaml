@@ -137,9 +137,8 @@
                                     Click="clientExistant_Click"
                                     Content="Séléction client existant"
                                     Style="{StaticResource PrincipalBouton}" />
-                                <Label Style="{StaticResource formulaireLabel}">Date retour</Label>
                                 <Label Style="{StaticResource formulaireLabel}">Date emprunt</Label>
-
+                                <Label Style="{StaticResource formulaireLabel}">Date retour</Label>
                             </StackPanel>
 
                             <StackPanel Grid.Row="0" Grid.Column="1">
@@ -178,11 +177,11 @@
                                     Style="{StaticResource PrincipalBouton}" />
                                 <DatePicker
                                     Focusable="False"
-                                    SelectedDate="{Binding SelectionDateEmprunt}"
+                                    SelectedDate="{Binding SelectionDateRetour}"
                                     Style="{StaticResource formulaireDate}" />
                                 <DatePicker
-                                    Focusable="False"
-                                    SelectedDate="{Binding SelectionDateRetour}"
+                                    Focusable="False" 
+                                    SelectedDate="{Binding SelectionDateEmprunt}"
                                     Style="{StaticResource formulaireDate}" />
 
                             </StackPanel>
