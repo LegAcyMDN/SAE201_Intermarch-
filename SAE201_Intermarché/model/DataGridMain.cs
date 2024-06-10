@@ -19,6 +19,9 @@ namespace SAE201_Intermarche.model
         private bool climatisation;
         private string lienPhotoUrlVehicule;
         private bool dispo;
+        private string nomMagasin;
+        private DateTime? dateDebut;
+        private DateTime? dateFin;
 
         public bool Dispo { get => dispo; set => dispo = value; }
         public string NomVehicule { get => nomVehicule; set => nomVehicule = value; }
@@ -31,8 +34,11 @@ namespace SAE201_Intermarche.model
         public string PrixLocationVehicule { get => prixLocationVehicule; set => prixLocationVehicule = value; }
         public bool Climatisation { get => climatisation; set => climatisation = value; }
         public string LienPhotoUrlVehicule { get => lienPhotoUrlVehicule; set => lienPhotoUrlVehicule = value; }
+        public string NomMagasin { get => nomMagasin; set => nomMagasin = value; }
+        public DateTime? DateDebut { get => dateDebut; set => dateDebut = value; }
+        public DateTime? DateFin { get => dateFin; set => dateFin = value; }
 
-        public DataGridMain(bool dispo, string nomVehicule, CategorieVehicule categorieVehicule, string immatriculationVehicule, TypeBoite typeBoite, int numMagasinVehicule, string descriptionVehicule, int nombrePlaceVehicule, double prixLocationVehicule, bool climatisation, string lienPhotoUrlVehicule)
+        public DataGridMain(bool dispo, string nomVehicule, CategorieVehicule categorieVehicule, string immatriculationVehicule, TypeBoite typeBoite, int numMagasinVehicule, string descriptionVehicule, int nombrePlaceVehicule, double prixLocationVehicule, bool climatisation, string lienPhotoUrlVehicule, string nomMagasin, DateTime? dateDebut, DateTime? dateFin)
         {
             Dispo = dispo;
             NomVehicule = nomVehicule;
@@ -45,6 +51,9 @@ namespace SAE201_Intermarche.model
             PrixLocationVehicule = prixLocationVehicule.ToString();
             Climatisation = climatisation;
             LienPhotoUrlVehicule = lienPhotoUrlVehicule;
+            NomMagasin = nomMagasin;
+            DateDebut = dateDebut;
+            DateFin = dateFin;
         }
     }
 }

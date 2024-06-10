@@ -172,28 +172,42 @@ namespace SAE201_Intermarche.model
                 {
 
 
-                    //  ListePourPremiereDataGrid.Add(new LignePremiereDataGrid(vehicule.NomVehicule, resa.ForfaitKM, resa.UneAssurance.DescriptionAssurance, resa.UnClient.Nom, vehicule.TypeBoite, resa.DateDebut, resa.DateFin));
+                    ListePourPremiereDataGrid.Add(new LignePremiereDataGrid(vehicule.NomVehicule, resa.ForfaitKM, resa.UneAssurance.DescriptionAssurance, resa.UnClient.Nom, vehicule.TypeBoite, resa.DateDebut, resa.DateFin));
                 }
                 //}
             }
 
+
+            foreach (EntiteReservation entiteReservation in LesReservations)
+            {
+                foreach (EntiteVehicule vehicule in entiteReservation.LesVehicules)
+                {
+                    ListeTousVehiculesDetail.Add(new DataGridMain(false, vehicule.NomVehicule, vehicule.UneCategorie, vehicule.Immatriculation, vehicule.TypeBoite, vehicule.UnMagasin.NumMagasin, vehicule.DescriptionVehicule, vehicule.NombrePlaces, vehicule.PrixLocation, vehicule.Climatisation, vehicule.LienPhotoURL, vehicule.UnMagasin.NomMagasin, entiteReservation.DateDebut, entiteReservation.DateFin));
+                }
+            }
+
+
             foreach (EntiteVehicule vehicule in LesVehicules)
             {
-                ListeTousVehiculesDetail.Add(new DataGridMain(dispo, vehicule.NomVehicule, vehicule.UneCategorie, vehicule.Immatriculation, vehicule.TypeBoite, vehicule.UnMagasin.NumMagasin, vehicule.DescriptionVehicule, vehicule.NombrePlaces, vehicule.PrixLocation, vehicule.Climatisation, vehicule.LienPhotoURL));
-
-                ListeTousVehiculesDetail.ToList().ForEach(x =>
+                if (ListeTousVehiculesDetail.ToList().Find(x => x.ImmatriculationVehicule == vehicule.Immatriculation) == null)
                 {
-                    LesReservations.ToList().ForEach(resa =>
-                    {
-                        if (resa.LesVehicules.Find(y => y.Immatriculation == x.ImmatriculationVehicule) != null)
-                        {
-                            x.Dispo = false;
-                        }
+                    ListeTousVehiculesDetail.Add(new DataGridMain(false, vehicule.NomVehicule, vehicule.UneCategorie, vehicule.Immatriculation, vehicule.TypeBoite, vehicule.UnMagasin.NumMagasin, vehicule.DescriptionVehicule, vehicule.NombrePlaces, vehicule.PrixLocation, vehicule.Climatisation, vehicule.LienPhotoURL, vehicule.UnMagasin.NomMagasin, null, null));
 
+
+                    ListeTousVehiculesDetail.ToList().ForEach(x =>
+                    {
+                        LesReservations.ToList().ForEach(resa =>
+                        {
+                            if (resa.LesVehicules.Find(y => y.Immatriculation == x.ImmatriculationVehicule) != null)
+                            {
+                                x.Dispo = false;
+                            }
+
+
+                        });
 
                     });
-
-                });
+                }
 
 
             }
