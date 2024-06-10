@@ -1,6 +1,8 @@
-﻿using System;
+﻿using SAE201_Intermarche.model;
+using System;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Data;
 using System.Windows.Input;
 
 namespace SAE201_Intermarche
@@ -23,6 +25,7 @@ namespace SAE201_Intermarche
             Connexion connexion = new Connexion();
             connexion.ShowDialog();
             instance = this;
+            dgListeVehicules.Items.Filter = ContientMotClef;
         }
 
 
@@ -125,6 +128,44 @@ namespace SAE201_Intermarche
             MainWindow.getInstance().data.SelectionAssuVol = true;
             MainWindow.getInstance().data.CalculPrixFinal();
             AffichagePrix.GetBindingExpression(TextBox.TextProperty).UpdateSource();
+        }
+
+        private void dgListeVehicules_SelectedCellsChanged(object sender, SelectedCellsChangedEventArgs e)
+        {
+            colonnegridmain.ItemsSource = dgListeVehicules.SelectedItems;
+        }
+
+        private bool ContientMotClef(object obj)
+        {
+            DataGridMain unClient = obj as DataGridMain;
+            if (String.IsNullOrEmpty(cbCategorieVehicule.Text) || String.IsNullOrEmpty(cbMagasin.Text) || dateEmpruntChoix.SelectedDate == DateTime.Today || dateRetourChoix.SelectedDate == DateTime.Today)
+                return true;
+            else
+                return (unClient.CategorieVehicule.StartsWith(cbCategorieVehicule.Text, StringComparison.OrdinalIgnoreCase)
+                && unClient.NomMagasin.StartsWith(cbMagasin.Text, StringComparison.OrdinalIgnoreCase)
+                && unClient.DateDebut.Value.ToString().StartsWith(dateEmpruntChoix.Text, StringComparison.OrdinalIgnoreCase)
+                && unClient.DateFin.Value.ToString().StartsWith(dateRetourChoix.Text, StringComparison.OrdinalIgnoreCase)
+                /*&& unClient.TypeBoite.StartsWith(cb.Text, StringComparison.OrdinalIgnoreCase)*/);
+        }
+
+        private void cbCategorieVehicule_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            CollectionViewSource.GetDefaultView(dgListeVehicules.ItemsSource).Refresh();
+        }
+
+        private void dateEmpruntChoix_SelectedDateChanged(object sender, SelectionChangedEventArgs e)
+        {
+            CollectionViewSource.GetDefaultView(dgListeVehicules.ItemsSource).Refresh();
+        }
+
+        private void dateRetourChoix_SelectedDateChanged(object sender, SelectionChangedEventArgs e)
+        {
+            CollectionViewSource.GetDefaultView(dgListeVehicules.ItemsSource).Refresh();
+        }
+
+        private void cbMagasin_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            CollectionViewSource.GetDefaultView(dgListeVehicules.ItemsSource).Refresh();
         }
     }
 }
