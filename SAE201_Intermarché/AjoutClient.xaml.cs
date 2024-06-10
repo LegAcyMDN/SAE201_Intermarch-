@@ -21,8 +21,9 @@ namespace SAE201_Intermarche
     {
         public AjoutClient()
         {
-            dateCrea.Text = DateTime.Today.ToString();
             InitializeComponent();
+            dateCrea.Text = DateTime.Today.ToString();
+            
 
         }
 

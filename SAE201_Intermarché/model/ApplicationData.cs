@@ -12,6 +12,7 @@ namespace SAE201_Intermarche.model
     {
         //selection pour resa 
         private EntiteClient selectionClient;
+        private EntiteClient creationClient;
         private DateTime selectionDateEmprunt;
         private DateTime selectionDateRetour;
         private string prixFinal;
@@ -73,6 +74,7 @@ namespace SAE201_Intermarche.model
         public double PrixVoituresSelectionnees { get => prixVoituresSelectionnees; set => prixVoituresSelectionnees = value; }
         public bool BoolTypeBoite { get => boolTypeBoite; set => boolTypeBoite = value; }
         public List<int> ListeIdClients { get => listeIdClients; set => listeIdClients = value; }
+        public EntiteClient CreationClient { get => creationClient; set => creationClient = value; }
 
         public ApplicationData()
         {
