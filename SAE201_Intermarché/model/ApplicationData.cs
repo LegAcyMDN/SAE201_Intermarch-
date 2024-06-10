@@ -64,9 +64,6 @@ namespace SAE201_Intermarche.model
         public DateTime SelectionDateEmprunt { get => selectionDateEmprunt; set => selectionDateEmprunt = value; }
         public DateTime SelectionDateRetour { get => selectionDateRetour; set => selectionDateRetour = value; }
         public string PrixFinal { get => prixFinal; set => prixFinal = value; }
-        public bool SelectionForfaitBas { get => selectionForfaitBas; set => selectionForfaitBas = value; }
-        public bool SelectionForfaitMoyen { get => selectionForfaitMoyen; set => selectionForfaitMoyen = value; }
-        public bool SelectionForfaitHaut { get => selectionForfaitHaut; set => selectionForfaitHaut = value; }
         public bool SelectionAssuCorpo { get => selectionAssuCorpo; set => selectionAssuCorpo = value; }
         public bool SelectionAssuVol { get => selectionAssuVol; set => selectionAssuVol = value; }
         public double PrixVoituresSelectionnees { get => prixVoituresSelectionnees; set => prixVoituresSelectionnees = value; }

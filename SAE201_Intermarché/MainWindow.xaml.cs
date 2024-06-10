@@ -133,6 +133,10 @@ namespace SAE201_Intermarche
         private void dgListeVehicules_SelectedCellsChanged(object sender, SelectedCellsChangedEventArgs e)
         {
             colonnegridmain.ItemsSource = dgListeVehicules.SelectedItems;
+            foreach (DataGridMain entite in dgListeVehicules.ItemsSource)
+            {
+                MainWindow.getInstance().data.PrixVoituresSelectionnees += double.Parse(entite.PrixLocationVehicule);
+            }
         }
 
         private bool ContientMotClef(object obj)
@@ -166,14 +170,6 @@ namespace SAE201_Intermarche
         private void cbMagasin_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             CollectionViewSource.GetDefaultView(dgListeVehicules.ItemsSource).Refresh();
-        }
-
-        private void colonnegridmain_AddingNewItem(object sender, AddingNewItemEventArgs e)
-        {
-           foreach (DataGridMain entite in dgListeVehicules.ItemsSource)
-            {
-                MainWindow.getInstance().data.PrixVoituresSelectionnees += double.Parse(entite.PrixLocationVehicule);
-            }
         }
     }
 }
