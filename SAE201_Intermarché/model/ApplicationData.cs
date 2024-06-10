@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Data;
+using System.Diagnostics.Eventing.Reader;
 using System.Linq;
+using System.Windows;
 
 namespace SAE201_Intermarche.model
 {
@@ -18,9 +20,9 @@ namespace SAE201_Intermarche.model
         private bool selectionAssuVol = false;
         private bool boolTypeBoite; // false = manuelle, true = automatique. 
         // const calcul prix et date
-        private const double ASSU_CORPO = 0.07;
-        private const double ASSU_VOL = 0.05;
-        private const double ASSU_VOL_CORPO = 0.10;
+        private const double ASSU_CORPO = 1.07;
+        private const double ASSU_VOL = 1.05;
+        private const double ASSU_VOL_CORPO = 1.10;
 
         //listes items
         private ObservableCollection<string> clientEtIdComboBoxItems;
@@ -210,22 +212,34 @@ namespace SAE201_Intermarche.model
             }
 
         }
-        public string CalculPrixFinal()
+        public void CalculPrixFinal()
 
-        {
+            {
             double pourcentageAssu = 0;
-            double prix = 0;
             TimeSpan difference = selectionDateRetour - selectionDateEmprunt;
-            int nbjours = difference.Days;
-            nbjours = 8;
+            int nbjours = 1;
+            if(difference.Days == 0)
+            {
+                nbjours = 1;
+            }
+            else if(difference.Days < 0)
+            {
+                MessageBox.Show("erreur ! la date d'emprunt est après la date de retour !");
+            }
+            else
+            {
+                nbjours = difference.Days;
+            }
             if (selectionAssuCorpo == true && selectionAssuVol == false)
                 pourcentageAssu = ASSU_CORPO;
             else if (selectionAssuVol == true && selectionAssuCorpo == false)
                 pourcentageAssu = ASSU_VOL;
             else if (selectionAssuCorpo == true && selectionAssuVol == true)
                 pourcentageAssu = ASSU_VOL_CORPO;
-            prix = prixVoituresSelectionnees * nbjours + (prixVoituresSelectionnees * nbjours * pourcentageAssu); 
-            return PrixFinal = $"prix : {prix} euros";
+            else
+                pourcentageAssu = 1;
+            double prix = Math.Round(prixVoituresSelectionnees * nbjours + (prixVoituresSelectionnees * nbjours * pourcentageAssu),2); 
+            PrixFinal = $"prix : {prix} euros";
         }
 
 
@@ -251,8 +265,6 @@ namespace SAE201_Intermarche.model
             LesReservations.Add(resa1);
 
             ListePourPremiereDataGrid.Add(new LignePremiereDataGrid(vehicule4L.NomVehicule, resa1.ForfaitKM, resa1.UneAssurance.DescriptionAssurance, resa1.UnClient.Nom, vehicule4L.TypeBoite, resa1.DateDebut, resa1.DateFin));
-
-
         }
 
 

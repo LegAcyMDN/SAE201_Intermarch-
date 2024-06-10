@@ -26,7 +26,7 @@ namespace SAE201_Intermarche
         {
             InitializeComponent();
             Connexion connexion = new Connexion();
-            connexion.ShowDialog();
+           // connexion.ShowDialog();
             instance = this;
             dgListeVehicules.Items.Filter = ContientMotClef;
         }
@@ -37,7 +37,7 @@ namespace SAE201_Intermarche
 
         private void confirmLocation_Click(object sender, RoutedEventArgs e)
         {
-            MainWindow.getInstance().data.SelectionClient.Delete();
+            MainWindow.getInstance().data.SelectionClient = null;
             MainWindow.getInstance().data.SelectionDateRetour = DateTime.Now;
             MainWindow.getInstance().data.SelectionDateEmprunt = DateTime.Now;
 
@@ -89,30 +89,15 @@ namespace SAE201_Intermarche
         private void dateEmpruntChoix_DataContextChanged(object sender, DependencyPropertyChangedEventArgs e)
         {
             MainWindow.getInstance().data.SelectionDateEmprunt = (DateTime)dateEmpruntChoix.DataContext;
-            MainWindow.getInstance().data.CalculPrixFinal();
-            AffichagePrix.GetBindingExpression(TextBox.TextProperty).UpdateSource();
-
-
+            this.data.CalculPrixFinal();
+            AffichagePrix.Text = this.data.PrixFinal;
         }
 
         private void dateRetourChoix_DataContextChanged(object sender, DependencyPropertyChangedEventArgs e)
         {
             MainWindow.getInstance().data.SelectionDateRetour = (DateTime)dateRetourChoix.DataContext;
-            MainWindow.getInstance().data.CalculPrixFinal();
-            AffichagePrix.GetBindingExpression(TextBox.TextProperty).UpdateSource();
-        }
-        private void Corpo_Checked(object sender, RoutedEventArgs e)
-        {
-            MainWindow.getInstance().data.SelectionAssuCorpo = true;
-            MainWindow.getInstance().data.CalculPrixFinal();
-            AffichagePrix.GetBindingExpression(TextBox.TextProperty).UpdateSource();
-        }
-
-        private void vol_Checked(object sender, RoutedEventArgs e)
-        {
-            MainWindow.getInstance().data.SelectionAssuVol = true;
-            MainWindow.getInstance().data.CalculPrixFinal();
-            AffichagePrix.GetBindingExpression(TextBox.TextProperty).UpdateSource();
+            this.data.CalculPrixFinal();
+            AffichagePrix.Text = this.data.PrixFinal;
         }
 
         private void dgListeVehicules_SelectedCellsChanged(object sender, SelectedCellsChangedEventArgs e)
@@ -120,7 +105,9 @@ namespace SAE201_Intermarche
             colonnegridmain.ItemsSource = dgListeVehicules.SelectedItems;
             foreach (DataGridMain entite in dgListeVehicules.ItemsSource)
             {
-                MainWindow.getInstance().data.PrixVoituresSelectionnees += double.Parse(entite.PrixLocationVehicule);
+               this.data.PrixVoituresSelectionnees += double.Parse(entite.PrixLocationVehicule);
+                this.data.CalculPrixFinal();
+                AffichagePrix.Text = this.data.PrixFinal;
             }
         }
 
@@ -168,11 +155,15 @@ namespace SAE201_Intermarche
         private void dateEmpruntChoix_SelectedDateChanged(object sender, SelectionChangedEventArgs e)
         {
             CollectionViewSource.GetDefaultView(dgListeVehicules.ItemsSource).Refresh();
+            this.data.CalculPrixFinal();
+            AffichagePrix.Text = this.data.PrixFinal;
         }
 
         private void dateRetourChoix_SelectedDateChanged(object sender, SelectionChangedEventArgs e)
         {
             CollectionViewSource.GetDefaultView(dgListeVehicules.ItemsSource).Refresh();
+            this.data.CalculPrixFinal();
+            AffichagePrix.Text = this.data.PrixFinal;
         }
 
         private void cbMagasin_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -207,5 +198,24 @@ namespace SAE201_Intermarche
 
         }
 
+        private void vol_Click(object sender, RoutedEventArgs e)
+        {
+            if (MainWindow.getInstance().data.SelectionAssuVol == false)
+                MainWindow.getInstance().data.SelectionAssuVol = true;
+            else
+                MainWindow.getInstance().data.SelectionAssuVol = false;
+            MainWindow.getInstance().data.CalculPrixFinal();
+            AffichagePrix.Text = this.data.PrixFinal;
+        }
+
+        private void Corpo_Click(object sender, RoutedEventArgs e)
+        {
+           if (MainWindow.getInstance().data.SelectionAssuCorpo == true)
+                MainWindow.getInstance().data.SelectionAssuCorpo = false;
+            else
+                MainWindow.getInstance().data.SelectionAssuCorpo = true;
+            MainWindow.getInstance().data.CalculPrixFinal();
+            AffichagePrix.Text = this.data.PrixFinal;
+        }
     }
 }

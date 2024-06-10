@@ -73,13 +73,11 @@
                                 <CheckBox
                                     x:Name="Corpo"
                                     Margin="20,5"
-                                    Checked="Corpo_Checked"
-                                    Content="Assurance corporel" />
+                                    Content="Assurance corporel" Click="Corpo_Click" />
                                 <CheckBox
                                     x:Name="vol"
                                     Margin="20,5"
-                                    Checked="vol_Checked"
-                                    Content="Assurance vol" />
+                                    Content="Assurance vol" Click="vol_Click" />
                                 <RadioButton
                                     x:Name="forfaitBas"
                                     Margin="20,5"
@@ -175,13 +173,14 @@
                                     Click="nouveauClient_Click"
                                     Content="Création nouveau client"
                                     Style="{StaticResource PrincipalBouton}" />
-                                <DatePicker
-                                    Focusable="False"
-                                    SelectedDate="{Binding SelectionDateRetour}"
-                                    Style="{StaticResource formulaireDate}" />
+                                
                                 <DatePicker
                                     Focusable="False" 
                                     SelectedDate="{Binding SelectionDateEmprunt}"
+                                    Style="{StaticResource formulaireDate}" />
+                                <DatePicker
+                                    Focusable="False"
+                                    SelectedDate="{Binding SelectionDateRetour}"
                                     Style="{StaticResource formulaireDate}" />
 
                             </StackPanel>
